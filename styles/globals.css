@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Scroll Bar Syle */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eef1ff;
+}
+::-webkit-scrollbar-thumb {
+  background: #8758ff;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6f38c5;
+}
+/* Scroll Bar Syle */
