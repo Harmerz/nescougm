@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BsFillArrowUpSquareFill } from "react-icons/bs";
 
-const BackToTop = () => {
+export const BackToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const toggleVisibility = () => {
@@ -34,5 +34,3 @@ const BackToTop = () => {
     </div>
   );
 };
-
-export default BackToTop;
