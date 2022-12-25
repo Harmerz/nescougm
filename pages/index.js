@@ -5,17 +5,20 @@ import { useState } from 'react';
 import { Button } from '../components/element/Button';
 import { BackToTop } from '../components/element/BackToTop';
 import { DefaultLayout } from '../components/layout';
+import { Footer } from '../components/layout/Footer';
+
 
 export default function Home() {
   return (
     <DefaultLayout title="Homepage - NESCO UGM 2023">
-    <div className='h-[200vh]'>
-      <div className='text-bold uppercase text-red-600 justify-center justi'>Haikal</div>
-      <Button color='primary'> Button </Button>
-      <Button color='secondary'> Button </Button>
+    <div className='justify-center bg-gradient-to-br from-bg-00 to-bg-01 h-[100vh] flex items-center'>
+      <div className='text-7xl font-bold uppercase text-white'>Homepage</div>
       <BackToTop />
     </div>
       
+    <footer>
+        <Footer/>
+      </footer>
     </DefaultLayout>
     
   )

@@ -9,13 +9,11 @@ import { DefaultLayout } from '../components/layout';
 export default function Competition() {
   return (
     <DefaultLayout title="Competition - NESCO UGM 2023">
-    <div className='h-[200vh]'>
-      <div className='text-bold uppercase text-red-600 justify-center justi'>Haikal</div>
-      <Button color='primary'> Button </Button>
-      <Button color='secondary'> Button </Button>
+    <div className='justify-center bg-gradient-to-br from-bg-00 to-bg-01 h-[100vh] flex items-center'>
+      <div className='text-7xl font-bold uppercase text-white'>Competition</div>
       <BackToTop />
     </div>
-      
+    
     </DefaultLayout>
     
   )
