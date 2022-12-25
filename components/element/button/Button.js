@@ -1,9 +1,9 @@
 import React from "react";
 
-export const Button = ({ children, color, size }) => {
-  const buttonColor = {
-    primary: "bg-gradient-to-r from-[#9806F2] to-[#689FE3] opacity-90 hover:opacity-100 border-[0.5px]",
-    secondary: "bg-gradient-to-r from-[#FFA62E] to-[#AF7CCE]",
+export const Button = ({ children, type, size }) => {
+  const buttonType = {
+    primary: "bg-c-01 text-c-00",
+    secondary: "bg-c-00 text-c-01 border-4 border-c-01",
   };
 
   const buttonSize = {
@@ -12,8 +12,8 @@ export const Button = ({ children, color, size }) => {
     lg: "text-lg",
   };
 
-  const colorClassName = buttonColor[color || "primary"];
+  const colorClassName = buttonType[type || "primary"];
   const sizeClassName = buttonSize[size || "md"];
 
-  return <button className={`px-12 py-4 rounded-full ${colorClassName} ${sizeClassName} font-bold text-white opacity-90 hover:opacity-100 transition-opacity`}>{children}</button>;
+  return <button className={`px-12 py-4 rounded-full ${colorClassName} ${sizeClassName} font-bold opacity-90 hover:opacity-100 transition-opacity`}>{children}</button>;
 };
