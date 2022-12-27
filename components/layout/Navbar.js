@@ -73,7 +73,7 @@ export function Navbar (){
                     return (
                       <Link
                         href={route.path}
-                        class="md:p-4 py-2 flex justify-center"
+                        className="md:p-4 py-2 flex justify-center"
                         key={route.key}
                       >
                         <div className="mx-5 flex">
@@ -93,7 +93,7 @@ export function Navbar (){
               >
                 <Link
                   href="/signin"
-                  class="md:p-4 py-2 flex justify-center"
+                  className="md:p-4 py-2 flex justify-center"
                 >
                   <Button color="primary">
                     SignIn
