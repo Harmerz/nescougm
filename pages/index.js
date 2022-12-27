@@ -1,4 +1,4 @@
-import { BackToTop } from '../components/element/backtotop';
+import { BackToTop } from '../components/element/BackToTop';
 import { DefaultLayout } from '../components/layout';
 import { Footer } from '../components/layout/Footer';
 
