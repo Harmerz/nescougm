@@ -1,1 +1,1 @@
-export * from "./BackToTop.js";
+export * from "./BackToTop";
