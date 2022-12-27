@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Button } from "../element/Button";
+import { Button } from "../element/Button/Button";
 
 export function Footer(){
     const competition = ["Paper Competition", 
