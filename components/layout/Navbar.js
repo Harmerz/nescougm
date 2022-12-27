@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
-import { Button } from '../element/Button/Button';
+import { Button } from '../element/button';
 
 export function Navbar (){
     const routes = [
