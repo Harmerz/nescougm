@@ -1,6 +1,6 @@
 import { BackToTop } from '../components/element/BackToTop';
 import { DefaultLayout } from '../components/layout';
-import { Footer } from '../components/layout/Footer';
+import { Footer } from '../components/layout';
 
 
 export default function Home() {
