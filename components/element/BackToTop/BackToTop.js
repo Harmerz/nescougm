@@ -28,7 +28,7 @@ export const BackToTop = () => {
   }, []);
   return (
     <div className="fixed bottom-10 right-10">
-      <button type="button" onClick={backToTop} className={`${isVisible ? "opacity-100" : "opacity-0"} text-[#8758ff] hover:text-[#6f38c5] text-[42px] transition-all`}>
+      <button type="button" onClick={backToTop} className={`${isVisible ? "opacity-100" : "opacity-0"} text-[#05C2FC] hover:text-[#00769a] hover:shadow-xl text-[42px] transition-all`}>
         <BsFillArrowUpSquareFill />
       </button>
     </div>
