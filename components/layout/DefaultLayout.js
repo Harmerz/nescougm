@@ -1,4 +1,5 @@
 import Head from 'next/head'
+
 import { Navbar } from './Navbar'
 
 export function DefaultLayout({ children, title = 'NESCO UGM' }) {
