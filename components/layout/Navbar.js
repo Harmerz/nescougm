@@ -1,15 +1,24 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from '../element/button';
 
 export function Navbar (){
+  const [yOffset, setYOffset] = useState(typeof window !== "undefined" ?  window.pageYOffset : 0);
+  const [visible, setVisible] = useState(true);
+  
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
+  function handleScroll() {
+    const currentYOffset = window.pageYOffset;
+    const visible = yOffset >= currentYOffset;
+
+    setYOffset(currentYOffset);
+    setVisible(visible);
+  }
     const routes = [
-        {
-          path: "/faq",
-          name: "FAQ",
-          key: "faq",
-        },
         {
           path: "/competition",
           name: "Competition",
@@ -25,11 +34,28 @@ export function Navbar (){
             name: "Merch",
             key: "merch",
         },
+        {
+          path: "/faq",
+          name: "FAQ",
+          key: "faq",
+        },
       ];
+      const styles = {
+        active: {
+          visibility: "visible",
+          transition: "all 0.5s",
+          position: "fixed"
+        },
+        hidden: {
+          visibility: "hidden",
+          transition: "all 0.5s",
+          transform: "translateY(-100%)"
+        }
+      }
 
       const [dropDown, setDropDown] = useState(false); 
     return (
-          <nav className={`bg-c-00 px-2 sm:px-4 border-b-[5px] py-4 border-c-01 border-t-4 md:rounded-none ${dropDown ? "rounded-b-3xl" : ""}`}>
+          <nav className={`bg-c-00 px-2 sm:px-4 border-b-[5px] py-2 border-c-01 border-t-4 md:rounded-none ${dropDown ? "rounded-b-3xl" : ""} w-[100vw]`} style={visible ? styles.active : styles.hidden}>
             <div className="container flex flex-wrap justify-between lg:justify-around items-center mx-auto">
               <Link href="/" className="flex items-center">
                 <div className="flex">
