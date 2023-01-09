@@ -15,7 +15,7 @@
     }
   },
   "rules": {
-    "prettier/prettier": ["error"],
+    "prettier/prettier": ["warn"],
     "react-hooks/exhaustive-deps": "warn",
     "react-hooks/rules-of-hooks": "error",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
