@@ -1,7 +1,7 @@
-export function Photo(){
-    return(
-        <div className='justify-center bg-gradient-to-br from-bg-00 to-bg-01 h-[100vh] flex items-center'>
-            <div className='text-7xl font-bold uppercase text-white'>Homepage - Photo</div>
-        </div>
-    )
+export function Photo() {
+  return (
+    <div className="justify-center bg-gradient-to-br from-bg-00 to-bg-01 h-[100vh] flex items-center">
+      <div className="text-7xl font-bold uppercase text-white">Homepage - Photo</div>
+    </div>
+  )
 }

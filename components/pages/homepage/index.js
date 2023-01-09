@@ -1,3 +1,3 @@
-export * from "./Hero";
-export * from "./About";
-export * from "./Photo";
+export * from './Hero'
+export * from './About'
+export * from './Photo'

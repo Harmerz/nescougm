@@ -1,7 +1,7 @@
-import Head from "next/head";
-import { Navbar } from "./Navbar";
+import Head from 'next/head'
+import { Navbar } from './Navbar'
 
-export function DefaultLayout({ children, title = "NESCO UGM" }) {
+export function DefaultLayout({ children, title = 'NESCO UGM' }) {
   return (
     <>
       <Head>
@@ -12,7 +12,8 @@ export function DefaultLayout({ children, title = "NESCO UGM" }) {
         <Navbar />
       </header>
       <main>{children}</main>
-      
     </>
-  );
+  )
 }
+
+export default DefaultLayout

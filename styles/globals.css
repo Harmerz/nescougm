@@ -8,15 +8,14 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #1F2326;
+  background: #1f2326;
 }
 ::-webkit-scrollbar-thumb {
-  background: #05C2FC;
+  background: #05c2fc;
   border-radius: 50px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #00769a;
-  
 }
 /* Scroll Bar Syle */
