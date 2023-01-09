@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import Link from 'next/link'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
@@ -7,17 +8,17 @@ export function Navbar() {
   const [yOffset, setYOffset] = useState(typeof window !== 'undefined' ? window.pageYOffset : 0)
   const [visible, setVisible] = useState(true)
 
+  function handleScroll() {
+    const currentYOffset = window.pageYOffset
+    const temp = yOffset >= currentYOffset
+
+    setYOffset(currentYOffset)
+    setVisible(temp)
+  }
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   })
-  function handleScroll() {
-    const currentYOffset = window.pageYOffset
-    const visible = yOffset >= currentYOffset
-
-    setYOffset(currentYOffset)
-    setVisible(visible)
-  }
   const routes = [
     {
       path: '/competition',
@@ -65,7 +66,7 @@ export function Navbar() {
         <Link href="/" className="flex items-center">
           <div className="flex">
             <div className="flex justify-items-center place-items-center content-center mr-2 h-10 relative w-40">
-              <Image src={'/Nesco.png'} alt="Tutur" fill />
+              <Image src="/Nesco.png" alt="Tutur" fill />
             </div>
           </div>
         </Link>
@@ -77,7 +78,7 @@ export function Navbar() {
           aria-expanded="false"
           onClick={() => setDropDown(!dropDown)}
         >
-          <Image src={'/icon/List.svg'} width={20} height={20} alt="List" />
+          <Image src="/icon/List.svg" width={20} height={20} alt="List" />
         </button>
         <div
           className={`w-full lg:flex items-center lg:w-auto lg:flex-row ${

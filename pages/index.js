@@ -1,6 +1,5 @@
 import { BackToTop } from '../components/element/BackToTop'
-import { DefaultLayout } from '../components/layout'
-import { Footer } from '../components/layout'
+import { DefaultLayout, Footer } from '../components/layout'
 import { Hero, Photo, About } from '../components/pages/homepage'
 
 export default function Home() {

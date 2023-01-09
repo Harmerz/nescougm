@@ -1,3 +1,33 @@
 {
-  "extends": "next/core-web-vitals"
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "airbnb",
+    "plugin:prettier/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:react/jsx-runtime"
+  ],
+  "plugins": ["prettier", "react"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "prettier/prettier": ["error"],
+    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-indent-props": [1, 2],
+    "react/jsx-indent": [1, 2],
+    "react/jsx-one-expression-per-line": [0],
+    "react/prefer-stateless-function": [1],
+    "react/static-property-placement": [1, "property assignment"],
+    "react/prop-types": [0],
+    "import/prefer-default-export": [0],
+    "react/function-component-definition": [0],
+    "no-undef": [1],
+    "react/jsx-props-no-spreading": [0]
+  }
 }

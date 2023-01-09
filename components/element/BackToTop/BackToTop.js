@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+/* eslint-disable no-undef */
+import { useEffect, useState } from 'react'
 import { BsFillArrowUpSquareFill } from 'react-icons/bs'
 
 export const BackToTop = () => {

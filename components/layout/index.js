@@ -1,3 +1,3 @@
-export * from './DefaultLayout.js'
-export * from './Navbar.js'
-export * from './Footer.js'
+export * from './DefaultLayout'
+export * from './Navbar'
+export * from './Footer'

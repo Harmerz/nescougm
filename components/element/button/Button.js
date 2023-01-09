@@ -1,5 +1,3 @@
-import React from 'react'
-
 export const Button = ({ children, type, size }) => {
   const buttonType = {
     primary: 'bg-c-01 text-c-00 hover:opacity-80 ',
@@ -17,6 +15,7 @@ export const Button = ({ children, type, size }) => {
 
   return (
     <button
+      type="submit"
       className={`rounded-full ${colorClassName} ${sizeClassName} transition-all font-bold drop-shadow-[0_0_14px_rgba(109,199,236,0.491667)] hover:drop-shadow-[0_0_20px_rgba(81,177,204,0.64)]`}
     >
       {children}
