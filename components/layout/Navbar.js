@@ -1,7 +1,8 @@
 /* eslint-disable no-undef */
-import Link from 'next/link'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
+
 import { Button } from '../element/button'
 
 export function Navbar() {

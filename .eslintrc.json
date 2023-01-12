@@ -13,6 +13,8 @@
   ],
   "plugins": ["prettier", "react", "simple-import-sort", "import"],
   "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": true,
     "ecmaFeatures": {
       "jsx": true
     }
