@@ -1,4 +1,15 @@
+import 'aos/dist/aos.css'
+
+import AOS from 'aos'
+import { useEffect } from 'react'
+
 export function Photo() {
+  useEffect(() => {
+    AOS.init({
+      once: false,
+      duration: 2000,
+    })
+  }, [])
   return (
     <div className="shadow-xl h-[140vh] bg-gradient-to-b p-[6px] from-c-02 to-bg-02">
       <div className="justify-center bg-bg-02 h-[140vh] flex">
@@ -11,13 +22,23 @@ export function Photo() {
         </div>
 
         <div className="grid h-[140vh] w-9/12 justify-self-end">
-          <div className="flex justify-center self-center mt-16 sm:mt-24 mb-4 sm:mb-20">
+          <div
+            data-aos="fade-in"
+            data-aos-duration="2000"
+            data-aos-delay="500"
+            className="flex justify-center self-center mt-16 sm:mt-24 mb-4 sm:mb-20 aos-init"
+          >
             <div className=" text-[24px] sm:text-[42px] text-justify font-bold font-poppins leading-[43.15px] text-white ">
               Lorem Ipsum
             </div>
           </div>
 
-          <div className="grid grid-cols-none grid-rows-none gap-4 h-[110vh]">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="2000"
+            data-aos-delay="1000"
+            className="grid grid-cols-none grid-rows-none gap-4 h-[120vh] sm:h-[100vh] aos-init"
+          >
             <div className="rounded-xl shadow-lg sm:col-span-4 sm:col-start-1 sm:row-span-4 sm:row-start-2 lg:col-span-4 lg:col-start-1 lg:row-span-5 lg:row-start-3 bg-gradient-to-r p-[4px] from-[#0DF8CF] to-[#05C2FC]">
               <div className="flex flex-col justify-between h-full bg-[#D9D9D9] text-black rounded-lg p-4">
                 1
