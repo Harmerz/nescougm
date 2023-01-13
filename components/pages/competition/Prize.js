@@ -14,12 +14,14 @@ import VerticalBar from './VerticalBar'
 export function Prize({ favorit = true }) {
   const [currentSlide, setCurrentSlide] = useState(0)
   return (
-    <div className="w-full h-fit lg:h-[100vh] bg-c-00 flex justify-end items-center relative overflow-hidden">
+    <div className="w-full h-fit lg:h-[100vh] bg-c-00 flex justify-end items-center relative">
       <Image src={Vector1} className="absolute bottom-0 right-0 w-[30%]" />
       <div className="w-[40vw] h-[40vw] lg:w-[22vw] lg:h-[22vw] rounded-full absolute -left-[3%] top-[7%] lg:left-[1%] lg:top-[18%] xl:top-[12%] 2xl:top-[6%] bg-c-01 opacity-[.14] z-[11] blur-[80px] md:blur-[90px]" />
       <div className="w-[34vw] h-[34vw] lg:w-[22vw] lg:h-[22vw] rounded-full absolute left-[5%] bottom-[35%] lg:left-[4%] md:bottom-[30%] lg:bottom-[11%] bg-c-01 opacity-[.14] z-[11] lg:z-[9] blur-[80px] md:blur-[90px]" />
       <div className="w-[13vw] h-[13vw] rounded-full absolute left-[21%] bottom-[5%] xl:bottom-[2%] bg-c-01 opacity-[.14] z-[9] hidden lg:block blur-[80px] md:blur-[90px]" />
-      <div className="w-[30vw] h-[30vw] lg:w-[22vw] lg:h-[22vw] rounded-full absolute -right-[2%] top-[40%] lg:top-[2%] bg-c-01 opacity-[.14] z-[11] blur-[80px] md:blur-[90px]" />
+      <div className="absolute inset-0 -top-[100%] overflow-hidden">
+        <div className="w-[30vw] h-[30vw] lg:w-[22vw] lg:h-[22vw] rounded-full absolute -right-[2%] top-[70%] lg:top-[51%] bg-c-01 opacity-[.14] z-[11] blur-[80px] md:blur-[90px]" />
+      </div>
       <div className="absolute w-[18vw] left-0 inset-y-0 bg-gradient-to-b from-c-01 to-c-02 flex items-center z-10">
         <div className="h-[100%] ml-[10%]">
           <VerticalBar title="Prize Pool" color="white" hide={false} />
