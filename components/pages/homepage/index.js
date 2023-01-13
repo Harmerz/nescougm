@@ -1,3 +1,6 @@
 export * from './About'
 export * from './Hero'
+export * from './Medpart'
+export * from './Paper'
 export * from './Photo'
+export * from './Webinar'

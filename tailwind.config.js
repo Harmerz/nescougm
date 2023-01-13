@@ -16,8 +16,10 @@ module.exports = {
         'c-01': '#05C2FC',
         'c-02': '#0DF8CF',
         'c-03': '#D8DDDF',
+        'c-04': '#0F7A9B00',
         'bg-00': '#304352',
         'bg-01': '#252E37',
+        'bg-02': '#242B32',
       },
       fontFamily: {
         poppins: ['Poppins', ...defaultTheme.fontFamily.sans],

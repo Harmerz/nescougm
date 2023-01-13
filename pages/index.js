@@ -1,6 +1,6 @@
 import { BackToTop } from '../components/element/BackToTop'
 import { DefaultLayout, Footer } from '../components/layout'
-import { About, Hero, Photo } from '../components/pages/homepage'
+import { About, Hero, Medpart, Paper, Photo, Webinar } from '../components/pages/homepage'
 
 export default function Home() {
   return (
@@ -8,7 +8,10 @@ export default function Home() {
       <div>
         <Hero />
         <About />
+        <Paper />
+        <Webinar />
         <Photo />
+        <Medpart />
         <BackToTop />
       </div>
 
