@@ -61,7 +61,7 @@ export function Prize({ favorit = true }) {
           renderArrowPrev={() => <div />}
           renderArrowNext={(clickHandler) => {
             return (
-              <div className="absolute top-0 bottom-0 right-0 mr-[7vw] flex items-center">
+              <div className="absolute top-0 bottom-0 right-0 mr-[7vw] flex items-center z-[12]">
                 <button onClick={clickHandler} type="button" className="w-[2vw]">
                   <Image src={RightArrow} />
                 </button>
