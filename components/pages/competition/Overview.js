@@ -35,7 +35,7 @@ export function Overview() {
           yang bertujuan mendorong perkembangan dan perencanaan sistem ketenagalistrikan, khususnya
           di Indonesia.
         </div>
-        <Link href="/signin" className="mt-[15px]">
+        <Link href="/signin" className="mt-[15px] z-[100]">
           <Button type="secondary" size="sm">
             Guide Book
           </Button>

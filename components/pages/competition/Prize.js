@@ -43,7 +43,7 @@ export function Prize({ favorit = true }) {
           <div>
             Go to Kategori{' '}
             <span
-              className="cursor-pointer text-transparent bg-clip-text bg-gradient-to-tl from-c-01 to-c-02"
+              className="cursor-pointer text-transparent bg-clip-text bg-gradient-to-tl from-c-01 to-c-02 z-[100]"
               onClick={() => setCurrentSlide((slide) => slide + 1)}
               role="presentation"
             >
@@ -63,7 +63,7 @@ export function Prize({ favorit = true }) {
           renderArrowPrev={() => <div />}
           renderArrowNext={(clickHandler) => {
             return (
-              <div className="absolute top-0 bottom-0 right-0 mr-[7vw] flex items-center z-[12]">
+              <div className="absolute top-0 bottom-0 right-0 mr-[7vw] flex items-center z-[100]">
                 <button onClick={clickHandler} type="button" className="w-[2vw]">
                   <Image src={RightArrow} />
                 </button>

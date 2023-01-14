@@ -28,7 +28,7 @@ export const BackToTop = () => {
     }
   }, [])
   return (
-    <div className="fixed bottom-10 right-10">
+    <div className="fixed bottom-10 right-10 z-[9999]">
       <button
         type="button"
         onClick={backToTop}
