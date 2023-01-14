@@ -3,7 +3,7 @@ export default function VerticalBar({ title = '', color = 'white', hide = true }
     <div
       className={`${
         hide ? 'hidden' : 'flex'
-      } md:flex flex-col w-[20px] items-center h-full justify-center`}
+      } lg:flex flex-col w-[20px] items-center h-full justify-center`}
     >
       <div className={`text-xl text-${color} mb-[28px] font-bold`}>
         Nes

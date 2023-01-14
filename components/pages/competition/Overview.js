@@ -11,7 +11,7 @@ import VerticalBar from './VerticalBar'
 
 export function Overview() {
   return (
-    <div className="w-full h-fit lg:h-[100vh] bg-c-00 py-[5vh] ox-content flex justify-around items-center flex-col lg:flex-row relative">
+    <div className="w-full h-fit lg:h-[100vh] bg-c-00 py-[5vh] box-content flex justify-around items-center flex-col lg:flex-row relative">
       <div className="w-[30vw] h-[30vw] md:w-[22vw] md:h-[22vw] rounded-full absolute left-0 top-0 lg:-left-[1%] lg:top-[12%] bg-c-01 opacity-[.14] blur-[80px] md:blur-[90px]" />
       <div className="w-[10vw] h-[10vw] rounded-full absolute left-[21%] top-[10vw] bg-c-01 opacity-[.14] hidden lg:block blur-[80px] md:blur-[90px]" />
       <div className="w-[36vw] h-[36vw] rounded-full absolute left-[2%] top-[42%] bg-c-01 opacity-[.14] lg:hidden blur-[80px] md:blur-[90px]" />
@@ -19,7 +19,7 @@ export function Overview() {
         <div className="w-[22vw] h-[22vw] rounded-full absolute -right-[5%] top-[36%] lg:top-[48%] bg-c-01 opacity-[.14] blur-[80px] md:blur-[90px] z-[11]" />
         <div className="w-[45vw] h-[45vw] rounded-full absolute -right-[7%] bottom-[36%] bg-c-01 opacity-[.14] lg:hidden blur-[80px] md:blur-[90px] z-[11]" />
       </div>
-      <div className="h-4/5 hidden lg:block">
+      <div className="h-4/5">
         <VerticalBar title="Overview" color="c-01" />
       </div>
       <div className="w-[80%] lg:w-[17%] text-justify lg:text-left lg:h-fit flex flex-col mb-[5%]">
