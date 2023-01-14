@@ -4,12 +4,12 @@ import VerticalBar from './VerticalBar'
 export function Timeline({ tujuh = false }) {
   return (
     <div className="box-content pt-[7vh] lg:py-[5vh] w-full lg:h-[100vh] bg-c-00 flex items-center relative">
-      <div className="w-[19vw] h-[19vw] rounded-full absolute right-[0%] top-[15%] -translate-y-1/3 bg-c-01 opacity-[.14] z-[9] hidden lg:block blur-[80px] md:blur-[90px]" />
-      <div className="w-[19vw] h-[19vw] rounded-full absolute left-[15%] top-[72%] -translate-x-1/2 -translate-y-1/3 bg-c-01 opacity-[.14] z-[9] hidden lg:block blur-[80px] md:blur-[90px]" />
-      <div className="w-[40vw] h-[40vw] rounded-full absolute left-[15%] top-[24%] -translate-x-1/2 -translate-y-2/3 bg-c-01 opacity-[.14] z-[9] lg:hidden blur-[80px] md:blur-[90px]" />
-      <div className="w-[40vw] h-[40vw] rounded-full absolute left-[2%] bottom-[20%] -translate-x-1/2 translate-y-2/3 bg-c-01 opacity-[.14] z-[9] lg:hidden blur-[80px] md:blur-[90px]" />
+      <div className="w-[19vw] h-[19vw] rounded-full absolute right-[0%] top-[15%] -translate-y-1/3 bg-c-01 opacity-[.14] pointer-events-none z-[9] hidden lg:block blur-[80px] md:blur-[90px]" />
+      <div className="w-[19vw] h-[19vw] rounded-full absolute left-[15%] top-[72%] -translate-x-1/2 -translate-y-1/3 bg-c-01 opacity-[.14] pointer-events-none z-[9] hidden lg:block blur-[80px] md:blur-[90px]" />
+      <div className="w-[40vw] h-[40vw] rounded-full absolute left-[15%] top-[24%] -translate-x-1/2 -translate-y-2/3 bg-c-01 opacity-[.14] pointer-events-none z-[9] lg:hidden blur-[80px] md:blur-[90px]" />
+      <div className="w-[40vw] h-[40vw] rounded-full absolute left-[2%] bottom-[20%] -translate-x-1/2 translate-y-2/3 bg-c-01 opacity-[.14] pointer-events-none z-[9] lg:hidden blur-[80px] md:blur-[90px]" />
       <div className="absolute inset-0 -top-[100%] overflow-hidden">
-        <div className="w-[40vw] h-[40vw] rounded-full absolute right-[1%] top-[70%] translate-x-1/2 -translate-y-2/3 bg-c-01 opacity-[.14] z-[9] lg:hidden blur-[80px] md:blur-[90px]" />
+        <div className="w-[40vw] h-[40vw] rounded-full absolute right-[1%] top-[70%] translate-x-1/2 -translate-y-2/3 bg-c-01 opacity-[.14] pointer-events-none z-[9] lg:hidden blur-[80px] md:blur-[90px]" />
       </div>
       <div className="hidden lg:block h-4/5 w-[2%] ml-[3.5%]">
         <VerticalBar title="Timeline" color="c-01" />
