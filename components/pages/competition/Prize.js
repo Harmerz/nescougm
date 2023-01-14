@@ -53,7 +53,7 @@ export function Prize({ favorit = true }) {
           </div>
         </div>
       </div>
-      <div className="w-[82vw] h-full">
+      <div className="w-[82vw] h-full z-[9]">
         <Carousel
           showThumbs={false}
           showStatus={false}
