@@ -60,7 +60,7 @@ export function Navbar() {
     <nav
       className={`bg-c-00 px-2 sm:px-4 border-b-[5px] py-2 border-c-01 border-t-4 md:rounded-none ${
         dropDown ? 'rounded-b-3xl' : ''
-      } w-[100vw]`}
+      } w-[100vw] z-[9999]`}
       style={visible ? styles.active : styles.hidden}
     >
       <div className="container flex flex-wrap justify-between lg:justify-around items-center mx-auto">
