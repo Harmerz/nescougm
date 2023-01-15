@@ -90,8 +90,8 @@ export function Prize({ favorit = true }) {
             <div className="w-full lg:h-[100vh] flex lg:flex-col">
               <div
                 className={`w-[20vw] lg:w-fit h-fit ${
-                  favorit ? 'mt-[5%]' : 'sm:mt-[1vh] md:mt-[2.5vh]'
-                } lg:mt-[10vh] text-lg md:text-xl lg:text-4xl xl:text-5xl font-bold text-white flex flex-wrap ml-[6vw] lg:ml-[3vw]`}
+                  favorit ? 'mt-[5%] text-lg' : 'sm:mt-[1vh] md:mt-[2.5vh] text-base'
+                } lg:mt-[10vh] md:text-xl lg:text-4xl xl:text-5xl font-bold text-white flex flex-wrap ml-[6vw] lg:ml-[3vw]`}
               >
                 Kategori&nbsp;
                 <div className="text-transparent bg-clip-text bg-gradient-to-b from-c-01 to-c-02 text-left">
@@ -130,7 +130,7 @@ export function Prize({ favorit = true }) {
             <div className="w-full lg:h-[100vh] flex lg:flex-col">
               <div
                 className={`w-[20vw] lg:w-fit h-fit mt-[0%] ${
-                  favorit ? 'sm:mt-[1%] md:mt-[2%] text-lg' : 'text-sm sm:text-base'
+                  favorit ? 'mt-[1vh] sm:mt-0 text-xs sm:text-lg' : 'text-xs sm:text-base'
                 } lg:mt-[10vh] md:text-xl lg:text-4xl xl:text-5xl font-bold text-white flex flex-wrap ml-[6vw] lg:ml-[3vw]`}
               >
                 Kategori&nbsp;

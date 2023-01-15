@@ -16,7 +16,7 @@ export function HeroCompetition() {
       <div className="w-[86%] h-[70%] mt-[5vh] bg-c-00 flex items-center z-[10]">
         <div className="h-[80%] w-[6px] lg:h-[60%] lg:w-[20px] -ml-[3px] lg:-ml-[10px] bg-gradient-to-b from-c-01 to-c-02 rounded-[24px]" />
         <div className="h-[100%] ml-[5%] flex flex-col justify-center">
-          <div className="h-[27%] sm:h-[23%] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-c-01 to-c-02">
+          <div className="h-fit sm:h-[23%] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-c-01 to-c-02">
             Paper
             <br />
             Competition
