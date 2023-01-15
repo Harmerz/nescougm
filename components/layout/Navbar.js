@@ -52,6 +52,7 @@ export function Navbar() {
       visibility: 'hidden',
       transition: 'all 0.5s',
       transform: 'translateY(-100%)',
+      position: 'fixed',
     },
   }
 
