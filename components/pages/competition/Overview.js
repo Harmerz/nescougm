@@ -136,8 +136,16 @@ export function Overview() {
               gradientUnits="userSpaceOnUse"
             >
               <stop offset="0.0260485" stopColor="#05C2FC" />
-              <stop offset="0.43529" stopColor="#08D8EA" />
-              <stop offset="1" stopColor="#0DF8CF" />
+              <stop
+                offset="0.43529"
+                stopColor="#08D8EA"
+                className="animate-[flickerBgCenter_3s_linear_infinite]"
+              />
+              <stop
+                offset="1"
+                stopColor="#0DF8CF"
+                className="animate-[flickerBgEnd_3s_linear_infinite]"
+              />
             </linearGradient>
             <linearGradient
               id="paint1_linear_747_1944"
