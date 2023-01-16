@@ -1,7 +1,7 @@
 /* @type {import('tailwindcss').Config} */
 
 // eslint-disable-next-line import/no-extraneous-dependencies
-const defaultTheme = require('tailwindcss/defaultTheme')
+// const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   content: [
@@ -22,7 +22,31 @@ module.exports = {
         'bg-02': '#242B32',
       },
       fontFamily: {
-        poppins: ['Poppins', ...defaultTheme.fontFamily.sans],
+        jost: ['Jost', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
+        // poppins: ['Poppins', ...defaultTheme.fontFamily.sans],
+      },
+      keyframes: {
+        flicker: {
+          '0%, 19.9%, 25%, 62.9%, 65%, 65.9%, 70%, 100%': { fill: 'white' },
+          '20%, 24.9%, 63%, 64.9%, 66%, 69.9%': { fill: '#d3d3d3' },
+        },
+        flickerLight: {
+          '0%, 20.7%, 25%, 63.7%, 65%, 66.7%, 70%, 100%': { stopOpacity: '1' },
+          '20.8%, 24.9%, 63.8%, 64.9%, 66.8%, 69.9%': { stopOpacity: '0' },
+        },
+        flickerBgStart: {
+          '0%, 19.9%, 25%, 62.9%, 65%, 65.9%, 70%, 100%': { stopColor: '#05C2FC' },
+          '20%, 24.9%, 63%, 64.9%, 66%, 69.9%': { stopColor: '#037497' },
+        },
+        flickerBgCenter: {
+          '0%, 19.9%, 25%, 62.9%, 65%, 65.9%, 70%, 100%': { stopColor: '#08D8EA' },
+          '20%, 24.9%, 63%, 64.9%, 66%, 69.9%': { stopColor: '#037497' },
+        },
+        flickerBgEnd: {
+          '0%, 19.9%, 25%, 62.9%, 65%, 65.9%, 70%, 100%': { stopColor: '#0DF8CF' },
+          '20%, 24.9%, 63%, 64.9%, 66%, 69.9%': { stopColor: '#037497' },
+        },
       },
     },
   },

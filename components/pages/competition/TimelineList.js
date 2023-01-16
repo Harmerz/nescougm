@@ -14,8 +14,8 @@ export default function TimelineList({ children, index, timeline }) {
           className={`absolute lg:static text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white font-bold text-center h-full lg:h-[22%] flex items-center pb-[3%] lg:justify-start ${
             index % 2 === 1
               ? 'left-[44%] lg:items-start lg:pb-0'
-              : 'right-[44%] lg:items-end lg:pb-[2%]'
-          } lg:ml-[5%]`}
+              : 'right-[44%] lg:items-end lg:pb-[1%]'
+          } lg:ml-[5%] font-jost font-extrabold`}
         >
           {index}
         </div>
@@ -26,10 +26,10 @@ export default function TimelineList({ children, index, timeline }) {
               : 'mr-[11%] ml-[59%] lg:ml-0 lg:mr-0 lg:mt-[5%]'
           }`}
         >
-          <div className="text-xl sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl text-transparent bg-clip-text bg-gradient-to-b from-c-01 to-c-02 text-center flex items-center mb-[2%]">
+          <div className="text-lg sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl font-jost text-transparent bg-clip-text bg-gradient-to-b from-c-01 to-c-02 text-center flex items-center mb-[2%]">
             {timeline}
           </div>
-          <div className="text-base sm:text-xl md:text-2xl lg:text-xl xl:text-2xl text-white text-left">
+          <div className="text-xs sm:text-xl md:text-2xl lg:text-xl 2xl:text-2xl font-poppins text-white text-left">
             {children}
           </div>
         </div>
