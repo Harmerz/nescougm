@@ -1,7 +1,7 @@
 /* @type {import('tailwindcss').Config} */
 
 // eslint-disable-next-line import/no-extraneous-dependencies
-const defaultTheme = require('tailwindcss/defaultTheme')
+// const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   content: [
@@ -22,7 +22,9 @@ module.exports = {
         'bg-02': '#242B32',
       },
       fontFamily: {
-        poppins: ['Poppins', ...defaultTheme.fontFamily.sans],
+        jost: ['Jost', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
+        // poppins: ['Poppins', ...defaultTheme.fontFamily.sans],
       },
       keyframes: {
         flicker: {
