@@ -149,7 +149,7 @@ export function Prize({ juaraMahasiswa, juaraSMA }) {
             onChange={(index) => setCurrentSlide(index)}
           >
             <div>
-              <div className="w-full lg:h-[100vh] flex lg:flex-col">
+              <div className="w-full lg:h-[100vh] flex lg:flex-col select-none">
                 <div
                   className={`w-[20vw] lg:w-fit h-fit ${
                     favoritMahasiswa ? 'mt-[5%] text-lg' : 'sm:mt-[1vh] md:mt-[2.5vh] text-base'
@@ -189,7 +189,7 @@ export function Prize({ juaraMahasiswa, juaraSMA }) {
               </div>
             </div>
             <div>
-              <div className="w-full lg:h-[100vh] flex lg:flex-col">
+              <div className="w-full lg:h-[100vh] flex lg:flex-col select-none">
                 <div
                   className={`w-[20vw] lg:w-fit h-fit mt-[0%] ${
                     favoritSMA ? 'mt-[1vh] sm:mt-0 text-xs sm:text-lg' : 'text-xs sm:text-base'
