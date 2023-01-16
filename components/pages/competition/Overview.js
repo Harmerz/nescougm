@@ -84,6 +84,7 @@ export function Overview() {
           viewBox="0 0 456 596"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          className="group"
         >
           <path
             d="M415.999 565.5H54.0039V149.395C54.0039 149.395 54.0039 0 231.002 0C415.999 0 415.999 149.395 415.999 149.395V565.5Z"
@@ -103,8 +104,8 @@ export function Overview() {
             cy="267.5"
             rx="88.5"
             ry="87.5"
-            fill="white"
-            className="animate-[flicker_3s_linear_infinite]"
+            fill="#d3d3d3"
+            className="animate-[flicker_4s_linear_infinite] group-hover:animate-none"
           />
           <rect
             x="187.111"
@@ -135,16 +136,20 @@ export function Overview() {
               y2="476.258"
               gradientUnits="userSpaceOnUse"
             >
-              <stop offset="0.0260485" stopColor="#05C2FC" />
+              <stop
+                offset="0.0260485"
+                stopColor="#037497"
+                className="animate-[flickerBgStart_4s_linear_infinite] group-hover:animate-none"
+              />
               <stop
                 offset="0.43529"
-                stopColor="#08D8EA"
-                className="animate-[flickerBgCenter_3s_linear_infinite]"
+                stopColor="#037497"
+                className="animate-[flickerBgCenter_4s_linear_infinite] group-hover:animate-none"
               />
               <stop
                 offset="1"
-                stopColor="#0DF8CF"
-                className="animate-[flickerBgEnd_3s_linear_infinite]"
+                stopColor="#037497"
+                className="animate-[flickerBgEnd_4s_linear_infinite] group-hover:animate-none"
               />
             </linearGradient>
             <linearGradient
@@ -157,8 +162,8 @@ export function Overview() {
             >
               <stop
                 stopColor="white"
-                stopOpacity="1"
-                className="animate-[flickerLight_3s_linear_infinite]"
+                stopOpacity="0"
+                className="animate-[flickerLight_4s_linear_infinite] group-hover:animate-none"
               />
               <stop offset="1" stopColor="white" stopOpacity="0" />
             </linearGradient>
