@@ -40,12 +40,12 @@ export function Prize({ favorit = true }) {
         data-aos-delay="1000"
         data-aos-anchor="#CompetitionPrize"
         data-aos-anchor-placement="top-center"
-        className="absolute inset-0 z-[11]"
+        className="absolute inset-0 z-[11] pointer-events-none"
       >
-        <div className="w-[40vw] h-[40vw] lg:w-[22vw] lg:h-[22vw] rounded-full absolute -left-[3%] top-[7%] lg:left-[1%] lg:top-[18%] xl:top-[12%] 2xl:top-[6%] bg-c-01 opacity-[.14] pointer-events-none z-[11] blur-[80px] md:blur-[90px]" />
-        <div className="w-[34vw] h-[34vw] rounded-full absolute left-[5%] bottom-[35%] md:bottom-[30%] bg-c-01 opacity-[.14] pointer-events-none z-[11] lg:hidden blur-[80px] md:blur-[90px]" />
+        <div className="w-[40vw] h-[40vw] lg:w-[22vw] lg:h-[22vw] rounded-full absolute -left-[3%] top-[7%] lg:left-[1%] lg:top-[18%] xl:top-[12%] 2xl:top-[6%] bg-c-01 opacity-[.14] z-[11] blur-[80px] md:blur-[90px]" />
+        <div className="w-[34vw] h-[34vw] rounded-full absolute left-[5%] bottom-[35%] md:bottom-[30%] bg-c-01 opacity-[.14] z-[11] lg:hidden blur-[80px] md:blur-[90px]" />
         <div className="absolute inset-0 -top-[100%] overflow-hidden">
-          <div className="w-[30vw] h-[30vw] lg:w-[22vw] lg:h-[22vw] rounded-full absolute -right-[2%] top-[70%] lg:top-[51%] bg-c-01 opacity-[.14] z-[11] pointer-events-none blur-[80px] md:blur-[90px]" />
+          <div className="w-[30vw] h-[30vw] lg:w-[22vw] lg:h-[22vw] rounded-full absolute -right-[2%] top-[70%] lg:top-[51%] bg-c-01 opacity-[.14] z-[11] blur-[80px] md:blur-[90px]" />
         </div>
       </div>
       <div
@@ -54,10 +54,10 @@ export function Prize({ favorit = true }) {
         data-aos-delay="1000"
         data-aos-anchor="#CompetitionPrize"
         data-aos-anchor-placement="top-center"
-        className="absolute inset-0 z-[9]"
+        className="absolute inset-0 z-[9] pointer-events-none"
       >
-        <div className="w-[22vw] h-[22vw] rounded-full absolute left-[4%] bottom-[11%] bg-c-01 opacity-[.14] pointer-events-none z-[9] hidden lg:block blur-[80px] md:blur-[90px]" />
-        <div className="w-[13vw] h-[13vw] rounded-full absolute left-[21%] bottom-[5%] xl:bottom-[2%] bg-c-01 opacity-[.14] pointer-events-none z-[9] hidden lg:block blur-[80px] md:blur-[90px]" />
+        <div className="w-[22vw] h-[22vw] rounded-full absolute left-[4%] bottom-[11%] bg-c-01 opacity-[.14] z-[9] hidden lg:block blur-[80px] md:blur-[90px]" />
+        <div className="w-[13vw] h-[13vw] rounded-full absolute left-[21%] bottom-[5%] xl:bottom-[2%] bg-c-01 opacity-[.14] z-[9] hidden lg:block blur-[80px] md:blur-[90px]" />
       </div>
       <div
         data-aos="fade-right"

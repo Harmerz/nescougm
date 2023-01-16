@@ -40,7 +40,7 @@ export function HeroCompetition() {
         data-aos-duration="1000"
         data-aos-delay="1000"
         data-aos-anchor="#CompetitionHero"
-        className="absolute inset-0 z-[11] flex justify-center items-center"
+        className="absolute inset-0 z-[11] flex justify-center items-center pointer-events-none "
       >
         <div className="w-[20vw] h-[20vw] rounded-full absolute right-[25%] bg-c-01 opacity-[.14] blur-[80px] md:blur-[90px] z-[11]" />
         <div className="w-[13vw] h-[13vw] rounded-full absolute left-[45%] bottom-[20%] bg-c-01 opacity-[.14] blur-[80px] md:blur-[90px] z-[11]" />

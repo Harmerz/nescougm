@@ -26,7 +26,7 @@ export function Overview() {
         data-aos-delay="1000"
         data-aos-anchor="#CompetitionOverview"
         data-aos-anchor-placement="top-center"
-        className="absolute inset-0 z-[11]"
+        className="absolute inset-0 z-[11] pointer-events-none"
       >
         <div className="w-[30vw] h-[30vw] md:w-[22vw] md:h-[22vw] rounded-full absolute left-0 top-0 lg:-left-[1%] lg:top-[12%] bg-c-01 opacity-[.14] blur-[80px] md:blur-[90px]" />
         <div className="w-[10vw] h-[10vw] rounded-full absolute left-[21%] top-[10vw] bg-c-01 opacity-[.14] hidden lg:block blur-[80px] md:blur-[90px]" />

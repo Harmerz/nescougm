@@ -21,14 +21,14 @@ export function Timeline({ tujuh = false }) {
         data-aos-delay="1000"
         data-aos-anchor="#CompetitionTimeline"
         data-aos-anchor-placement="top-center"
-        className="absolute inset-0"
+        className="absolute inset-0 pointer-events-none"
       >
-        <div className="w-[19vw] h-[19vw] rounded-full absolute right-[0%] top-[15%] -translate-y-1/3 bg-c-01 opacity-[.14] pointer-events-none z-[9] hidden lg:block blur-[80px] md:blur-[90px]" />
-        <div className="w-[19vw] h-[19vw] rounded-full absolute left-[15%] top-[72%] -translate-x-1/2 -translate-y-1/3 bg-c-01 opacity-[.14] pointer-events-none z-[9] hidden lg:block blur-[80px] md:blur-[90px]" />
-        <div className="w-[40vw] h-[40vw] rounded-full absolute left-[15%] top-[24%] -translate-x-1/2 -translate-y-2/3 bg-c-01 opacity-[.14] pointer-events-none z-[9] lg:hidden blur-[80px] md:blur-[90px]" />
-        <div className="w-[40vw] h-[40vw] rounded-full absolute left-[2%] bottom-[20%] -translate-x-1/2 translate-y-2/3 bg-c-01 opacity-[.14] pointer-events-none z-[9] lg:hidden blur-[80px] md:blur-[90px]" />
+        <div className="w-[19vw] h-[19vw] rounded-full absolute right-[0%] top-[15%] -translate-y-1/3 bg-c-01 opacity-[.14] z-[9] hidden lg:block blur-[80px] md:blur-[90px]" />
+        <div className="w-[19vw] h-[19vw] rounded-full absolute left-[15%] top-[72%] -translate-x-1/2 -translate-y-1/3 bg-c-01 opacity-[.14] z-[9] hidden lg:block blur-[80px] md:blur-[90px]" />
+        <div className="w-[40vw] h-[40vw] rounded-full absolute left-[15%] top-[24%] -translate-x-1/2 -translate-y-2/3 bg-c-01 opacity-[.14] z-[9] lg:hidden blur-[80px] md:blur-[90px]" />
+        <div className="w-[40vw] h-[40vw] rounded-full absolute left-[2%] bottom-[20%] -translate-x-1/2 translate-y-2/3 bg-c-01 opacity-[.14] z-[9] lg:hidden blur-[80px] md:blur-[90px]" />
         <div className="absolute inset-0 -top-[100%] overflow-hidden">
-          <div className="w-[40vw] h-[40vw] rounded-full absolute right-[1%] top-[70%] translate-x-1/2 -translate-y-2/3 bg-c-01 opacity-[.14] pointer-events-none z-[9] lg:hidden blur-[80px] md:blur-[90px]" />
+          <div className="w-[40vw] h-[40vw] rounded-full absolute right-[1%] top-[70%] translate-x-1/2 -translate-y-2/3 bg-c-01 opacity-[.14] z-[9] lg:hidden blur-[80px] md:blur-[90px]" />
         </div>
       </div>
       <div
