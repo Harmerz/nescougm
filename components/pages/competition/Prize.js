@@ -37,7 +37,7 @@ export function Prize({ favorit = true }) {
       <div
         data-aos="fade-in"
         data-aos-duration="1000"
-        data-aos-delay="2000"
+        data-aos-delay="1000"
         data-aos-anchor="#CompetitionPrize"
         data-aos-anchor-placement="top-center"
         className="absolute inset-0 z-[11]"
@@ -51,7 +51,7 @@ export function Prize({ favorit = true }) {
       <div
         data-aos="fade-in"
         data-aos-duration="1000"
-        data-aos-delay="2000"
+        data-aos-delay="1000"
         data-aos-anchor="#CompetitionPrize"
         data-aos-anchor-placement="top-center"
         className="absolute inset-0 z-[9]"

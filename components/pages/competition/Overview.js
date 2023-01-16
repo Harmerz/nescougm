@@ -25,7 +25,7 @@ export function Overview() {
       <div
         data-aos="fade-in"
         data-aos-duration="1000"
-        data-aos-delay="2000"
+        data-aos-delay="1000"
         data-aos-anchor="#CompetitionOverview"
         data-aos-anchor-placement="top-center"
         className="absolute inset-0 z-[11]"

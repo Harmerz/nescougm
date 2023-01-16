@@ -38,7 +38,7 @@ export function HeroCompetition() {
       <div
         data-aos="fade-in"
         data-aos-duration="1000"
-        data-aos-delay="2000"
+        data-aos-delay="1000"
         data-aos-anchor="#CompetitionHero"
         className="absolute inset-0 z-[11] flex justify-center items-center"
       >
