@@ -6,7 +6,7 @@ import { useEffect } from 'react'
 import TimelineList from './TimelineList'
 import VerticalBar from './VerticalBar'
 
-export function Timeline({ tujuh = false }) {
+export function Timeline({ timelines }) {
   useEffect(() => {
     AOS.init()
   }, [])
@@ -77,31 +77,11 @@ export function Timeline({ tujuh = false }) {
             data-aos-anchor-placement="top-center"
             className="lg:mr-[8%] w-full h-full flex flex-col lg:flex-row justify-evenly"
           >
-            <TimelineList index="01" timeline="xx Mei - xx Juni">
-              Mahasiswa, perseorangan atau tim maksimal 3 orang
-            </TimelineList>
-            <TimelineList index="02" timeline="xx Mei - xx Juni">
-              Mahasiswa, perseorangan atau tim maksimal 3 orang
-            </TimelineList>
-            <TimelineList index="03" timeline="xx Mei - xx Juni">
-              Mahasiswa, perseorangan atau tim maksimal 3 orang
-            </TimelineList>
-            <TimelineList index="04" timeline="xx Mei - xx Juni">
-              Mahasiswa, perseorangan atau tim maksimal 3 orang
-            </TimelineList>
-            <TimelineList index="05" timeline="xx Mei - xx Juni">
-              Mahasiswa, perseorangan atau tim maksimal 3 orang
-            </TimelineList>
-            <TimelineList index="06" timeline="xx Mei - xx Juni">
-              Mahasiswa, perseorangan atau tim maksimal 3 orang
-            </TimelineList>
-            {tujuh ? (
-              <TimelineList index="07" timeline="xx Mei - xx Juni">
-                Mahasiswa, perseorangan atau tim maksimal 3 orang
+            {timelines.map((x, i) => (
+              <TimelineList index={`0${i + 1}`} timeline={x[0]} key="none">
+                {x[1]}
               </TimelineList>
-            ) : (
-              <div />
-            )}
+            ))}
           </div>
         </div>
       </div>

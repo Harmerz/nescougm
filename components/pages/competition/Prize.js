@@ -13,7 +13,9 @@ import RightArrow from '../../../public/vector/competition/competition-prize-rig
 import PrizeList from './PrizeList'
 import VerticalBar from './VerticalBar'
 
-export function Prize({ favorit = true }) {
+export function Prize({ juaraMahasiswa, juaraSMA }) {
+  const favoritMahasiswa = juaraMahasiswa.length === 4
+  const favoritSMA = juaraSMA.length === 4
   useEffect(() => {
     AOS.init()
   }, [])
@@ -150,7 +152,7 @@ export function Prize({ favorit = true }) {
               <div className="w-full lg:h-[100vh] flex lg:flex-col">
                 <div
                   className={`w-[20vw] lg:w-fit h-fit ${
-                    favorit ? 'mt-[5%] text-lg' : 'sm:mt-[1vh] md:mt-[2.5vh] text-base'
+                    favoritMahasiswa ? 'mt-[5%] text-lg' : 'sm:mt-[1vh] md:mt-[2.5vh] text-base'
                   } lg:mt-[10vh] md:text-xl lg:text-4xl xl:text-5xl font-jost font-bold text-white flex flex-wrap ml-[6vw] lg:ml-[3vw]`}
                 >
                   Kategori&nbsp;
@@ -160,23 +162,23 @@ export function Prize({ favorit = true }) {
                 </div>
                 <div className="w-[60vw] h-full flex flex-col lg:flex-row mx-[10vw] mt-[7%] pl-[2vw] mb-[10vw] lg:mb-0">
                   <PrizeList icon={IconJuara} title="Juara I">
-                    Rp5.000.000,-
+                    {juaraMahasiswa[0]}
                     <br />
                     +sertifikat
                   </PrizeList>
                   <PrizeList icon={IconJuara} title="Juara II">
-                    Rp4.000.000,-
+                    {juaraMahasiswa[1]}
                     <br />
                     +sertifikat
                   </PrizeList>
                   <PrizeList icon={IconJuara} title="Juara III">
-                    Rp3.000.000,-
+                    {juaraMahasiswa[2]}
                     <br />
                     +sertifikat
                   </PrizeList>
-                  {favorit ? (
+                  {favoritMahasiswa ? (
                     <PrizeList icon={IconJuara} title="Juara Favorit">
-                      Rp250.000,-
+                      {juaraMahasiswa[3]}
                       <br />
                       +sertifikat
                     </PrizeList>
@@ -190,7 +192,7 @@ export function Prize({ favorit = true }) {
               <div className="w-full lg:h-[100vh] flex lg:flex-col">
                 <div
                   className={`w-[20vw] lg:w-fit h-fit mt-[0%] ${
-                    favorit ? 'mt-[1vh] sm:mt-0 text-xs sm:text-lg' : 'text-xs sm:text-base'
+                    favoritSMA ? 'mt-[1vh] sm:mt-0 text-xs sm:text-lg' : 'text-xs sm:text-base'
                   } lg:mt-[10vh] md:text-xl lg:text-4xl xl:text-5xl font-jost font-bold text-white flex flex-wrap ml-[6vw] lg:ml-[3vw]`}
                 >
                   Kategori&nbsp;
@@ -200,23 +202,23 @@ export function Prize({ favorit = true }) {
                 </div>
                 <div className="w-[60vw] h-full flex flex-col lg:flex-row mx-[10vw] mt-[7%] pl-[2vw] mb-[10vw] lg:mb-0">
                   <PrizeList icon={IconJuara} title="Juara I">
-                    Rp5.000.000,-
+                    {juaraSMA[0]}
                     <br />
                     +sertifikat
                   </PrizeList>
                   <PrizeList icon={IconJuara} title="Juara II">
-                    Rp4.000.000,-
+                    {juaraSMA[1]}
                     <br />
                     +sertifikat
                   </PrizeList>
                   <PrizeList icon={IconJuara} title="Juara III">
-                    Rp3.000.000,-
+                    {juaraSMA[2]}
                     <br />
                     +sertifikat
                   </PrizeList>
-                  {favorit ? (
+                  {favoritSMA ? (
                     <PrizeList icon={IconJuara} title="Juara Favorit">
-                      Rp250.000,-
+                      {juaraSMA[3]}
                       <br />
                       +sertifikat
                     </PrizeList>

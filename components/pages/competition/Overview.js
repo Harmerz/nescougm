@@ -11,7 +11,7 @@ import { Button } from '../../element/button'
 import OverviewList from './OverviewList'
 import VerticalBar from './VerticalBar'
 
-export function Overview() {
+export function Overview({ competitionDescription, peserta, biayaPendaftaran, contactPerson }) {
   useEffect(() => {
     AOS.init()
   }, [])
@@ -60,10 +60,7 @@ export function Overview() {
           <div className="w-[80%] h-[4px] mt-[8px] bg-c-01" />
         </div>
         <div className="w-full mt-[15px] font-poppins text-white text-base md:text-lg lg:text-lg xl:text-xl">
-          Paper Competition merupakan kompetisi bidang ketenagalistrikan berupa lomba problem
-          solving tentang Load Flow Diagram, forecasting, sistem proteksi listrik, dan sejenisnya,
-          yang bertujuan mendorong perkembangan dan perencanaan sistem ketenagalistrikan, khususnya
-          di Indonesia.
+          {competitionDescription}
         </div>
         <Link href="/signin" className="mt-[15px] z-[100]">
           <Button type="secondary" size="sm">
@@ -178,18 +175,13 @@ export function Overview() {
         className="w-[60%] lg:w-[25%] lg:h-[60%] flex flex-col items-center justify-evenly"
       >
         <OverviewList icon={Icon00} title="Kategori Peserta:">
-          Mahasiswa, perseorangan atau tim maksimal 3 orang
+          {peserta}
         </OverviewList>
         <OverviewList icon={Icon01} title="Biaya Pendaftaran:">
-          Rp 150.000,00-
+          {biayaPendaftaran}
         </OverviewList>
         <OverviewList icon={Icon02} title="Contact Person:">
-          <div className="font-bold">Fajar</div>
-          <div>WA: 081390803682</div>
-          <div>LINE: fajars7710</div>
-          <div className="font-bold">Satria </div>
-          <div>WA:083195784338</div>
-          <div>LINE: satriayw</div>
+          {contactPerson}
         </OverviewList>
       </div>
     </div>

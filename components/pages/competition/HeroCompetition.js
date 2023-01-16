@@ -10,7 +10,7 @@ import Vector1 from '../../../public/vector/competition/competition-hero-01.svg'
 import Vector2 from '../../../public/vector/competition/competition-hero-02.svg'
 import { Button } from '../../element/button'
 
-export function HeroCompetition() {
+export function HeroCompetition({ competitionTitle }) {
   useEffect(() => {
     AOS.init()
   }, [])
@@ -55,9 +55,7 @@ export function HeroCompetition() {
           <div className="h-[80%] w-[6px] lg:h-[60%] lg:w-[20px] -ml-[3px] lg:-ml-[10px] bg-gradient-to-b from-c-01 to-c-02 rounded-[24px]" />
           <div className="h-[100%] ml-[5%] flex flex-col justify-center">
             <div className="h-fit sm:h-[23%] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-jost font-bold text-transparent bg-clip-text bg-gradient-to-b from-c-01 to-c-02">
-              Paper
-              <br />
-              Competition
+              {competitionTitle}
             </div>
             <div className="w-[80%] h-[15%] text-xs sm:text-base md:text-lg lg:text-xl font-poppins text-white">
               Untuk pendaftaran dapat dilakukan{' '}
