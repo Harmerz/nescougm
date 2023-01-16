@@ -10,7 +10,7 @@ export function Footer() {
     'Webinar Nasional',
   ]
   return (
-    <div className="min-h-[450px] lg:min-h-0 h-[50vh] bg-c-00 flex items-center justify-center lg:justify-around lg:flex-row flex-col gap-y-6">
+    <div className="min-h-[550px] lg:min-h-0 h-[50vh] bg-c-00 flex items-center justify-center lg:justify-around lg:flex-row flex-col gap-y-6">
       <div className="lg:flex-row flex-col items-center flex">
         <div className="w-24 h-24 bg-slate-400 mb-3 lg:m-0" />
         <div className="w-[210px] h-[60px] lg:ml-4">
