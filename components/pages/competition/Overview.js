@@ -51,15 +51,15 @@ export function Overview() {
         data-aos-duration="2000"
         data-aos-anchor="#CompetitionOverview"
         data-aos-anchor-placement="top-center"
-        className="w-[80%] lg:w-[17%] text-justify lg:text-left lg:h-fit flex flex-col mb-[5%]"
+        className="w-[80%] lg:w-[20%] text-justify lg:text-left lg:h-fit flex flex-col mb-[5%]"
       >
         <div className="flex flex-col w-auto items-center w-fit">
-          <div className="text-2xl md:text-3xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-c-01 to-c-02">
+          <div className="text-2xl md:text-3xl lg:text-5xl font-jost font-bold text-transparent bg-clip-text bg-gradient-to-b from-c-01 to-c-02">
             Overview
           </div>
           <div className="w-[80%] h-[4px] mt-[8px] bg-c-01" />
         </div>
-        <div className="w-full mt-[15px] text-white text-base md:text-lg lg:text-xl">
+        <div className="w-full mt-[15px] font-poppins text-white text-base md:text-lg lg:text-lg xl:text-xl">
           Paper Competition merupakan kompetisi bidang ketenagalistrikan berupa lomba problem
           solving tentang Load Flow Diagram, forecasting, sistem proteksi listrik, dan sejenisnya,
           yang bertujuan mendorong perkembangan dan perencanaan sistem ketenagalistrikan, khususnya

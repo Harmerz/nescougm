@@ -84,12 +84,12 @@ export function Prize({ favorit = true }) {
         data-aos-anchor-placement="top-center"
         className="w-[35vw] lg:w-[19vw] h-[80%] lg:h-[63%] mt-[1%] bg-bg-01 absolute left-[8vw] flex flex-col z-10"
       >
-        <div className="h-full text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-c-01 to-c-02 flex items-center ml-[10%]">
+        <div className="h-full text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-jost font-bold text-transparent bg-clip-text bg-gradient-to-b from-c-01 to-c-02 flex items-center ml-[10%]">
           Prize
           <br />
           Pool
         </div>
-        <div className="h-[24%] ml-[10%] w-[80%] text-white text-base md:text-lg lg:text-xl xl:text-2xl flex items-center">
+        <div className="h-[24%] ml-[10%] w-[80%] font-poppins text-white text-base md:text-lg lg:text-xl xl:text-2xl flex items-center">
           <div>
             Go to Kategori{' '}
             <span
@@ -151,7 +151,7 @@ export function Prize({ favorit = true }) {
                 <div
                   className={`w-[20vw] lg:w-fit h-fit ${
                     favorit ? 'mt-[5%] text-lg' : 'sm:mt-[1vh] md:mt-[2.5vh] text-base'
-                  } lg:mt-[10vh] md:text-xl lg:text-4xl xl:text-5xl font-bold text-white flex flex-wrap ml-[6vw] lg:ml-[3vw]`}
+                  } lg:mt-[10vh] md:text-xl lg:text-4xl xl:text-5xl font-jost font-bold text-white flex flex-wrap ml-[6vw] lg:ml-[3vw]`}
                 >
                   Kategori&nbsp;
                   <div className="text-transparent bg-clip-text bg-gradient-to-b from-c-01 to-c-02 text-left">
@@ -191,7 +191,7 @@ export function Prize({ favorit = true }) {
                 <div
                   className={`w-[20vw] lg:w-fit h-fit mt-[0%] ${
                     favorit ? 'mt-[1vh] sm:mt-0 text-xs sm:text-lg' : 'text-xs sm:text-base'
-                  } lg:mt-[10vh] md:text-xl lg:text-4xl xl:text-5xl font-bold text-white flex flex-wrap ml-[6vw] lg:ml-[3vw]`}
+                  } lg:mt-[10vh] md:text-xl lg:text-4xl xl:text-5xl font-jost font-bold text-white flex flex-wrap ml-[6vw] lg:ml-[3vw]`}
                 >
                   Kategori&nbsp;
                   <div className="text-transparent bg-clip-text bg-gradient-to-b from-c-01 to-c-02 text-left">

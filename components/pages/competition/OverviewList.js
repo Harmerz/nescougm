@@ -7,10 +7,10 @@ export default function OverviewList({ children, icon, title }) {
         <Image src={icon} />
       </div>
       <div className="flex flex-col w-[70%] lg:ml-[10%]">
-        <div className="text-xl md:text-2xl lg:text-3xl text-transparent bg-clip-text bg-gradient-to-b from-c-01 to-c-02 text-center lg:text-left">
+        <div className="text-xl md:text-2xl lg:text-3xl font-jost text-transparent bg-clip-text bg-gradient-to-b from-c-01 to-c-02 text-center lg:text-left">
           {title}
         </div>
-        <div className="text-base md:text-lg lg:text-xl text-white text-center lg:text-left">
+        <div className="text-base md:text-lg lg:text-xl font-poppins text-white text-center lg:text-left">
           {children}
         </div>
       </div>

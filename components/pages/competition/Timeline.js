@@ -66,7 +66,7 @@ export function Timeline({ tujuh = false }) {
             data-aos-duration="2000"
             data-aos-anchor="#CompetitionTimeline"
             data-aos-anchor-placement="top-center"
-            className="absolute w-1/2 mx-auto inset-x-0 text-center -top-[7vh] lg:top-[15%] text-2xl md:text-3xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-c-01 to-c-02"
+            className="absolute w-1/2 mx-auto inset-x-0 text-center -top-[7vh] lg:top-[15%] text-2xl sm:text-4xl md:text-5xl lg:text-5xl font-jost font-bold text-transparent bg-clip-text bg-gradient-to-b from-c-01 to-c-02"
           >
             Timeline
           </div>
