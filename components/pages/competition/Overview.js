@@ -80,15 +80,15 @@ export function Overview() {
       >
         <svg
           width="456"
-          height="596"
           viewBox="0 0 456 596"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="group"
+          className="group pointer-events-none"
         >
           <path
             d="M415.999 565.5H54.0039V149.395C54.0039 149.395 54.0039 0 231.002 0C415.999 0 415.999 149.395 415.999 149.395V565.5Z"
             fill="url(#paint0_linear_747_1944)"
+            className="pointer-events-auto"
           />
           <path
             d="M235.437 181.696L272 215.696L379.687 510.164L57.6867 510.164L57.6869 292.696L131.937 215.696L235.437 181.696Z"
