@@ -117,6 +117,8 @@ export function Prize({ favorit = true }) {
             showStatus={false}
             infiniteLoop
             emulateTouch
+            preventMovementUntilSwipeScrollTolerance
+            swipeScrollTolerance={50}
             className="w-full h-full"
             renderArrowPrev={() => <div />}
             renderArrowNext={(clickHandler) => {
