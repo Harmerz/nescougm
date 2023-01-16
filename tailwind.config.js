@@ -24,6 +24,16 @@ module.exports = {
       fontFamily: {
         poppins: ['Poppins', ...defaultTheme.fontFamily.sans],
       },
+      keyframes: {
+        flicker: {
+          '0%, 19.9%, 22%, 62.9%, 64%, 64.9%, 70%, 100%': { fill: 'white' },
+          '20%, 21.9%, 63%, 63.9%, 65%, 69.9%': { fill: '#d3d3d3' },
+        },
+        flickerLight: {
+          '0%, 19.9%, 22%, 62.9%, 64%, 64.9%, 70%, 100%': { stopOpacity: '1' },
+          '20%, 21.9%, 63%, 63.9%, 65%, 69.9%': { stopOpacity: '0' },
+        },
+      },
     },
   },
   plugins: [],
