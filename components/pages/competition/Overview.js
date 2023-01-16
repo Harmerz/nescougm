@@ -1,5 +1,9 @@
+import 'aos/dist/aos.css'
+
+import AOS from 'aos'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useEffect } from 'react'
 
 import Icon00 from '../../../public/vector/competition/competition-overview-00.svg'
 import Icon01 from '../../../public/vector/competition/competition-overview-01.svg'
@@ -10,19 +14,47 @@ import OverviewList from './OverviewList'
 import VerticalBar from './VerticalBar'
 
 export function Overview() {
+  useEffect(() => {
+    AOS.init()
+  }, [])
   return (
-    <div className="w-full h-fit lg:h-[100vh] bg-c-00 py-[5vh] box-content flex justify-around items-center flex-col lg:flex-row relative">
-      <div className="w-[30vw] h-[30vw] md:w-[22vw] md:h-[22vw] rounded-full absolute left-0 top-0 lg:-left-[1%] lg:top-[12%] bg-c-01 opacity-[.14] blur-[80px] md:blur-[90px]" />
-      <div className="w-[10vw] h-[10vw] rounded-full absolute left-[21%] top-[10vw] bg-c-01 opacity-[.14] hidden lg:block blur-[80px] md:blur-[90px]" />
-      <div className="w-[36vw] h-[36vw] rounded-full absolute left-[2%] top-[42%] bg-c-01 opacity-[.14] lg:hidden blur-[80px] md:blur-[90px]" />
-      <div className="absolute inset-0 -top-[100%] -bottom-[100%] overflow-hidden">
-        <div className="w-[22vw] h-[22vw] rounded-full absolute -right-[5%] top-[36%] lg:top-[48%] bg-c-01 opacity-[.14] blur-[80px] md:blur-[90px] z-[11]" />
-        <div className="w-[45vw] h-[45vw] rounded-full absolute -right-[7%] bottom-[36%] bg-c-01 opacity-[.14] lg:hidden blur-[80px] md:blur-[90px] z-[11]" />
+    <div
+      className="w-full h-fit lg:h-[100vh] bg-c-00 py-[5vh] box-content flex justify-around items-center flex-col lg:flex-row relative"
+      id="CompetitionOverview"
+    >
+      <div
+        data-aos="fade-in"
+        data-aos-duration="1000"
+        data-aos-delay="2000"
+        data-aos-anchor="#CompetitionOverview"
+        data-aos-anchor-placement="top-center"
+        className="absolute inset-0"
+      >
+        <div className="w-[30vw] h-[30vw] md:w-[22vw] md:h-[22vw] rounded-full absolute left-0 top-0 lg:-left-[1%] lg:top-[12%] bg-c-01 opacity-[.14] blur-[80px] md:blur-[90px]" />
+        <div className="w-[10vw] h-[10vw] rounded-full absolute left-[21%] top-[10vw] bg-c-01 opacity-[.14] hidden lg:block blur-[80px] md:blur-[90px]" />
+        <div className="w-[36vw] h-[36vw] rounded-full absolute left-[2%] top-[42%] bg-c-01 opacity-[.14] lg:hidden blur-[80px] md:blur-[90px]" />
+        <div className="absolute inset-0 -top-[100%] -bottom-[100%] overflow-hidden">
+          <div className="w-[22vw] h-[22vw] rounded-full absolute -right-[5%] top-[36%] lg:top-[48%] bg-c-01 opacity-[.14] blur-[80px] md:blur-[90px] z-[11]" />
+          <div className="w-[45vw] h-[45vw] rounded-full absolute -right-[7%] bottom-[36%] bg-c-01 opacity-[.14] lg:hidden blur-[80px] md:blur-[90px] z-[11]" />
+        </div>
       </div>
-      <div className="h-4/5">
+      <div
+        data-aos="fade-right"
+        data-aos-duration="1000"
+        data-aos-delay="1000"
+        data-aos-anchor="#CompetitionOverview"
+        data-aos-anchor-placement="top-center"
+        className="h-4/5"
+      >
         <VerticalBar title="Overview" color="c-01" />
       </div>
-      <div className="w-[80%] lg:w-[17%] text-justify lg:text-left lg:h-fit flex flex-col mb-[5%]">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="2000"
+        data-aos-anchor="#CompetitionOverview"
+        data-aos-anchor-placement="top-center"
+        className="w-[80%] lg:w-[17%] text-justify lg:text-left lg:h-fit flex flex-col mb-[5%]"
+      >
         <div className="flex flex-col w-auto items-center w-fit">
           <div className="text-2xl md:text-3xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-c-01 to-c-02">
             Overview
@@ -41,10 +73,22 @@ export function Overview() {
           </Button>
         </Link>
       </div>
-      <div className="w-[40%] lg:w-[28%]">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="2000"
+        data-aos-anchor="#CompetitionOverview"
+        data-aos-anchor-placement="top-center"
+        className="w-[40%] lg:w-[28%]"
+      >
         <Image src={Vector00} className="w-full" />
       </div>
-      <div className="w-[60%] lg:w-[25%] lg:h-[60%] flex flex-col items-center justify-evenly">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="2000"
+        data-aos-anchor="#CompetitionOverview"
+        data-aos-anchor-placement="top-center"
+        className="w-[60%] lg:w-[25%] lg:h-[60%] flex flex-col items-center justify-evenly"
+      >
         <OverviewList icon={Icon00} title="Kategori Peserta:">
           Mahasiswa, perseorangan atau tim maksimal 3 orang
         </OverviewList>
