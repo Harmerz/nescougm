@@ -112,123 +112,125 @@ export function Prize({ juaraMahasiswa, juaraSMA }) {
           data-aos-delay="500"
           data-aos-anchor="#CompetitionPrize"
           data-aos-anchor-placement="top-center"
-          className="w-[82vw] h-full z-[9]"
+          className="w-full h-full z-[9]"
         >
-          <Carousel
-            showThumbs={false}
-            showStatus={false}
-            infiniteLoop
-            emulateTouch
-            preventMovementUntilSwipeScrollTolerance
-            swipeScrollTolerance={50}
-            className="w-full h-full"
-            renderArrowPrev={() => <div />}
-            renderArrowNext={(clickHandler) => {
-              return (
-                <div className="absolute top-0 bottom-0 right-0 mr-[7vw] flex items-center z-[100]">
-                  <button onClick={clickHandler} type="button" className="w-[2vw]">
-                    <Image src={RightArrow} />
-                  </button>
-                </div>
-              )
-            }}
-            renderIndicator={(onClickHandler, isSelected, index) => {
-              return (
-                <span
-                  className={`inline-block w-[12px] h-[12px] rounded-full ${
-                    index === 0 ? 'ml-[25vw] sm:ml-[23vw] md:ml-[21vw] lg:ml-[0.4vw]' : ''
-                  } mx-[0.4vw] lg:mb-[15vh] cursor-pointer ${isSelected ? 'bg-c-01' : 'bg-white'}`}
-                  onClick={onClickHandler}
-                  onKeyDown={onClickHandler}
-                  role="button"
-                  tabIndex={0}
-                />
-              )
-            }}
-            selectedItem={currentSlide}
-            onChange={(index) => setCurrentSlide(index)}
-          >
-            <div>
-              <div className="w-full lg:h-[100vh] flex lg:flex-col select-none">
-                <div
-                  className={`w-[20vw] lg:w-fit h-fit ${
-                    favoritMahasiswa ? 'mt-[5%] text-lg' : 'sm:mt-[1vh] md:mt-[2.5vh] text-base'
-                  } lg:mt-[10vh] md:text-xl lg:text-4xl xl:text-5xl font-jost font-bold text-white flex flex-wrap ml-[6vw] lg:ml-[3vw]`}
-                >
-                  Kategori&nbsp;
-                  <div className="text-transparent bg-clip-text bg-gradient-to-b from-c-01 to-c-02 text-left">
-                    Mahasiswa
+          <div className="w-[70vw] h-full z-[9]">
+            <Carousel
+              showThumbs={false}
+              showStatus={false}
+              showArrows={false}
+              infiniteLoop
+              emulateTouch
+              preventMovementUntilSwipeScrollTolerance
+              swipeScrollTolerance={50}
+              className="w-full h-full"
+              renderIndicator={(onClickHandler, isSelected) => {
+                return (
+                  <span
+                    className={`inline-block w-[12px] h-[12px] rounded-full first:ml-[25vw] first:sm:ml-[23vw] first:md:ml-[21vw] first:lg:ml-[12vw] mx-[0.4vw] lg:mb-[15vh] cursor-pointer ${
+                      isSelected ? 'bg-c-01' : 'bg-white'
+                    }`}
+                    onClick={onClickHandler}
+                    onKeyDown={onClickHandler}
+                    role="button"
+                    tabIndex={0}
+                  />
+                )
+              }}
+              selectedItem={currentSlide}
+              onChange={(index) => setCurrentSlide(index)}
+            >
+              <div>
+                <div className="w-full lg:h-[100vh] flex lg:flex-col select-none">
+                  <div
+                    className={`w-[20vw] lg:w-fit h-fit ${
+                      favoritMahasiswa ? 'mt-[5%] text-lg' : 'sm:mt-[1vh] md:mt-[2.5vh] text-base'
+                    } lg:mt-[10vh] md:text-xl lg:text-4xl xl:text-5xl font-jost font-bold text-white flex flex-wrap ml-[6vw] lg:ml-[3vw]`}
+                  >
+                    Kategori&nbsp;
+                    <div className="text-transparent bg-clip-text bg-gradient-to-b from-c-01 to-c-02 text-left">
+                      Mahasiswa
+                    </div>
                   </div>
-                </div>
-                <div className="w-[60vw] h-full flex flex-col lg:flex-row mx-[10vw] mt-[7%] pl-[2vw] mb-[10vw] lg:mb-0">
-                  <PrizeList icon={IconJuara} title="Juara I">
-                    {juaraMahasiswa[0]}
-                    <br />
-                    +sertifikat
-                  </PrizeList>
-                  <PrizeList icon={IconJuara} title="Juara II">
-                    {juaraMahasiswa[1]}
-                    <br />
-                    +sertifikat
-                  </PrizeList>
-                  <PrizeList icon={IconJuara} title="Juara III">
-                    {juaraMahasiswa[2]}
-                    <br />
-                    +sertifikat
-                  </PrizeList>
-                  {favoritMahasiswa ? (
-                    <PrizeList icon={IconJuara} title="Juara Favorit">
-                      {juaraMahasiswa[3]}
+                  <div className="w-[60vw] h-full flex flex-col lg:flex-row mx-[10vw] mt-[7%] pl-[2vw] mb-[10vw] lg:mb-0">
+                    <PrizeList icon={IconJuara} title="Juara I">
+                      {juaraMahasiswa[0]}
                       <br />
                       +sertifikat
                     </PrizeList>
-                  ) : (
-                    <div />
-                  )}
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className="w-full lg:h-[100vh] flex lg:flex-col select-none">
-                <div
-                  className={`w-[20vw] lg:w-fit h-fit mt-[0%] ${
-                    favoritSMA ? 'mt-[1vh] sm:mt-0 text-xs sm:text-lg' : 'text-xs sm:text-base'
-                  } lg:mt-[10vh] md:text-xl lg:text-4xl xl:text-5xl font-jost font-bold text-white flex flex-wrap ml-[6vw] lg:ml-[3vw]`}
-                >
-                  Kategori&nbsp;
-                  <div className="text-transparent bg-clip-text bg-gradient-to-b from-c-01 to-c-02 text-left">
-                    SMA/MA sederajat
-                  </div>
-                </div>
-                <div className="w-[60vw] h-full flex flex-col lg:flex-row mx-[10vw] mt-[7%] pl-[2vw] mb-[10vw] lg:mb-0">
-                  <PrizeList icon={IconJuara} title="Juara I">
-                    {juaraSMA[0]}
-                    <br />
-                    +sertifikat
-                  </PrizeList>
-                  <PrizeList icon={IconJuara} title="Juara II">
-                    {juaraSMA[1]}
-                    <br />
-                    +sertifikat
-                  </PrizeList>
-                  <PrizeList icon={IconJuara} title="Juara III">
-                    {juaraSMA[2]}
-                    <br />
-                    +sertifikat
-                  </PrizeList>
-                  {favoritSMA ? (
-                    <PrizeList icon={IconJuara} title="Juara Favorit">
-                      {juaraSMA[3]}
+                    <PrizeList icon={IconJuara} title="Juara II">
+                      {juaraMahasiswa[1]}
                       <br />
                       +sertifikat
                     </PrizeList>
-                  ) : (
-                    <div />
-                  )}
+                    <PrizeList icon={IconJuara} title="Juara III">
+                      {juaraMahasiswa[2]}
+                      <br />
+                      +sertifikat
+                    </PrizeList>
+                    {favoritMahasiswa ? (
+                      <PrizeList icon={IconJuara} title="Juara Favorit">
+                        {juaraMahasiswa[3]}
+                        <br />
+                        +sertifikat
+                      </PrizeList>
+                    ) : (
+                      <div />
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-          </Carousel>
+              <div>
+                <div className="w-full lg:h-[100vh] flex lg:flex-col select-none">
+                  <div
+                    className={`w-[20vw] lg:w-fit h-fit mt-[0%] ${
+                      favoritSMA ? 'mt-[1vh] sm:mt-0 text-xs sm:text-lg' : 'text-xs sm:text-base'
+                    } lg:mt-[10vh] md:text-xl lg:text-4xl xl:text-5xl font-jost font-bold text-white flex flex-wrap ml-[6vw] lg:ml-[3vw]`}
+                  >
+                    Kategori&nbsp;
+                    <div className="text-transparent bg-clip-text bg-gradient-to-b from-c-01 to-c-02 text-left">
+                      SMA/MA sederajat
+                    </div>
+                  </div>
+                  <div className="w-[60vw] h-full flex flex-col lg:flex-row mx-[10vw] mt-[7%] pl-[2vw] mb-[10vw] lg:mb-0">
+                    <PrizeList icon={IconJuara} title="Juara I">
+                      {juaraSMA[0]}
+                      <br />
+                      +sertifikat
+                    </PrizeList>
+                    <PrizeList icon={IconJuara} title="Juara II">
+                      {juaraSMA[1]}
+                      <br />
+                      +sertifikat
+                    </PrizeList>
+                    <PrizeList icon={IconJuara} title="Juara III">
+                      {juaraSMA[2]}
+                      <br />
+                      +sertifikat
+                    </PrizeList>
+                    {favoritSMA ? (
+                      <PrizeList icon={IconJuara} title="Juara Favorit">
+                        {juaraSMA[3]}
+                        <br />
+                        +sertifikat
+                      </PrizeList>
+                    ) : (
+                      <div />
+                    )}
+                  </div>
+                </div>
+              </div>
+            </Carousel>
+          </div>
+          <div className="absolute top-0 bottom-0 right-[7vw] flex items-center z-[100]">
+            <button
+              onClick={() => setCurrentSlide((slide) => slide + 1)}
+              type="button"
+              className="w-[2vw]"
+            >
+              <Image src={RightArrow} />
+            </button>
+          </div>
         </div>
       </div>
     </div>
