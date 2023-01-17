@@ -16,6 +16,8 @@ import VerticalBar from './VerticalBar'
 export function Prize({ juaraMahasiswa, juaraSMA }) {
   const favoritMahasiswa = juaraMahasiswa.length === 4
   const favoritSMA = juaraSMA.length === 4
+  const alignMahasiswa = !favoritMahasiswa && favoritSMA
+  const alignSMA = !favoritSMA && favoritMahasiswa
   useEffect(() => {
     AOS.init()
   }, [])
@@ -123,7 +125,7 @@ export function Prize({ juaraMahasiswa, juaraSMA }) {
               emulateTouch
               preventMovementUntilSwipeScrollTolerance
               swipeScrollTolerance={50}
-              className="w-full h-full"
+              className="w-full h-full relative"
               renderIndicator={(onClickHandler, isSelected) => {
                 return (
                   <span
@@ -141,7 +143,11 @@ export function Prize({ juaraMahasiswa, juaraSMA }) {
               onChange={(index) => setCurrentSlide(index)}
             >
               <div>
-                <div className="w-full lg:min-h-[650px] lg:h-[100vh] flex lg:flex-col select-none">
+                <div
+                  className={`w-full lg:min-h-[650px] lg:h-[100vh] flex lg:flex-col select-none ${
+                    alignMahasiswa ? 'absolute inset-0' : ''
+                  }`}
+                >
                   <div
                     className={`w-[20vw] lg:w-fit h-fit ${
                       favoritMahasiswa ? 'mt-[5%] text-lg' : 'sm:mt-[1vh] md:mt-[2.5vh] text-base'
@@ -152,7 +158,7 @@ export function Prize({ juaraMahasiswa, juaraSMA }) {
                       Mahasiswa
                     </div>
                   </div>
-                  <div className="w-[60vw] h-full flex flex-col lg:flex-row mx-[10vw] mt-[7%] pl-[2vw] mb-[10vw] lg:mb-0">
+                  <div className="w-[60vw] h-full flex flex-col lg:flex-row mx-[10vw] mt-[7%] pl-[2vw] mb-[10vw] lg:mb-0 justify-evenly">
                     <PrizeList icon={IconJuara} title="Juara I">
                       {juaraMahasiswa[0]}
                       <br />
@@ -181,7 +187,11 @@ export function Prize({ juaraMahasiswa, juaraSMA }) {
                 </div>
               </div>
               <div>
-                <div className="w-full lg:min-h-[650px] lg:h-[100vh] flex lg:flex-col select-none">
+                <div
+                  className={`w-full lg:min-h-[650px] lg:h-[100vh] flex lg:flex-col select-none ${
+                    alignSMA ? 'absolute inset-0' : ''
+                  }`}
+                >
                   <div
                     className={`w-[20vw] lg:w-fit h-fit mt-[0%] ${
                       favoritSMA ? 'mt-[1vh] sm:mt-0 text-xs sm:text-lg' : 'text-xs sm:text-base'
@@ -192,7 +202,7 @@ export function Prize({ juaraMahasiswa, juaraSMA }) {
                       SMA/MA sederajat
                     </div>
                   </div>
-                  <div className="w-[60vw] h-full flex flex-col lg:flex-row mx-[10vw] mt-[7%] pl-[2vw] mb-[10vw] lg:mb-0">
+                  <div className="w-[60vw] h-full flex flex-col lg:flex-row mx-[10vw] mt-[7%] pl-[2vw] mb-[10vw] lg:mb-0 justify-evenly">
                     <PrizeList icon={IconJuara} title="Juara I">
                       {juaraSMA[0]}
                       <br />
