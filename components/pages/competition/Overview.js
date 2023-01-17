@@ -11,7 +11,7 @@ import { Button } from '../../element/button'
 import OverviewList from './OverviewList'
 import VerticalBar from './VerticalBar'
 
-export function Overview({ competitionDescription, peserta, biayaPendaftaran, contactPerson }) {
+export function Overview({ competitionDescription, peserta, biayaPendaftaran, contactPersons }) {
   useEffect(() => {
     AOS.init()
   }, [])
@@ -181,7 +181,23 @@ export function Overview({ competitionDescription, peserta, biayaPendaftaran, co
           {biayaPendaftaran}
         </OverviewList>
         <OverviewList icon={Icon02} title="Contact Person:">
-          {contactPerson}
+          {contactPersons.map(([nama, wa, line]) => (
+            <div key="none">
+              <div className="font-bold">{nama}</div>
+              <div>
+                WA:{' '}
+                <a href={`http://wa.me/62${wa}`} target="_blank" rel="noreferrer">
+                  {wa}
+                </a>
+              </div>
+              <div>
+                LINE:{' '}
+                <a href={`http://line.me/ti/p/~${line}`} target="_blank" rel="noreferrer">
+                  {line}
+                </a>
+              </div>
+            </div>
+          ))}
         </OverviewList>
       </div>
     </div>
