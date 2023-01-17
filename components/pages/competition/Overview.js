@@ -22,8 +22,8 @@ export function Overview({ competitionDescription, peserta, biayaPendaftaran, co
     >
       <div
         data-aos="fade-in"
-        data-aos-duration="1000"
-        data-aos-delay="1000"
+        data-aos-duration="500"
+        data-aos-delay="500"
         data-aos-anchor="#CompetitionOverview"
         data-aos-anchor-placement="top-center"
         className="absolute inset-0 z-[11] pointer-events-none"
@@ -38,8 +38,8 @@ export function Overview({ competitionDescription, peserta, biayaPendaftaran, co
       </div>
       <div
         data-aos="fade-right"
-        data-aos-duration="1000"
-        data-aos-delay="1000"
+        data-aos-duration="500"
+        data-aos-delay="500"
         data-aos-anchor="#CompetitionOverview"
         data-aos-anchor-placement="top-center"
         className="h-4/5"
@@ -48,7 +48,7 @@ export function Overview({ competitionDescription, peserta, biayaPendaftaran, co
       </div>
       <div
         data-aos="fade-up"
-        data-aos-duration="2000"
+        data-aos-duration="1000"
         data-aos-anchor="#CompetitionOverview"
         data-aos-anchor-placement="top-center"
         className="w-[80%] lg:w-[20%] text-justify lg:text-left lg:h-fit flex flex-col mb-[5%] items-center lg:items-start"
@@ -70,7 +70,7 @@ export function Overview({ competitionDescription, peserta, biayaPendaftaran, co
       </div>
       <div
         data-aos="fade-up"
-        data-aos-duration="2000"
+        data-aos-duration="1000"
         data-aos-anchor="#CompetitionOverview"
         data-aos-anchor-placement="top-center"
         className="w-[40%] lg:w-[28%] flex justify-center items-center"
@@ -169,7 +169,7 @@ export function Overview({ competitionDescription, peserta, biayaPendaftaran, co
       </div>
       <div
         data-aos="fade-up"
-        data-aos-duration="2000"
+        data-aos-duration="1000"
         data-aos-anchor="#CompetitionOverview"
         data-aos-anchor-placement="top-center"
         className="w-[60%] lg:w-[25%] lg:h-[60%] flex flex-col items-center justify-evenly"
