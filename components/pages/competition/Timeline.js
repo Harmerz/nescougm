@@ -12,7 +12,7 @@ export function Timeline({ timelines }) {
   }, [])
   return (
     <div
-      className="box-content pt-[7vh] lg:py-[5vh] w-full lg:h-[100vh] bg-c-00 flex items-center relative"
+      className="box-content pt-[7vh] lg:py-[5vh] w-full lg:min-h-[720px] lg:h-[100vh] bg-c-00 flex items-center relative"
       id="CompetitionTimeline"
     >
       <div

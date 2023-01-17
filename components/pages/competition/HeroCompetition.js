@@ -16,7 +16,7 @@ export function HeroCompetition({ competitionTitle }) {
   }, [])
   return (
     <div
-      className="w-full h-[90vw] lg:h-[100vh] bg-bg-01 flex justify-center items-center relative overflow-hidden"
+      className="w-full h-[90vw] lg:min-h-[520px] lg:h-[100vh] bg-bg-01 flex justify-center items-center relative overflow-hidden"
       id="CompetitionHero"
     >
       <Image

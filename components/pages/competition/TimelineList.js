@@ -34,7 +34,7 @@ export default function TimelineList({ children, index, timeline }) {
             {timeline}
           </div>
           <div
-            className={`text-xs sm:text-xl md:text-2xl lg:text-base 2xl:text-lg font-poppins text-white ${
+            className={`text-sm sm:text-xl md:text-2xl lg:text-sm 2xl:text-lg font-poppins text-white ${
               index % 2 === 1 ? 'text-right' : 'text-left'
             } lg:text-left`}
           >

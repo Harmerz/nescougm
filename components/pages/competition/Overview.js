@@ -17,7 +17,7 @@ export function Overview({ competitionDescription, peserta, biayaPendaftaran, co
   }, [])
   return (
     <div
-      className="w-full h-fit lg:h-[100vh] bg-c-00 py-[5vh] box-content flex justify-around items-center flex-col lg:flex-row relative"
+      className="w-full h-fit lg:min-h-[620px] lg:h-[100vh] bg-c-00 py-[5vh] box-content flex justify-around items-center flex-col lg:flex-row relative"
       id="CompetitionOverview"
     >
       <div
