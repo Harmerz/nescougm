@@ -17,8 +17,8 @@ export function Timeline({ timelines }) {
     >
       <div
         data-aos="fade-in"
-        data-aos-duration="1000"
-        data-aos-delay="1000"
+        data-aos-duration="500"
+        data-aos-delay="500"
         data-aos-anchor="#CompetitionTimeline"
         data-aos-anchor-placement="top-center"
         className="absolute inset-0 pointer-events-none"
@@ -33,8 +33,8 @@ export function Timeline({ timelines }) {
       </div>
       <div
         data-aos="fade-right"
-        data-aos-duration="1000"
-        data-aos-delay="1000"
+        data-aos-duration="500"
+        data-aos-delay="500"
         data-aos-anchor="#CompetitionTimeline"
         data-aos-anchor-placement="top-center"
         className="hidden lg:block h-4/5 w-[2%] ml-[3.5%]"
@@ -44,7 +44,7 @@ export function Timeline({ timelines }) {
       <div className="w-full h-full flex flex-col justify-center items-center z-[10] lg:ml-[5%] mt-[7vh] lg:mt-0 box-content pb-[5vh] lg:pb-0">
         <div
           data-aos="fade-in"
-          data-aos-duration="2000"
+          data-aos-duration="1000"
           data-aos-anchor="#CompetitionTimeline"
           data-aos-anchor-placement="top-center"
           className="mb-[40px] lg:mb-0 lg:absolute w-1/2 lg:mx-auto lg:inset-x-0 lg:top-[15%] text-center text-2xl sm:text-4xl md:text-5xl lg:text-5xl font-jost font-bold text-transparent bg-clip-text bg-gradient-to-b from-c-01 to-c-02"
@@ -54,15 +54,15 @@ export function Timeline({ timelines }) {
         <div className="relative lg:static lg:mr-[8%] w-full h-full flex flex-col lg:flex-row justify-evenly">
           <div
             data-aos="fade-up"
-            data-aos-duration="2000"
+            data-aos-duration="1000"
             data-aos-anchor="#CompetitionTimeline"
             data-aos-anchor-placement="top-center"
             className="lg:h-[20%] absolute inset-y-0 inset-x-[43%] lg:inset-0 lg:my-auto bg-gradient-to-t lg:bg-gradient-to-l from-c-01 to-c-02 flex items-center overflow-hidden"
           >
             <div
               data-aos="fade-right"
-              data-aos-duration="1000"
-              data-aos-delay="1000"
+              data-aos-duration="500"
+              data-aos-delay="500"
               data-aos-anchor="#CompetitionTimeline"
               data-aos-anchor-placement="top-center"
               className="hidden lg:block h-[400%] w-[2%] ml-[3.5%]"
@@ -72,7 +72,7 @@ export function Timeline({ timelines }) {
           </div>
           <div
             data-aos="fade-up"
-            data-aos-duration="2000"
+            data-aos-duration="1000"
             data-aos-anchor="#CompetitionTimeline"
             data-aos-anchor-placement="top-center"
             className="lg:mr-[8%] w-full h-full flex flex-col lg:flex-row justify-evenly"

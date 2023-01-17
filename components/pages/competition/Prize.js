@@ -28,8 +28,8 @@ export function Prize({ juaraMahasiswa, juaraSMA }) {
       <div className="absolute inset-0 overflow-hidden">
         <Image
           data-aos="fade-left"
-          data-aos-duration="1000"
-          data-aos-delay="1000"
+          data-aos-duration="500"
+          data-aos-delay="500"
           data-aos-anchor="#CompetitionPrize"
           data-aos-anchor-placement="top-center"
           src={Vector1}
@@ -38,8 +38,8 @@ export function Prize({ juaraMahasiswa, juaraSMA }) {
       </div>
       <div
         data-aos="fade-in"
-        data-aos-duration="1000"
-        data-aos-delay="1000"
+        data-aos-duration="500"
+        data-aos-delay="500"
         data-aos-anchor="#CompetitionPrize"
         data-aos-anchor-placement="top-center"
         className="absolute inset-0 z-[11] pointer-events-none"
@@ -52,8 +52,8 @@ export function Prize({ juaraMahasiswa, juaraSMA }) {
       </div>
       <div
         data-aos="fade-in"
-        data-aos-duration="1000"
-        data-aos-delay="1000"
+        data-aos-duration="500"
+        data-aos-delay="500"
         data-aos-anchor="#CompetitionPrize"
         data-aos-anchor-placement="top-center"
         className="absolute inset-0 z-[9] pointer-events-none"
@@ -63,8 +63,8 @@ export function Prize({ juaraMahasiswa, juaraSMA }) {
       </div>
       <div
         data-aos="fade-right"
-        data-aos-duration="1400"
-        data-aos-delay="600"
+        data-aos-duration="700"
+        data-aos-delay="300"
         data-aos-anchor="#CompetitionPrize"
         data-aos-anchor-placement="top-center"
         className="absolute w-[18vw] left-0 inset-y-0 bg-gradient-to-b from-c-01 to-c-02 flex items-center z-10"
@@ -81,7 +81,7 @@ export function Prize({ juaraMahasiswa, juaraSMA }) {
       </div>
       <div
         data-aos="fade-right"
-        data-aos-duration="2000"
+        data-aos-duration="1000"
         data-aos-anchor="#CompetitionPrize"
         data-aos-anchor-placement="top-center"
         className="w-[35vw] lg:w-[19vw] h-[80%] lg:h-[63%] mt-[1%] bg-bg-01 absolute left-[8vw] flex flex-col z-10"
@@ -108,8 +108,8 @@ export function Prize({ juaraMahasiswa, juaraSMA }) {
       <div className="w-[82vw] h-full z-[9] overflow-hidden">
         <div
           data-aos="fade-left"
-          data-aos-duration="1500"
-          data-aos-delay="500"
+          data-aos-duration="750"
+          data-aos-delay="250"
           data-aos-anchor="#CompetitionPrize"
           data-aos-anchor-placement="top-center"
           className="w-full h-full z-[9]"

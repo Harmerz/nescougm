@@ -21,24 +21,24 @@ export function HeroCompetition({ competitionTitle }) {
     >
       <Image
         data-aos="fade-left"
-        data-aos-duration="1000"
-        data-aos-delay="1000"
+        data-aos-duration="500"
+        data-aos-delay="500"
         data-aos-anchor="#CompetitionHero"
         src={Vector0}
         className="w-[40%] absolute right-0 top-0 z-[9]"
       />
       <Image
         data-aos="fade-right"
-        data-aos-duration="1000"
-        data-aos-delay="1000"
+        data-aos-duration="500"
+        data-aos-delay="500"
         data-aos-anchor="#CompetitionHero"
         src={Vector1}
         className="w-[15%] absolute left-0 bottom-[1vh] z-[9]"
       />
       <div
         data-aos="fade-in"
-        data-aos-duration="1000"
-        data-aos-delay="1000"
+        data-aos-duration="500"
+        data-aos-delay="500"
         data-aos-anchor="#CompetitionHero"
         className="absolute inset-0 z-[11] flex justify-center items-center pointer-events-none "
       >
@@ -47,7 +47,7 @@ export function HeroCompetition({ competitionTitle }) {
       </div>
       <div
         data-aos="zoom-in"
-        data-aos-duration="2000"
+        data-aos-duration="1000"
         data-aos-anchor="#CompetitionHero"
         className="w-full h-full flex justify-center items-center z-[10]"
       >
