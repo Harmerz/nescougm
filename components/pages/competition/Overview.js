@@ -11,19 +11,19 @@ import { Button } from '../../element/button'
 import OverviewList from './OverviewList'
 import VerticalBar from './VerticalBar'
 
-export function Overview({ competitionDescription, peserta, biayaPendaftaran, contactPerson }) {
+export function Overview({ competitionDescription, peserta, biayaPendaftaran, contactPersons }) {
   useEffect(() => {
     AOS.init()
   }, [])
   return (
     <div
-      className="w-full h-fit lg:h-[100vh] bg-c-00 py-[5vh] box-content flex justify-around items-center flex-col lg:flex-row relative"
+      className="w-full h-fit lg:min-h-[620px] lg:h-[100vh] bg-c-00 py-[5vh] box-content flex justify-around items-center flex-col lg:flex-row relative"
       id="CompetitionOverview"
     >
       <div
         data-aos="fade-in"
-        data-aos-duration="1000"
-        data-aos-delay="1000"
+        data-aos-duration="500"
+        data-aos-delay="500"
         data-aos-anchor="#CompetitionOverview"
         data-aos-anchor-placement="top-center"
         className="absolute inset-0 z-[11] pointer-events-none"
@@ -38,8 +38,8 @@ export function Overview({ competitionDescription, peserta, biayaPendaftaran, co
       </div>
       <div
         data-aos="fade-right"
-        data-aos-duration="1000"
-        data-aos-delay="1000"
+        data-aos-duration="500"
+        data-aos-delay="500"
         data-aos-anchor="#CompetitionOverview"
         data-aos-anchor-placement="top-center"
         className="h-4/5"
@@ -48,18 +48,18 @@ export function Overview({ competitionDescription, peserta, biayaPendaftaran, co
       </div>
       <div
         data-aos="fade-up"
-        data-aos-duration="2000"
+        data-aos-duration="1000"
         data-aos-anchor="#CompetitionOverview"
         data-aos-anchor-placement="top-center"
-        className="w-[80%] lg:w-[20%] text-justify lg:text-left lg:h-fit flex flex-col mb-[5%]"
+        className="w-[80%] lg:w-[20%] text-justify lg:text-left lg:h-fit flex flex-col mb-[5%] items-center lg:items-start"
       >
         <div className="flex flex-col w-auto items-center w-fit">
-          <div className="text-2xl md:text-3xl lg:text-5xl font-jost font-bold text-transparent bg-clip-text bg-gradient-to-b from-c-01 to-c-02">
+          <div className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-jost font-bold text-transparent bg-clip-text bg-gradient-to-b from-c-01 to-c-02">
             Overview
           </div>
           <div className="w-[80%] h-[4px] mt-[8px] bg-c-01" />
         </div>
-        <div className="w-full mt-[15px] font-poppins text-white text-base md:text-lg lg:text-lg xl:text-xl">
+        <div className="w-full mt-[15px] font-poppins text-white text-base md:text-lg lg:text-lg xl:text-xl text-justify">
           {competitionDescription}
         </div>
         <Link href="/signin" className="mt-[15px] z-[100]">
@@ -70,7 +70,7 @@ export function Overview({ competitionDescription, peserta, biayaPendaftaran, co
       </div>
       <div
         data-aos="fade-up"
-        data-aos-duration="2000"
+        data-aos-duration="1000"
         data-aos-anchor="#CompetitionOverview"
         data-aos-anchor-placement="top-center"
         className="w-[40%] lg:w-[28%] flex justify-center items-center"
@@ -169,7 +169,7 @@ export function Overview({ competitionDescription, peserta, biayaPendaftaran, co
       </div>
       <div
         data-aos="fade-up"
-        data-aos-duration="2000"
+        data-aos-duration="1000"
         data-aos-anchor="#CompetitionOverview"
         data-aos-anchor-placement="top-center"
         className="w-[60%] lg:w-[25%] lg:h-[60%] flex flex-col items-center justify-evenly"
@@ -181,7 +181,23 @@ export function Overview({ competitionDescription, peserta, biayaPendaftaran, co
           {biayaPendaftaran}
         </OverviewList>
         <OverviewList icon={Icon02} title="Contact Person:">
-          {contactPerson}
+          {contactPersons.map(([nama, wa, line]) => (
+            <div key="none">
+              <div className="font-bold">{nama}</div>
+              <div>
+                WA:{' '}
+                <a href={`http://wa.me/62${wa}`} target="_blank" rel="noreferrer">
+                  {wa}
+                </a>
+              </div>
+              <div>
+                LINE:{' '}
+                <a href={`http://line.me/ti/p/~${line}`} target="_blank" rel="noreferrer">
+                  {line}
+                </a>
+              </div>
+            </div>
+          ))}
         </OverviewList>
       </div>
     </div>

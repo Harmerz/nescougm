@@ -16,29 +16,29 @@ export function HeroCompetition({ competitionTitle }) {
   }, [])
   return (
     <div
-      className="w-full h-[90vw] lg:h-[100vh] bg-bg-01 flex justify-center items-center relative overflow-hidden"
+      className="w-full h-[90vw] lg:min-h-[520px] lg:h-[100vh] bg-bg-01 flex justify-center items-center relative overflow-hidden"
       id="CompetitionHero"
     >
       <Image
         data-aos="fade-left"
-        data-aos-duration="1000"
-        data-aos-delay="1000"
+        data-aos-duration="500"
+        data-aos-delay="500"
         data-aos-anchor="#CompetitionHero"
         src={Vector0}
         className="w-[40%] absolute right-0 top-0 z-[9]"
       />
       <Image
         data-aos="fade-right"
-        data-aos-duration="1000"
-        data-aos-delay="1000"
+        data-aos-duration="500"
+        data-aos-delay="500"
         data-aos-anchor="#CompetitionHero"
         src={Vector1}
         className="w-[15%] absolute left-0 bottom-[1vh] z-[9]"
       />
       <div
         data-aos="fade-in"
-        data-aos-duration="1000"
-        data-aos-delay="1000"
+        data-aos-duration="500"
+        data-aos-delay="500"
         data-aos-anchor="#CompetitionHero"
         className="absolute inset-0 z-[11] flex justify-center items-center pointer-events-none "
       >
@@ -47,15 +47,17 @@ export function HeroCompetition({ competitionTitle }) {
       </div>
       <div
         data-aos="zoom-in"
-        data-aos-duration="2000"
+        data-aos-duration="1000"
         data-aos-anchor="#CompetitionHero"
         className="w-full h-full flex justify-center items-center z-[10]"
       >
         <div className="w-[86%] h-[70%] mt-[5vh] bg-c-00 flex items-center z-[10]">
           <div className="h-[80%] w-[6px] lg:h-[60%] lg:w-[20px] -ml-[3px] lg:-ml-[10px] bg-gradient-to-b from-c-01 to-c-02 rounded-[24px]" />
-          <div className="h-[100%] ml-[5%] flex flex-col justify-center">
-            <div className="h-fit sm:h-[23%] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-jost font-bold text-transparent bg-clip-text bg-gradient-to-b from-c-01 to-c-02">
-              {competitionTitle}
+          <div className="h-[100%] ml-[5%] flex flex-col">
+            <div className="h-[50%] mb-[2%] flex items-end text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-jost font-bold">
+              <div className="text-transparent bg-clip-text bg-gradient-to-b from-c-01 to-c-02">
+                {competitionTitle}
+              </div>
             </div>
             <div className="w-[80%] h-[15%] text-xs sm:text-base md:text-lg lg:text-xl font-poppins text-white">
               Untuk pendaftaran dapat dilakukan{' '}

@@ -16,20 +16,22 @@ import VerticalBar from './VerticalBar'
 export function Prize({ juaraMahasiswa, juaraSMA }) {
   const favoritMahasiswa = juaraMahasiswa.length === 4
   const favoritSMA = juaraSMA.length === 4
+  const alignMahasiswa = !favoritMahasiswa && favoritSMA
+  const alignSMA = !favoritSMA && favoritMahasiswa
   useEffect(() => {
     AOS.init()
   }, [])
   const [currentSlide, setCurrentSlide] = useState(0)
   return (
     <div
-      className="w-full h-fit lg:h-[100vh] bg-c-00 flex justify-end items-center relative"
+      className="w-full h-fit lg:min-h-[650px] lg:h-[100vh] bg-c-00 flex justify-end items-center relative"
       id="CompetitionPrize"
     >
       <div className="absolute inset-0 overflow-hidden">
         <Image
           data-aos="fade-left"
-          data-aos-duration="1000"
-          data-aos-delay="1000"
+          data-aos-duration="500"
+          data-aos-delay="500"
           data-aos-anchor="#CompetitionPrize"
           data-aos-anchor-placement="top-center"
           src={Vector1}
@@ -38,8 +40,8 @@ export function Prize({ juaraMahasiswa, juaraSMA }) {
       </div>
       <div
         data-aos="fade-in"
-        data-aos-duration="1000"
-        data-aos-delay="1000"
+        data-aos-duration="500"
+        data-aos-delay="500"
         data-aos-anchor="#CompetitionPrize"
         data-aos-anchor-placement="top-center"
         className="absolute inset-0 z-[11] pointer-events-none"
@@ -52,8 +54,8 @@ export function Prize({ juaraMahasiswa, juaraSMA }) {
       </div>
       <div
         data-aos="fade-in"
-        data-aos-duration="1000"
-        data-aos-delay="1000"
+        data-aos-duration="500"
+        data-aos-delay="500"
         data-aos-anchor="#CompetitionPrize"
         data-aos-anchor-placement="top-center"
         className="absolute inset-0 z-[9] pointer-events-none"
@@ -63,8 +65,8 @@ export function Prize({ juaraMahasiswa, juaraSMA }) {
       </div>
       <div
         data-aos="fade-right"
-        data-aos-duration="1400"
-        data-aos-delay="600"
+        data-aos-duration="700"
+        data-aos-delay="300"
         data-aos-anchor="#CompetitionPrize"
         data-aos-anchor-placement="top-center"
         className="absolute w-[18vw] left-0 inset-y-0 bg-gradient-to-b from-c-01 to-c-02 flex items-center z-10"
@@ -81,7 +83,7 @@ export function Prize({ juaraMahasiswa, juaraSMA }) {
       </div>
       <div
         data-aos="fade-right"
-        data-aos-duration="2000"
+        data-aos-duration="1000"
         data-aos-anchor="#CompetitionPrize"
         data-aos-anchor-placement="top-center"
         className="w-[35vw] lg:w-[19vw] h-[80%] lg:h-[63%] mt-[1%] bg-bg-01 absolute left-[8vw] flex flex-col z-10"
@@ -108,127 +110,137 @@ export function Prize({ juaraMahasiswa, juaraSMA }) {
       <div className="w-[82vw] h-full z-[9] overflow-hidden">
         <div
           data-aos="fade-left"
-          data-aos-duration="1500"
-          data-aos-delay="500"
+          data-aos-duration="750"
+          data-aos-delay="250"
           data-aos-anchor="#CompetitionPrize"
           data-aos-anchor-placement="top-center"
-          className="w-[82vw] h-full z-[9]"
+          className="w-full h-full z-[9]"
         >
-          <Carousel
-            showThumbs={false}
-            showStatus={false}
-            infiniteLoop
-            emulateTouch
-            preventMovementUntilSwipeScrollTolerance
-            swipeScrollTolerance={50}
-            className="w-full h-full"
-            renderArrowPrev={() => <div />}
-            renderArrowNext={(clickHandler) => {
-              return (
-                <div className="absolute top-0 bottom-0 right-0 mr-[7vw] flex items-center z-[100]">
-                  <button onClick={clickHandler} type="button" className="w-[2vw]">
-                    <Image src={RightArrow} />
-                  </button>
-                </div>
-              )
-            }}
-            renderIndicator={(onClickHandler, isSelected, index) => {
-              return (
-                <span
-                  className={`inline-block w-[12px] h-[12px] rounded-full ${
-                    index === 0 ? 'ml-[25vw] sm:ml-[23vw] md:ml-[21vw] lg:ml-[0.4vw]' : ''
-                  } mx-[0.4vw] lg:mb-[15vh] cursor-pointer ${isSelected ? 'bg-c-01' : 'bg-white'}`}
-                  onClick={onClickHandler}
-                  onKeyDown={onClickHandler}
-                  role="button"
-                  tabIndex={0}
-                />
-              )
-            }}
-            selectedItem={currentSlide}
-            onChange={(index) => setCurrentSlide(index)}
-          >
-            <div>
-              <div className="w-full lg:h-[100vh] flex lg:flex-col select-none">
+          <div className="w-[70vw] h-full z-[9]">
+            <Carousel
+              showThumbs={false}
+              showStatus={false}
+              showArrows={false}
+              infiniteLoop
+              emulateTouch
+              preventMovementUntilSwipeScrollTolerance
+              swipeScrollTolerance={50}
+              className="w-full h-full relative"
+              renderIndicator={(onClickHandler, isSelected) => {
+                return (
+                  <span
+                    className={`inline-block w-[12px] h-[12px] rounded-full first:ml-[25vw] first:sm:ml-[23vw] first:md:ml-[21vw] first:lg:ml-[12vw] mx-[0.4vw] lg:mb-[15vh] cursor-pointer ${
+                      isSelected ? 'bg-c-01' : 'bg-white'
+                    }`}
+                    onClick={onClickHandler}
+                    onKeyDown={onClickHandler}
+                    role="button"
+                    tabIndex={0}
+                  />
+                )
+              }}
+              selectedItem={currentSlide}
+              onChange={(index) => setCurrentSlide(index)}
+            >
+              <div>
                 <div
-                  className={`w-[20vw] lg:w-fit h-fit ${
-                    favoritMahasiswa ? 'mt-[5%] text-lg' : 'sm:mt-[1vh] md:mt-[2.5vh] text-base'
-                  } lg:mt-[10vh] md:text-xl lg:text-4xl xl:text-5xl font-jost font-bold text-white flex flex-wrap ml-[6vw] lg:ml-[3vw]`}
+                  className={`w-full lg:min-h-[650px] lg:h-[100vh] flex lg:flex-col select-none ${
+                    alignMahasiswa ? 'absolute inset-0' : ''
+                  }`}
                 >
-                  Kategori&nbsp;
-                  <div className="text-transparent bg-clip-text bg-gradient-to-b from-c-01 to-c-02 text-left">
-                    Mahasiswa
+                  <div
+                    className={`w-[20vw] lg:w-fit h-fit ${
+                      favoritMahasiswa ? 'mt-[5%] text-lg' : 'sm:mt-[1vh] md:mt-[2.5vh] text-base'
+                    } lg:mt-[10vh] md:text-xl lg:text-4xl xl:text-5xl font-jost font-bold text-white flex flex-wrap ml-[6vw] lg:ml-[3vw]`}
+                  >
+                    Kategori&nbsp;
+                    <div className="text-transparent bg-clip-text bg-gradient-to-b from-c-01 to-c-02 text-left">
+                      Mahasiswa
+                    </div>
                   </div>
-                </div>
-                <div className="w-[60vw] h-full flex flex-col lg:flex-row mx-[10vw] mt-[7%] pl-[2vw] mb-[10vw] lg:mb-0">
-                  <PrizeList icon={IconJuara} title="Juara I">
-                    {juaraMahasiswa[0]}
-                    <br />
-                    +sertifikat
-                  </PrizeList>
-                  <PrizeList icon={IconJuara} title="Juara II">
-                    {juaraMahasiswa[1]}
-                    <br />
-                    +sertifikat
-                  </PrizeList>
-                  <PrizeList icon={IconJuara} title="Juara III">
-                    {juaraMahasiswa[2]}
-                    <br />
-                    +sertifikat
-                  </PrizeList>
-                  {favoritMahasiswa ? (
-                    <PrizeList icon={IconJuara} title="Juara Favorit">
-                      {juaraMahasiswa[3]}
+                  <div className="w-[60vw] h-full flex flex-col lg:flex-row mx-[10vw] mt-[7%] pl-[2vw] mb-[10vw] lg:mb-0 justify-evenly">
+                    <PrizeList icon={IconJuara} title="Juara I">
+                      {juaraMahasiswa[0]}
                       <br />
                       +sertifikat
                     </PrizeList>
-                  ) : (
-                    <div />
-                  )}
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className="w-full lg:h-[100vh] flex lg:flex-col select-none">
-                <div
-                  className={`w-[20vw] lg:w-fit h-fit mt-[0%] ${
-                    favoritSMA ? 'mt-[1vh] sm:mt-0 text-xs sm:text-lg' : 'text-xs sm:text-base'
-                  } lg:mt-[10vh] md:text-xl lg:text-4xl xl:text-5xl font-jost font-bold text-white flex flex-wrap ml-[6vw] lg:ml-[3vw]`}
-                >
-                  Kategori&nbsp;
-                  <div className="text-transparent bg-clip-text bg-gradient-to-b from-c-01 to-c-02 text-left">
-                    SMA/MA sederajat
-                  </div>
-                </div>
-                <div className="w-[60vw] h-full flex flex-col lg:flex-row mx-[10vw] mt-[7%] pl-[2vw] mb-[10vw] lg:mb-0">
-                  <PrizeList icon={IconJuara} title="Juara I">
-                    {juaraSMA[0]}
-                    <br />
-                    +sertifikat
-                  </PrizeList>
-                  <PrizeList icon={IconJuara} title="Juara II">
-                    {juaraSMA[1]}
-                    <br />
-                    +sertifikat
-                  </PrizeList>
-                  <PrizeList icon={IconJuara} title="Juara III">
-                    {juaraSMA[2]}
-                    <br />
-                    +sertifikat
-                  </PrizeList>
-                  {favoritSMA ? (
-                    <PrizeList icon={IconJuara} title="Juara Favorit">
-                      {juaraSMA[3]}
+                    <PrizeList icon={IconJuara} title="Juara II">
+                      {juaraMahasiswa[1]}
                       <br />
                       +sertifikat
                     </PrizeList>
-                  ) : (
-                    <div />
-                  )}
+                    <PrizeList icon={IconJuara} title="Juara III">
+                      {juaraMahasiswa[2]}
+                      <br />
+                      +sertifikat
+                    </PrizeList>
+                    {favoritMahasiswa ? (
+                      <PrizeList icon={IconJuara} title="Juara Favorit">
+                        {juaraMahasiswa[3]}
+                        <br />
+                        +sertifikat
+                      </PrizeList>
+                    ) : (
+                      <div />
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-          </Carousel>
+              <div>
+                <div
+                  className={`w-full lg:min-h-[650px] lg:h-[100vh] flex lg:flex-col select-none ${
+                    alignSMA ? 'absolute inset-0' : ''
+                  }`}
+                >
+                  <div
+                    className={`w-[20vw] lg:w-fit h-fit mt-[0%] ${
+                      favoritSMA ? 'mt-[1vh] sm:mt-0 text-xs sm:text-lg' : 'text-xs sm:text-base'
+                    } lg:mt-[10vh] md:text-xl lg:text-4xl xl:text-5xl font-jost font-bold text-white flex flex-wrap ml-[6vw] lg:ml-[3vw]`}
+                  >
+                    Kategori&nbsp;
+                    <div className="text-transparent bg-clip-text bg-gradient-to-b from-c-01 to-c-02 text-left">
+                      SMA/MA sederajat
+                    </div>
+                  </div>
+                  <div className="w-[60vw] h-full flex flex-col lg:flex-row mx-[10vw] mt-[7%] pl-[2vw] mb-[10vw] lg:mb-0 justify-evenly">
+                    <PrizeList icon={IconJuara} title="Juara I">
+                      {juaraSMA[0]}
+                      <br />
+                      +sertifikat
+                    </PrizeList>
+                    <PrizeList icon={IconJuara} title="Juara II">
+                      {juaraSMA[1]}
+                      <br />
+                      +sertifikat
+                    </PrizeList>
+                    <PrizeList icon={IconJuara} title="Juara III">
+                      {juaraSMA[2]}
+                      <br />
+                      +sertifikat
+                    </PrizeList>
+                    {favoritSMA ? (
+                      <PrizeList icon={IconJuara} title="Juara Favorit">
+                        {juaraSMA[3]}
+                        <br />
+                        +sertifikat
+                      </PrizeList>
+                    ) : (
+                      <div />
+                    )}
+                  </div>
+                </div>
+              </div>
+            </Carousel>
+          </div>
+          <div className="absolute top-0 bottom-0 right-[7vw] flex items-center z-[100]">
+            <button
+              onClick={() => setCurrentSlide((slide) => slide + 1)}
+              type="button"
+              className="w-[2vw]"
+            >
+              <Image src={RightArrow} />
+            </button>
+          </div>
         </div>
       </div>
     </div>

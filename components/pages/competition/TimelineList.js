@@ -26,10 +26,18 @@ export default function TimelineList({ children, index, timeline }) {
               : 'mr-[11%] ml-[59%] lg:ml-0 lg:mr-0 lg:mt-[5%]'
           }`}
         >
-          <div className="text-lg sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl font-jost text-transparent bg-clip-text bg-gradient-to-b from-c-01 to-c-02 text-center flex items-center mb-[2%]">
+          <div
+            className={`text-lg sm:text-2xl md:text-3xl lg:text-xl xl:text-2xl 2xl:text-3xl font-jost text-transparent bg-clip-text bg-gradient-to-b from-c-01 to-c-02 flex items-center mb-[2%] ${
+              index % 2 === 1 ? 'justify-end' : 'justify-start'
+            } lg:justify-start`}
+          >
             {timeline}
           </div>
-          <div className="text-xs sm:text-xl md:text-2xl lg:text-xl 2xl:text-2xl font-poppins text-white text-left">
+          <div
+            className={`text-sm sm:text-xl md:text-2xl lg:text-sm 2xl:text-lg font-poppins text-white ${
+              index % 2 === 1 ? 'text-right' : 'text-left'
+            } lg:text-left`}
+          >
             {children}
           </div>
         </div>
