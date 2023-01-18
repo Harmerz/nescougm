@@ -15,11 +15,9 @@ export function Medpart() {
     <div className="bg-bg-02 h-[150vh] sm:h-[170vh] w-full overflow-hidden">
       <div className="grid">
         <div className="flex justify-self-end self-start mt-10 mr-5 sm:mr-10">
-          <Image
-            className="w-[60px] h-[50px] sm:w-[85.63px] sm:h-[72.85px]"
-            src="/Group 5.svg"
-            alt="vektor"
-          />
+          <div className="w-[60px] h-[50px] sm:w-[85.63px] sm:h-[72.85px] relative">
+            <Image alt="vektor" fill src="/Group 5.svg" />
+          </div>
         </div>
 
         <div className="grid h-[120vh] w-11/12 lg:w-10/12 xl:w-9/12 place-self-center">
@@ -107,11 +105,9 @@ export function Medpart() {
         </div>
 
         <div className="flex justify-items-end self-end w-full">
-          <Image
-            className="w-[250px] h-[250px] sm:w-[350px] sm:h-[350px]"
-            src="/Group 609.svg"
-            alt="vektor"
-          />
+          <div className="w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] relative">
+            <Image src="/Group 609.svg" alt="vektor" fill />
+          </div>
         </div>
       </div>
     </div>

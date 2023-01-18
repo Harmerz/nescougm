@@ -12,11 +12,9 @@ export function Hero() {
     <div className="bg-bg-02 h-[100vh] sm:h-[100vh]">
       <div className="w-3/3 grid sm:flex flex-row items-center overflow-hidden">
         <div className=" grid place-self-start self-start w-3/3 sm:w-44 lg:w-36 xl:w-48">
-          <Image
-            className="w-[90px] h-[160px] sm:w-[150px] sm:h-[250px] lg:w-[200px] lg:h-[270px] xl:w-[250px] xl:h-[344.5px]"
-            src="/Ornament 2.svg"
-            alt="vektor"
-          />
+          <div className="relative w-[90px] h-[160px] sm:w-[150px] sm:h-[250px] lg:w-[200px] lg:h-[270px] xl:w-[250px] xl:h-[344.5px] ">
+            <Image src="/Ornament 2.svg" alt="vektor" fill />
+          </div>
         </div>
 
         <div
@@ -42,11 +40,9 @@ export function Hero() {
         </div>
 
         <div className="self-end grid place-items-end lg:mb-[120px] w-3/3 sm:w-44 lg:w-36 xl:w-24">
-          <Image
-            className="w-[20.93px] h-[140.5px] sm:w-[40.33px] sm:h-[250px] lg:w-[40.33px] lg:h-[350.33px] xl:w-[53.33px] xl:h-[403.5px]"
-            src="/Ornament 1.svg"
-            alt="vektor"
-          />
+          <div className="w-[20.93px] h-[140.5px] sm:w-[40.33px] sm:h-[250px] lg:w-[40.33px] lg:h-[350.33px] xl:w-[53.33px] xl:h-[403.5px] relative">
+            <Image src="/Ornament 1.svg" alt="vektor" fill />
+          </div>
         </div>
       </div>
     </div>

@@ -15,11 +15,9 @@ export function Photo() {
     <div className="shadow-xl h-[140vh] bg-gradient-to-b p-[6px] from-c-02 to-bg-02">
       <div className="justify-center bg-bg-02 h-[140vh] flex">
         <div className="flex justify-items-start self-start mr-5 ml-2.5 mt-8">
-          <Image
-            className="w-[75px] h-[15px] sm:w-[115px] sm:[20px] lg:w-[145.5px] lg:h-[28px]"
-            src="/Group608.svg"
-            alt="vektor"
-          />
+          <div className="w-[75px] h-[15px] sm:w-[115px] sm:[20px] lg:w-[145.5px] lg:h-[28px] relative">
+            <Image src="/Group608.svg" alt="vektor" fill />
+          </div>
         </div>
 
         <div className="grid h-[140vh] w-9/12 justify-self-end">
@@ -85,11 +83,9 @@ export function Photo() {
         </div>
 
         <div className="flex invisible justify-items-start self-start mr-5 ml-2.5 mt-8">
-          <Image
-            className="invisible w-[75px] h-[15px] sm:w-[115px] sm:[20px] lg:w-[145.5px] lg:h-[28px]"
-            src="/Group608.svg"
-            alt="vektor"
-          />
+          <div className="invisible w-[75px] h-[15px] sm:w-[115px] sm:[20px] lg:w-[145.5px] lg:h-[28px] relative">
+            <Image src="/Group608.svg" alt="vektor" fill />
+          </div>
         </div>
       </div>
     </div>
