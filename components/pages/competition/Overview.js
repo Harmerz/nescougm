@@ -53,7 +53,7 @@ export function Overview({ competitionDescription, peserta, biayaPendaftaran, co
         data-aos-anchor-placement="top-center"
         className="w-[80%] lg:w-[20%] text-justify lg:text-left lg:h-fit flex flex-col mb-[5%] items-center lg:items-start"
       >
-        <div className="flex flex-col w-auto items-center w-fit">
+        <div className="flex flex-col items-center w-fit">
           <div className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-jost font-bold text-transparent bg-clip-text bg-gradient-to-b from-c-01 to-c-02">
             Overview
           </div>
@@ -182,7 +182,7 @@ export function Overview({ competitionDescription, peserta, biayaPendaftaran, co
         </OverviewList>
         <OverviewList icon={Icon02} title="Contact Person:">
           {contactPersons?.map(([nama, wa, line]) => (
-            <div key="none">
+            <div key={nama + wa}>
               <div className="font-bold">{nama}</div>
               <div>
                 WA:{' '}

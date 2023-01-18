@@ -3,13 +3,7 @@ import { useRouter } from 'next/router'
 import Competition from '../competition'
 
 const Electricity = {
-  competitionTitle: (
-    <>
-      Electricity
-      <br />
-      Competition
-    </>
-  ),
+  competitionTitle: 'Electricity Competition',
   competitionDescription:
     'Paper Competition merupakan kompetisi bidang ketenagalistrikan berupa lomba problem solving tentang Load Flow Diagram, forecasting, sistem proteksi listrik, dan sejenisnya, yang bertujuan mendorong perkembangan dan perencanaan sistem ketenagalistrikan, khususnya di Indonesia.',
   peserta: 'Mahasiswa, perseorangan atau tim maksimal 3 orang',
@@ -32,13 +26,7 @@ const Electricity = {
 }
 
 const Paper = {
-  competitionTitle: (
-    <>
-      Paper
-      <br />
-      Competition
-    </>
-  ),
+  competitionTitle: 'Paper Competition',
   competitionDescription:
     'Paper Competition merupakan kompetisi bidang ketenagalistrikan berupa lomba problem solving tentang Load Flow Diagram, forecasting, sistem proteksi listrik, dan sejenisnya, yang bertujuan mendorong perkembangan dan perencanaan sistem ketenagalistrikan, khususnya di Indonesia.',
   peserta: 'Mahasiswa, perseorangan atau tim maksimal 3 orang',
@@ -61,13 +49,7 @@ const Paper = {
 }
 
 const Poster = {
-  competitionTitle: (
-    <>
-      Poster
-      <br />
-      Competition
-    </>
-  ),
+  competitionTitle: 'Poster Competition',
   competitionDescription:
     'Paper Competition merupakan kompetisi bidang ketenagalistrikan berupa lomba problem solving tentang Load Flow Diagram, forecasting, sistem proteksi listrik, dan sejenisnya, yang bertujuan mendorong perkembangan dan perencanaan sistem ketenagalistrikan, khususnya di Indonesia.',
   peserta: 'Mahasiswa, perseorangan atau tim maksimal 3 orang',
