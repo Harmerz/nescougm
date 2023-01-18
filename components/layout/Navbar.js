@@ -95,7 +95,7 @@ export function Navbar() {
         <Link href="/" className="flex items-center">
           <div className="flex">
             <div className="flex justify-items-center place-items-center content-center mr-2 h-10 relative w-40">
-              <Image src="/Nesco.png" alt="Tutur" fill />
+              <Image src="/Nesco.png" alt="Nesco" fill />
             </div>
           </div>
         </Link>
@@ -162,7 +162,7 @@ export function Navbar() {
                         {route.childern.map((competition) => (
                           <li key={competition.value}>
                             <Link
-                              href={`/competitions/${competition.value}`}
+                              href={`/competition/${competition.value}`}
                               className="block px-4 py-2 hover:text-c-01"
                             >
                               {competition.name}

@@ -1,6 +1,42 @@
-import { useRouter } from 'next/router'
+import 'aos/dist/aos.css'
 
-import Competition from '../competition'
+import AOS from 'aos'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+
+import { BackToTop } from '../../components/element/BackToTop'
+import { DefaultLayout, Footer } from '../../components/layout'
+import { HeroCompetition, Overview, Prize, Timeline } from '../../components/pages/competition'
+
+export function Competition({ props }) {
+  useEffect(() => {
+    AOS.init({
+      disable: false,
+    })
+  }, [])
+  return (
+    <DefaultLayout title="Competition - NESCO UGM 2023">
+      <div>
+        <HeroCompetition competitionTitle={props?.competitionTitle ?? 'Competition Title'} />
+        <Overview
+          competitionDescription={props?.competitionDescription ?? "Competition's Description"}
+          peserta={props?.peserta ?? 'Peserta'}
+          biayaPendaftaran={props?.biayaPendaftaran ?? 'Biaya Pendaftaran'}
+          contactPersons={props?.contactPersons ?? ['Contact Person']}
+        />
+        <Prize
+          juaraMahasiswa={props?.juaraMahasiswa ?? 'Juara Mahasiswa'}
+          juaraSMA={props?.juaraSMA ?? 'Juara SMA'}
+        />
+        <Timeline timelines={props?.timelines ?? ['Timelines']} />
+        <BackToTop />
+      </div>
+      <footer>
+        <Footer />
+      </footer>
+    </DefaultLayout>
+  )
+}
 
 const Electricity = {
   competitionTitle: 'Electricity Competition',
@@ -71,11 +107,15 @@ const Poster = {
   ],
 }
 
-export default function CommentPage() {
+export default function CompetitionPage() {
   const router = useRouter()
   const Cabang = router.query.cabang
-
   if (Cabang === 'electricity') return <Competition props={Electricity} />
   if (Cabang === 'paper') return <Competition props={Paper} />
   if (Cabang === 'poster') return <Competition props={Poster} />
+  return (
+    <div>
+      <h1>{Cabang}</h1>
+    </div>
+  )
 }
