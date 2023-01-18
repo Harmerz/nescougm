@@ -5,8 +5,17 @@ import { useEffect, useState } from 'react'
 
 import { Button } from '../element/button'
 
+const Icon = ({ active = true }) => {
+  return (
+    <div className={`toggle__container ${active ? 'active' : ''}`}>
+      <div className={`toggle ${active ? 'no-animation active' : ''} toggle__one`} />
+      <div className={`toggle ${active ? 'no-animation active' : 'active'} toggle__two`} />
+      <div className={`toggle ${active ? 'no-animation active' : 'active'} toggle__three`} />
+    </div>
+  )
+}
 export function Navbar() {
-  const [yOffset, setYOffset] = useState(typeof window !== 'undefined' ? window.pageYOffset : 0)
+  const [yOffset, setYOffset] = useState(typeof window !== 'undefined' ? window?.pageYOffset : 0)
   const [visible, setVisible] = useState(true)
 
   function handleScroll() {
@@ -25,6 +34,23 @@ export function Navbar() {
       path: '/competition',
       name: 'Competition',
       key: 'competition',
+      childern: [
+        {
+          name: 'Electricity',
+          value: 'electricity',
+          key: 'electricity',
+        },
+        {
+          name: 'Paper',
+          value: 'paper',
+          key: 'paper',
+        },
+        {
+          name: 'Poster',
+          value: 'poster',
+          key: 'poster',
+        },
+      ],
     },
     {
       path: '/webinar',
@@ -57,6 +83,7 @@ export function Navbar() {
   }
 
   const [dropDown, setDropDown] = useState(false)
+  const [dropDownCompetition, setDropDownCompetition] = useState(false)
   return (
     <nav
       className={`bg-c-00 px-2 sm:px-4 border-b-[5px] py-2 border-c-01 border-t-4 md:rounded-none ${
@@ -75,18 +102,18 @@ export function Navbar() {
         <button
           data-collapse-toggle="navbar-default"
           type="button"
-          className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg lg:hidden focus:outline-none focus:ring-2 focus:ring-gray-200 "
+          className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg lg:hidden focus:outline-none "
           aria-controls="navbar-default"
           aria-expanded="false"
           onClick={() => setDropDown(!dropDown)}
         >
-          <Image src="/icon/List.svg" width={20} height={20} alt="List" />
+          <Icon active={dropDown} />
         </button>
         <div
           className={`w-full lg:flex items-center lg:w-auto lg:flex-row ${
             dropDown ? '' : 'hidden'
           }`}
-          id="menu"
+          id="menu_mobile"
         >
           <ul
             className="
@@ -99,14 +126,65 @@ export function Navbar() {
                     item-center"
           >
             {routes.map((route) => {
+              if (route.key === 'competition') {
+                return (
+                  <li key="competition">
+                    <button
+                      type="submit"
+                      id="dropdownNavbarLink"
+                      data-dropdown-toggle="dropdownNavbar"
+                      className="flex items-center w-full md:p-4 py-2 justify-center font-poppins text-md font-semibold text-white rounded hover:text-c-01"
+                      onClick={() => setDropDownCompetition(!dropDownCompetition)}
+                    >
+                      Competition{' '}
+                      <svg
+                        className="w-5 h-5 ml-1"
+                        aria-hidden="true"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </button>
+
+                    <div
+                      id="dropdownNavbar"
+                      className={`z-10 fixed font-normal bg-c-00 divide-y divide-gray-100 rounded shadow w-44 ${
+                        dropDownCompetition ? '' : 'hidden'
+                      }`}
+                    >
+                      <ul className="py-1 text-sm text-white" aria-labelledby="dropdownLargeButton">
+                        {route.childern.map((competition) => (
+                          <li key={competition.value}>
+                            <Link
+                              href={`/competitions/${competition.value}`}
+                              className="block px-4 py-2 hover:text-c-01"
+                            >
+                              {competition.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </li>
+                )
+              }
+
               return (
-                <Link href={route.path} className="md:p-4 py-2 flex justify-center" key={route.key}>
-                  <div className="mx-5 flex">
-                    <span className="self-center font-poppins whitespace-nowrap text-md text-white font-semibold">
-                      {route.name}
-                    </span>
-                  </div>
-                </Link>
+                <li key={route.key}>
+                  <Link href={route.path} className="md:p-4 py-2 flex justify-center">
+                    <div className="mx-5 flex">
+                      <span className="self-center font-poppins whitespace-nowrap text-md text-white font-semibold">
+                        {route.name}
+                      </span>
+                    </div>
+                  </Link>
+                </li>
               )
             })}
           </ul>

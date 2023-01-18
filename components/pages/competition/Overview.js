@@ -181,7 +181,7 @@ export function Overview({ competitionDescription, peserta, biayaPendaftaran, co
           {biayaPendaftaran}
         </OverviewList>
         <OverviewList icon={Icon02} title="Contact Person:">
-          {contactPersons.map(([nama, wa, line]) => (
+          {contactPersons?.map(([nama, wa, line]) => (
             <div key="none">
               <div className="font-bold">{nama}</div>
               <div>
