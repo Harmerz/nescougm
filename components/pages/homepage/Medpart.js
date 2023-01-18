@@ -1,6 +1,7 @@
 import 'aos/dist/aos.css'
 
 import AOS from 'aos'
+import Image from 'next/image'
 import { useEffect } from 'react'
 
 export function Medpart() {
@@ -14,7 +15,7 @@ export function Medpart() {
     <div className="bg-bg-02 h-[150vh] sm:h-[170vh] w-full overflow-hidden">
       <div className="grid">
         <div className="flex justify-self-end self-start mt-10 mr-5 sm:mr-10">
-          <img
+          <Image
             className="w-[60px] h-[50px] sm:w-[85.63px] sm:h-[72.85px]"
             src="/Group 5.svg"
             alt="vektor"
@@ -106,7 +107,7 @@ export function Medpart() {
         </div>
 
         <div className="flex justify-items-end self-end w-full">
-          <img
+          <Image
             className="w-[250px] h-[250px] sm:w-[350px] sm:h-[350px]"
             src="/Group 609.svg"
             alt="vektor"

@@ -1,6 +1,7 @@
 import 'aos/dist/aos.css'
 
 import AOS from 'aos'
+import Image from 'next/image'
 import { useEffect } from 'react'
 
 export function Photo() {
@@ -14,7 +15,7 @@ export function Photo() {
     <div className="shadow-xl h-[140vh] bg-gradient-to-b p-[6px] from-c-02 to-bg-02">
       <div className="justify-center bg-bg-02 h-[140vh] flex">
         <div className="flex justify-items-start self-start mr-5 ml-2.5 mt-8">
-          <img
+          <Image
             className="w-[75px] h-[15px] sm:w-[115px] sm:[20px] lg:w-[145.5px] lg:h-[28px]"
             src="/Group608.svg"
             alt="vektor"
@@ -84,7 +85,7 @@ export function Photo() {
         </div>
 
         <div className="flex invisible justify-items-start self-start mr-5 ml-2.5 mt-8">
-          <img
+          <Image
             className="invisible w-[75px] h-[15px] sm:w-[115px] sm:[20px] lg:w-[145.5px] lg:h-[28px]"
             src="/Group608.svg"
             alt="vektor"
