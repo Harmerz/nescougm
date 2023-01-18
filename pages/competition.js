@@ -21,7 +21,7 @@ export default function Competition({ props }) {
           competitionDescription={props.competitionDescription}
           peserta={props.peserta}
           biayaPendaftaran={props.biayaPendaftaran}
-          contactPerson={props.contactPerson}
+          contactPersons={props.contactPersons}
         />
         <Prize juaraMahasiswa={props.juaraMahasiswa} juaraSMA={props.juaraSMA} />
         <Timeline timelines={props.timelines} />
