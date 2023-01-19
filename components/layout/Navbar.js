@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 
 import { Button } from '../element/button'
@@ -25,6 +26,9 @@ export function Navbar() {
     setYOffset(currentYOffset)
     setVisible(temp)
   }
+
+  const router = useRouter()
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
@@ -133,10 +137,18 @@ export function Navbar() {
                       type="submit"
                       id="dropdownNavbarLink"
                       data-dropdown-toggle="dropdownNavbar"
-                      className="flex items-center w-full md:p-4 py-2 justify-center font-poppins text-md font-semibold text-white rounded hover:text-c-01"
+                      className="flex items-center w-full md:p-4 py-2 justify-center font-poppins text-md font-semibold rounded hover:text-c-01 text-white"
                       onClick={() => setDropDownCompetition(!dropDownCompetition)}
                     >
-                      Competition{' '}
+                      <p
+                        className={`hover:text-c-01 ${
+                          router.pathname.includes(route.path)
+                            ? 'text-c-01 border-b-4 border-c-01'
+                            : 'text-white'
+                        }`}
+                      >
+                        Competition
+                      </p>
                       <svg
                         className="w-5 h-5 ml-1"
                         aria-hidden="true"
@@ -154,8 +166,8 @@ export function Navbar() {
 
                     <div
                       id="dropdownNavbar"
-                      className={`z-10 fixed font-normal bg-c-00 divide-y divide-gray-100 rounded shadow w-44 ${
-                        dropDownCompetition ? '' : 'hidden'
+                      className={`z-10 lg:fixed justify-center  font-normal mx-auto bg-c-00 divide-y divide-gray-100 w-44 items-center  ${
+                        dropDownCompetition ? 'lg:flex flex' : 'lg:hidden hidden'
                       }`}
                     >
                       <ul className="py-1 text-sm text-white" aria-labelledby="dropdownLargeButton">
@@ -163,7 +175,7 @@ export function Navbar() {
                           <li key={competition.value}>
                             <Link
                               href={`/competition/${competition.value}`}
-                              className="block px-4 py-2 hover:text-c-01"
+                              className="block px-4 py-2 hover:text-c-01 text-md font-semibold font-poppins"
                             >
                               {competition.name}
                             </Link>
@@ -179,7 +191,13 @@ export function Navbar() {
                 <li key={route.key}>
                   <Link href={route.path} className="md:p-4 py-2 flex justify-center">
                     <div className="mx-5 flex">
-                      <span className="self-center font-poppins whitespace-nowrap text-md text-white font-semibold">
+                      <span
+                        className={`self-center font-poppins whitespace-nowrap text-md font-semibold hover:text-c-01  ${
+                          router.pathname.includes(route.path)
+                            ? 'text-c-01 border-b-4 border-c-01'
+                            : 'text-white'
+                        }`}
+                      >
                         {route.name}
                       </span>
                     </div>
