@@ -38,12 +38,7 @@ export function Navbar() {
       path: '/competition',
       name: 'Competition',
       key: 'competition',
-      childern: [
-        {
-          name: 'Electricity',
-          value: 'electricity',
-          key: 'electricity',
-        },
+      children: [
         {
           name: 'Paper',
           value: 'paper',
@@ -53,6 +48,11 @@ export function Navbar() {
           name: 'Poster',
           value: 'poster',
           key: 'poster',
+        },
+        {
+          name: 'Video',
+          value: 'video',
+          key: 'video',
         },
       ],
     },
@@ -171,7 +171,7 @@ export function Navbar() {
                       }`}
                     >
                       <ul className="py-1 text-sm text-white" aria-labelledby="dropdownLargeButton">
-                        {route.childern.map((competition) => (
+                        {route.children.map((competition) => (
                           <li key={competition.value}>
                             <Link
                               href={`/competition/${competition.value}`}

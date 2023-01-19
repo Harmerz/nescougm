@@ -38,35 +38,12 @@ export function Competition({ props }) {
   )
 }
 
-const Electricity = {
-  competitionTitle: 'Electricity Competition',
-  competitionDescription:
-    'Paper Competition merupakan kompetisi bidang ketenagalistrikan berupa lomba problem solving tentang Load Flow Diagram, forecasting, sistem proteksi listrik, dan sejenisnya, yang bertujuan mendorong perkembangan dan perencanaan sistem ketenagalistrikan, khususnya di Indonesia.',
-  peserta: 'Mahasiswa, perseorangan atau tim maksimal 3 orang',
-  biayaPendaftaran: 'Rp 150.000,00-',
-  contactPersons: [
-    ['Fajar', '081390803682', 'fajars7710'],
-    ['Satria', '083195784338', 'satriayw'],
-  ],
-  juaraMahasiswa: ['Rp5.000.000,-', 'Rp4.000.000,-', 'Rp3.000.000,-'],
-  juaraSMA: ['Rp5.000.000,-', 'Rp4.000.000,-', 'Rp3.000.000,-', 'Rp250.000,-'],
-  timelines: [
-    ['xx Mei - xx Juni', 'Mahasiswa, perseorangan atau tim maksimal 3 orang'],
-    ['xx Mei - xx Juni', 'Mahasiswa, perseorangan atau tim maksimal 3 orang'],
-    ['xx Mei - xx Juni', 'Mahasiswa, perseorangan atau tim maksimal 3 orang'],
-    ['xx Mei - xx Juni', 'Mahasiswa, perseorangan atau tim maksimal 3 orang'],
-    ['xx Mei - xx Juni', 'Mahasiswa, perseorangan atau tim maksimal 3 orang'],
-    ['xx Mei - xx Juni', 'Mahasiswa, perseorangan atau tim maksimal 3 orang'],
-    ['xx Mei - xx Juni', 'Mahasiswa, perseorangan atau tim maksimal 3 orang'],
-  ],
-}
-
 const Paper = {
   competitionTitle: 'Paper Competition',
   competitionDescription:
     'Paper Competition merupakan kompetisi bidang ketenagalistrikan berupa lomba problem solving tentang Load Flow Diagram, forecasting, sistem proteksi listrik, dan sejenisnya, yang bertujuan mendorong perkembangan dan perencanaan sistem ketenagalistrikan, khususnya di Indonesia.',
   peserta: 'Mahasiswa, perseorangan atau tim maksimal 3 orang',
-  biayaPendaftaran: 'Rp 150.000,00-',
+  biayaPendaftaran: 'Rp150.000,00',
   contactPersons: [
     ['Fajar', '081390803682', 'fajars7710'],
     ['Satria', '083195784338', 'satriayw'],
@@ -74,22 +51,21 @@ const Paper = {
   juaraMahasiswa: ['Rp5.000.000,-', 'Rp4.000.000,-', 'Rp3.000.000,-'],
   juaraSMA: ['Rp5.000.000,-', 'Rp4.000.000,-', 'Rp3.000.000,-', 'Rp250.000,-'],
   timelines: [
-    ['xx Mei - xx Juni', 'Mahasiswa, perseorangan atau tim maksimal 3 orang'],
-    ['xx Mei - xx Juni', 'Mahasiswa, perseorangan atau tim maksimal 3 orang'],
-    ['xx Mei - xx Juni', 'Mahasiswa, perseorangan atau tim maksimal 3 orang'],
-    ['xx Mei - xx Juni', 'Mahasiswa, perseorangan atau tim maksimal 3 orang'],
-    ['xx Mei - xx Juni', 'Mahasiswa, perseorangan atau tim maksimal 3 orang'],
-    ['xx Mei - xx Juni', 'Mahasiswa, perseorangan atau tim maksimal 3 orang'],
-    ['xx Mei - xx Juni', 'Mahasiswa, perseorangan atau tim maksimal 3 orang'],
+    ['8 Februari 2023 s.d. 18 Maret 2023', 'Periode Pendaftaran Peserta'],
+    ['24 Maret 2023', 'Rilis Soal'],
+    ['24 Maret 2023 s.d. 24 April 2023', 'Periode Pengunggahan'],
+    ['25 April 2023 s.d. 1 Mei 2023', 'Periode Penjurian Paper Babak Penyisihan'],
+    ['3 Mei 2023', 'Pengumuman Finalis'],
+    ['14 Mei 2023', 'Periode Penjurian Paper Babak Final'],
   ],
 }
 
 const Poster = {
   competitionTitle: 'Poster Competition',
   competitionDescription:
-    'Paper Competition merupakan kompetisi bidang ketenagalistrikan berupa lomba problem solving tentang Load Flow Diagram, forecasting, sistem proteksi listrik, dan sejenisnya, yang bertujuan mendorong perkembangan dan perencanaan sistem ketenagalistrikan, khususnya di Indonesia.',
-  peserta: 'Mahasiswa, perseorangan atau tim maksimal 3 orang',
-  biayaPendaftaran: 'Rp 150.000,00-',
+    'Poster Competition adalah kompetisi pembuatan karya poster mengenai perkembangan ketenagalistrikan, pemanfaatan energi bersih, dan pengaplikasian e-mobility di Indonesia. Poster Competition terdiri dari dua kategori, yaitu kategori mahasiswa dan kategori pelajar SMA sederajat.',
+  peserta: 'Perseorangan atau tim maksimal 3 orang',
+  biayaPendaftaran: 'Rp40.000,00',
   contactPersons: [
     ['Fajar', '081390803682', 'fajars7710'],
     ['Satria', '083195784338', 'satriayw'],
@@ -97,22 +73,43 @@ const Poster = {
   juaraMahasiswa: ['Rp5.000.000,-', 'Rp4.000.000,-', 'Rp3.000.000,-'],
   juaraSMA: ['Rp5.000.000,-', 'Rp4.000.000,-', 'Rp3.000.000,-', 'Rp250.000,-'],
   timelines: [
-    ['xx Mei - xx Juni', 'Mahasiswa, perseorangan atau tim maksimal 3 orang'],
-    ['xx Mei - xx Juni', 'Mahasiswa, perseorangan atau tim maksimal 3 orang'],
-    ['xx Mei - xx Juni', 'Mahasiswa, perseorangan atau tim maksimal 3 orang'],
-    ['xx Mei - xx Juni', 'Mahasiswa, perseorangan atau tim maksimal 3 orang'],
-    ['xx Mei - xx Juni', 'Mahasiswa, perseorangan atau tim maksimal 3 orang'],
-    ['xx Mei - xx Juni', 'Mahasiswa, perseorangan atau tim maksimal 3 orang'],
-    ['xx Mei - xx Juni', 'Mahasiswa, perseorangan atau tim maksimal 3 orang'],
+    ['8 Februari 2023 s.d. 18 Maret 2023', 'Periode Pendaftaran Peserta'],
+    ['24 Maret 2023 s.d. 6 April 2023', 'Periode Pengunggahan'],
+    ['7 April 2023 s.d. 20 April 2023', 'Periode Penjurian Poster Babak Penyisihan'],
+    ['24 April 2023', 'Pengumuman Finalis'],
+    ['24 April 2023 s.d. 7 Mei 2023', 'Periode Penjurian Poster Babak Final'],
+    ['14 Mei 2023', 'Pengumuman Pemenang'],
+  ],
+}
+
+const Video = {
+  competitionTitle: 'Video Competition',
+  competitionDescription:
+    'Video Competition adalah kompetisi pembuatan karya berupa video mengenai perkembangan ketenagalistrikan, sustainable and renewable energy, dan e-mobility di Indonesia. Video Competition terdiri dari dua kategori, yaitu kategori mahasiswa dan kategori pelajar SMA sederajat.',
+  peserta: 'Perseorangan atau tim maksimal 3 orang',
+  biayaPendaftaran: 'Rp75.000,00',
+  contactPersons: [
+    ['Fajar', '081390803682', 'fajars7710'],
+    ['Satria', '083195784338', 'satriayw'],
+  ],
+  juaraMahasiswa: ['Rp5.000.000,-', 'Rp4.000.000,-', 'Rp3.000.000,-'],
+  juaraSMA: ['Rp5.000.000,-', 'Rp4.000.000,-', 'Rp3.000.000,-', 'Rp250.000,-'],
+  timelines: [
+    ['8 Februari 2023 s.d. 18 Maret 2023', 'Periode Pendaftaran Peserta'],
+    ['24 Maret 2023 s.d. 6 April 2023', 'Periode Pengunggahan Video'],
+    ['7 April 2023 s.d. 20 April 2023', 'Periode Penjurian Video'],
+    ['24 April 2023', 'Pengumuman Finalis'],
+    ['24 April 2023 s.d. 7 Mei 2023', 'Periode Final Video'],
+    ['14 Mei 2023', 'Pengumuman Pemenang'],
   ],
 }
 
 export default function CompetitionPage() {
   const router = useRouter()
   const Cabang = router.query.cabang
-  if (Cabang === 'electricity') return <Competition props={Electricity} />
   if (Cabang === 'paper') return <Competition props={Paper} />
   if (Cabang === 'poster') return <Competition props={Poster} />
+  if (Cabang === 'video') return <Competition props={Video} />
   return (
     <div>
       <h1>{Cabang}</h1>
