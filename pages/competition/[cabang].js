@@ -110,9 +110,9 @@ const Video = {
 export default function CompetitionPage() {
   const router = useRouter()
   const Cabang = router.query.cabang
-  if (Cabang === 'video') return <Competition props={Video} />
   if (Cabang === 'paper') return <Competition props={Paper} />
   if (Cabang === 'poster') return <Competition props={Poster} />
+  if (Cabang === 'video') return <Competition props={Video} />
   return (
     <div>
       <h1>{Cabang}</h1>
