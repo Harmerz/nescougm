@@ -78,7 +78,7 @@ export function Timeline({ timelines }) {
             className="lg:mr-[8%] w-full h-full flex flex-col lg:flex-row justify-evenly"
           >
             {timelines.map((x, i) => (
-              <TimelineList index={`0${i + 1}`} timeline={x[0]} key="none">
+              <TimelineList index={`0${i + 1}`} timeline={x[0]} key={x[0] + x[1]}>
                 {x[1]}
               </TimelineList>
             ))}
