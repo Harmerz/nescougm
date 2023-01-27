@@ -48,7 +48,7 @@ export function About() {
               src="/aftermovie fix.mp4"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullscreen
+              allowFullScreen
             />
           </div>
         </div>
