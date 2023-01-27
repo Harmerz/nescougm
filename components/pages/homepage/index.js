@@ -1,4 +1,5 @@
 export * from './About'
+export * from './Competition'
 export * from './Hero'
 export * from './Medpart'
 export * from './Paper'
