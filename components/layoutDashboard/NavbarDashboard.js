@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Button } from '../element/button'
 import Image from 'next/image'
-import logo from '../../public/LogoNescoDashboard.svg'
+import logo from '../../public/NescoDashboard.svg'
 
 export default function NavbarDashboard() {
   const styles = {
@@ -33,7 +33,10 @@ export default function NavbarDashboard() {
   })
 
   return (
-    <div className="sticky top-0 w-full" style={visible ? styles.active : styles.hidden}>
+    <div
+      className="sticky top-0 w-[100vw] z-[9999]"
+      style={visible ? styles.active : styles.hidden}
+    >
       <div className="flex justify-between items-center px-[20px] md:px-[100px] py-[48px]">
         <a href="./">
           <Button type="secondary" size="md" className="">
