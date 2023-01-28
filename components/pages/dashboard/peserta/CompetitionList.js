@@ -3,17 +3,16 @@ import { useState } from 'react'
 
 import IconCompetition from '../../../../public/vector/dashboard/admin/CompetitionDashboard.svg'
 import { Button } from '../../../element/button'
-import { CompetitionDataTable } from '../admin/CompetitionDataTable'
 
 export function CompetitionList() {
   const [table, setTable] = useState(false)
   const [competition, setCompetition] = useState('')
-  const [handleComp, setHandleComp] = useState('')
-  const [warning, setWarning] = useState(false)
   const [daftar, setDaftar] = useState(false)
   const [title, setTitle] = useState('Kompetisi yang didaftar')
-  // const handleTitle = (title) => { }
+  const [handleComp, setHandleComp] = useState('')
+  const [warning, setWarning] = useState(false)
 
+  // eslint-disable-next-line react/no-unstable-nested-components
   const ChangeContent = () => {
     return (
       <div className="flex justify-center">
@@ -53,16 +52,17 @@ export function CompetitionList() {
           {title}
         </h1>
         {handleComp === 'Paper' ? (
-          <></>
+          <div className="text-white flex justify-center">{competition}</div>
         ) : handleComp === 'Poster' ? (
-          <></>
+          <div className="text-white flex justify-center">{competition}</div>
         ) : handleComp === 'Video' ? (
-          <></>
+          <div className="text-white flex justify-center">{competition}</div>
         ) : handleComp === '' ? (
           <>
             {daftar ? (
               <div className="flex justify-center gap-[68px] py-[89px]">
                 <button
+                  type="button"
                   onClick={() => [
                     setTable(!table),
                     setCompetition('Paper'),
@@ -73,6 +73,7 @@ export function CompetitionList() {
                   <Image src={IconCompetition} alt="iconPaper" />
                 </button>
                 <button
+                  type="button"
                   onClick={() => [
                     setTable(!table),
                     setCompetition('Poster'),
@@ -83,6 +84,7 @@ export function CompetitionList() {
                   <Image src={IconCompetition} alt="iconPoster" />
                 </button>
                 <button
+                  type="button"
                   onClick={() => [
                     setTable(!table),
                     setCompetition('Video'),
