@@ -1,7 +1,6 @@
 import { BackToTop } from '../../../components/element/BackToTop'
 import DefaultLayoutDashboard from '../../../components/layoutDashboard/DefaultLayoutDashboard'
-import { Hero } from '../../../components/pages/dashboard/admin/Hero'
-import { CompetitionPeserta } from '../../../components/pages/dashboard/peserta'
+import { CompetitionList, Hero } from '../../../components/pages/dashboard/peserta'
 
 export default function DashboardAdmin() {
   return (
@@ -9,7 +8,7 @@ export default function DashboardAdmin() {
       <div>
         <Hero />
         <BackToTop />
-        <CompetitionPeserta />
+        <CompetitionList />
       </div>
     </DefaultLayoutDashboard>
   )

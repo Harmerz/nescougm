@@ -1,4 +1,4 @@
-export const Button = ({ children, type, size, animation }) => {
+export const Button = ({ children, type, size, animation, onClick }) => {
   const buttonType = {
     primary: 'rounded-full bg-c-01 text-c-00 hover:opacity-80 ',
     secondary: 'rounded-full text-c-01 border-2 border-c-01 hover:bg-c-01 hover:text-c-00',
@@ -24,6 +24,7 @@ export const Button = ({ children, type, size, animation }) => {
     <button
       type="submit"
       className={` ${colorClassName} ${sizeClassName} ${animationClassName} transition-all font-bold `}
+      onClick={onClick}
     >
       {children}
     </button>

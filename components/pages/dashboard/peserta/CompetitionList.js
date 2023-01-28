@@ -1,7 +1,6 @@
 import Image from 'next/image'
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 
-import IconCompetition from '../../../../public/vector/dashboard/admin/CompetitionDashboard.svg'
 import { Button } from '../../../element/button'
 
 export function CompetitionList() {
@@ -12,8 +11,7 @@ export function CompetitionList() {
   const [handleComp, setHandleComp] = useState('')
   const [warning, setWarning] = useState(false)
 
-  // eslint-disable-next-line react/no-unstable-nested-components
-  const ChangeContent = () => {
+  const ChangeContent = useCallback(() => {
     return (
       <div className="flex justify-center">
         <div className="flex flex-col gap-[15px] justify-center bg-[#22292F] border-c-02/25 border-[1px] px-[78px] py-[48px] rounded-[10px] text-white">
@@ -24,41 +22,39 @@ export function CompetitionList() {
             </p>
           </h1>
           <div className="flex justify-center gap-[40px]">
-            <div onClick={() => setWarning(!warning)}>
-              <Button size="sm" type="secondary">
+            <div>
+              <Button onClick={() => setWarning(!warning)} size="sm" type="secondary">
                 Batalkan
               </Button>
             </div>
-            <div
-              onClick={() => [
-                setTitle(competition),
-                setHandleComp(competition),
-                setWarning(!warning),
-              ]}
+            <button
+              type="submit"
+              onClick={() => {
+                setTitle(competition)
+                setHandleComp(competition)
+                setWarning(!warning)
+              }}
             >
               <Button size="sm" type="primary">
                 Daftar
               </Button>
-            </div>
+            </button>
           </div>
         </div>
       </div>
     )
-  }
+  }, [competition, warning])
+
   return (
     <section>
       <div className="relative">
         <h1 className="w-[339px] font-jost font-medium bg-gradient-to-r from-c-02 to-c-01 bg-clip-text text-transparent text-[30px]">
           {title}
         </h1>
-        {handleComp === 'Paper' ? (
+        {handleComp !== '' ? (
           <div className="text-white flex justify-center">{competition}</div>
-        ) : handleComp === 'Poster' ? (
-          <div className="text-white flex justify-center">{competition}</div>
-        ) : handleComp === 'Video' ? (
-          <div className="text-white flex justify-center">{competition}</div>
-        ) : handleComp === '' ? (
-          <>
+        ) : (
+          <div>
             {daftar ? (
               <div className="flex justify-center gap-[68px] py-[89px]">
                 <button
@@ -70,7 +66,12 @@ export function CompetitionList() {
                     setWarning(!warning),
                   ]}
                 >
-                  <Image src={IconCompetition} alt="iconPaper" />
+                  <Image
+                    src="/vector/dashboard/admin/CompetitionDashboard.svg"
+                    alt="iconPaper"
+                    width={200}
+                    height={200}
+                  />
                 </button>
                 <button
                   type="button"
@@ -81,7 +82,12 @@ export function CompetitionList() {
                     setWarning(!warning),
                   ]}
                 >
-                  <Image src={IconCompetition} alt="iconPoster" />
+                  <Image
+                    src="/vector/dashboard/admin/CompetitionDashboard.svg"
+                    alt="iconPoster"
+                    width={200}
+                    height={200}
+                  />
                 </button>
                 <button
                   type="button"
@@ -92,7 +98,12 @@ export function CompetitionList() {
                     setWarning(!warning),
                   ]}
                 >
-                  <Image src={IconCompetition} alt="iconVideo" />
+                  <Image
+                    src="/vector/dashboard/admin/CompetitionDashboard.svg"
+                    alt="iconVideo"
+                    width={200}
+                    height={200}
+                  />
                 </button>
               </div>
             ) : (
@@ -100,16 +111,14 @@ export function CompetitionList() {
                 <div className="font-poppins font-bold text-[20px] text-white">
                   Belum ada kompetisi yang terdaftar
                 </div>
-                <div onClick={() => setDaftar(!competition)}>
-                  <Button type="secondary" size="sm">
+                <div>
+                  <Button type="secondary" size="sm" onClick={() => setDaftar(!competition)}>
                     Daftar
                   </Button>
                 </div>
               </div>
             )}
-          </>
-        ) : (
-          <></>
+          </div>
         )}
         {/* pop up disclaimer */}
         <div className="absolute z-40 top-1/3 right-1/3">
