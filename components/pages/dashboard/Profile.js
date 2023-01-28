@@ -6,7 +6,7 @@ import profilePicture from '../../../public/vector/dashboard/dashboard-profile.s
 
 export default function Profile({ icon = profilePicture, posisi = '', nama = '', email = '' }) {
   return (
-    <div className="bg-c-00 h-fit lg:h-[100vh] pt-[150px] pb-[100vh] lg:py-[150px] px-[5%] lg:px-[100px] lg:overflow-hidden">
+    <div className="bg-c-00 ">
       <div className="font-jost text-2xl xl:text-3xl text-transparent bg-clip-text bg-gradient-to-l from-c-01 to-c-02 w-fit">
         Profile
       </div>
