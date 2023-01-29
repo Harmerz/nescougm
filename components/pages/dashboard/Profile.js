@@ -10,7 +10,7 @@ export default function Profile({ icon = profilePicture, posisi = '', nama = '',
       <div className="font-jost text-2xl xl:text-3xl text-transparent bg-clip-text bg-gradient-to-l from-c-01 to-c-02 w-fit">
         Profile
       </div>
-      <div className="bg-[#22292F] min-h-[180px] h-fit lg:h-[28vh] rounded-[10px] flex items-center flex-col lg:flex-row relative">
+      <div className="bg-[#22292F] min-h-[180px] h-fit lg:h-[28vh] rounded-[10px] flex items-center flex-col lg:flex-row relative drop-shadow-[0_0_14px_rgba(0,0,0,0.25)]">
         <div className="mt-[40px] lg:mt-0 lg:ml-[7%] h-full w-[23%] sm:w-[17%] xl:w-[15%]">
           <Image src={icon} alt="icon" className="w-full h-full" />
         </div>
