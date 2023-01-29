@@ -48,7 +48,7 @@ export function CompetitionList() {
   return (
     <section>
       <div className="relative">
-        <h1 className="w-[339px] font-jost font-medium bg-gradient-to-r from-c-02 to-c-01 bg-clip-text text-transparent text-[30px]">
+        <h1 className="w-fit text-lg sm:text-xl lg:text-2xl xl:text-3xl mt-[50px] font-jost font-medium bg-gradient-to-r from-c-02 to-c-01 bg-clip-text text-transparent">
           {title}
         </h1>
         {handleComp !== '' ? (
@@ -108,7 +108,7 @@ export function CompetitionList() {
               </div>
             ) : (
               <div className="flex flex-col items-center gap-[26px] py-[87px] bg-[#22292F] rounded-[10px] drop-shadow-[0_0_14px_rgba(0,0,0,0.25)]">
-                <div className="font-poppins font-bold text-[20px] text-white">
+                <div className="text-sm sm:text-base xl:text-xl font-poppins font-bold text-white text-center">
                   Belum ada kompetisi yang terdaftar
                 </div>
                 <div>
