@@ -7,14 +7,14 @@ import profilePicture from '../../../public/vector/dashboard/dashboard-profile.s
 export default function Profile({ icon = profilePicture, posisi = '', nama = '', email = '' }) {
   return (
     <div className="">
-      <div className="font-jost text-2xl xl:text-3xl text-transparent bg-clip-text bg-gradient-to-l from-c-01 to-c-02 w-fit">
+      <div className="font-jost text-lg sm:text-xl lg:text-2xl xl:text-3xl text-transparent bg-clip-text bg-gradient-to-l from-c-01 to-c-02 w-fit">
         Profile
       </div>
-      <div className="bg-[#22292F] min-h-[180px] h-fit lg:h-[28vh] rounded-[10px] flex items-center flex-col lg:flex-row relative">
+      <div className="bg-[#22292F] min-h-[180px] h-fit lg:h-[28vh] rounded-[10px] flex items-center flex-col lg:flex-row relative drop-shadow-[0_0_14px_rgba(0,0,0,0.25)]">
         <div className="mt-[40px] lg:mt-0 lg:ml-[7%] h-full w-[23%] sm:w-[17%] xl:w-[15%]">
           <Image src={icon} alt="icon" className="w-full h-full" />
         </div>
-        <div className="mt-[20px] lg:mt-0 lg:ml-[4%] flex flex-col items-center lg:items-start text-white font-poppins w-[50%]">
+        <div className="mt-[20px] lg:mt-0 lg:ml-[4%] flex flex-col items-center lg:items-start text-white font-poppins w-full lg:w-[50%]">
           <h2 className="font-jost text-lg sm:text-xl xl:text-2xl text-transparent bg-clip-text bg-gradient-to-l from-c-01 to-c-02 w-fit">
             {posisi}
           </h2>

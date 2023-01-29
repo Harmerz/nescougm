@@ -5,7 +5,7 @@ import { CompetitionPeserta, Hero } from '../../../components/pages/dashboard/pe
 export default function DashboardAdmin() {
   return (
     <DefaultLayoutDashboard title="Dashboard - NESCO UGM 2023">
-      <div>
+      <div className="bg-c-00 min-h-[100vh] pt-[150px] px-[5%] lg:px-[100px] lg:overflow-hidden">
         <Hero />
         <BackToTop />
         <CompetitionPeserta />
