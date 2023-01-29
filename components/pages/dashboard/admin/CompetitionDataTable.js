@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { AiOutlineRollback, AiOutlineSearch } from 'react-icons/ai'
 
 export default function DataTable({ title, onKembali }) {
@@ -7,13 +8,14 @@ export default function DataTable({ title, onKembali }) {
     ['Nekolism', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
     ['neko-neko.fig', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
     ['isyarat sistem dapet A', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
-    ['isyarat sistem dapet A', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
-    ['isyarat sistem dapet A', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
-    ['isyarat sistem dapet A', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
-    ['isyarat sistem dapet A', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
-    ['isyarat sistem dapet A', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
-    ['isyarat sistem dapet A', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
+    ['isyarat sistem dapet B', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
+    ['isyarat sistem dapet C', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
+    ['isyarat sistem dapet D', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
+    ['isyarat sistem dapet E', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
+    ['isyarat sistem dapet F', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
+    ['isyarat sistem dapet G', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
   ]
+  const [hasilPencarian, setHasilPencarian] = useState(isi)
   return (
     <div>
       <div className="flex justify-center items-center">
@@ -43,6 +45,13 @@ export default function DataTable({ title, onKembali }) {
             type="text"
             placeholder="Cari nama kelompok"
             className="ml-[1%] w-full mr-[5%] bg-inherit focus:outline-0 placeholder:text-white/[.20] text-white/[.50]"
+            onChange={(e) =>
+              setHasilPencarian(
+                isi.filter((peserta) =>
+                  peserta[0].toLowerCase().includes(e.target.value.toLowerCase())
+                )
+              )
+            }
           />
         </div>
         <div className="ml-auto flex items-center mr-[3%]">Total: {isi.length}</div>
@@ -65,7 +74,7 @@ export default function DataTable({ title, onKembali }) {
           <div />
         </div>
         <div className="h-[340px] overflow-auto">
-          {isi.map((baris, index) => (
+          {hasilPencarian.map((baris, index) => (
             <div
               key={baris[0] + baris[1]}
               className="grid grid-rows-[60px] grid-cols-[0.4fr_repeat(7,1fr)] justify-items-center items-center"
