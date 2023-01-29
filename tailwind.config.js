@@ -20,6 +20,7 @@ module.exports = {
         'bg-00': '#304352',
         'bg-01': '#252E37',
         'bg-02': '#242B32',
+        'bg-03': '#22292F',
       },
       fontFamily: {
         jost: ['Jost', 'sans-serif'],
