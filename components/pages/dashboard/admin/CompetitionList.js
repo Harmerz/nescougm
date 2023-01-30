@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { useState } from 'react'
 
-import DataTable from './CompetitionDataTable'
+import { DataTable } from './CompetitionDataTable'
 
 export function CompetitionList() {
   const [competition, setCompetition] = useState('')

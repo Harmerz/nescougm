@@ -1,6 +1,7 @@
 import Image from 'next/image'
 
 import { Button } from '../../../element/button'
+import { Pembayaran } from './Pembayaran'
 
 function ButtonDashboard({ children }) {
   return (
@@ -19,7 +20,7 @@ export function CompetitionPeserta() {
       <h1 className="my-12 rounded bg-clip-text bg-gradient-to-t from-c-01 to-c-02 text-transparent text-3xl md:text-5xl px-4 py-2 transition-all font-semibold font-poppins">
         Paper Competition
       </h1>
-      <div className="bg-c-00 xl:w-4/5 w-11/12 items-center justify-center flex md:p-6 py-11">
+      <div className="bg-c-00 xl:w-4/5 w-11/12 items-center justify-center flex flex-col md:p-6 py-11">
         <div className="flex flex-col xl:w-4/5 w-11/12 h-4/5 bg-bg-01 rounded-xl">
           <div className="sm:p-16 py-10 pl-4">
             <div className="bg-c-00 rounded-3xl py-2 px-2 flex justify-center items-center  w-36">
@@ -198,6 +199,7 @@ export function CompetitionPeserta() {
             <Button size="sm">Simpan</Button>
           </div>
         </div>
+        <Pembayaran />
       </div>
     </div>
   )

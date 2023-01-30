@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { AiOutlineRollback, AiOutlineSearch } from 'react-icons/ai'
 
-export default function DataTable({ title, onKembali }) {
+export function DataTable({ title, onKembali }) {
   const isi = [
     ['Haha hihi', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
     ['Tim Juara oye', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', true, ''],
