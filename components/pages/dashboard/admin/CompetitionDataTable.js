@@ -3,17 +3,17 @@ import { AiOutlineRollback, AiOutlineSearch } from 'react-icons/ai'
 
 export function DataTable({ title, onKembali }) {
   const isi = [
-    ['Haha hihi', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
-    ['Tim Juara oye', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', true, ''],
-    ['Nekolism', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
-    ['neko-neko.fig', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
-    ['isyarat sistem dapet A', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
-    ['isyarat sistem dapet B', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
-    ['isyarat sistem dapet C', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
-    ['isyarat sistem dapet D', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
-    ['isyarat sistem dapet E', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
-    ['isyarat sistem dapet F', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
-    ['isyarat sistem dapet G', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
+    ['Haha hihi', '12345', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
+    ['Tim Juara oye', '67890', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', true, ''],
+    ['Nekolism', '11111', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
+    ['neko-neko.fig', '10110', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
+    ['isyarat sistem dapet A', '04010', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
+    ['isyarat sistem dapet B', '12345', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
+    ['isyarat sistem dapet C', '12345', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
+    ['isyarat sistem dapet D', '12345', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
+    ['isyarat sistem dapet E', '12345', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
+    ['isyarat sistem dapet F', '12345', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
+    ['isyarat sistem dapet G', '12345', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
   ]
   const [hasilPencarian, setHasilPencarian] = useState(isi)
   return (
@@ -47,8 +47,10 @@ export function DataTable({ title, onKembali }) {
             className="ml-[1%] w-full mr-[5%] bg-inherit focus:outline-0 placeholder:text-white/[.20] text-white/[.50]"
             onChange={(e) =>
               setHasilPencarian(
-                isi.filter((peserta) =>
-                  peserta[0].toLowerCase().includes(e.target.value.toLowerCase())
+                isi.filter(
+                  (peserta) =>
+                    peserta[0].toLowerCase().includes(e.target.value.toLowerCase()) ||
+                    peserta[1].toLowerCase().includes(e.target.value.toLowerCase())
                 )
               )
             }
@@ -62,9 +64,10 @@ export function DataTable({ title, onKembali }) {
         </div>
       </div>
       <div className="mt-[20px] outline outline-1 outline-c-02/[.60] drop-shadow-[0_0_10px_#0DF8CF20] bg-bg-03 h-[400px] mb-[50px] rounded-[5px] text-white font-poppins">
-        <div className="grid grid-rows-[60px] grid-cols-[0.4fr_repeat(7,1fr)_12px] justify-items-center items-center outline outline-1 outline-c-02/[.60] rounded-t-[5px]">
+        <div className="grid grid-rows-[60px] grid-cols-[0.4fr_repeat(8,1fr)_12px] justify-items-center items-center outline outline-1 outline-c-02/[.60] rounded-t-[5px]">
           <div>No</div>
           <div>Nama tim</div>
+          <div>ID</div>
           <div>Nama ketua</div>
           <div>Email ketua</div>
           <div>Nomor wa</div>
@@ -77,20 +80,21 @@ export function DataTable({ title, onKembali }) {
           {hasilPencarian.map((baris, index) => (
             <div
               key={baris[0] + baris[1]}
-              className="grid grid-rows-[60px] grid-cols-[0.4fr_repeat(7,1fr)] justify-items-center items-center"
+              className="grid grid-rows-[60px] grid-cols-[0.4fr_repeat(8,1fr)] justify-items-center items-center"
             >
               <div>{index + 1}</div>
               <div>{baris[0]}</div>
               <div>{baris[1]}</div>
               <div>{baris[2]}</div>
               <div>{baris[3]}</div>
+              <div>{baris[4]}</div>
               <div>
                 <button type="submit" href="#?">
                   <div className="font-bold underline">Lihat Detail</div>
                 </button>
               </div>
-              <div>{baris[4] ? '1' : '0'}</div>
-              <div>{baris[5]}</div>
+              <div>{baris[5] ? '1' : '0'}</div>
+              <div>{baris[6]}</div>
               <div className="h-[1px] col-span-full bg-c-02/[.60] w-[97%]" />
             </div>
           ))}
