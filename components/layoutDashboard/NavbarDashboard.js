@@ -6,7 +6,7 @@ import { Button } from '../element/button'
 
 export function NavbarDashboard() {
   return (
-    <div className="w-[100vw] z-[9999] bg-c-00">
+    <div className="w-[100%] z-[9999] bg-c-00">
       <div className="flex justify-between items-center px-[20px] md:px-[100px] py-[48px]">
         <Link href="/">
           <Button type="secondary" size="md" className="">
