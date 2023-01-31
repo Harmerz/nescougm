@@ -19,3 +19,13 @@
   background: #00769a;
 }
 /* Scroll Bar Syle */
+
+/* react-slick style */
+.slick-slide {
+  padding: 0 10px;
+}
+
+.slick-list {
+  margin: 0 -10px;
+}
+/* react-slick style */
