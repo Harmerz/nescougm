@@ -5,7 +5,6 @@ import {
   Hero,
   HomePageCompetition,
   Medpart,
-  Paper,
   Photo,
   Webinar,
 } from '../components/pages/homepage'
@@ -17,7 +16,6 @@ export default function Home() {
         <Hero />
         <About />
         <HomePageCompetition />
-        <Paper />
         <Webinar />
         <Photo />
         <Medpart />
