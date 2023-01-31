@@ -30,7 +30,7 @@ export function HomePageCompetition() {
   const [activeIndex, setActiveIndex] = useState(0)
 
   return (
-    <div className="h-[100vh] justify-center items-center flex bg-c-00">
+    <div className="h-[100vh] justify-center items-center flex bg-c-00 overflow-hidden">
       <div className="w-4/5 border-4 border-c-01 h-1/2 rounded-xl flex  ">
         <div className="flex place-self-center flex-col">
           <div className="justify-between flex flex-row items-center">
