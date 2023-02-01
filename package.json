@@ -16,7 +16,7 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.6.0",
     "react-responsive-carousel": "^3.2.23",
-    "swiper": "^8.4.6"
+    "swiper": "^9.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",

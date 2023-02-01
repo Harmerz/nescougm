@@ -3,7 +3,7 @@ export function Faq() {
     {
       Question: 'Alur cara daftar lombanya bagaimana?',
       Answer: 'Peserta bisa memahami alur pendaftaran lomba pada guidebook berikut:   ',
-      A: ' -Paper Competition  : ',
+      A: ' -Paper Competition  :',
       B: ' -Poster Competition : ',
       C: ' -Video Competition  :',
       D: '',
@@ -77,7 +77,7 @@ export function Faq() {
       <div className="uppercase text-white text-lg font-semibold font-poppins mt-[13px] ">
         frequently asked question
       </div>
-      <ul className="space-y-4 mx-[32px] md:mx-[40px] mt-[50px] brightness-75 mx-[7px] md:mt-[60px] lg:mt-[83px] mb-[100px] ">
+      <ul className="space-y-4 mx-6 md:mx-[40px] mt-[50px] brightness-75 mx-[7px] md:mt-[60px] lg:mt-[83px] mb-[100px] ">
         {FaqEdit.map((route) => {
           return (
             <div

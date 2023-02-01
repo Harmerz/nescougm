@@ -1,9 +1,10 @@
-import { DefaultLayout } from '../components/layout/DefaultLayout'
+import { Page404 } from '../components/pages/dashboard/Error404'
+
 export function NotFound() {
   return (
-    <DefaultLayout title="Page not found - NESCO UGM 2023">
-      <div className="flex justify-center items-center pt-[100px]">404 - Salah link mas</div>
-    </DefaultLayout>
+    <div title="Page not found - NESCO UGM 2023">
+      <Page404 />
+    </div>
   )
 }
 export default NotFound
