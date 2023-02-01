@@ -28,8 +28,8 @@ export default function TimelineList({ children, index, timeline }) {
         >
           <div
             className={`text-lg sm:text-2xl md:text-3xl lg:text-xl xl:text-2xl 2xl:text-3xl font-jost text-transparent bg-clip-text bg-gradient-to-b from-c-01 to-c-02 flex items-center mb-[2%] ${
-              index % 2 === 1 ? 'justify-end' : 'justify-start'
-            } lg:justify-start`}
+              index % 2 === 1 ? 'text-right' : 'text-left'
+            } lg:text-left`}
           >
             {timeline}
           </div>
