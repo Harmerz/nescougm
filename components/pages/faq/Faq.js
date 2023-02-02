@@ -3,7 +3,7 @@ export function Faq() {
     {
       Question: 'Alur cara daftar lombanya bagaimana?',
       Answer: 'Peserta bisa memahami alur pendaftaran lomba pada guidebook berikut:   ',
-      A: ' -Paper Competition  : ',
+      A: ' -Paper Competition  :',
       B: ' -Poster Competition : ',
       C: ' -Video Competition  :',
       D: '',
@@ -66,20 +66,18 @@ export function Faq() {
     },
   ]
   return (
-    <div className="justify-start bg-gradient-to-br from-c-00 to-bg-01 h-[300vh]  flex items-center flex-col">
-      <div>
-        <div
-          className="
-          flex items-center justify-center bg-clip-text text-transparent bg-gradient-to-t from-c-02 to-c-01 text-7xl font-extrabold uppercase text-white font-jost absolut 
-          mt-[300px] md:mt-[370px] lg:mt-[190px]"
-        >
-          FAQ
-        </div>
-        <div className="uppercase text-white text-lg font-semibold font-poppins ">
-          frequently asked question
-        </div>
+    <div className=" justify-start  flex items-center flex-col bg-gradient-to-br from-c-00 to-bg-01 border-black ">
+      <div
+        className=" 
+        bg-clip-text text-transparent bg-gradient-to-t from-c-02 to-c-01 text-6xl sm:text-7xl font-extrabold uppercase text-white font-jost  
+        mt-[100px] md:mt-[150px] lg:mt-[196px]"
+      >
+        FAQ
       </div>
-      <ul className="space-y-4 absolute mt-[430px] brightness-75 mx-[7px] md:mt-[500px] lg:mt-[315px]">
+      <div className="uppercase text-white text-lg font-semibold font-poppins mt-[13px] ">
+        frequently asked question
+      </div>
+      <ul className="space-y-4 mx-6 md:mx-[40px] mt-[50px] brightness-75 mx-[7px] md:mt-[60px] lg:mt-[83px] mb-[100px] ">
         {FaqEdit.map((route) => {
           return (
             <div
@@ -91,8 +89,8 @@ export function Faq() {
                 className="peer absolute top-0 inset-x-0 w-full h-12 opacity-0 z-10 cursor-pointer"
               />
               <div
-                className="font-poppins  text-[12px] sm:text-[13.38px] leading-[18px] font-normal flex items-center py-[5px] pl-[10px] lg:py-[18px] lg:pl-[30
-                    px] lg:text-[16px] lg:h-12  md:h-10 h-8"
+                className="font-poppins  text-[11px] sm:text-[13.38px] leading-[18px] font-normal flex items-center py-[5px] pl-[10px] lg:py-[18px] lg:pl-[30
+                    px] lg:text-[16px] lg:h-12  md:h-10 h-8 w-[285px] sm:w-auto"
               >
                 <h1>{route.Question}</h1>
               </div>
@@ -126,8 +124,8 @@ export function Faq() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 12h-15" />
                 </svg>
               </div>
-              <div className=" overflow-y-hidden transition-all duration-500 max-h-0 peer-checked:max-h-40">
-                <div className="pt-[3px] font-poppins text-[11px] sm:text-[14px] leading-[18px] lg:text-[15px] lg:leading-[18px] font-normal text-justify px-[10px] lg:pt-[30px] lg:pl-[30px] lg:pr-[60px] h-[200px] lg:pt-[10px]">
+              <div className=" overflow-y-hidden transition-all duration-500 max-h-0 peer-checked:max-h-48">
+                <div className="pt-[3px] font-poppins text-[11px] sm:text-[14px] leading-[18px] lg:text-[15px] lg:leading-[18px] font-normal text-justify px-[10px] lg:pt-[30px] lg:pl-[30px] lg:pr-[60px ] lg:pt-[10px]">
                   <p>{route.Answer}</p>
                   <div className="font-poppins text-[11px] sm:text-[14px] leading-[18px] lg:text-[15px] lg:leading-[18px] font-normal text-justify pl-[10px] pt-[5px] flex flex-col space-y-1 lg:pt-[7px] lg:space-y-2">
                     <p>{route.A}</p>
