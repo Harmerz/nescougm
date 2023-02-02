@@ -1,9 +1,28 @@
 import 'aos/dist/aos.css'
 
 import AOS from 'aos'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { useEffect } from 'react'
 
+const draw = {
+  hidden: { x: -200 },
+  visible: (i) => {
+    const delay = 1 + i * 0.5
+    return {
+      x: 0,
+      transition: {
+        delay,
+        type: 'spring',
+        duration: 1,
+        bounce: 0,
+        repeat: Infinity,
+        repeatType: 'mirror',
+        repeatDelay: 2,
+      },
+    }
+  },
+}
 export function About() {
   useEffect(() => {
     AOS.init({
@@ -12,50 +31,152 @@ export function About() {
     })
   }, [])
   return (
-    <div className="shadow-xl h-[100vh] bg-gradient-to-t p-[6px] from-c-01 to-bg-02">
-      <div className="grid items-center bg-bg-02 h-[98vh]">
-        <div className="flex invisible sm:visible justify-start self-start h-[5vh] sm:h-[5vh] sm:ml-10 sm:mt-5">
-          <div className="invisible sm:visible sm:w-[70px] sm:h-[60px] lg:w-[85.63px] lg:h-[65.85px] relative">
-            <Image src="/Group 4.svg" alt="vektor" fill />
-          </div>
-        </div>
-
-        <div
-          data-aos="fade-up"
-          data-aos-duration="2000"
-          data-aos-delay="500"
-          className="lg:flex grid justify-center place-items-center h-[88vh] sm:h-[78vh] aos-init"
-        >
-          <div className=" grid self-start sm:self-start lg:self-center place-self-center w-[250px] sm:w-[500px] lg:w-[450px] xl:w-[550px] sm:mt-4 lg:ml-8 xl:ml-0 xl:mr-16">
-            <div className="text-[18px] lg:text-[32px] xl:text-[42px] text-center lg:text-justify font-bold font-poppins leading-[43.15px] text-transparent bg-clip-text bg-gradient-to-br from-c-01 to-c-02">
-              {' '}
-              Lorem Ipsum sit dolor amet{' '}
-            </div>
-            <div className="w-[250px] sm:w-[500px] lg:w-[420px] xl:w-[550px] text-[12px] md:text-[15px] xl:text-[15px] text-justify font-medium font-poppins leading-[36.75px] mt-4 sm:mt-4 lg:mt-8 text-white">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-              dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-              mollit anim id est laborum. Sed ut perspiciatis unde omni.
-            </div>
-          </div>
-
-          <div className="lg:self-center sm:self-end aspect-video lg:ml-8 lg:mb-12 xl:mb-0 xl:ml-20 row-start-1">
-            <iframe
-              title="This is a unique title"
-              className="rounded-xl w-[250px] h-[140px] sm:w-[360px] sm:h-[202.5px] lg:w-[420px] lg:h-[236px] xl:w-[520px] xl:h-[292.5px]"
-              src="/aftermovie fix.mp4"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
+    <div className="shadow-2xl rounded-sm min-h-screen bg-gradient-to-t pr-[8px] pt-[0px] pb-[6px] pl-[8px] from-c-01 to-bg-02">
+      <div className="grid relative rounded-lg content-center bg-c-00 min-h-screen py-16 px-8 sm:p-0">
+        <div className="hidden sm:flex min-h-fit lg:h-[14vh] sm:px-20 lg:px-24 justify-start">
+          <motion.div
+            animate={{
+              scale: [1, 2, 2, 1, 1],
+              rotate: [0, 0, 180, 180, 0],
+              borderRadius: ['0%', '0%', '50%', '50%', '0%'],
+            }}
+            transition={{
+              duration: 2,
+              ease: 'easeInOut',
+              times: [0, 0.2, 0.5, 0.8, 1],
+              repeat: Infinity,
+              repeatDelay: 1,
+            }}
+            className="sm:w-[70px] sm:h-[60px] lg:w-[85.63px] lg:h-[60.85px] place-self-end lg:place-self-center"
+          >
+            <Image
+              className="h-full w-full"
+              width={0}
+              height={0}
+              src="/homepageassets/Group 4.svg"
+              alt="vektor"
             />
+          </motion.div>
+        </div>
+
+        <div className="h-[200px] w-[200px] sm:h-[281px] sm:w-[281px] absolute top-20 left-0 lg:top-1/4 lg:left-10">
+          <div className="h-full w-full bg-gradient-to-b from-c-02 to-bg-02 opacity-20 rounded-full blur-xl contrast-100 brightness-500 drop-shadow-xl saturate-500" />
+        </div>
+        <div className="h-[200px] w-[200px] sm:h-[281px] sm:w-[281px] h-[281px] w-[281px] absolute top-2/3  lg:top-2/3 lg:right-10 justify-self-end">
+          <div className="h-full w-full bg-gradient-to-b from-c-02 to-bg-02 opacity-20 rounded-full blur-xl contrast-100 brightness-500 drop-shadow-xl saturate-500" />
+        </div>
+
+        <div className="max-w-[1560px] min-h-fit mx-auto grid lg:flex self-center gap-8 lg:gap-10 sm:py-8 sm:px-20 lg:py-12 aos-init">
+          <div className="lg:w-1/2 justify-center m-0 lg:m-auto lg:order-last">
+            <div
+              data-aos="fade-in"
+              data-aos-duration="2000"
+              data-aos-delay="500"
+              className="aspect-video flex items-center"
+            >
+              <iframe
+                width="853"
+                height="480"
+                className="h-4/5 w-4/5 m-auto rounded-xl"
+                src="aftermovie fix.mp4"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                title="Embedded youtube"
+              />
+            </div>
+          </div>
+          <div
+            data-aos="fade-in"
+            data-aos-duration="2000"
+            data-aos-delay="500"
+            className="lg:w-1/2 flex flex-col justify-center justify-items-center gap-8"
+          >
+            <h1 className="text-white md:text-4xl sm:text-2xl text-xl font-bold text-center lg:text-left py-2">
+              National{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#05C2FC] to-[#0DF8CF]">
+                Electrical
+              </span>{' '}
+              Power System Competition
+            </h1>
+
+            <p
+              data-aos="fade-up"
+              data-aos-duration="2000"
+              data-aos-delay="500"
+              className="text-[12px] sm:text-[15px] xl:text-[15px] text-justify font-medium font-jost leading-[36.75px] text-white pb-10 lg:pb-0"
+            >
+              National Electrical Power System Competition (NESCO) merupakan sebuah kompetisi
+              tingkat nasional Badan Semi Otonom (BSO) Magatrika (Mahasiswa Ketenagalistrikan) yang
+              berada di bawah arahan Keluarga Mahasiswa Teknik Elektro dan Teknologi Informasi
+              Fakultas Teknik Universitas Gadjah Mada (KMTETI FT UGM) yang membahas mengenai
+              permasalahan listrik tegangan tinggi yang bertujuan untuk meningkatkan perkembangan
+              ketenagalistrikan khususnya di Indonesia.
+            </p>
           </div>
         </div>
 
-        <div className="invisible sm:visible flex justify-end self-end h-[5vh] sm:h-[10vh] sm:mr-4 lg:mr-24 xl:mr-56 mb-5">
-          <Image width={338} height={403.5} src="/Group 608.svg" alt="vektor" />
-        </div>
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          className="hidden sm:flex min-h-fit lg:h-[14vh] sm:px-20 lg:px-20 xl:px-40 justify-end"
+        >
+          <motion.div
+            variants={draw}
+            custom={4}
+            className="place-self-center sm:w-[150px] sm:h-[100px] lg:w-[200px] lg:h-[150px] xl:w-[300px] xl:h-[190px]"
+          >
+            <Image
+              className="h-full w-full"
+              width={0}
+              height={0}
+              src="/homepageassets/Vector 212.svg"
+              alt="vektor"
+            />
+          </motion.div>
+
+          <motion.div
+            variants={draw}
+            custom={3}
+            className="place-self-center sm:w-[75px] sm:h-[100px] lg:w-[100px] lg:h-[150px] xl:w-[120px] xl:h-[190px]"
+          >
+            <Image
+              className="h-full w-full"
+              width={0}
+              height={0}
+              src="/homepageassets/Vector 213.svg"
+              alt="vektor"
+            />
+          </motion.div>
+
+          <motion.div
+            variants={draw}
+            custom={2}
+            className="place-self-center sm:w-[75px] sm:h-[100px]  lg:w-[100px] lg:h-[150px] xl:w-[120px] xl:h-[190px]"
+          >
+            <Image
+              className="h-full w-full"
+              width={0}
+              height={0}
+              src="/homepageassets/Vector 214.svg"
+              alt="vektor"
+            />
+          </motion.div>
+
+          <motion.div
+            variants={draw}
+            custom={1}
+            className="place-self-center sm:w-[75px] sm:h-[100px] lg:w-[100px] lg:h-[150px] xl:w-[120px] xl:h-[190px]"
+          >
+            <Image
+              className="h-full w-full"
+              width={0}
+              height={0}
+              src="/homepageassets/Vector 215.svg"
+              alt="vektor"
+            />
+          </motion.div>
+        </motion.div>
       </div>
     </div>
   )
