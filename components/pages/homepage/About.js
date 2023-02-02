@@ -92,19 +92,17 @@ export function About() {
             data-aos-delay="500"
             className="lg:w-1/2 flex flex-col justify-center justify-items-center gap-8"
           >
-            <h1 className="text-white md:text-4xl sm:text-2xl text-xl font-bold text-center lg:text-left py-2">
+            <h1 className="text-white md:text-[42px] md:leading-[43.2px] sm:text-2xl 2xl:text-[50px] lg:leading-[50px] text-xl font-bold font-jost text-center lg:text-left pt-2">
               National{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#05C2FC] to-[#0DF8CF]">
-                Electrical
-              </span>{' '}
-              Power System Competition
+              <span className="text-transparent bg-clip-text bg-[#0DF8CF]">Electrical</span> Power
+              System Competition
             </h1>
 
             <p
               data-aos="fade-up"
               data-aos-duration="2000"
               data-aos-delay="500"
-              className="text-[12px] sm:text-[15px] xl:text-[15px] text-justify font-medium font-jost leading-[36.75px] text-white pb-10 lg:pb-0"
+              className="text-[12px] sm:text-[15px] xl:text-[16px] text-justify font-medium font-poppins leading-[36.75px] text-white pb-10 lg:pb-0"
             >
               National Electrical Power System Competition (NESCO) merupakan sebuah kompetisi
               tingkat nasional Badan Semi Otonom (BSO) Magatrika (Mahasiswa Ketenagalistrikan) yang

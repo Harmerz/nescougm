@@ -26,9 +26,9 @@ export function Webinar() {
             data-aos="fade-in"
             data-aos-duration="2000"
             data-aos-delay="500"
-            className="text-white md:text-4xl sm:text-3xl text-xl font-bold text-justify font-poppins text-transparent bg-clip-text bg-gradient-to-br from-c-01 to-c-02 py-2 aos-init"
+            className="text-white md:text-[42px] 2xl:text-[50px] sm:text-3xl text-xl font-bold text-justify font-jost py-2 aos-init"
           >
-            Lorem Ipsum sit dolor amet
+            Seminar <span className="text-transparent bg-clip-text bg-[#0DF8CF]">Nasional</span>
           </h1>
         </div>
 
@@ -48,14 +48,11 @@ export function Webinar() {
             />
           </div>
           <div className="lg:w-1/2 flex flex-col justify-center">
-            <h2 className="text-[12px] sm:text-[15px] xl:text-[15px] text-justify font-medium font-jost leading-[36.75px] text-white pb-10 lg:pb-0">
+            <h2 className="text-[12px] sm:text-[15px] md:text-[16px] text-justify font-poppins leading-[36.75px] text-white pb-10 lg:pb-0">
               {' '}
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-              dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-              mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit
+              Seminar Nasional adalah seminar yang diadakan oleh NESCO tiap tahunnya dengan tema
+              ketenagalistrikan untuk menjadi ruang diskusi dan upaya mengenalkan serta mendorong
+              perkembangan sistem ketenagalistrikan di kalangan masyarakat umum.
             </h2>
           </div>
         </div>

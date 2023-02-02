@@ -30,7 +30,7 @@ function Caraousel({ images }) {
       onMouseLeave={() => {
         setAutoPlay(true)
       }}
-      className=" hidden sm:block rounded-xl shadow-lg h-full bg-gradient-to-r p-[4px] from-[#0DF8CF] to-[#05C2FC]"
+      className=" hidden sm:block rounded-xl shadow-lg h-full bg-gradient-to-r p-[2px] from-[#0DF8CF] to-[#05C2FC]"
     >
       <div className="flex flex-col justify-between h-full bg-[#D9D9D9] text-black rounded-lg">
         <div className="relative h-full w-full">
@@ -45,8 +45,8 @@ function Caraousel({ images }) {
                 }
               >
                 <Image
-                  width={0}
-                  height={0}
+                  width={1500}
+                  height={1000}
                   className="w-full object-cover"
                   src={image.image}
                   alt="/"
@@ -57,14 +57,14 @@ function Caraousel({ images }) {
           <button
             data-collapse-toggle="navbar-default"
             type="button"
-            className="hidden absolute text-[40px] bottom-1/2 bg-[white] flex justify-center items-center w-[30px] h-[30px] rounded-lg  cursor-pointer translate-y-2/4 left-4 left-4"
+            className="sm:hidden absolute text-[40px] bottom-1/2 bg-[white] flex justify-center items-center w-[30px] h-[30px] rounded-lg  cursor-pointer translate-y-2/4 left-4"
             onClick={() => slideLeft(!current)}
           >
             <Image src="/icon/left.png" width={30} height={20} alt="List" />
           </button>
           <button
             type="button"
-            className="hidden absolute text-[40px] bottom-1/2 bg-[white] flex justify-center items-end w-[30px] h-[30px] rounded-lg cursor-pointer translate-y-2/4 right-4"
+            className="sm:hidden absolute text-[40px] bottom-1/2 bg-[white] flex justify-center items-end w-[30px] h-[30px] rounded-lg cursor-pointer translate-y-2/4 right-4"
             onClick={() => slideRight(!current)}
           >
             <Image src="/icon/right.png" width={30} height={20} alt="List" />

@@ -137,15 +137,15 @@ export function Photo() {
           <div className="h-full w-full bg-gradient-to-b from-c-02 to-bg-02 opacity-20 rounded-full blur-xl contrast-100 brightness-500 drop-shadow-xl saturate-500" />
         </div>
 
-        <div className="hidden md:grid min-h-fit w-full sm:px-10 py-10 lg:px-24  justify-self-center">
+        <div className="hidden md:grid min-h-fit w-full sm:px-10 pb-10 lg:px-24  justify-self-center">
           <div
             data-aos="fade-in"
             data-aos-duration="2000"
             data-aos-delay="500"
-            className="flex justify-center sm:mt-0 sm:mb-0 aos-init"
+            className="flex justify-center sm:mt-0 sm:mb-0 aos-init pb-[30px] 2xl:pb-[71px]"
           >
-            <div className="self-center text-[30px] sm:text-[42px] lg:text-[50px] text-justify font-bold font-poppins leading-[40.15px] text-white ">
-              Lorem Ipsum
+            <div className="font-jost font-bold self-center text-[30px] sm:text-[42px] lg:text-[50px] text-justify leading-[40.15px] text-white ">
+              Gallery <span className="text-transparent bg-clip-text bg-[#0DF8CF]">NESCO</span>
             </div>
           </div>
 
@@ -167,7 +167,7 @@ export function Photo() {
               </div>
             </div>
 
-            <div className="flex gap-4 sm:pl-20 sm:pr-16 lg:pl-28 lg:pr-20 xl:pl-40 xl:pr-20 ">
+            <div className="flex gap-4 sm:pl-20 sm:pr-16 lg:pl-28 lg:pr-20 xl:pl-[135px] xl:pr-20 2xl:pl-52">
               <div className="basis-1/4 sm:h-[225px] lg:h-[275px] xl:h-[320px] self-end">
                 <Caraousel images={imageSlide4} />
               </div>
@@ -194,7 +194,7 @@ export function Photo() {
             data-aos-delay="500"
             className="flex justify-center aos-init"
           >
-            <h1 className="text-white md:text-4xl sm:text-3xl text-xl font-bold text-justify font-poppins text-white py-2 aos-init">
+            <h1 className=" md:text-4xl sm:text-3xl text-xl font-bold text-justify font-poppins text-white py-2 aos-init">
               Lorem Ipsum
             </h1>
           </div>
@@ -214,8 +214,8 @@ export function Photo() {
                   >
                     <div className="relative w-full h-full mt-o mr-auto cursor-grab items-center bg-c-00 rounded-lg">
                       <Image
-                        width={0}
-                        height={0}
+                        width={1500}
+                        height={1000}
                         className="block w-full h-full object-cover rounded-lg"
                         src={image.image}
                         alt="/"
