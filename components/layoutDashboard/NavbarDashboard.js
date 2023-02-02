@@ -1,9 +1,11 @@
-import { useState, useEffect } from 'react'
-import { Button } from '../element/button'
+/* eslint-disable no-undef */
 import Image from 'next/image'
-import logo from '../../public/NescoDashboard.svg'
+import { useEffect, useState } from 'react'
 
-export default function NavbarDashboard() {
+import logo from '../../public/NescoDashboard.svg'
+import { Button } from '../element/button'
+
+export function NavbarDashboard() {
   const styles = {
     active: {
       visibility: 'visible',

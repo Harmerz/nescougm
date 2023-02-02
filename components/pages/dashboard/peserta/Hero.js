@@ -3,7 +3,7 @@ import Profile from '../Profile'
 export function Hero() {
   return (
     <section>
-      <Profile posisi="Admin" nama="Halo KSK" email="ksk@gmail.com" />
+      <Profile posisi="Leader" nama="gatau namanya siapa" email="gatausiapa@gmail.com" />
     </section>
   )
 }

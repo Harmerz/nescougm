@@ -1,5 +1,5 @@
-import { DefaultLayout, Footer } from '../components/layout'
 import { BackToTop } from '../components/element/BackToTop'
+import { DefaultLayout, Footer } from '../components/layout'
 import { Faq } from '../components/pages/faq'
 
 export default function FAQ() {
