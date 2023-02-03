@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 import Image from 'next/image'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 import logo from '../../public/NescoDashboard.svg'
@@ -39,18 +40,18 @@ export function NavbarDashboard() {
       className="sticky top-0 w-[100vw] z-[9999]"
       style={visible ? styles.active : styles.hidden}
     >
-      <div className="flex justify-between items-center px-[20px] md:px-[100px] py-[48px]">
-        <a href="./">
+      <div className="flex justify-between items-center px-5 md:px-[100px] py-6 bg-c-00">
+        <Link href="/">
           <Button type="secondary" size="md" className="">
             Return to Homepage
           </Button>
-        </a>
-        <a
-          href="./"
+        </Link>
+        <Link
+          href="/"
           className="hidden md:flex transition duration-300 ease-in-out hover:scale-125 transform active:scale-105 active:opacity-50 "
         >
           <Image src={logo} alt="logo" />
-        </a>
+        </Link>
       </div>
     </div>
   )
