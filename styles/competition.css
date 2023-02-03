@@ -1,0 +1,40 @@
+.competition-shape {
+  stroke-dasharray: 20 580;
+  stroke-dashoffset: -550;
+  stroke-width: 4px;
+  stroke: #0df8cf;
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+}
+.competition-shape2 {
+  stroke-dasharray: 140 580;
+  stroke-dashoffset: -400;
+  stroke-width: 4px;
+  stroke: #0df8cf;
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+}
+.competition-shape3 {
+  stroke-dasharray: 120 580;
+  stroke-dashoffset: -100;
+  stroke-width: 4px;
+  stroke: #0df8cf;
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+}
+.svg-wrapper:hover .competition-shape3 {
+  stroke-width: 4px;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 760;
+}
+.svg-wrapper:hover .competition-shape2 {
+  stroke-width: 4px;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 760;
+}
+.competition-text {
+  font-family: 'Roboto Condensed';
+  font-size: 22px;
+  line-height: 32px;
+  letter-spacing: 8px;
+  color: #fff;
+  top: -48px;
+  position: relative;
+}
