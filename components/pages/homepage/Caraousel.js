@@ -19,8 +19,6 @@ function Caraousel({ images }) {
         slideRight()
       }, 2500)
   })
-
-  console.log(current)
   return (
     <div
       onMouseEnter={() => {
