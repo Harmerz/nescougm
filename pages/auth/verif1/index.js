@@ -7,3 +7,5 @@ export function VerifikasiPage() {
     </div>
   )
 }
+
+export default VerifikasiPage
