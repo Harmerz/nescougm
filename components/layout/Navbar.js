@@ -18,13 +18,17 @@ const Icon = ({ active = true }) => {
 export function Navbar() {
   const [yOffset, setYOffset] = useState(typeof window !== 'undefined' ? window?.pageYOffset : 0)
   const [visible, setVisible] = useState(true)
+  const [dropDown, setDropDown] = useState(false)
+  const [dropDownCompetition, setDropDownCompetition] = useState(false)
 
   function handleScroll() {
     const currentYOffset = window.pageYOffset
-    const temp = yOffset >= currentYOffset
+    const naik = yOffset >= currentYOffset
 
     setYOffset(currentYOffset)
-    setVisible(temp)
+    setVisible(naik)
+    setDropDown(dropDown && visible)
+    setDropDownCompetition(dropDownCompetition && visible)
   }
 
   const router = useRouter()
@@ -86,8 +90,6 @@ export function Navbar() {
     },
   }
 
-  const [dropDown, setDropDown] = useState(false)
-  const [dropDownCompetition, setDropDownCompetition] = useState(false)
   return (
     <nav
       className={`bg-c-00 px-2 sm:px-4 border-b-[5px] py-2 border-c-01 border-t-4 md:rounded-none ${
@@ -176,6 +178,7 @@ export function Navbar() {
                             <Link
                               href={`/competition/${competition.value}`}
                               className="block px-4 py-2 hover:text-c-01 text-md font-semibold font-poppins"
+                              onClick={() => setDropDownCompetition(false)}
                             >
                               {competition.name}
                             </Link>
