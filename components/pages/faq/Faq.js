@@ -68,10 +68,10 @@ export function Faq() {
   return (
     <div className=" justify-start  flex items-center flex-col bg-c-00 border-black ">
       <div className="h-[200px] w-[200px] sm:h-[281px] sm:w-[281px] absolute top-20 left-0 lg:top-1/4 lg:left-10">
-          <div className="h-full w-full bg-gradient-to-b from-c-01 to-bg-02 opacity-20 rounded-full blur-xl contrast-100 brightness-500 drop-shadow-xl saturate-500" />
+        <div className="h-full w-full bg-gradient-to-b from-c-01 to-bg-02 opacity-20 rounded-full blur-xl contrast-100 brightness-500 drop-shadow-xl saturate-500" />
       </div>
       <div className="h-[200px] w-[200px] sm:h-[481px] sm:w-[481px] absolute top-1/2 right-0 lg:top-1/2 lg:right-10">
-          <div className="h-full w-full bg-gradient-to-b from-c-01 to-bg-02 opacity-20 rounded-full blur-xl contrast-100 brightness-500 drop-shadow-xl saturate-500" />
+        <div className="h-full w-full bg-gradient-to-b from-c-01 to-bg-02 opacity-20 rounded-full blur-xl contrast-100 brightness-500 drop-shadow-xl saturate-500" />
       </div>
       <div
         className=" 
@@ -87,7 +87,7 @@ export function Faq() {
         {FaqEdit.map((route) => {
           return (
             <div
-              className="relative  lg:w-[752px] overflow-hidden bg-transparent text-white border-black  rounded-[10px] shadow-[2px_2px_8px] shadow-c-02 absolute "
+              className="relative  lg:w-[752px] overflow-hidden bg-transparent text-white border-black  rounded-[10px] shadow-[2px_2px_8px] shadow-c-02 "
               key={route.key}
             >
               <input
