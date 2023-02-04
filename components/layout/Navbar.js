@@ -57,9 +57,9 @@ export function Navbar() {
       ],
     },
     {
-      path: '/webinar',
-      name: 'Webinar',
-      key: 'webinar',
+      path: '/seminar',
+      name: 'Seminar',
+      key: 'seminar',
     },
     {
       path: '/merch',
@@ -90,17 +90,15 @@ export function Navbar() {
   const [dropDownCompetition, setDropDownCompetition] = useState(false)
   return (
     <nav
-      className={`bg-c-00 px-2 sm:px-4 border-b-[5px] py-2 border-c-01 border-t-4 md:rounded-none ${
+      className={`bg-c-00 px-2 sm:px-4 border-b-[2px] border-t-[2px] md:border-b-[3px] md:border-t-[3px] py-2 lg:py-0 border-c-01  md:rounded-none ${
         dropDown ? 'rounded-b-3xl' : ''
       } w-[100vw] z-[9999]`}
       style={visible ? styles.active : styles.hidden}
     >
       <div className="container flex flex-wrap justify-between lg:justify-around items-center mx-auto">
-        <Link href="/" className="flex items-center">
-          <div className="flex">
-            <div className="flex justify-items-center place-items-center content-center mr-2 h-10 relative w-40">
-              <Image src="/Nesco.png" alt="Nesco" fill />
-            </div>
+        <Link href="/" className="">
+          <div className="w-2/3 md:w-full md:h-full flex  ">
+            <Image src="/Nesco.png" alt="Nesco" width={146.33} height={43} />
           </div>
         </Link>
         <button
@@ -213,7 +211,7 @@ export function Navbar() {
           }`}
         >
           <Link href="/signin" className="md:p-4 py-2 flex justify-center">
-            <Button color="primary">SignIn</Button>
+            <Button color="primary">Sign In</Button>
           </Link>
         </div>
       </div>
