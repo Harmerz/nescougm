@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
@@ -19,8 +20,6 @@ function Caraousel({ images }) {
         slideRight()
       }, 2500)
   })
-
-  console.log(current)
   return (
     <div
       onMouseEnter={() => {
