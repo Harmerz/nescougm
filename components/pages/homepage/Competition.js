@@ -234,7 +234,7 @@ export function HomePageCompetition() {
                       <ScrollUpCompetition2 />
                     </SwiperSlide>
                   </Swiper>
-                  <Swiper
+                  {/* <Swiper
                     onSlideChange={(e) => setActiveIndex(e.activeIndex)}
                     // pagination={{
                     //   clickable: true,
@@ -283,7 +283,7 @@ export function HomePageCompetition() {
                     >
                       <ScrollUpCompetition2 />
                     </SwiperSlide>
-                  </Swiper>
+                  </Swiper> */}
                 </div>
               </div>
             </div>
