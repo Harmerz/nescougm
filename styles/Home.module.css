@@ -127,3 +127,10 @@
     filter: invert(1);
   }
 }
+.h1 {
+  color: transparent;
+  background-image: linear-gradient(to bottom right, rgba(13, 248, 207, 1), rgba(5, 194, 252, 1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(2px 0px 1px #0df8cf);
+}

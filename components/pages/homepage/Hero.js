@@ -5,6 +5,8 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { useEffect } from 'react'
 
+import styles from '../../../styles/Home.module.css'
+
 const draw = {
   hidden: { pathLength: 0, opacity: 0 },
   visible: (i) => {
@@ -34,7 +36,7 @@ export function Hero() {
   }, [])
   return (
     <div className="bg-c-00 min-h-fit">
-      <div className="w-full min-h-screen grid items-center">
+      <div className="w-full md:min-h-screen grid items-center">
         <div className="grid h-[20vh] lg:h-[25vh] w-full lg:w-1/2 self-start justify-self-start">
           <div className="w-2/5 h-full sm:w-1/3 lg:w-2/5">
             <motion.svg
@@ -200,33 +202,23 @@ export function Hero() {
           data-aos="fade-in"
           data-aos-duration="500"
           data-aos-delay="500"
-          className="grid max-w-[1560px] mx-auto lg:flex w-full px-10 py-10 sm:px-20 sm:py-0 lg:py-10 lg:px-16 xl:py-10 xl:px-20 gap-10 sm:gap-10 lg:gap-8 xl:gap-20 aos-init"
+          className="grid max-w-[186px] justify-center md:max-w-[1560px] mx-auto lg:flex w-full px-10 py-10 sm:px-20 sm:py-0 lg:py-10 lg:px-16 xl:py-10 xl:px-[162px] gap-10 sm:gap-10 lg:gap-8 xl:gap-20 aos-init"
         >
           <div
             data-aos="zoom-in"
             data-aos-duration="1000"
-            className="grid w-full lg:w-1/2 gap-5 sm:gap-8 lg:gap-5 xl:gap-8 justify-center"
+            className="flex flex-col w-full gap-[6px] sm:gap-8 lg:gap-5 xl:gap-[37px] justify-center"
           >
-            <div className="w-4/5 sm:w-3/5 lg:w-3/4 xl:w-2/3 mx-auto">
-              <Image
-                className="w-full h-full"
-                src="/homepageassets/NESCO.svg"
-                alt="Nesco"
-                width={0}
-                height={0}
-              />
+            <div>
+              <div className="w-full 2xl:w-4/6 text-center lg:text-left mx-auto lg:mx-0 font-jost font-extrabold text-[42.89px] leading-[47.73px] md:text-[70px] md:leading-[75px] lg:text-[139px] lg:leading-[111px]">
+                <h1 className={styles.h1}>NESCO</h1>
+              </div>
+              <div className="lg:pl-[10px] w-4/5 sm:w-3/5 md:w-[23%] text-center lg:text-left mx-auto lg:mx-0 font-jost font-extrabold text-[14.19px] leading-[19.6px] md:text-[25px] md:leading-[30px] lg:text-[46px] lg:leading-[70px]">
+                <h1 className={styles.h1}>2023</h1>
+              </div>
             </div>
-            <div className="grid w-4/5 sm:w-3/5 lg:w-3/4 xl:w-2/3 mx-auto">
-              <Image
-                width={0}
-                height={0}
-                className="h-full w-1/3 mx-auto lg:mx-0 lg:mr-auto"
-                src="/homepageassets/2023.svg"
-                alt="nesco"
-              />
-            </div>
-            <div className="grid t w-full lg:w-3/4 xl:w-2/3 mx-auto">
-              <p className="text-sm sm:text-lg font-medium font-poppins text-white text-center lg:text-justify self-start lg:justify-self-start ">
+            <div className="lg:pl-[10px] w-full md:w-3/4 lg:w-4/6 text-center lg:text-left mx-auto lg:mx-0">
+              <p className="text-[6px] md:text-[16px] font-medium font-poppins text-white text-center lg:text-justify self-start lg:justify-self-start ">
                 Indonesia’s adaptive electrical ecosystem by Integrating Clean Energy Resilience
                 through e-mobility
               </p>
@@ -244,7 +236,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="grid h-[20vh] lg:h-[25vh] w-2/5 sm:w-1/3 lg:w-1/4  relative justify-self-end self-end w-full">
+        <div className="grid h-[20vh] lg:h-[25vh] w-2/5 sm:w-1/3 lg:w-1/4  relative justify-self-end self-end ">
           <div className="relative pb-20 bottom-1/3 sm:bottom-2/3 h-4/5 w-1/4 sm:h-full sm:w-1/4 lg:w-1/6 justify-self-end ">
             <motion.svg
               data-aos="fade-left"
