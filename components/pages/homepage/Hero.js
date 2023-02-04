@@ -38,12 +38,12 @@ export function Hero() {
     <div className="bg-c-00 min-h-fit">
       <div className="w-full md:min-h-screen grid items-center">
         <div className="grid h-[20vh] lg:h-[25vh] w-full lg:w-1/2 self-start justify-self-start">
-          <div className="w-2/5 h-full sm:w-1/3 lg:w-2/5">
+          <div className="w-2/5 h-full sm:w-1/3 lg:w-2/5 pt-[45px] md:pt-[65px]">
             <motion.svg
               data-aos="fade-right"
               data-aos-duration="500"
               data-aos-delay="500"
-              className="w-full h-full"
+              className="w-full h-full "
               viewBox="0 0 190 351"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
