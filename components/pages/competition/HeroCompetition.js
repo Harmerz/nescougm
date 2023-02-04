@@ -19,30 +19,22 @@ export function HeroCompetition({ competitionTitle = 'Competition Title' }) {
       className="w-full h-[90vw] lg:min-h-[520px] lg:h-[100vh] bg-bg-01 flex justify-center items-center relative overflow-hidden"
       id="CompetitionHero"
     >
-      <div className="h-1/2 flex w-[40%] right-0 top-0 z-[9] absolute">
-        <div className="w-full relative flex">
-          <Image
-            data-aos="fade-left"
-            data-aos-duration="500"
-            data-aos-delay="500"
-            data-aos-anchor="#CompetitionHero"
-            src={Vector0}
-            fill
-          />
-        </div>
-      </div>
-      <div className="w-full h-1/2 flex absolute left-0 bottom-[-10vh] z-[9]">
-        <div className="w-[20%] relative flex">
-          <Image
-            data-aos="fade-right"
-            data-aos-duration="500"
-            data-aos-delay="500"
-            data-aos-anchor="#CompetitionHero"
-            src={Vector1}
-            fill
-          />
-        </div>
-      </div>
+      <Image
+        data-aos="fade-left"
+        data-aos-duration="500"
+        data-aos-delay="500"
+        data-aos-anchor="#CompetitionHero"
+        src={Vector0}
+        className="w-[40%] absolute right-0 top-0 z-[9]"
+      />
+      <Image
+        data-aos="fade-right"
+        data-aos-duration="500"
+        data-aos-delay="500"
+        data-aos-anchor="#CompetitionHero"
+        src={Vector1}
+        className="w-[15%] absolute left-0 bottom-[1vh] z-[9]"
+      />
       <div
         data-aos="fade-in"
         data-aos-duration="500"
@@ -79,12 +71,8 @@ export function HeroCompetition({ competitionTitle = 'Competition Title' }) {
               </Button>
             </Link>
           </div>
-          <div className="ml-auto h-full w-[90px] lg:w-[14vw] bg-gradient-to-b from-c-01 to-c-02 relative">
-            <div className="absolute bottom-0 left-0 w-full">
-              <div className="relative w-full">
-                <Image src={Vector2} fill />
-              </div>
-            </div>
+          <div className="ml-auto h-full w-[90px] lg:w-[14vw] bg-gradient-to-b from-c-01 to-c-02 relative overflow-hidden">
+            <Image src={Vector2} className="absolute bottom-0 left-0 w-full" />
           </div>
         </div>
       </div>
