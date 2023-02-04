@@ -1,8 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 import 'aos/dist/aos.css'
 
 import AOS from 'aos'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import { useEffect } from 'react'
 
 import styles from '../../../styles/Home.module.css'
@@ -36,7 +36,7 @@ export function Hero() {
   }, [])
   return (
     <div className="bg-c-00 min-h-fit">
-      <div className="w-full md:min-h-screen grid items-center">
+      <div className="w-full min-h-screen grid items-center">
         <div className="grid h-[20vh] lg:h-[25vh] w-full lg:w-1/2 self-start justify-self-start">
           <div className="w-2/5 h-full sm:w-1/3 lg:w-2/5 pt-[45px] md:pt-[65px]">
             <motion.svg
@@ -202,22 +202,22 @@ export function Hero() {
           data-aos="fade-in"
           data-aos-duration="500"
           data-aos-delay="500"
-          className="grid max-w-[186px] justify-center md:max-w-[1560px] mx-auto lg:flex w-full px-10 py-10 sm:px-20 sm:py-0 lg:py-10 lg:px-16 xl:py-10 xl:px-[162px] gap-10 sm:gap-10 lg:gap-8 xl:gap-20 aos-init"
+          className="flex flex-col-reverse lg:grid lg:grid-cols-2 max-w-[186px] justify-center md:max-w-[1560px] mx-auto w-full lg:py-10 lg:px-16 xl:py-10 xl:px-[162px]  aos-init lg:mt-[-100px] 2xl:mt-[-155px]"
         >
           <div
             data-aos="zoom-in"
             data-aos-duration="1000"
-            className="flex flex-col w-full gap-[6px] sm:gap-8 lg:gap-5 xl:gap-[37px] justify-center"
+            className="flex flex-col w-full gap-[6px] lg:gap-5 xl:gap-[37px] justify-center"
           >
             <div>
-              <div className="w-full 2xl:w-4/6 text-center lg:text-left mx-auto lg:mx-0 font-jost font-extrabold text-[42.89px] leading-[47.73px] md:text-[70px] md:leading-[75px] lg:text-[139px] lg:leading-[111px]">
+              <div className="w-full  text-center lg:text-left mx-auto lg:mx-0 font-jost font-extrabold text-[42.89px] leading-[47.73px] md:text-[70px] md:leading-[75px] lg:text-[120px] 2xl:text-[139px] lg:leading-[111px] overflow-visible">
                 <h1 className={styles.h1}>NESCO</h1>
               </div>
-              <div className="lg:pl-[10px] w-4/5 sm:w-3/5 md:w-[23%] text-center lg:text-left mx-auto lg:mx-0 font-jost font-extrabold text-[14.19px] leading-[19.6px] md:text-[25px] md:leading-[30px] lg:text-[46px] lg:leading-[70px]">
+              <div className="lg:pl-[10px] w-full text-center lg:text-left mx-auto lg:mx-0 font-jost font-extrabold text-[14.19px] leading-[19.6px] md:text-[25px] md:leading-[30px] lg:text-[46px] lg:leading-[70px]">
                 <h1 className={styles.h1}>2023</h1>
               </div>
             </div>
-            <div className="lg:pl-[10px] w-full md:w-3/4 lg:w-4/6 text-center lg:text-left mx-auto lg:mx-0">
+            <div className="lg:pl-[10px] w-full md:w-3/4  text-center lg:text-left mx-auto lg:mx-0">
               <p className="text-[6px] md:text-[16px] font-medium font-poppins text-white text-center lg:text-justify self-start lg:justify-self-start ">
                 Indonesia’s adaptive electrical ecosystem by Integrating Clean Energy Resilience
                 through e-mobility
@@ -225,14 +225,8 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="flex items-center lg:w-1/2 justify-center row-start-1">
-            <Image
-              className="w-4/5 sm:w-3/4 lg:w-4/5 xl:w-1/2 h-full sm:h-3/4 lg:h-4/5 xl:h-full mx-auto my-auto"
-              src="/"
-              alt="/"
-              width={0}
-              height={0}
-            />
+          <div className="xl:mr-[-100px]">
+            <img src="/homepageassets/gif2.gif" alt="/" />
           </div>
         </div>
 
@@ -242,7 +236,7 @@ export function Hero() {
               data-aos="fade-left"
               data-aos-duration="500"
               data-aos-delay="500"
-              className="w-full h-full"
+              className="w-full h-full "
               viewBox="0 0 49 415"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
