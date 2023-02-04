@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable no-unused-vars */
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import '../../../styles/Home.module.css'
@@ -12,38 +14,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { Button } from '../../element/button'
 // ;
-function ScrollUpCompetition() {
-  return (
-    <div className="flex flex-col">
-      <div className="grid bg-c-00 w-14 h-14 content-center">
-        <Image className="mx-auto my-auto" src="/homepageassets/video.svg" width={50} height={50} />
-      </div>
-    </div>
-  )
-}
-function ScrollUpCompetition1() {
-  return (
-    <div className="flex flex-col">
-      <div className="grid bg-c-00 w-14 h-14 content-center">
-        <Image className="mx-auto my-auto" src="/homepageassets/pape.svg" width={50} height={50} />
-      </div>
-    </div>
-  )
-}
-function ScrollUpCompetition2() {
-  return (
-    <div className="flex flex-col">
-      <div className="grid bg-c-00 w-14 h-14 content-center">
-        <Image
-          className="mx-auto my-auto"
-          src="/homepageassets/poster.svg"
-          width={50}
-          height={50}
-        />
-      </div>
-    </div>
-  )
-}
+
 const Yoyo = {
   hidden: { y: -20 },
   visible: (i) => {
@@ -162,7 +133,7 @@ export function HomePageCompetition() {
             <Image src={Picture[activeIndex]} width={120} height={100} />
           </div>
         </div>
-        <div className="flex place-self-center flex-col gap-12 sm:gap-0">
+        <div className="flex flex-col gap-12 sm:gap-0">
           <div className="justify-between flex flex-row items-center">
             <div id="Judul" className="w-1/2 hidden sm:flex items-center xl:ml-10">
               <div className="w-full h-full flex flex-col">
@@ -181,15 +152,15 @@ export function HomePageCompetition() {
               className="w-full sm:w-1/2 justify-center sm:justify-end flex self-end h-fit sm:h-48"
             >
               <div className="self-end flex w-3/4 sm:w-2/5 lg:w-1/3 h-full relative">
-                <div className="w-4/5 absolute rounded-md bg-gradient-to-r from-c-01 to-c-02 h-11 justify-end top-1/2 sm:top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]" />
-                <div className="w-full absolute justify-end top-1/2 sm:top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]">
+                <div className=" w-1/2 sm:w-full xl:w-4/5 absolute rounded-md sm:rounded-none sm:rounded-l-md bg-gradient-to-r from-c-01 to-c-02 h-11 justify-end top-1/2 translate-x-1/2 sm:-translate-x-0 sm:right-0 translate-y-[-50%]" />
+                <div className="w-full absolute justify-end top-1/2 sm:top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] hidden sm:block">
                   <Swiper
                     onSlideChange={(e) => setActiveIndex(e?.activeIndex)}
                     direction="vertical"
                     // pagination={{
                     //   clickable: true,
                     // }}
-                    className="mySwipper justify-end hidden sm:block"
+                    className="mySwipper justify-end hidden md:block"
                     effect="coverflow"
                     grabCursor
                     centeredSlides
@@ -202,6 +173,7 @@ export function HomePageCompetition() {
                       slideShadows: true,
                     }}
                     modules={[EffectCoverflow]}
+                    clickable
                   >
                     <SwiperSlide
                       style={{
@@ -209,9 +181,12 @@ export function HomePageCompetition() {
                         height: '77px',
                         borderRadius: '11px',
                       }}
-                      className="bg-c-00 border-c-02 border-4 flex items-center justify-center self-center"
+                      className="bg-c-00 border-c-02 border-4 flex items-center justify-center self-center relative"
                     >
-                      <ScrollUpCompetition />
+                      <img
+                        className="mx-auto flex top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 absolute h-14 w-14"
+                        src="/homepageassets/video.svg"
+                      />
                     </SwiperSlide>
                     <SwiperSlide
                       style={{
@@ -219,9 +194,12 @@ export function HomePageCompetition() {
                         height: '77px',
                         borderRadius: '11px',
                       }}
-                      className="bg-c-00 border-c-02 border-4 flex items-center justify-center self-center"
+                      className="bg-c-00 border-c-02 border-4 flex items-center justify-center self-center relative"
                     >
-                      <ScrollUpCompetition1 />
+                      <img
+                        className="mx-auto flex top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 absolute h-14 w-14"
+                        src="/homepageassets/pape.svg"
+                      />
                     </SwiperSlide>
                     <SwiperSlide
                       style={{
@@ -229,61 +207,77 @@ export function HomePageCompetition() {
                         height: '77px',
                         borderRadius: '11px',
                       }}
-                      className="bg-c-00 border-c-02 border-4 flex items-center justify-center self-center"
+                      className="bg-c-00 border-c-02 border-4 flex items-center justify-center self-center relative"
                     >
-                      <ScrollUpCompetition2 />
+                      <img
+                        className="mx-auto flex top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 absolute h-14 w-14"
+                        src="/homepageassets/poster.svg"
+                      />
                     </SwiperSlide>
                   </Swiper>
-                  {/* <Swiper
-                    onSlideChange={(e) => setActiveIndex(e.activeIndex)}
-                    // pagination={{
-                    //   clickable: true,
-                    // }}
-                    className="mySwipper justify-end sm:hidden block"
+                </div>
+                <div className="w-full absolute justify-end top-1/2 sm:top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] sm:hidden block">
+                  <Swiper
+                    onSlideChange={(e) => setActiveIndex(e?.activeIndex)}
+                    direction="horizontal"
+                    pagination={{
+                      clickable: true,
+                    }}
+                    className="mySwipper justify-end hidden md:block"
                     effect="coverflow"
                     grabCursor
                     centeredSlides
                     slidesPerView="auto"
+                    spaceBetween={50}
                     coverflowEffect={{
                       rotate: 0,
                       stretch: 0,
-                      depth: 100,
-                      modifier: 2.5,
+                      depth: 10,
+                      modifier: 1,
                       slideShadows: true,
                     }}
                     modules={[EffectCoverflow]}
                   >
                     <SwiperSlide
                       style={{
-                        width: '70px',
-                        height: '70px',
+                        width: '77px',
+                        height: '77px',
                         borderRadius: '11px',
                       }}
-                      className="bg-c-00 border-c-02 border-4 flex items-center justify-center self-center"
+                      className="bg-c-00 border-c-02 border-4 flex items-center justify-center self-center relative"
                     >
-                      <ScrollUpCompetition />
+                      <img
+                        className="mx-auto flex top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 absolute h-14 w-14"
+                        src="/homepageassets/video.svg"
+                      />
                     </SwiperSlide>
                     <SwiperSlide
                       style={{
-                        width: '70px',
-                        height: '70px',
+                        width: '77px',
+                        height: '77px',
                         borderRadius: '11px',
                       }}
-                      className="bg-c-00 border-c-02 border-4 flex items-center justify-center self-center"
+                      className="bg-c-00 border-c-02 border-4 flex items-center justify-center self-center relative"
                     >
-                      <ScrollUpCompetition1 />
+                      <img
+                        className="mx-auto flex top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 absolute h-14 w-14"
+                        src="/homepageassets/pape.svg"
+                      />
                     </SwiperSlide>
                     <SwiperSlide
                       style={{
-                        width: '70px',
-                        height: '70px',
+                        width: '77px',
+                        height: '77px',
                         borderRadius: '11px',
                       }}
-                      className="bg-c-00 border-c-02 border-4 flex items-center justify-center self-center"
+                      className="bg-c-00 border-c-02 border-4 flex items-center justify-center self-center relative"
                     >
-                      <ScrollUpCompetition2 />
+                      <img
+                        className="mx-auto flex top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 absolute h-14 w-14"
+                        src="/homepageassets/poster.svg"
+                      />
                     </SwiperSlide>
-                  </Swiper> */}
+                  </Swiper>
                 </div>
               </div>
             </div>
