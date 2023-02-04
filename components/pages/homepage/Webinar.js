@@ -37,7 +37,7 @@ export function Webinar() {
   }, [])
 
   return (
-    <div className="hidden w-full relative min-h-screen py-16 px-10 sm:px-20 md:px-[100px] bg-[#1F2326] flex content-center">
+    <div className="hidden w-full relative min-h-screen py-16 px-10 sm:px-20 md:px-[100px] bg-[#1F2326]  content-center">
       <div className="h-[200px] w-[200px] sm:h-[281px] sm:w-[281px] absolute bottom-2/3 sm:right-10 lg:top-1/4  justify-self-end">
         <div className="h-full w-full bg-gradient-to-b from-c-02 to-bg-02 opacity-20 rounded-full blur-xl contrast-100 brightness-500 drop-shadow-xl saturate-500" />
       </div>
