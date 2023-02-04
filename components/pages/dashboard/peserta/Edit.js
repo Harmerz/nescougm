@@ -1,10 +1,25 @@
+import Link from 'next/link'
 import { useState } from 'react'
+import { AiOutlineRollback } from 'react-icons/ai'
 
 export function EditComponent() {
   const [jumlah, setJumlah] = useState(1)
+  console.log(jumlah)
   return (
-    <div className="bg-bg-04 rounded-xl flex flex-col">
-      <h1>Edit Component</h1>
+    <div className="bg-bg-04 rounded-xl flex flex-col py-12 px-6">
+      <Link className="mb-8" href="/dashboard/peserta">
+        <button
+          type="submit"
+          href="#?"
+          className="font-jost font-medium sm:text-xs lg:text-lg xl:text-xl flex items-center absolute top-[4%] right-[3%] lg:static text-c-02"
+        >
+          <AiOutlineRollback />
+          &nbsp;
+          <div className=" bg-gradient-to-l from-c-01 to-c-02 bg-clip-text text-transparent">
+            Kembali
+          </div>
+        </button>
+      </Link>
       <div className="bg-bg-01 rounded-xl flex justify-center items-center p-16">
         <div className="flex flex-col w-3/5 justify-center items-center">
           <div className="pl-4">
@@ -80,40 +95,44 @@ export function EditComponent() {
               </div>
             </div>
           </div>
-          <form className="flex flex-col w-full w-4/5">
-            <div className="flex flex-row justify-between mt-7">
-              <p className="text-white font-poppins font-semibold text-base">Jumlah Peserta :</p>
-              <label htmlFor="1" className="text-white text-base font-poppins flex items-center">
-                <input
-                  type="radio"
-                  name="jumlah"
-                  value="1"
-                  onChange={(e) => setJumlah(e.target.value)}
-                  checked
-                  className="after:bg-c-01 w-5 h-5 mr-2"
-                />
-                1 Orang
-              </label>
-              <label htmlFor="2" className="text-white text-base font-poppins flex items-center">
-                <input
-                  type="radio"
-                  name="jumlah"
-                  value="2"
-                  onChange={(e) => setJumlah(e.target.value)}
-                  className="after:bg-c-01 w-5 h-5 mr-2"
-                />
-                2 Orang
-              </label>
-              <label htmlFor="3" className="text-white text-base font-poppins flex items-center">
-                <input
-                  type="radio"
-                  name="jumlah"
-                  value="3"
-                  onChange={(e) => setJumlah(e.target.value)}
-                  className="after:bg-c-01 w-5 h-5 mr-2"
-                />
-                3 Orang
-              </label>
+          <form className="flex flex-col w-4/5">
+            <div className="flex flex-col md:flex-row mt-7 w-full">
+              <p className="text-white font-poppins font-semibold text-base w-2/12  ">
+                Jumlah Peserta :
+              </p>
+              <div className="flex flex-row justify-around w-10/12">
+                <label htmlFor="1" className="text-white text-base font-poppins flex items-center">
+                  <input
+                    type="radio"
+                    name="jumlah"
+                    value="1"
+                    onChange={(e) => setJumlah(e.target.value)}
+                    checked
+                    className="after:bg-c-01 w-5 h-5 mr-2"
+                  />
+                  1 Orang
+                </label>
+                <label htmlFor="2" className="text-white text-base font-poppins flex items-center">
+                  <input
+                    type="radio"
+                    name="jumlah"
+                    value="2"
+                    onChange={(e) => setJumlah(e.target.value)}
+                    className="after:bg-c-01 w-5 h-5 mr-2"
+                  />
+                  2 Orang
+                </label>
+                <label htmlFor="3" className="text-white text-base font-poppins flex items-center">
+                  <input
+                    type="radio"
+                    name="jumlah"
+                    value="3"
+                    onChange={(e) => setJumlah(e.target.value)}
+                    className="after:bg-c-01 w-5 h-5 mr-2"
+                  />
+                  3 Orang
+                </label>
+              </div>
             </div>
           </form>
           <div
@@ -121,32 +140,57 @@ export function EditComponent() {
           >
             KETUA
           </div>
-          <form className="flex flex-col md:flex-row w-full">
-            <label
-              htmlFor="Ketua"
-              className="flex-col flex text-white font-poppins font-medium text-base"
-            >
-              Nama Ketua:
-              <input
-                type="text"
-                id="Ketua"
-                name="Ketua"
-                className="bg-bg-04 rounded-lg h-8 p-4 border-c-02 border-[0.5px] border-opacity-30"
-              />
-            </label>
-            <label
-              htmlFor="EKetua"
-              className="flex-col flex text-white font-poppins font-medium text-base md:mt-0 mt-5 ml-5"
-            >
-              Email Ketua:
-              <input
-                type="text"
-                id="EKetua"
-                name="EKetua"
-                className="bg-bg-04 rounded-lg h-8 p-4 border-c-02 border-[0.5px] border-opacity-30"
-              />
-            </label>
+          <form className="flex flex-col lg:flex-row w-full justify-around">
+            <div className="lg:w-[30%] w-full">
+              <label
+                htmlFor="Ketua"
+                className="flex-col flex text-white font-poppins font-medium text-base"
+              >
+                Nama Ketua:
+                <input
+                  type="text"
+                  id="Ketua"
+                  name="Ketua"
+                  className="bg-bg-04 rounded-lg h-8 p-4 border-c-02 border-[0.5px] border-opacity-30"
+                />
+              </label>
+            </div>
+            <div className="lg:w-[30%] w-full self-end justify-self-end">
+              <label
+                htmlFor="EKetua"
+                className="flex-col flex text-white font-poppins font-medium text-base lg:mt-0 mt-5 "
+              >
+                Email Ketua:
+                <input
+                  type="text"
+                  id="EKetua"
+                  name="EKetua"
+                  className="bg-bg-04 rounded-lg h-8 p-4 border-c-02 border-[0.5px] border-opacity-30"
+                />
+              </label>
+            </div>
+            <div className="lg:w-[30%]" />
           </form>
+          <div className="flex flex-col md:flex-row w-full justify-between mt-6">
+            <div className=" w-full md:w-[30%] flex-col flex text-white font-poppins font-medium text-base md:mt-0 mt-5">
+              Foto Ketua:
+              <div className=" h-32 bg-bg-04 flex items-center justify-center rounded-lg">
+                <div className="bg-white w-4/5 h-4/5" />
+              </div>
+            </div>
+            <div className=" w-full md:w-[30%] flex-col flex text-white font-poppins font-medium text-base md:mt-0 mt-5 ">
+              E-KTM Ketua:
+              <div className=" h-32 bg-bg-04 flex items-center justify-center rounded-lg">
+                <div className="bg-white w-4/5 h-4/5" />
+              </div>
+            </div>
+            <div className=" w-full md:w-[30%] flex-col flex text-white font-poppins font-medium text-base md:mt-0 mt-5">
+              Bukti Follow IG @nescougm:
+              <div className=" h-32 bg-bg-04 flex items-center justify-center rounded-lg">
+                <div className="bg-white w-4/5 h-4/5" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
