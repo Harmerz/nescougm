@@ -207,10 +207,10 @@ export function Photo() {
               className="max-w-5xl w-full"
             >
               <Slider {...settings}>
-                {smimageSlide.map((image, index) => {
+                {smimageSlide.map((image) => {
                   return (
                     <div
-                      key={index.id}
+                      key={image.image}
                       className="flex h-[300px] w-full m-w-[1560px] rounded-xl shadow-lg bg-gradient-to-r p-[2px] from-[#0DF8CF] to-[#05C2FC] mt-3"
                     >
                       <div className="relative w-full h-full mt-o mr-auto cursor-grab items-center bg-c-00 rounded-lg">

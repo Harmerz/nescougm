@@ -158,7 +158,7 @@ export function HomePageCompetition() {
         className="w-4/5 shadow-xl relative border-4 border-c-02 h-fit max-w-[1560px] rounded-xl grid gap-32 sm:gap-0 aos-init"
       >
         <div className="relative w-full h-[8vh] sm:h-[8vh] bottom-full flex justify-center">
-          <div className="flex absolute w-[180px] h-[180px] xl:w-[200px] xl:h-[200px] rounded-full border-dotted border-c-02 border-4 bg-c-00 flex justify-center">
+          <div className="absolute w-[180px] h-[180px] xl:w-[200px] xl:h-[200px] rounded-full border-dotted border-c-02 border-4 bg-c-00 flex justify-center">
             <Image src={Picture[activeIndex]} width={120} height={100} />
           </div>
         </div>
@@ -184,7 +184,7 @@ export function HomePageCompetition() {
                 <div className="w-4/5 absolute rounded-md bg-gradient-to-r from-c-01 to-c-02 h-11 justify-end top-1/2 sm:top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]" />
                 <div className="w-full absolute justify-end top-1/2 sm:top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]">
                   <Swiper
-                    onSlideChange={(e) => setActiveIndex(e.activeIndex)}
+                    onSlideChange={(e) => setActiveIndex(e?.activeIndex)}
                     direction="vertical"
                     // pagination={{
                     //   clickable: true,
@@ -234,7 +234,7 @@ export function HomePageCompetition() {
                       <ScrollUpCompetition2 />
                     </SwiperSlide>
                   </Swiper>
-                  <Swiper
+                  {/* <Swiper
                     onSlideChange={(e) => setActiveIndex(e.activeIndex)}
                     // pagination={{
                     //   clickable: true,
@@ -283,7 +283,7 @@ export function HomePageCompetition() {
                     >
                       <ScrollUpCompetition2 />
                     </SwiperSlide>
-                  </Swiper>
+                  </Swiper> */}
                 </div>
               </div>
             </div>
