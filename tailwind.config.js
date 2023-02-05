@@ -17,9 +17,12 @@ module.exports = {
         'c-02': '#0DF8CF',
         'c-03': '#D8DDDF',
         'c-04': '#0F7A9B00',
+        'c-05': '#2B3A46',
         'bg-00': '#304352',
         'bg-01': '#252E37',
         'bg-02': '#242B32',
+        'bg-03': '#1E2126',
+        'bg-04': '#22292F',
       },
       fontFamily: {
         jost: ['Jost', 'sans-serif'],
