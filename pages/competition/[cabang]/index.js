@@ -4,9 +4,10 @@ import AOS from 'aos'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 
-import { BackToTop } from '../../components/element/BackToTop'
-import { DefaultLayout, Footer } from '../../components/layout'
-import { HeroCompetition, Overview, Prize, Timeline } from '../../components/pages/competition'
+import { BackToTop } from '../../../components/element/BackToTop'
+import { DefaultLayout, Footer } from '../../../components/layout'
+import { HeroCompetition, Overview, Prize, Timeline } from '../../../components/pages/competition'
+import { NotFound } from '../../404'
 
 export function Competition({ props }) {
   useEffect(() => {
@@ -111,9 +112,5 @@ export default function CompetitionPage() {
   if (Cabang === 'paper') return <Competition props={Paper} />
   if (Cabang === 'poster') return <Competition props={Poster} />
   if (Cabang === 'video') return <Competition props={Video} />
-  return (
-    <div>
-      <h1>{Cabang}</h1>
-    </div>
-  )
+  return <NotFound />
 }
