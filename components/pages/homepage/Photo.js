@@ -58,7 +58,7 @@ export function Photo() {
   }
   return (
     <div className=" md:min-h-screen bg-c-00">
-      <div className="bg-gradient-to-t from-transparent to-c-02 relative rounded-[10px] p-[4px] shadow-[0_-20px_25px_rgba(13,248,207,0.2)] md:min-h-screen flex flex-col sm:grid">
+      <div className="bg-gradient-to-t from-transparent to-c-02 relative rounded-[10px] p-[1px] md:p-[3px] md:shadow-[0_-10px_15px_rgba(13,248,207,0.2)] md:min-h-screen flex flex-col sm:grid">
         <div className="bg-c-00 rounded-t-[10px] md:min-h-screen ">
           <div className="flex h-[15vh] sm:h-[10vh] lg:h-[13vh] xl:h-[18vh]">
             <div className="flex self-center ml-8 lg:ml-12 w-[90px] h-[50px] sm:w-[120px] sm:h-[80px] lg:w-[150.5px] lg:h-[100px] xl:w-[180.5px] xl:h-[120px]">
