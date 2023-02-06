@@ -35,11 +35,17 @@ const Yoyo = {
 }
 
 export function HomePageCompetition() {
-  const Lomba = ['Paper Competition', 'Poster Competition', 'Essay Competition']
+  const Lomba = ['Paper Competition', 'Poster Competition', 'Video Competition']
+  const Link = ['/competition/paper', '/competition/poster', '/competition/video']
   const Picture = [
-    '/homepageassets/video.svg',
     '/homepageassets/pape.svg',
     '/homepageassets/poster.svg',
+    '/homepageassets/video.svg',
+  ]
+  const Description = [
+    'Paper Competition merupakan kompetisi bidang ketenagalistrikan berupa lomba problem solving tentang Load Flow Diagram, forecasting, sistem proteksi listrik, dan sejenisnya, yang bertujuan mendorong perkembangan dan perencanaan sistem ketenagalistrikan, khususnya di Indonesia.',
+    'Poster Competition adalah kompetisi pembuatan karya poster mengenai perkembangan ketenagalistrikan, pemanfaatan energi bersih, dan pengaplikasian e-mobility di Indonesia. Poster Competition terdiri dari dua kategori, yaitu kategori mahasiswa dan kategori pelajar SMA sederajat.',
+    'Video Competition adalah kompetisi pembuatan karya berupa video mengenai perkembangan ketenagalistrikan, sustainable and renewable energy, dan e-mobility di Indonesia. Video Competition terdiri dari dua kategori, yaitu kategori mahasiswa dan kategori pelajar SMA sederajat.',
   ]
   useEffect(() => {
     AOS.init({
@@ -134,22 +140,24 @@ export function HomePageCompetition() {
           </div>
         </div>
         <div className="flex flex-col gap-12 sm:gap-0">
-          <div className="justify-between flex flex-row items-center">
-            <div id="Judul" className="w-1/2 hidden sm:flex items-center xl:ml-10">
+          <div className="justify-between flex flex-col sm:flex-row items-center">
+            <div id="Judul" className="w-1/2 flex items-center xl:ml-10">
               <div className="w-full h-full flex flex-col">
-                <h1 className="sm:text-4xl lg:text-5xl font-bold w-4/5 xl:w-3/5 text-center justify-center text-white">
+                <h1 className="text-[30px] sm:text-[36px] sm:leading-[43.2px] font-jost font-bold sm:w-4/5 xl:w-3/5 text-center justify-center text-white">
                   {Lomba[activeIndex]}
                 </h1>
-                <div className="justify-center hidden sm:flex w-4/5 xl:w-3/5 mt-10">
-                  <Button className="self-items-center" type="secondary" size="md">
-                    Learn More
-                  </Button>
+                <div className="justify-center flex sm:w-4/5 xl:w-3/5 mt:[10px] sm:mt-[23px] ">
+                  <a href={Link[activeIndex]}>
+                    <Button className="self-items-center" type="secondary" size="sm">
+                      Learn More
+                    </Button>
+                  </a>
                 </div>
               </div>
             </div>
             <div
               id="swiper"
-              className="w-full sm:w-1/2 justify-center sm:justify-end flex self-end h-fit sm:h-48"
+              className="w-full sm:w-1/2 justify-center sm:justify-end flex self-end h-fit sm:h-48 mt-16 sm:mt-0"
             >
               <div className="self-end flex w-3/4 sm:w-2/5 lg:w-1/3 h-full relative">
                 <div className=" w-1/2 sm:w-full xl:w-4/5 absolute rounded-md sm:rounded-none sm:rounded-l-md bg-gradient-to-r from-c-01 to-c-02 h-11 justify-end top-1/2 translate-x-1/2 sm:-translate-x-0 sm:right-0 translate-y-[-50%]" />
@@ -181,20 +189,7 @@ export function HomePageCompetition() {
                         height: '77px',
                         borderRadius: '11px',
                       }}
-                      className="bg-c-00 border-c-02 border-4 flex items-center justify-center self-center relative"
-                    >
-                      <img
-                        className="mx-auto flex top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 absolute h-14 w-14"
-                        src="/homepageassets/video.svg"
-                      />
-                    </SwiperSlide>
-                    <SwiperSlide
-                      style={{
-                        width: '77px',
-                        height: '77px',
-                        borderRadius: '11px',
-                      }}
-                      className="bg-c-00 border-c-02 border-4 flex items-center justify-center self-center relative"
+                      className="bg-c-00 border-c-02 border-[2px] md:border-[3px] flex items-center justify-center self-center relative"
                     >
                       <img
                         className="mx-auto flex top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 absolute h-14 w-14"
@@ -214,6 +209,19 @@ export function HomePageCompetition() {
                         src="/homepageassets/poster.svg"
                       />
                     </SwiperSlide>
+                    <SwiperSlide
+                      style={{
+                        width: '77px',
+                        height: '77px',
+                        borderRadius: '11px',
+                      }}
+                      className="bg-c-00 border-c-02 border-4 flex items-center justify-center self-center relative"
+                    >
+                      <img
+                        className="mx-auto flex top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 absolute h-14 w-14"
+                        src="/homepageassets/video.svg"
+                      />
+                    </SwiperSlide>
                   </Swiper>
                 </div>
                 <div className="w-full absolute justify-end top-1/2 sm:top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] sm:hidden block">
@@ -223,7 +231,7 @@ export function HomePageCompetition() {
                     pagination={{
                       clickable: true,
                     }}
-                    className="mySwipper justify-end hidden md:block"
+                    className="mySwipper justify-end"
                     effect="coverflow"
                     grabCursor
                     centeredSlides
@@ -244,20 +252,7 @@ export function HomePageCompetition() {
                         height: '77px',
                         borderRadius: '11px',
                       }}
-                      className="bg-c-00 border-c-02 border-4 flex items-center justify-center self-center relative"
-                    >
-                      <img
-                        className="mx-auto flex top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 absolute h-14 w-14"
-                        src="/homepageassets/video.svg"
-                      />
-                    </SwiperSlide>
-                    <SwiperSlide
-                      style={{
-                        width: '77px',
-                        height: '77px',
-                        borderRadius: '11px',
-                      }}
-                      className="bg-c-00 border-c-02 border-4 flex items-center justify-center self-center relative"
+                      className="bg-c-00 border-c-02 border-4 flex items-center justify-center self-center relative scale-75 active:scale-100"
                     >
                       <img
                         className="mx-auto flex top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 absolute h-14 w-14"
@@ -270,11 +265,24 @@ export function HomePageCompetition() {
                         height: '77px',
                         borderRadius: '11px',
                       }}
-                      className="bg-c-00 border-c-02 border-4 flex items-center justify-center self-center relative"
+                      className="bg-c-00 border-c-02 border-4 flex items-center justify-center self-center relative scale-75 active:scale-100"
                     >
                       <img
                         className="mx-auto flex top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 absolute h-14 w-14"
                         src="/homepageassets/poster.svg"
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide
+                      style={{
+                        width: '77px',
+                        height: '77px',
+                        borderRadius: '11px',
+                      }}
+                      className="bg-c-00 border-c-02 border-4 flex items-center justify-center self-center relative scale-75 active:scale-100"
+                    >
+                      <img
+                        className="mx-auto flex top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 absolute h-14 w-14"
+                        src="/homepageassets/video.svg"
                       />
                     </SwiperSlide>
                   </Swiper>
@@ -283,21 +291,10 @@ export function HomePageCompetition() {
             </div>
           </div>
           <div className="w-full sm:w-1/2 flex items-center self-center mt-2 sm:mt-10 mb-10 sm:mb-10 px-5 sm:px-0">
-            <p className="text-white text-center ">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            <p className="text-white text-center text-[12px] sm:text-[16px] font-poppins">
+              {Description[activeIndex]}
             </p>
           </div>
-        </div>
-      </div>
-      <div className="hidden md:grid h-[20vh] lg:h-[25vh] sm:w-1/3 lg:w-1/4  relative justify-self-end self-end w-full">
-        <div className="relative pb-15 bottom-1/2 h-4/5 sm:w-1/5 justify-self-end ">
-          <Image
-            src="/homepageassets/Group 607.svg"
-            className="w-full h-full"
-            width={0}
-            height={0}
-          />
         </div>
       </div>
     </div>
