@@ -64,7 +64,7 @@ export function Footer() {
             {competition.map((text) => (
               <Link
                 href={text.link}
-                className="text-[12px] lg:text-[16px] text-white font-poppins font-medium justify-center flex hover:text-c-01"
+                className="text-[12px] lg:text-[16px] text-white font-poppins font-medium justify-center flex hover:opacity-50"
                 key={text.kompetisi}
               >
                 {text.kompetisi}

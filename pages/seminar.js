@@ -4,7 +4,7 @@ import { Comingsoon } from '../components/pages/comingsoon'
 
 export default function Seminar() {
   return (
-    <DefaultLayout title="Webinar - NESCO UGM 2023">
+    <DefaultLayout title="Seminar - NESCO UGM 2023">
       <div>
         <Comingsoon />
         <BackToTop />

@@ -25,10 +25,7 @@ const draw = {
 }
 export function About() {
   useEffect(() => {
-    AOS.init({
-      once: false,
-      duration: 2000,
-    })
+    AOS.init()
   }, [])
   return (
     <div className="bg-c-00 md:min-h-screen md:pb-[50px] relative">
@@ -73,8 +70,8 @@ export function About() {
               <div className="lg:w-1/2 justify-center m-0 lg:m-auto lg:order-last">
                 <div
                   data-aos="fade-in"
-                  data-aos-duration="2000"
-                  data-aos-delay="500"
+                  data-aos-duration="500"
+                  data-aos-delay="300"
                   className="aspect-video flex items-center"
                 >
                   <iframe
@@ -93,8 +90,8 @@ export function About() {
               </div>
               <div
                 data-aos="fade-in"
-                data-aos-duration="2000"
-                data-aos-delay="500"
+                data-aos-duration="500"
+                data-aos-delay="300"
                 className="lg:w-1/2 lg:mt-[90px] 2xl:mt-0 flex flex-col justify-center justify-items-center gap-8"
               >
                 <h1 className="text-white sm:leading-[43.2px] sm:text-[36px] text-[30px] font-bold font-jost text-center lg:text-left pt-2">
@@ -105,8 +102,8 @@ export function About() {
 
                 <p
                   data-aos="fade-up"
-                  data-aos-duration="2000"
-                  data-aos-delay="500"
+                  data-aos-duration="500"
+                  data-aos-delay="300"
                   className="text-[12px] sm:text-[15px] md:text-[16px] text-justify font-poppins leading-[23.3px] md:leading-[36.75px] text-white pb-10 lg:pb-0"
                 >
                   National Electrical Power System Competition (NESCO) merupakan sebuah kompetisi

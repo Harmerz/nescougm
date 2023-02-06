@@ -45,10 +45,7 @@ const draw = {
 }
 export function Photo() {
   useEffect(() => {
-    AOS.init({
-      once: false,
-      duration: 2000,
-    })
+    AOS.init()
   }, [])
   const settings = {
     infinite: true,
@@ -152,8 +149,8 @@ export function Photo() {
 
             <div
               data-aos="fade-up"
-              data-aos-duration="2000"
-              data-aos-delay="1000"
+              data-aos-duration="500"
+              data-aos-delay="500"
               className="grid gap-4 min-h-fit pb-20 mt-12 lg:mt-20 aos-init"
             >
               <div className="flex gap-4">
@@ -191,7 +188,7 @@ export function Photo() {
           <div className="pt-[50px] sm:pt-[135px] pb-[214px] md:py-0 flex flex-col sm:max-w-[468px] sm:mx-auto md:hidden px-10 gap-5 mb-auto md:pb-20">
             <div
               data-aos="fade-in"
-              data-aos-duration="2000"
+              data-aos-duration="500"
               data-aos-delay="500"
               className="flex justify-center aos-init"
             >
@@ -202,7 +199,7 @@ export function Photo() {
 
             <div
               data-aos="fade-up"
-              data-aos-duration="2000"
+              data-aos-duration="500"
               data-aos-delay="1000"
               className="max-w-5xl w-full"
             >
@@ -231,7 +228,7 @@ export function Photo() {
           <div className="hidden sm:flex min-h-fit lg:h-[14vh] sm:px-20 lg:px-24 justify-end">
             <motion.div
               animate={{
-                scale: [1, 2, 2, 1, 1],
+                scale: [0.5, 1, 1, 0.5, 0.5],
                 rotate: [0, 0, 180, 180, 0],
                 borderRadius: ['0%', '0%', '50%', '50%', '0%'],
               }}
@@ -242,7 +239,7 @@ export function Photo() {
                 repeat: Infinity,
                 repeatDelay: 1,
               }}
-              className="sm:w-[70px] sm:h-[60px] lg:w-[85.63px] lg:h-[60.85px] place-self-end lg:place-self-center"
+              className="sm:w-[50px] lg:w-[60px]  place-self-end lg:place-self-center"
             >
               <Image
                 className="h-full w-full"

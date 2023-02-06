@@ -30,14 +30,11 @@ const draw = {
 
 export function Webinar() {
   useEffect(() => {
-    AOS.init({
-      once: false,
-      duration: 2000,
-    })
+    AOS.init()
   }, [])
 
   return (
-    <div className="hidden w-full relative min-h-screen py-16 px-10 sm:px-20 md:px-[100px] bg-[#1F2326]  content-center">
+    <div className="w-full relative h-fit py-16 sm:py-[100px] md:py-[300px] px-10 sm:px-20 md:px-[100px] bg-[#1F2326]  content-center">
       <div className="h-[200px] w-[200px] sm:h-[281px] sm:w-[281px] absolute bottom-2/3 sm:right-10 lg:top-1/4  justify-self-end">
         <div className="h-full w-full bg-gradient-to-b from-c-02 to-bg-02 opacity-20 rounded-full blur-xl contrast-100 brightness-500 drop-shadow-xl saturate-500" />
       </div>
@@ -87,7 +84,7 @@ export function Webinar() {
           <motion.svg
             data-aos="fade-left"
             data-aos-duration="500"
-            data-aos-delay="500"
+            data-aos-delay="300"
             className=" w-full h-full"
             viewBox="0 0 49 415"
             fill="none"

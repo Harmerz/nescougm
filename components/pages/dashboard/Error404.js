@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export function Page404() {
   return (
-    <div className=" justify-content  flex items-center flex-col bg-gradient-to-br from-c-00 to-bg-01 h-screen">
+    <div className=" justify-center  flex items-center flex-col bg-gradient-to-br from-c-00 to-bg-01 min-h-screen">
       <div
         className=" flex items-center justify-center bg-clip-text text-transparent bg-gradient-to-t from-c-02
          to-c-01 text-7xl font-bold text-[96px] leading-[144px] uppercase text-white font-poppins mt-[177px] lg:mt-[203px] lg:text-[120px] lg:leading-[180px] 
@@ -22,8 +22,8 @@ export function Page404() {
         </p>
       </div>
       <Link href="/">
-        <div className="flex flex-row justify-center h-fit mt-[56px] mb-[266px] lg:mb-[205px]">
-          <div className=" text-white font-poppins  flex flex-row justify-center font-light text-[20px] leading-[28.9px] ">
+        <div className="flex flex-row justify-center mt-[56px] mb-[266px] lg:mb-[205px]">
+          <div className=" text-white font-poppins  flex flex-row justify-center font-light text-[16px] leading-[28.9px] ">
             <p>
               <u>Return to Hompage</u>
             </p>

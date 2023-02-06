@@ -10,7 +10,7 @@ import { Button } from '../../element/button/Button'
 export function Comingsoon() {
   return (
     <div className="relative flex bg-c-00 items-center overflow-hidden h-screen">
-      <div className="mx-14 sm:mx-36 lg:mx-[155px] 2xl:mx-auto my-auto grid grid-cols-2">
+      <div className="mx-14 sm:mx-36 lg:mx-[155px] 2xl:mx-auto my-auto md:grid grid-cols-2">
         <div className="absolute top-[72px] left-[-18px] opacity-[.2] blur-[90px] bg-c-01 w-[191px] h-[191px] rounded-full" />
         <div className="absolute bottom-0 right-[-35px] opacity-[.2] blur-[90px] bg-c-01 w-[191px] h-[191px] rounded-full" />
         <div className="my-auto flex flex-col">

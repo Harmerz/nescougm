@@ -23,7 +23,7 @@ export const Button = ({ children, type, size, animation, onClick }) => {
   return (
     <button
       type="submit"
-      className={` ${colorClassName} ${sizeClassName} ${animationClassName} transition-all font-bold `}
+      className={` ${colorClassName} ${sizeClassName} ${animationClassName} transition-all font-bold font-poppins`}
       onClick={onClick}
     >
       {children}
