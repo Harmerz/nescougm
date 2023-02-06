@@ -9,10 +9,10 @@ import { Button } from '../element/button'
 
 export function Footer() {
   const competition = [
-    'Paper Competition',
-    'Electricity Innovation Competition',
-    'Poster Competition',
-    'Webinar Nasional',
+    { kompetisi: 'Paper Competition', link: '/competition/paper' },
+    { kompetisi: 'Poster Competition', link: '/competition/poster' },
+    { kompetisi: 'Video Competition', link: '/competition/video' },
+    { kompetisi: 'Seminar Nasional', link: '/seminar' },
   ]
 
   const LinkSocialMedia = [
@@ -36,15 +36,19 @@ export function Footer() {
           </div>
           <div className="h-full w-full flex flex-col gap-[10px] items-center lg:items-start justify-center">
             <div className="flex justify-center ">
-              <Image src="/Nesco-Footer.png" alt="Footer" width={210} height={60} />
+              <Image src="/Nesco-Footer.svg" alt="Footer" width={210} height={60} />
             </div>
             <div className="flex flex-row gap-x-[10px] lg:justify-start justify-center items-center">
               {LinkSocialMedia.map((item, idx) => {
                 const Icon = icons[idx]
                 return (
                   <div key={item.link}>
-                    <Link href={item.link} target="_blank" className="cursor-pointer">
-                      <Icon icon={icons[idx]} className="fill-[#D8DDDF] " size={17} />
+                    <Link href={item.link} target="_blank" className="cursor-pointer ">
+                      <Icon
+                        icon={icons[idx]}
+                        className="fill-[#D8DDDF] hover:fill-c-02"
+                        size={17}
+                      />
                     </Link>
                   </div>
                 )
@@ -52,18 +56,19 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="flex-col flex text-[14px] gap-[14px] lg:gap-[18px]">
-          <div className="text-[20px] text-c-01 font-jost font-bold flex justify-center">
+        <div className="flex-col flex gap-[14px] lg:gap-[18px]">
+          <div className="text-[18px] lg:text-[20px] text-c-01 font-jost font-bold flex justify-center">
             QUICK LINKS
           </div>
           <div className="flex flex-col gap-[7px]">
             {competition.map((text) => (
-              <div
-                className="text-[12px] lg:text-[14px] text-white font-poppins font-medium justify-center flex"
-                key={text}
+              <Link
+                href={text.link}
+                className="text-[12px] lg:text-[16px] text-white font-poppins font-medium justify-center flex hover:text-c-01"
+                key={text.kompetisi}
               >
-                {text}
-              </div>
+                {text.kompetisi}
+              </Link>
             ))}
           </div>
         </div>
