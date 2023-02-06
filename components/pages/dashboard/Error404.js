@@ -10,7 +10,7 @@ export function Page404() {
       >
         404
       </div>
-      <div className="uppercase text-white text-lg font-bold font-poppins mt-[42px] md:mt-[16px] text[20px] leading-[30px] llg:text-[28px] leading-[42px]">
+      <div className="uppercase text-white text-lg font-bold font-poppins mt-[42px] md:mt-[16px] text[20px] leading-[30px] llg:text-[28px] ">
         oops, page not found
       </div>
       <div

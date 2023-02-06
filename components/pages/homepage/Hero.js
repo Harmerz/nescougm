@@ -243,7 +243,7 @@ export function Hero() {
             {gif2 ? (
               <Image
                 className=" object-cover object-center h-auto"
-                src="/homepageassets/gif2.gif"
+                src="/homepageassets/gif2.webm"
                 alt="maskot nesco"
                 fill
                 priority
@@ -254,7 +254,7 @@ export function Hero() {
             {gif1 ? (
               <Image
                 className=" object-cover object-center h-auto"
-                src="/homepageassets/gif1.gif"
+                src="/homepageassets/gif1.webm"
                 alt="maskot nesco"
                 fill
               />
