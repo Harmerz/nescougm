@@ -3,7 +3,8 @@ import 'aos/dist/aos.css'
 
 import AOS from 'aos'
 import { motion } from 'framer-motion'
-import { useEffect } from 'react'
+import Image from 'next/image'
+import { useEffect, useState } from 'react'
 
 import styles from '../../../styles/Home.module.css'
 
@@ -31,6 +32,12 @@ const draw = {
 }
 
 export function Hero() {
+  const [gif, setGif] = useState(true)
+  useEffect(() => {
+    setInterval(() => {
+      setGif(false)
+    }, 9000)
+  })
   useEffect(() => {
     AOS.init()
   }, [])
@@ -202,7 +209,7 @@ export function Hero() {
           data-aos="fade-in"
           data-aos-duration="500"
           data-aos-delay="500"
-          className="flex flex-col-reverse lg:grid lg:grid-cols-2 max-w-[186px] justify-center md:max-w-[1560px] mx-auto w-full lg:py-10 lg:px-16 xl:py-10 xl:px-[162px]  aos-init lg:mt-[-100px] 2xl:mt-[-155px]"
+          className="flex flex-col-reverse lg:grid lg:grid-cols-2 max-w-[186px] justify-center md:max-w-[1560px] mx-auto w-full lg:py-10 lg:px-4 xl:py-10 xl:pl-40 xl:pr-16 aos-init lg:mt-[-100px] 2xl:mt-[-155px]"
         >
           <div
             data-aos="zoom-in"
@@ -225,8 +232,13 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="xl:mr-[-100px]">
-            <img src="/homepageassets/gif2.gif" alt="/" />
+          <div className="container after:pb-[100%] xl:mr-[-100px] w-full relative after:block">
+            <Image
+              className=" object-cover object-center h-auto"
+              src={`/homepageassets/${gif ? 'gif1' : 'gif2'}.gif`}
+              alt="maskot nesco"
+              fill
+            />
           </div>
         </div>
 
