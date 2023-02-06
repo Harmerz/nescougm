@@ -32,11 +32,18 @@ const draw = {
 }
 
 export function Hero() {
-  const [gif, setGif] = useState(true)
+  const [gif1, setGif1] = useState(true)
+  const [gif2, setGif2] = useState(false)
+
   useEffect(() => {
     setInterval(() => {
-      setGif(false)
+      setGif1(false)
     }, 9000)
+  })
+  useEffect(() => {
+    setInterval(() => {
+      setGif2(true)
+    }, 8600)
   })
   useEffect(() => {
     AOS.init()
@@ -233,12 +240,26 @@ export function Hero() {
           </div>
 
           <div className="container after:pb-[100%] xl:mr-[-100px] w-full relative after:block">
-            <Image
-              className=" object-cover object-center h-auto"
-              src={`/homepageassets/${gif ? 'gif1' : 'gif2'}.gif`}
-              alt="maskot nesco"
-              fill
-            />
+            {gif2 ? (
+              <Image
+                className=" object-cover object-center h-auto"
+                src="/homepageassets/gif2.gif"
+                alt="maskot nesco"
+                fill
+              />
+            ) : (
+              <div />
+            )}
+            {gif1 ? (
+              <Image
+                className=" object-cover object-center h-auto"
+                src="/homepageassets/gif1.gif"
+                alt="maskot nesco"
+                fill
+              />
+            ) : (
+              <div />
+            )}
           </div>
         </div>
 
