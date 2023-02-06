@@ -65,8 +65,8 @@ export function Webinar() {
               height={284.42}
               width={233.5}
               className="w-4/5 md:3/5 xl:w-2/3 sm:h-4/5  mx-auto my-auto"
-              src="/homepageassets/Webinar.svg"
-              alt="/"
+              src="/homepageassets/webinar.svg"
+              alt="webinar nescougm"
             />
           </div>
           <div className="lg:w-1/2 flex flex-col justify-center">
