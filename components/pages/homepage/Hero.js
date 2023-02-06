@@ -216,7 +216,7 @@ export function Hero() {
           data-aos="fade-in"
           data-aos-duration="500"
           data-aos-delay="500"
-          className="flex flex-col-reverse lg:grid lg:grid-cols-2 max-w-[186px] justify-center md:max-w-[1560px] mx-auto w-full lg:py-10 lg:px-4 xl:py-10 xl:pl-40 xl:pr-16 aos-init lg:mt-[-100px] 2xl:mt-[-155px]"
+          className="flex flex-col-reverse lg:grid lg:grid-cols-2 max-w-[186px] justify-center md:max-w-[1560px] mx-auto w-full lg:py-10 lg:pl-24 xl:py-10 xl:pl-40 xl:pr-16 aos-init lg:mt-[-100px] 2xl:mt-[-155px]"
         >
           <div
             data-aos="zoom-in"
@@ -246,6 +246,7 @@ export function Hero() {
                 src="/homepageassets/gif2.gif"
                 alt="maskot nesco"
                 fill
+                priority
               />
             ) : (
               <div />
