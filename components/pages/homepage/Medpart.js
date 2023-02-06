@@ -138,3 +138,5 @@ export function Medpart() {
     </div>
   )
 }
+
+export default Medpart

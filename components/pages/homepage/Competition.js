@@ -303,3 +303,5 @@ export function HomePageCompetition() {
     </div>
   )
 }
+
+export default HomePageCompetition

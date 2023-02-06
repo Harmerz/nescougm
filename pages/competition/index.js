@@ -7,6 +7,7 @@ import { useEffect } from 'react'
 import { BackToTop } from '../../components/element/BackToTop'
 import { DefaultLayout, Footer } from '../../components/layout'
 import { HeroCompetition, Overview, Prize, Timeline } from '../../components/pages/competition'
+import { NotFound } from '../404'
 
 export function Competition({ props }) {
   useEffect(() => {
@@ -107,13 +108,9 @@ const Video = {
 
 export default function CompetitionPage() {
   const router = useRouter()
-  const Cabang = router.query.cabang
-  if (Cabang === 'paper') return <Competition props={Paper} />
-  if (Cabang === 'poster') return <Competition props={Poster} />
-  if (Cabang === 'video') return <Competition props={Video} />
-  return (
-    <div>
-      <h1>{Cabang}</h1>
-    </div>
-  )
+  const Cabang = router.pathname
+  if (Cabang === '/competition/paper') return <Competition props={Paper} />
+  if (Cabang === '/competition/poster') return <Competition props={Poster} />
+  if (Cabang === '/competition/video') return <Competition props={Video} />
+  return <NotFound />
 }
