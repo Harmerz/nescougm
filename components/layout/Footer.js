@@ -28,10 +28,10 @@ export function Footer() {
 
   return (
     <div className="h-fit min-h-[550px] lg:min-h-0  bg-c-00 ">
-      <div className="flex lg:flex-row flex-col lg:justify-around gap-y-[49px] py-[81px] items-center">
+      <div className="flex lg:flex-row flex-col lg:justify-between gap-[50px] lg:gap-0 lg:px-[100px] py-[81px] items-center">
         <div className="lg:flex-row flex-col items-center flex gap-[20px]">
           {/* <div className="w-24 h-24 bg-slate-400 " /> */}
-          <div className="w-full h-full flex justify-center lg:justify-end">
+          <div className="w-1/2 flex justify-center ">
             <Image src="/Logo.svg" width={95} height={83} />
           </div>
           <div className="h-full w-full flex flex-col gap-[10px] items-center lg:items-start justify-center">
@@ -44,7 +44,7 @@ export function Footer() {
                 return (
                   <div key={item.link}>
                     <Link href={item.link} target="_blank" className="cursor-pointer">
-                      <Icon icon={icons[idx]} className="fill-[#D8DDDF] " size={item.size} />
+                      <Icon icon={icons[idx]} className="fill-[#D8DDDF] " size={17} />
                     </Link>
                   </div>
                 )
@@ -52,21 +52,25 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="flex-col flex">
-          <div className="text-lg text-c-01 font-jost font-bold flex justify-center">
+        <div className="flex-col flex text-[14px] gap-[14px] lg:gap-[18px]">
+          <div className="text-[20px] text-c-01 font-jost font-bold flex justify-center">
             QUICK LINKS
           </div>
-          {competition.map((text) => (
-            <div
-              className="text-md text-white font-poppins font-medium justify-center flex"
-              key={text}
-            >
-              {text}
-            </div>
-          ))}
+          <div className="flex flex-col gap-[7px]">
+            {competition.map((text) => (
+              <div
+                className="text-[12px] lg:text-[14px] text-white font-poppins font-medium justify-center flex"
+                key={text}
+              >
+                {text}
+              </div>
+            ))}
+          </div>
         </div>
         <div className="flex justify-center">
-          <Button type="secondary">Get In Touch</Button>
+          <a href="https://api.whatsapp.com/send/?phone=62895601622874">
+            <Button type="secondary">Get In Touch</Button>
+          </a>
         </div>
       </div>
     </div>
