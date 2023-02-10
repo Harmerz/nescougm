@@ -1,5 +1,5 @@
 import { DefaultLayoutAuth } from '../../../components/layoutAuth'
-import { Verifikasi } from '../../../components/pages/auth/verif1'
+import { Verifikasi } from '../../../components/pages/auth/verifdaftar'
 
 export function VerifikasiPage() {
   return (

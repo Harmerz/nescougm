@@ -17,3 +17,5 @@ export function Verifikasi() {
     </div>
   )
 }
+
+export default Verifikasi
