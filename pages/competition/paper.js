@@ -19,6 +19,7 @@ export function Competition({ props }) {
         <HeroCompetition competitionTitle={props?.competitionTitle ?? 'Competition Title'} />
         <Overview
           competitionDescription={props?.competitionDescription ?? "Competition's Description"}
+          guidebook={props?.guidebook ?? 'https://bit.ly/JuknisNescoPaperCompetition2023'}
           peserta={props?.peserta ?? 'Peserta'}
           biayaPendaftaran={props?.biayaPendaftaran ?? 'Biaya Pendaftaran'}
           contactPersons={props?.contactPersons ?? ['Contact Person']}
@@ -26,6 +27,7 @@ export function Competition({ props }) {
         <Prize
           juaraMahasiswa={props?.juaraMahasiswa ?? 'Juara Mahasiswa'}
           juaraSMA={props?.juaraSMA ?? 'Juara SMA'}
+          piala={props?.piala ?? ', piala'}
         />
         <Timeline timelines={props?.timelines ?? ['Timelines']} />
         <BackToTop />

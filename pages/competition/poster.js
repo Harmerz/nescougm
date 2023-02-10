@@ -19,6 +19,7 @@ export function Competition({ props }) {
         <HeroCompetition competitionTitle={props?.competitionTitle ?? 'Competition Title'} />
         <Overview
           competitionDescription={props?.competitionDescription ?? "Competition's Description"}
+          guidebook={props?.guidebook ?? 'https://bit.ly/JuknisNescoPosterCompetition2023'}
           peserta={props?.peserta ?? 'Peserta'}
           biayaPendaftaran={props?.biayaPendaftaran ?? 'Biaya Pendaftaran'}
           contactPersons={props?.contactPersons ?? ['Contact Person']}

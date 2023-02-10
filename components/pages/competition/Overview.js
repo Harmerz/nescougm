@@ -11,7 +11,13 @@ import { Button } from '../../element/button'
 import OverviewList from './OverviewList'
 import VerticalBar from './VerticalBar'
 
-export function Overview({ competitionDescription, peserta, biayaPendaftaran, contactPersons }) {
+export function Overview({
+  competitionDescription,
+  peserta,
+  biayaPendaftaran,
+  contactPersons,
+  guidebook,
+}) {
   useEffect(() => {
     AOS.init()
   }, [])
@@ -62,7 +68,7 @@ export function Overview({ competitionDescription, peserta, biayaPendaftaran, co
         <div className="w-full mt-[15px] font-poppins text-white text-[12px] md:text-[16px] 2xl:text-xl   text-justify">
           {competitionDescription}
         </div>
-        <Link href="/signin" className="mt-[15px] z-[100]">
+        <Link href={guidebook} className="mt-[15px] z-[100]">
           <Button type="secondary" size="sm">
             Guide Book
           </Button>

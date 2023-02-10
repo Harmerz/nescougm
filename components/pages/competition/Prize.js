@@ -13,7 +13,7 @@ import RightArrow from '../../../public/vector/competition/competition-prize-rig
 import PrizeList from './PrizeList'
 import VerticalBar from './VerticalBar'
 
-export function Prize({ juaraMahasiswa, juaraSMA }) {
+export function Prize({ juaraMahasiswa, juaraSMA, piala }) {
   const favoritMahasiswa = juaraMahasiswa.length === 4
   const favoritSMA = juaraSMA.length === 4
   const alignMahasiswa = !favoritMahasiswa && favoritSMA
@@ -165,23 +165,23 @@ export function Prize({ juaraMahasiswa, juaraSMA }) {
                     <PrizeList icon={IconJuara} title="Juara I">
                       {juaraMahasiswa[0]}
                       <br />
-                      +sertifikat
+                      +sertifikat{piala}
                     </PrizeList>
                     <PrizeList icon={IconJuara} title="Juara II">
                       {juaraMahasiswa[1]}
                       <br />
-                      +sertifikat
+                      +sertifikat{piala}
                     </PrizeList>
                     <PrizeList icon={IconJuara} title="Juara III">
                       {juaraMahasiswa[2]}
                       <br />
-                      +sertifikat
+                      +sertifikat{piala}
                     </PrizeList>
                     {favoritMahasiswa ? (
                       <PrizeList icon={IconJuara} title="Juara Favorit">
                         {juaraMahasiswa[3]}
                         <br />
-                        +sertifikat
+                        +sertifikat{piala}
                       </PrizeList>
                     ) : (
                       <div />
