@@ -15,13 +15,21 @@ export default function Home() {
     <DefaultLayout title="Homepage - NESCO UGM 2023">
       <div>
         <Hero />
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div>Loading About</div>}>
           <About />
-          <HomePageCompetition />
-          <Webinar />
-          <Photo />
-          <Medpart />
           <BackToTop />
+        </Suspense>
+        <Suspense fallback={<div>Loading Competition</div>}>
+          <HomePageCompetition />
+        </Suspense>
+        <Suspense fallback={<div>Loading Webinar</div>}>
+          <Webinar />
+        </Suspense>
+        <Suspense fallback={<div>Loading Photo</div>}>
+          <Photo />
+        </Suspense>
+        <Suspense fallback={<div>Loading Medpart</div>}>
+          <Medpart />
         </Suspense>
       </div>
 
