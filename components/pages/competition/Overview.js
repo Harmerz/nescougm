@@ -11,7 +11,13 @@ import { Button } from '../../element/button'
 import OverviewList from './OverviewList'
 import VerticalBar from './VerticalBar'
 
-export function Overview({ competitionDescription, peserta, biayaPendaftaran, contactPersons }) {
+export function Overview({
+  competitionDescription,
+  peserta,
+  biayaPendaftaran,
+  contactPersons,
+  guidebook,
+}) {
   useEffect(() => {
     AOS.init()
   }, [])
@@ -59,10 +65,10 @@ export function Overview({ competitionDescription, peserta, biayaPendaftaran, co
           </div>
           <div className="w-[80%] h-[4px] mt-[8px] bg-c-01" />
         </div>
-        <div className="w-full mt-[15px] font-poppins text-white text-base md:text-lg lg:text-lg xl:text-xl text-justify">
+        <div className="w-full mt-[15px] font-poppins text-white text-[12px] md:text-[16px] 2xl:text-xl   text-justify">
           {competitionDescription}
         </div>
-        <Link href="/signin" className="mt-[15px] z-[100]">
+        <Link href={guidebook} className="mt-[15px] z-[100]">
           <Button type="secondary" size="sm">
             Guide Book
           </Button>
@@ -186,13 +192,23 @@ export function Overview({ competitionDescription, peserta, biayaPendaftaran, co
               <div className="font-bold">{nama}</div>
               <div>
                 WA:{' '}
-                <a href={`http://wa.me/62${wa}`} target="_blank" rel="noreferrer">
+                <a
+                  href={`http://wa.me/62${wa}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline hover:opacity-50"
+                >
                   {wa}
                 </a>
               </div>
               <div>
                 LINE:{' '}
-                <a href={`http://line.me/ti/p/~${line}`} target="_blank" rel="noreferrer">
+                <a
+                  href={`http://line.me/ti/p/~${line}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline hover:opacity-50"
+                >
                   {line}
                 </a>
               </div>

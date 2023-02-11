@@ -10,7 +10,7 @@ export default function OverviewList({ children, icon, title }) {
         <div className="text-xl md:text-2xl lg:text-3xl font-jost text-transparent bg-clip-text bg-gradient-to-b from-c-01 to-c-02 text-center lg:text-left">
           {title}
         </div>
-        <div className="text-base md:text-lg lg:text-xl font-poppins text-white text-center lg:text-left">
+        <div className=" text-[12px] md:text-[16px] 2xl:text-xl font-poppins text-white text-center lg:text-left">
           {children}
         </div>
       </div>

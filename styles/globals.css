@@ -21,3 +21,23 @@
   background: #00769a;
 }
 /* Scroll Bar Syle */
+
+/* react-slick style */
+.slick-slide {
+  padding: 0 10px;
+}
+
+.slick-list {
+  margin: 0 -10px;
+}
+/* react-slick style */
+
+/* Change the white to any color */
+input:-webkit-autofill {
+  -webkit-text-fill-color: #a5a9ad !important;
+}
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px #2b3a46 inset;
+}

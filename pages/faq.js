@@ -9,7 +9,9 @@ export default function FAQ() {
         <Faq />
         <BackToTop />
       </div>
-      <Footer />
+      <footer>
+        <Footer />
+      </footer>
     </DefaultLayout>
   )
 }

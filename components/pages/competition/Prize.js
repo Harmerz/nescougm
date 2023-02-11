@@ -13,15 +13,17 @@ import RightArrow from '../../../public/vector/competition/competition-prize-rig
 import PrizeList from './PrizeList'
 import VerticalBar from './VerticalBar'
 
-export function Prize({ juaraMahasiswa, juaraSMA }) {
+export function Prize({ juaraMahasiswa, juaraSMA, piala }) {
   const favoritMahasiswa = juaraMahasiswa.length === 4
   const favoritSMA = juaraSMA.length === 4
   const alignMahasiswa = !favoritMahasiswa && favoritSMA
   const alignSMA = !favoritSMA && favoritMahasiswa
+  const hanyaMahasiswa = juaraSMA.length === 0
+  const [currentSlide, setCurrentSlide] = useState(0)
   useEffect(() => {
     AOS.init()
   }, [])
-  const [currentSlide, setCurrentSlide] = useState(0)
+  useEffect(() => setCurrentSlide(0), [hanyaMahasiswa])
   return (
     <div
       className="w-full h-fit lg:min-h-[650px] lg:h-[100vh] bg-c-00 flex justify-end items-center relative"
@@ -94,7 +96,7 @@ export function Prize({ juaraMahasiswa, juaraSMA }) {
           Pool
         </div>
         <div className="h-[24%] ml-[10%] w-[80%] font-poppins text-white text-base md:text-lg lg:text-xl xl:text-2xl flex items-center">
-          <div>
+          <div className={hanyaMahasiswa ? 'hidden' : ''}>
             Go to Kategori{' '}
             <span
               className="cursor-pointer text-transparent bg-clip-text bg-gradient-to-tl from-c-01 to-c-02 z-[100]"
@@ -122,7 +124,8 @@ export function Prize({ juaraMahasiswa, juaraSMA }) {
               showStatus={false}
               showArrows={false}
               infiniteLoop
-              emulateTouch
+              emulateTouch={!hanyaMahasiswa}
+              swipeable={!hanyaMahasiswa}
               preventMovementUntilSwipeScrollTolerance
               swipeScrollTolerance={50}
               className="w-full h-full relative"
@@ -131,7 +134,7 @@ export function Prize({ juaraMahasiswa, juaraSMA }) {
                   <span
                     className={`inline-block w-[12px] h-[12px] rounded-full first:ml-[25vw] first:sm:ml-[23vw] first:md:ml-[21vw] first:lg:ml-[12vw] mx-[0.4vw] lg:mb-[15vh] cursor-pointer ${
                       isSelected ? 'bg-c-01' : 'bg-white'
-                    }`}
+                    } ${hanyaMahasiswa ? 'hidden' : ''}`}
                     onClick={onClickHandler}
                     onKeyDown={onClickHandler}
                     role="button"
@@ -162,23 +165,23 @@ export function Prize({ juaraMahasiswa, juaraSMA }) {
                     <PrizeList icon={IconJuara} title="Juara I">
                       {juaraMahasiswa[0]}
                       <br />
-                      +sertifikat
+                      +sertifikat{piala}
                     </PrizeList>
                     <PrizeList icon={IconJuara} title="Juara II">
                       {juaraMahasiswa[1]}
                       <br />
-                      +sertifikat
+                      +sertifikat{piala}
                     </PrizeList>
                     <PrizeList icon={IconJuara} title="Juara III">
                       {juaraMahasiswa[2]}
                       <br />
-                      +sertifikat
+                      +sertifikat{piala}
                     </PrizeList>
                     {favoritMahasiswa ? (
                       <PrizeList icon={IconJuara} title="Juara Favorit">
                         {juaraMahasiswa[3]}
                         <br />
-                        +sertifikat
+                        +sertifikat{piala}
                       </PrizeList>
                     ) : (
                       <div />
@@ -186,7 +189,7 @@ export function Prize({ juaraMahasiswa, juaraSMA }) {
                   </div>
                 </div>
               </div>
-              <div>
+              <div className={hanyaMahasiswa ? 'hidden' : ''}>
                 <div
                   className={`w-full lg:min-h-[650px] lg:h-[100vh] flex lg:flex-col select-none ${
                     alignSMA ? 'absolute inset-0' : ''
@@ -236,7 +239,7 @@ export function Prize({ juaraMahasiswa, juaraSMA }) {
             <button
               onClick={() => setCurrentSlide((slide) => slide + 1)}
               type="button"
-              className="w-[2vw]"
+              className={`w-[2vw] ${hanyaMahasiswa ? 'hidden' : ''}`}
             >
               <Image src={RightArrow} />
             </button>

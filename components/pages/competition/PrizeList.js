@@ -9,7 +9,7 @@ export default function PrizeList({ children, icon, title }) {
       <div className="flex items-center justify-center w-[10vw]">
         <Image src={icon} />
       </div>
-      <div className="text-base sm:text-lg md:text-xl lg:text-lg xl:text-2xl 2xl:text-3xl font-poppins mx-[2px] text-white text-center lg:text-left mt-[5%] lg:mt-[3vh]">
+      <div className="text-[12px] md:text-[16px] font-poppins mx-[2px] text-white text-center lg:text-left mt-[5%] lg:mt-[3vh]">
         {children}
       </div>
     </div>
