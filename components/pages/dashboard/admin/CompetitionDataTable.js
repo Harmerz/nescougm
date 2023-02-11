@@ -1,7 +1,9 @@
+import Image from 'next/image'
+import Link from 'next/link'
 import { useState } from 'react'
 import { AiOutlineRollback, AiOutlineSearch } from 'react-icons/ai'
 
-export function DataTable({ title, onKembali }) {
+export function DataTable({ title }) {
   const isi = [
     ['Haha hihi', '12345', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
     ['Tim Juara oye', '67890', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', true, ''],
@@ -18,25 +20,32 @@ export function DataTable({ title, onKembali }) {
   const [hasilPencarian, setHasilPencarian] = useState(isi)
   return (
     <div>
-      <div className="flex justify-center items-center">
-        <div className="w-[6vw] h-[6vw] bg-[#D9D9D9]" />
+      <div className="flex justify-center items-center mt-10">
+        <div className="relative">
+          <Image
+            src={`/vector/dashboard/peserta/${title.toLowerCase()}.png`}
+            width={150}
+            height={150}
+          />
+        </div>
         <div className="ml-[1%] text-4xl h-fit font-jost font-medium bg-gradient-to-b from-c-01 to-c-02 bg-clip-text text-transparent">
           {title} Competition
         </div>
       </div>
       <div>
-        <button
-          type="submit"
-          href="#?"
-          onClick={onKembali}
-          className="font-jost font-medium sm:text-xs lg:text-lg xl:text-xl flex items-center absolute top-[4%] right-[3%] lg:static text-c-02"
-        >
-          <AiOutlineRollback />
-          &nbsp;
-          <div className=" bg-gradient-to-l from-c-01 to-c-02 bg-clip-text text-transparent">
-            Kembali
-          </div>
-        </button>
+        <Link href="./">
+          <button
+            type="submit"
+            href="#?"
+            className="font-jost font-medium sm:text-xs lg:text-lg xl:text-xl flex items-center absolute top-[4%] right-[3%] lg:static text-c-02"
+          >
+            <AiOutlineRollback />
+            &nbsp;
+            <div className=" bg-gradient-to-l from-c-01 to-c-02 bg-clip-text text-transparent">
+              Kembali
+            </div>
+          </button>
+        </Link>
       </div>
       <div className="flex h-[50px] mt-[14px] font-poppins text-white">
         <div className="w-[36vw] bg-bg-03 rounded-[5px] outline-c-02/[.60] outline outline-1 drop-shadow-[0_0_10px_#0DF8CF20] text-white/[.20] flex">
