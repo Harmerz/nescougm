@@ -58,7 +58,7 @@ export function HomePageCompetition() {
   return (
     <div className="min-h-screen relative justify-center items-center flex flex-col bg-c-00 overflow-hidden">
       <div className="flex min-h-fit h-[20vh] w-full px-8 sm:px-16 mb-16 mt-8 justify-start">
-        <div className="w-full h-full place-self-end lg:place-self-center">
+        {/* <div className="w-full h-full place-self-end lg:place-self-center">
           <motion.svg
             initial="hidden"
             animate="visible"
@@ -126,7 +126,7 @@ export function HomePageCompetition() {
               </linearGradient>
             </defs>
           </motion.svg>
-        </div>
+        </div> */}
       </div>
       <div
         data-aos="fade-in"

@@ -80,7 +80,7 @@ export function Webinar() {
         </div>
       </div>
       <div className="hidden md:grid absolute right-0 top-0 h-[20vh] lg:h-[25vh] md:w-1/4 xl:w-1/3 justify-self-end self-end ">
-        <div className="relative bottom-1/3 sm:bottom-2/3 h-4/5  sm:h-full  w-1/6 xl:w-1/12 justify-self-end ">
+        {/* <div className="relative bottom-1/3 sm:bottom-2/3 h-4/5  sm:h-full  w-1/6 xl:w-1/12 justify-self-end ">
           <motion.svg
             data-aos="fade-left"
             data-aos-duration="500"
@@ -225,7 +225,7 @@ export function Webinar() {
               </linearGradient>
             </defs>
           </motion.svg>
-        </div>
+        </div> */}
       </div>
     </div>
   )

@@ -58,7 +58,7 @@ export function Photo() {
       <div className="bg-gradient-to-t from-transparent to-c-02 relative rounded-[10px] p-[1px] md:p-[3px] md:shadow-[0_-10px_15px_rgba(13,248,207,0.2)] md:min-h-screen flex flex-col sm:grid">
         <div className="bg-c-00 rounded-t-[10px] md:min-h-screen ">
           <div className="flex h-[15vh] sm:h-[10vh] lg:h-[13vh] xl:h-[18vh]">
-            <div className="flex self-center ml-8 lg:ml-12 w-[90px] h-[50px] sm:w-[120px] sm:h-[80px] lg:w-[150.5px] lg:h-[100px] xl:w-[180.5px] xl:h-[120px]">
+            {/* <div className="flex self-center ml-8 lg:ml-12 w-[90px] h-[50px] sm:w-[120px] sm:h-[80px] lg:w-[150.5px] lg:h-[100px] xl:w-[180.5px] xl:h-[120px]">
               <motion.svg
                 className="w-full h-full"
                 viewBox="0 0 146 30"
@@ -129,7 +129,7 @@ export function Photo() {
                   </linearGradient>
                 </defs>
               </motion.svg>
-            </div>
+            </div> */}
           </div>
           <div className="absolute h-[200px] w-[200px] top-2/3 sm:h-[281px] sm:w-[281px] sm:bottom-5">
             <div className="h-full w-full bg-gradient-to-b from-c-02 to-bg-02 opacity-20 rounded-full blur-xl contrast-100 brightness-500 drop-shadow-xl saturate-500" />
@@ -225,7 +225,7 @@ export function Photo() {
               </Slider>
             </div>
           </div>
-          <div className="hidden sm:flex min-h-fit lg:h-[14vh] sm:px-20 lg:px-24 justify-end">
+          {/* <div className="hidden sm:flex min-h-fit lg:h-[14vh] sm:px-20 lg:px-24 justify-end">
             <motion.div
               animate={{
                 scale: [0.5, 1, 1, 0.5, 0.5],
@@ -249,7 +249,7 @@ export function Photo() {
                 alt="vektor"
               />
             </motion.div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

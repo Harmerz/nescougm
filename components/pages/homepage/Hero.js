@@ -51,7 +51,7 @@ export function Hero() {
   return (
     <div className="bg-c-00 min-h-fit">
       <div className="w-full min-h-screen grid items-center">
-        <div className="grid h-[20vh] lg:h-[25vh] w-full lg:w-1/2 self-start justify-self-start">
+        {/* <div className="grid h-[20vh] lg:h-[25vh] w-full lg:w-1/2 self-start justify-self-start">
           <div className="w-2/5 h-full sm:w-1/3 lg:w-2/5 pt-[45px] md:pt-[65px]">
             <motion.svg
               data-aos="fade-right"
@@ -210,7 +210,7 @@ export function Hero() {
               </defs>
             </motion.svg>
           </div>
-        </div>
+        </div> */}
 
         <div
           data-aos="fade-in"
@@ -264,7 +264,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="grid h-[20vh] lg:h-[25vh] w-2/5 sm:w-1/3 lg:w-1/4  relative justify-self-end self-end ">
+        {/* <div className="grid h-[20vh] lg:h-[25vh] w-2/5 sm:w-1/3 lg:w-1/4  relative justify-self-end self-end ">
           <div className="relative pb-20 bottom-1/3 sm:bottom-2/3 h-4/5 w-1/4 sm:h-full sm:w-1/4 lg:w-1/6 justify-self-end ">
             <motion.svg
               data-aos="fade-left"
@@ -411,7 +411,7 @@ export function Hero() {
               </defs>
             </motion.svg>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   )

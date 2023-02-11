@@ -32,7 +32,7 @@ export function About() {
       <div className="rounded-b-[10px] bg-gradient-to-b from-transparent to-c-01 p-[1px] md:p-[3px] md:shadow-lg md:shadow-c-01/20">
         <div className="h-fit md:min-h-screen  bg-c-00 rounded-b-[10px] px-10 sm:px-20 md:px-[100px] ">
           {/* <div className="w-1/2"> */}
-          <div className="absolute left-0 hidden sm:flex min-h-fit lg:h-[14vh] sm:px-10 justify-start">
+          {/* <div className="absolute left-0 hidden sm:flex min-h-fit lg:h-[14vh] sm:px-10 justify-start">
             <motion.div
               animate={{
                 scale: [0.5, 1, 1, 0.5, 0.5],
@@ -56,7 +56,7 @@ export function About() {
                 alt="vektor"
               />
             </motion.div>
-          </div>
+          </div> */}
           {/* </div> */}
           <div className="flex h-fit md:min-h-screen items-center">
             <div className="h-[200px] w-[200px] sm:h-[281px] sm:w-[281px] absolute top-20 left-0 lg:top-1/4 lg:left-10">
@@ -115,7 +115,7 @@ export function About() {
                 </p>
               </div>
             </div>
-            <motion.div
+            {/* <motion.div
               initial="hidden"
               animate="visible"
               className="absolute bottom-0 right-[100px] hidden w-1/4 sm:flex"
@@ -134,11 +134,6 @@ export function About() {
                 />
               </motion.div>
               <motion.div variants={draw} custom={3} className="hidden w-1/6 sm:flex">
-                {/* <motion.div
-                  // variants={draw}
-                  // custom={3}
-                  className="place-self-center sm:w-[75px] sm:h-[100px] lg:w-[100px] lg:h-[150px] xl:w-[120px] xl:h-[190px]"
-                > */}
                 <Image
                   className="h-full w-full"
                   width={0}
@@ -146,12 +141,6 @@ export function About() {
                   src="/homepageassets/Vector 213.svg"
                   alt="vektor"
                 />
-                {/* </motion.div> */}
-                {/* <motion.div */}
-                {/* // variants={draw}
-                // custom={2} */}
-                {/* className="place-self-center sm:w-[75px] sm:h-[100px]  lg:w-[100px] lg:h-[150px] xl:w-[120px] xl:h-[190px]" */}
-                {/* > */}
                 <Image
                   className="h-full w-full"
                   width={0}
@@ -159,12 +148,6 @@ export function About() {
                   src="/homepageassets/Vector 214.svg"
                   alt="vektor"
                 />
-                {/* </motion.div> */}
-                {/* <motion.div
-                  // variants={draw}
-                  // custom={1}
-                  className="place-self-center sm:w-[75px] sm:h-[100px] lg:w-[100px] lg:h-[150px] xl:w-[120px] xl:h-[190px]"
-                > */}
                 <Image
                   className="h-full w-full"
                   width={0}
@@ -172,9 +155,8 @@ export function About() {
                   src="/homepageassets/Vector 215.svg"
                   alt="vektor"
                 />
-                {/* </motion.div> */}
               </motion.div>
-            </motion.div>
+            </motion.div> */}
           </div>
         </div>
       </div>
