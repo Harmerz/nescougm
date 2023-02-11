@@ -9,7 +9,7 @@ export function SignIn() {
   const icons = [AiOutlineMail]
   const form = [{ name: 'email', id: 'email', type: 'email', placeholder: 'Alamat Email' }]
   return (
-    <div className="flex flex-col h-[100vh] max-w-[362px] justify-center mx-auto gap-[10px]">
+    <div className="flex flex-col h-[100vh] max-w-[319px] sm:max-w-[362px] justify-center mx-auto gap-[10px]">
       <form className="flex flex-col justify-center items-center gap-[17px] w-full ">
         {form.map((item, idx) => {
           const Icon = icons[idx]
