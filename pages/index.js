@@ -5,7 +5,7 @@ import { DefaultLayout, Footer } from '../components/layout'
 
 const HomePageCompetition = lazy(() => import('../components/pages/homepage/Competition'))
 const About = lazy(() => import('../components/pages/homepage/About'))
-const Photo = lazy(() => import('../components/pages/homepage/Photo'))
+const Medpart = lazy(() => import('../components/pages/homepage/Medpart'))
 const Webinar = lazy(() => import('../components/pages/homepage/Webinar'))
 
 export default function Home() {
@@ -22,8 +22,8 @@ export default function Home() {
         <Suspense fallback={<div>Loading Webinar</div>}>
           <Webinar />
         </Suspense>
-        <Suspense fallback={<div>Loading Photo</div>}>
-          <Photo />
+        <Suspense fallback={<div>Loading Medpart</div>}>
+          <Medpart />
         </Suspense>
       </div>
 
