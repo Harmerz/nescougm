@@ -2,7 +2,6 @@ import { lazy, Suspense } from 'react'
 
 import { BackToTop } from '../components/element/BackToTop'
 import { DefaultLayout, Footer } from '../components/layout'
-import { Hero } from '../components/pages/homepage'
 
 const HomePageCompetition = lazy(() => import('../components/pages/homepage/Competition'))
 const About = lazy(() => import('../components/pages/homepage/About'))
@@ -14,7 +13,6 @@ export default function Home() {
   return (
     <DefaultLayout title="Homepage - NESCO UGM 2023">
       <div>
-        <Hero />
         <Suspense fallback={<div>Loading About</div>}>
           <About />
           <BackToTop />
