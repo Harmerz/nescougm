@@ -7,7 +7,6 @@ const HomePageCompetition = lazy(() => import('../components/pages/homepage/Comp
 const About = lazy(() => import('../components/pages/homepage/About'))
 const Medpart = lazy(() => import('../components/pages/homepage/Medpart'))
 const Photo = lazy(() => import('../components/pages/homepage/Photo'))
-const Webinar = lazy(() => import('../components/pages/homepage/Webinar'))
 
 export default function Home() {
   return (
@@ -20,9 +19,7 @@ export default function Home() {
         <Suspense fallback={<div>Loading Competition</div>}>
           <HomePageCompetition />
         </Suspense>
-        <Suspense fallback={<div>Loading Webinar</div>}>
-          <Webinar />
-        </Suspense>
+
         <Suspense fallback={<div>Loading Photo</div>}>
           <Photo />
         </Suspense>
