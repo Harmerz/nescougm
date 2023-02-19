@@ -1,11 +1,35 @@
+/* eslint-disable no-undef */
+import axios from 'axios'
 import Image from 'next/image'
-import { AiOutlineMail } from 'react-icons/ai'
+import { useRouter } from 'next/router'
+import { useState } from 'react'
+import { AiFillEye, AiFillEyeInvisible, AiOutlineMail, AiOutlineUnlock } from 'react-icons/ai'
 
 import google from '../../../../public/icon/google.svg'
 import { Button } from '../../../element/button'
-import { InputPassword } from '../InputPassword'
 
 export function SignIn() {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [Open, setOpen] = useState(false)
+  const Toggle = () => {
+    setOpen(!Open)
+  }
+  const route = useRouter()
+  const Login = () => async () => {
+    try {
+      const response = await axios.post('http://localhost:8000/api/signin', {
+        email,
+        password,
+      })
+      localStorage.setItem('token', response.data.token)
+      localStorage.setItem('user', JSON.stringify(response.data.user))
+      route.push('/dashboard/peserta')
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   const icons = [AiOutlineMail]
   const form = [{ name: 'email', id: 'email', type: 'email', placeholder: 'Alamat Email' }]
   return (
@@ -29,11 +53,47 @@ export function SignIn() {
                 placeholder={item.placeholder}
                 className="pl-[43px] bg-c-05 rounded-[8px] flex flex-col justify-between h-full w-full text-[#A5A9AD] focus:outline-none"
                 required
+                onChange={(e) => {
+                  setEmail(e.target.value)
+                }}
               />
             </div>
           )
         })}
-        <InputPassword Keterangan="Kata Sandi" />
+        <div
+          key="password"
+          className="flex gap-[8px] text-[#A5A9AD] text-[16px] font-poppins bg-gradient-to-b from-c-02 to-c-01 drop-shadow-[0px_0px_1.9px_#008DB8] w-full h-[51px] p-[1px] rounded-[8px] items-center justify-center relative"
+        >
+          <AiOutlineUnlock
+            size={24}
+            className="pointer-events-none absolute top-1/2 transform -translate-y-1/2 left-[11px]"
+          />
+          <input
+            type={Open === false ? 'password' : 'text'}
+            name="password"
+            id="password"
+            placeholder="Kata Sandi"
+            className="pl-[43px] bg-c-05 rounded-[8px] flex flex-col justify-between h-full w-full text-[#A5A9AD] focus:outline-none"
+            required
+            onChange={(e) => {
+              setPassword(e.target.value)
+            }}
+          />
+
+          {Open === false ? (
+            <AiFillEyeInvisible
+              size={24}
+              className="cursor-pointer absolute top-1/2 transform -translate-y-1/2 right-[11px]"
+              onClick={Toggle}
+            />
+          ) : (
+            <AiFillEye
+              size={24}
+              className="cursor-pointer absolute top-1/2 transform -translate-y-1/2 right-[11px]"
+              onClick={Toggle}
+            />
+          )}
+        </div>
       </form>
       <p className="font-poppins text-[12px] text-white/50 text-center">
         Lupa kata sandi ?{' '}
@@ -42,7 +102,7 @@ export function SignIn() {
         </span>
       </p>
       <div className="flex flex-col justify-center items-center gap-[17px]">
-        <Button type="tertiary" size="xl" animation="extra">
+        <Button type="tertiary" size="xl" animation="extra" onClick={Login()}>
           Masuk
         </Button>
         <href className=" border-[2px] border-c-01 rounded-[8.07px] w-full py-[11px] cursor-pointer">

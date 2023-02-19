@@ -213,7 +213,7 @@ export function Navbar() {
             dropDown ? '' : 'hidden'
           }`}
         >
-          <Link href="/signin" className="md:p-4 py-2 flex justify-center">
+          <Link href="/auth/signin" className="md:p-4 py-2 flex justify-center">
             <Button color="primary">Sign In</Button>
           </Link>
         </div>
