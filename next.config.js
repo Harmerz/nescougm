@@ -1,5 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'firebasestorage.googleapis.com',
+        port: '',
+      },
+    ],
+  },
   serverRuntimeConfig: {
     PROJECT_ROOT: __dirname,
   },

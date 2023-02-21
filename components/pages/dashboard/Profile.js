@@ -1,10 +1,13 @@
+/* eslint-disable no-undef */
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import { RiLogoutBoxRLine } from 'react-icons/ri'
 
 import vector1 from '../../../public/vector/dashboard/admin/Vector1Db.svg'
 import profilePicture from '../../../public/vector/dashboard/dashboard-profile.svg'
 
 export default function Profile({ icon = profilePicture, posisi = '', nama = '', email = '' }) {
+  const router = useRouter()
   return (
     <div className="">
       <div className="font-jost text-lg sm:text-xl lg:text-2xl xl:text-3xl text-transparent bg-clip-text bg-gradient-to-l from-c-01 to-c-02 w-fit">
@@ -31,6 +34,11 @@ export default function Profile({ icon = profilePicture, posisi = '', nama = '',
             type="submit"
             href="#?"
             className="text-[0.7rem] sm:text-xs lg:text-lg xl:text-xl flex items-center absolute top-[4%] right-[3%] lg:static"
+            onClick={() => {
+              localStorage.removeItem('token')
+              localStorage.removeItem('user')
+              router.push('/auth/signin')
+            }}
           >
             <RiLogoutBoxRLine />
             &nbsp;
