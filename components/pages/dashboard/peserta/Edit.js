@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-undef */
 /* eslint-disable no-underscore-dangle */
 import axios from 'axios'
@@ -57,7 +59,7 @@ export function EditComponent() {
     setEmailAnggota2(data?.teams?.[0]?.emailAnggota2)
     setNamaAnggota3(data?.teams?.[0]?.namaAnggota3)
     setEmailAnggota3(data?.teams?.[0]?.emailAnggota3)
-  }, [data?.teams?.[0]])
+  }, [data?.teams])
 
   const handleSimpan = () => {
     const formData = new FormData()
@@ -84,8 +86,8 @@ export function EditComponent() {
     formData.append('userId', JSON.parse(localStorage.getItem('user'))?._id ?? '-')
     axios
       .post('http://localhost:8000/api/createteam', formData)
-      .then((res) => {
-        console.log(res)
+      .then(() => {
+        router.push('/dashboard/peserta')
       })
       .catch((err) => {
         console.log(err)
@@ -233,6 +235,7 @@ export function EditComponent() {
               </div>
             </div>
           </form>
+
           <div
             className={` self-start rounded bg-clip-text bg-gradient-to-t from-c-01 to-c-02 text-transparent text-xs sm:text-lg py-2 transition-all font-semibold font-poppins`}
           >
@@ -389,6 +392,324 @@ export function EditComponent() {
                 </label>
               </div>
               File : {buktiFollowAnggota1?.name}
+            </div>
+          </div>
+          {/* <------------------------ ANGGOTA 1 ------------------------> */}
+          <div
+            className={` mt-10 self-start rounded bg-clip-text bg-gradient-to-t from-c-01 to-c-02 text-transparent text-xs sm:text-lg py-2 transition-all font-semibold font-poppins`}
+          >
+            ANGGOTA 1
+          </div>
+          <form className="flex flex-col lg:flex-row w-full justify-around">
+            <div className="lg:w-[30%] w-full">
+              <label
+                htmlFor="Anggota1"
+                className="flex-col flex text-white font-poppins font-medium text-base"
+              >
+                Nama Anggota 1:
+                <input
+                  value={namaAnggota2}
+                  onChange={(e) => setNamaAnggota2(e.target.value)}
+                  type="text"
+                  id="Anggota1"
+                  name="Anggota1"
+                  className="bg-bg-04 rounded-lg h-8 p-4 border-c-02 border-[0.5px] border-opacity-30"
+                  required
+                />
+              </label>
+            </div>
+            <div className="lg:w-[30%] w-full self-end justify-self-end">
+              <label
+                htmlFor="EAnggota1"
+                className="flex-col flex text-white font-poppins font-medium text-base lg:mt-0 mt-5 "
+              >
+                Email Anggota 1:
+                <input
+                  value={emailAnggota2}
+                  onChange={(e) => setEmailAnggota2(e.target.value)}
+                  type="email"
+                  id="EKetua"
+                  name="EKetua"
+                  className="bg-bg-04 rounded-lg h-8 p-4 border-c-02 border-[0.5px] border-opacity-30"
+                  required
+                />
+              </label>
+            </div>
+            <div className="lg:w-[30%]" />
+          </form>
+          <div className="flex flex-col md:flex-row w-full justify-between mt-6">
+            <div className=" w-full md:w-[30%] flex-col flex text-white font-poppins font-medium text-base md:mt-0 mt-5">
+              Foto Anggota 1:
+              <div className="flex items-center justify-center w-full">
+                <label
+                  htmlFor="fileFotoAnggota2"
+                  className="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+                >
+                  <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                    <svg
+                      aria-hidden="true"
+                      className="w-10 h-10 mb-3 text-gray-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                      />
+                    </svg>
+                    <div className="mb-2 text-sm text-gray-500 justify-center flex text-center flex-col">
+                      <p className="font-semibold">Click to upload</p>
+                      <p>or drag and drop</p>
+                    </div>
+                  </div>
+                  <input
+                    id="fileFotoAnggota2"
+                    type="file"
+                    className="hidden"
+                    onChange={(e) => setFotoAnggota2(e?.target?.files[0])}
+                  />
+                </label>
+              </div>
+              File : {fotoAnggota2?.name}
+            </div>
+            <div className=" w-full md:w-[30%] flex-col flex text-white font-poppins font-medium text-base md:mt-0 mt-5 ">
+              E-KTM Anggota 1:
+              <div className="flex items-center justify-center w-full">
+                <label
+                  htmlFor="fileEktmAnggota2"
+                  className="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+                >
+                  <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                    <svg
+                      aria-hidden="true"
+                      className="w-10 h-10 mb-3 text-gray-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                      />
+                    </svg>
+                    <div className="mb-2 text-sm text-gray-500 justify-center flex text-center flex-col">
+                      <p className="font-semibold">Click to upload</p>
+                      <p>or drag and drop</p>
+                    </div>
+                  </div>
+                  <input
+                    id="fileEktmAnggota2"
+                    type="file"
+                    className="hidden"
+                    onChange={(e) => setEKtmAnggota2(e?.target?.files[0])}
+                  />
+                </label>
+              </div>
+              File : {eKtmAnggota2?.name}
+            </div>
+            <div className=" w-full md:w-[30%] flex-col flex text-white font-poppins font-medium text-base md:mt-0 mt-5">
+              Bukti Follow IG @nescougm:
+              <div className="flex items-center justify-center w-full">
+                <label
+                  htmlFor="fileBuktiFollowAnggota2"
+                  className="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+                >
+                  <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                    <svg
+                      aria-hidden="true"
+                      className="w-10 h-10 mb-3 text-gray-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                      />
+                    </svg>
+                    <div className="mb-2 text-sm text-gray-500 justify-center flex text-center flex-col">
+                      <p className="font-semibold">Click to upload</p>
+                      <p>or drag and drop</p>
+                    </div>
+                  </div>
+                  <input
+                    id="fileBuktiFollowAnggota2"
+                    type="file"
+                    className="hidden"
+                    onChange={(e) => setBuktiFollowAnggota2(e?.target?.files[0])}
+                  />
+                </label>
+              </div>
+              File : {buktiFollowAnggota2?.name}
+            </div>
+          </div>
+
+          <div
+            className={` mt-10 self-start rounded bg-clip-text bg-gradient-to-t from-c-01 to-c-02 text-transparent text-xs sm:text-lg py-2 transition-all font-semibold font-poppins`}
+          >
+            ANGGOTA 2
+          </div>
+          <form className="flex flex-col lg:flex-row w-full justify-around">
+            <div className="lg:w-[30%] w-full">
+              <label
+                htmlFor="Anggota2"
+                className="flex-col flex text-white font-poppins font-medium text-base"
+              >
+                Nama Anggota 2:
+                <input
+                  value={namaAnggota3}
+                  onChange={(e) => setNamaAnggota3(e.target.value)}
+                  type="text"
+                  id="Anggota2"
+                  name="Anggota2"
+                  className="bg-bg-04 rounded-lg h-8 p-4 border-c-02 border-[0.5px] border-opacity-30"
+                  required
+                />
+              </label>
+            </div>
+            <div className="lg:w-[30%] w-full self-end justify-self-end">
+              <label
+                htmlFor="EAnggota2"
+                className="flex-col flex text-white font-poppins font-medium text-base lg:mt-0 mt-5 "
+              >
+                Email Anggota 2:
+                <input
+                  value={emailAnggota3}
+                  onChange={(e) => setEmailAnggota3(e.target.value)}
+                  type="email"
+                  id="Anggota2"
+                  name="Anggota2"
+                  className="bg-bg-04 rounded-lg h-8 p-4 border-c-02 border-[0.5px] border-opacity-30"
+                  required
+                />
+              </label>
+            </div>
+            <div className="lg:w-[30%]" />
+          </form>
+          <div className="flex flex-col md:flex-row w-full justify-between mt-6">
+            <div className=" w-full md:w-[30%] flex-col flex text-white font-poppins font-medium text-base md:mt-0 mt-5">
+              Foto Anggota 2:
+              <div className="flex items-center justify-center w-full">
+                <label
+                  htmlFor="fileFotoAnggota3"
+                  className="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+                >
+                  <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                    <svg
+                      aria-hidden="true"
+                      className="w-10 h-10 mb-3 text-gray-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                      />
+                    </svg>
+                    <div className="mb-2 text-sm text-gray-500 justify-center flex text-center flex-col">
+                      <p className="font-semibold">Click to upload</p>
+                      <p>or drag and drop</p>
+                    </div>
+                  </div>
+                  <input
+                    id="fileFotoAnggota3"
+                    type="file"
+                    className="hidden"
+                    onChange={(e) => setFotoAnggota3(e?.target?.files[0])}
+                  />
+                </label>
+              </div>
+              File : {fotoAnggota3?.name}
+            </div>
+            <div className=" w-full md:w-[30%] flex-col flex text-white font-poppins font-medium text-base md:mt-0 mt-5 ">
+              E-KTM Anggota 2:
+              <div className="flex items-center justify-center w-full">
+                <label
+                  htmlFor="fileEktmAnggota3"
+                  className="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+                >
+                  <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                    <svg
+                      aria-hidden="true"
+                      className="w-10 h-10 mb-3 text-gray-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                      />
+                    </svg>
+                    <div className="mb-2 text-sm text-gray-500 justify-center flex text-center flex-col">
+                      <p className="font-semibold">Click to upload</p>
+                      <p>or drag and drop</p>
+                    </div>
+                  </div>
+                  <input
+                    id="fileEktmAnggota3"
+                    type="file"
+                    className="hidden"
+                    onChange={(e) => setEKtmAnggota3(e?.target?.files[0])}
+                  />
+                </label>
+              </div>
+              File : {eKtmAnggota3?.name}
+            </div>
+            <div className=" w-full md:w-[30%] flex-col flex text-white font-poppins font-medium text-base md:mt-0 mt-5">
+              Bukti Follow IG @nescougm:
+              <div className="flex items-center justify-center w-full">
+                <label
+                  htmlFor="fileBuktiFollowAnggota3"
+                  className="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+                >
+                  <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                    <svg
+                      aria-hidden="true"
+                      className="w-10 h-10 mb-3 text-gray-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                      />
+                    </svg>
+                    <div className="mb-2 text-sm text-gray-500 justify-center flex text-center flex-col">
+                      <p className="font-semibold">Click to upload</p>
+                      <p>or drag and drop</p>
+                    </div>
+                  </div>
+                  <input
+                    id="fileBuktiFollowAnggota3"
+                    type="file"
+                    className="hidden"
+                    onChange={(e) => setBuktiFollowAnggota3(e?.target?.files[0])}
+                  />
+                </label>
+              </div>
+              File : {buktiFollowAnggota3?.name}
             </div>
           </div>
         </div>

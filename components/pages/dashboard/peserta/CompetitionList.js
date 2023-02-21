@@ -1,11 +1,50 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-console */
+/* eslint-disable no-undef */
+/* eslint-disable no-underscore-dangle */
+import axios from 'axios'
+import FormData from 'form-data'
 import Image from 'next/image'
-import { useCallback, useState } from 'react'
+import { useRouter } from 'next/router'
+import { useCallback, useEffect, useState } from 'react'
 
 import { Button } from '../../../element/button'
 
 export function CompetitionList() {
+  const router = useRouter()
   const [warning, setWarning] = useState(false)
   const [competition, setCompetition] = useState('')
+
+  const profile = () => {
+    const id = JSON.parse(localStorage.getItem('user'))?._id
+    axios
+      .get(`http://localhost:8000/api/${id}/profile`)
+      .then((res) => {
+        setData(res.data)
+      })
+      .catch(() => {
+        router.push('/auth/signin')
+      })
+  }
+  useEffect(() => {
+    profile()
+  }, [])
+
+  const handleClick = () => {
+    const id = JSON.parse(localStorage.getItem('user'))?._id
+    const formData = new FormData()
+    formData.append('selectedCompetition', competition)
+    formData.append('userId', id)
+    axios
+      .post(`http://localhost:8000/api/createTeam`, formData)
+      .then((res) => {
+        console.log(res)
+        router.reload()
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
 
   const ChangeContent = useCallback(() => {
     return (
@@ -29,7 +68,7 @@ export function CompetitionList() {
                 setWarning(!warning)
               }}
             >
-              <Button size="sm" type="primary">
+              <Button size="sm" type="primary" onClick={handleClick}>
                 Daftar
               </Button>
             </button>
@@ -44,7 +83,7 @@ export function CompetitionList() {
         type="button"
         onClick={() => {
           setWarning(!warning)
-          setCompetition('Paper Competition')
+          setCompetition('Lomba Paper')
         }}
         className="svg-wrapper relative flex justify-center"
       >
@@ -89,7 +128,7 @@ export function CompetitionList() {
         type="button"
         onClick={() => {
           setWarning(!warning)
-          setCompetition('Video Competition')
+          setCompetition('Lomba Video')
         }}
         className="svg-wrapper relative flex justify-center"
       >
@@ -133,7 +172,7 @@ export function CompetitionList() {
         type="button"
         onClick={() => {
           setWarning(!warning)
-          setCompetition('Poster Competition')
+          setCompetition('Lomba Poster')
         }}
         className="svg-wrapper relative flex justify-center"
       >

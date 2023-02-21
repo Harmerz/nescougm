@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import { initializeApp } from 'firebase/app'
 import { getDownloadURL, getStorage, ref } from 'firebase/storage'
 import Image from 'next/image'
@@ -25,7 +26,6 @@ export function CompetitionPeserta({ data }) {
 
   const handelGambar = (value) => {
     setModal(true)
-    console.log(value)
     getDownloadURL(ref(getStorage(app), value)).then((URL) => {
       setUrl(URL)
     })
@@ -73,7 +73,9 @@ export function CompetitionPeserta({ data }) {
       </div>
       <div className="flex flex-col w-full items-center justify-center">
         <h1 className="my-12 rounded bg-clip-text bg-gradient-to-t from-c-01 to-c-02 text-transparent text-3xl md:text-5xl px-4 py-2 transition-all font-semibold font-poppins">
-          Paper Competition
+          {data?.selectedCompetition === 'Lomba Video' ? 'Video Competition' : ''}
+          {data?.selectedCompetition === 'Lomba Poster' ? 'Poster Competition' : ''}
+          {data?.selectedCompetition === 'Lomba Paper' ? 'Paper Competition' : ''}
         </h1>
         <div className="bg-c-00 rounded-xl xl:w-full w-11/12 items-center justify-center flex flex-col md:p-6 py-11">
           <div className="flex flex-col w-[98%] h-4/5 bg-bg-01 rounded-xl">
@@ -315,7 +317,7 @@ export function CompetitionPeserta({ data }) {
             </div>
           </div>
           <JumlahKarya />
-          <Pembayaran />
+          <Pembayaran teamId={data?._id} payment={data?.proofOfPayment} status={data?.statusTim} />
         </div>
       </div>
     </>
