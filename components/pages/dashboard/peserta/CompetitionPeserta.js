@@ -316,7 +316,7 @@ export function CompetitionPeserta({ data }) {
               <Button size="sm">Simpan</Button>
             </div>
           </div>
-          <JumlahKarya />
+          {data?.selectedCompetition === 'Lomba Poster' ? <JumlahKarya /> : null}
           <Pembayaran teamId={data?._id} payment={data?.proofOfPayment} status={data?.statusTim} />
         </div>
       </div>
