@@ -317,7 +317,12 @@ export function CompetitionPeserta({ data }) {
             </div>
           </div>
           {data?.selectedCompetition === 'Lomba Poster' ? <JumlahKarya /> : null}
-          <Pembayaran teamId={data?._id} payment={data?.proofOfPayment} status={data?.statusTim} />
+          <Pembayaran
+            teamId={data?._id}
+            payment={data?.proofOfPayment}
+            status={data?.statusTim}
+            kompetisi={data?.selectedCompetition}
+          />
         </div>
       </div>
     </>

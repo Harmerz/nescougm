@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable no-console */
 /* eslint-disable no-undef */
