@@ -3,7 +3,6 @@
 /* eslint-disable no-console */
 /* eslint-disable no-undef */
 import axios from 'axios'
-import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
@@ -15,7 +14,6 @@ import {
   AiOutlineUnlock,
 } from 'react-icons/ai'
 
-import google from '../../../../public/icon/google.svg'
 import { Button } from '../../../element/button'
 
 export function SignIn() {
