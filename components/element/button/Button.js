@@ -1,7 +1,7 @@
 export const Button = ({ children, type, size, animation, onClick }) => {
   const buttonType = {
     primary: 'rounded-full bg-c-01 text-c-00 hover:opacity-80 ',
-    secondary: 'rounded-full text-c-01 border-2 border-c-01 hover:bg-c-01 hover:text-c-00',
+    secondary: 'rounded-full text-c-01 border-2 border-c-01 bg-c-00 hover:bg-c-01 hover:text-c-00',
     tertiary: 'rounded-[8.07px] text-white bg-gradient-to-b from-c-01/[.67] to-[#41B8A9]/[.91]',
   }
 

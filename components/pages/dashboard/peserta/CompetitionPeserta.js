@@ -1,4 +1,6 @@
 /* eslint-disable no-underscore-dangle */
+// import 'reoverlay/lib/ModalWrapper.css'
+
 import { initializeApp } from 'firebase/app'
 import { getDownloadURL, getStorage, ref } from 'firebase/storage'
 import Image from 'next/image'
@@ -21,6 +23,7 @@ export const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 
 export function CompetitionPeserta({ data }) {
+  const [warning, setWarning] = useState(false)
   const [url, setUrl] = useState('')
   const [modal, setModal] = useState(false)
 
@@ -53,22 +56,58 @@ export function CompetitionPeserta({ data }) {
     )
   }, [])
 
+  const ChangeContent = useCallback(() => {
+    return (
+      <div className="bg-black fixed z-40 bg-opacity-[.7] h-screen top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-screen flex justify-center items-center">
+        <div className="flex justify-center">
+          <div className="w-[300px] md:w-[488px] flex flex-col gap-[15px] justify-center bg-[#22292F] border-c-02/25 border-[1px] px-[78px] py-[48px] rounded-[10px] text-white">
+            <h1 className=" text-center text-[12px] md:text-[14px] leading-[30px] font-poppins font-medium">
+              Pastikan Anda telah melakukan pengisian data dengan lengkap dan benar. Apabila sudah
+              simpan permanen maka anda setuju bahwa data yang sudah diisi tidak dapat diubah
+              kembali.
+            </h1>
+            <div className="flex justify-center gap-[40px]">
+              <div>
+                <Button onClick={() => setWarning(!warning)} size="sm" type="secondary">
+                  Batalkan
+                </Button>
+              </div>
+              <button
+                type="submit"
+                onClick={() => {
+                  setWarning(!warning)
+                }}
+              >
+                <Button size="sm" type="primary">
+                  Simpan
+                </Button>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }, [warning])
+
   return (
     <>
       <div
         className={`${
           modal ? 'block' : 'hidden'
-        } fixed z-50 bg-slate-800 top-0 left-0 w-full h-full`}
+        } bg-black fixed z-40 bg-opacity-[.7] h-screen top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-screen flex justify-center items-center`}
       >
-        <button
-          className="absolute top-4 right-8 text-[##f1f1f1] font-bold text-4xl"
-          onClick={() => setModal(false)}
-          type="button"
-        >
-          &times;
-        </button>
-        <div className="flex justify-center items-center">
-          <Image src={url} alt="Picture of the author" width={500} height={500} />
+        <div className="flex justify-start">
+          <div className="flex justify-center items-center">
+            <Image src={url} alt="Picture of the author" width={500} height={500} />
+          </div>
+          <button
+            // className="flex w-screen h-full "
+            className="flex justify-start items-start font-bold text-4xl text-white my-[-20px]"
+            onClick={() => setModal(false)}
+            type="button"
+          >
+            &times;
+          </button>
         </div>
       </div>
       <div className="flex flex-col w-full items-center justify-center">
@@ -303,7 +342,14 @@ export function CompetitionPeserta({ data }) {
                   </Button>
                 </Link>
               </div>
-              <Button>Simpan Permanent</Button>
+              <Button
+                onClick={() => {
+                  setWarning(!warning)
+                }}
+              >
+                Simpan Permanent
+              </Button>
+              {warning ? <ChangeContent /> : <div />}
             </div>
             <div className="flex-row justify-end p-16 md:hidden flex">
               <div className="md:mr-12 mr-6">
@@ -313,7 +359,15 @@ export function CompetitionPeserta({ data }) {
                   </Button>
                 </Link>
               </div>
-              <Button size="sm">Simpan</Button>
+              <Button
+                size="sm"
+                onClick={() => {
+                  setWarning(!warning)
+                }}
+              >
+                Simpan
+              </Button>
+              {warning ? <ChangeContent /> : <div />}
             </div>
           </div>
           {data?.selectedCompetition === 'Lomba Poster' ? <JumlahKarya /> : null}
