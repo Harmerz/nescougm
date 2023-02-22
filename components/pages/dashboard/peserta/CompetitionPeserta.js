@@ -1,8 +1,10 @@
 /* eslint-disable no-underscore-dangle */
 // import 'reoverlay/lib/ModalWrapper.css'
 
+import axios from 'axios'
 import { initializeApp } from 'firebase/app'
 import { getDownloadURL, getStorage, ref } from 'firebase/storage'
+import FormData from 'form-data'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useCallback, useState } from 'react'
@@ -26,6 +28,23 @@ export function CompetitionPeserta({ data }) {
   const [warning, setWarning] = useState(false)
   const [url, setUrl] = useState('')
   const [modal, setModal] = useState(false)
+
+  const handleSavePermamnent = () => {
+    setWarning(!warning)
+    const formData = new FormData()
+    // eslint-disable-next-line no-undef
+    const id = JSON.parse(localStorage?.getItem('user'))?._id
+    formData.append('userId', id)
+    formData.append('savePermanent', true)
+    axios
+      .post('http://localhost:8000/api/createTeam', formData)
+      .then((res) => {
+        console.log(res)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
 
   const handelGambar = (value) => {
     setModal(true)
@@ -72,12 +91,7 @@ export function CompetitionPeserta({ data }) {
                   Batalkan
                 </Button>
               </div>
-              <button
-                type="submit"
-                onClick={() => {
-                  setWarning(!warning)
-                }}
-              >
+              <button type="submit" onClick={handleSavePermamnent}>
                 <Button size="sm" type="primary">
                   Simpan
                 </Button>
@@ -336,37 +350,62 @@ export function CompetitionPeserta({ data }) {
             </div>
             <div className="flex-row justify-end p-16 md:flex hidden">
               <div className="md:mr-12 mr-6">
-                <Link href="/dashboard/peserta/edit">
-                  <Button type="secondary" size="sm">
+                {!data?.savePermanent ? (
+                  <Link href="/dashboard/peserta/edit">
+                    <Button type="secondary" size="sm">
+                      Edit
+                    </Button>
+                  </Link>
+                ) : (
+                  <Button type="dead" animation="dead" size="sm">
                     Edit
                   </Button>
-                </Link>
+                )}
               </div>
-              <Button
-                onClick={() => {
-                  setWarning(!warning)
-                }}
-              >
-                Simpan Permanent
-              </Button>
+              {data?.savePermanent ? (
+                <Button type="dead" size="sm" animation="dead">
+                  Simpan Permanent
+                </Button>
+              ) : (
+                <Button
+                  size="sm"
+                  onClick={() => {
+                    setWarning(!warning)
+                  }}
+                >
+                  Simpan
+                </Button>
+              )}
               {warning ? <ChangeContent /> : <div />}
             </div>
             <div className="flex-row justify-end p-16 md:hidden flex">
               <div className="md:mr-12 mr-6">
-                <Link href="/dashboard/peserta/edit">
-                  <Button type="secondary" size="sm">
+                {!data?.savePermanent ? (
+                  <Link href="/dashboard/peserta/edit">
+                    <Button type="secondary" size="sm">
+                      Edit
+                    </Button>
+                  </Link>
+                ) : (
+                  <Button type="dead" animation="dead" size="sm">
                     Edit
                   </Button>
-                </Link>
+                )}
               </div>
-              <Button
-                size="sm"
-                onClick={() => {
-                  setWarning(!warning)
-                }}
-              >
-                Simpan
-              </Button>
+              {data?.savePermanent ? (
+                <Button type="dead" size="sm" animation="dead">
+                  Simpan
+                </Button>
+              ) : (
+                <Button
+                  size="sm"
+                  onClick={() => {
+                    setWarning(!warning)
+                  }}
+                >
+                  Simpan
+                </Button>
+              )}
               {warning ? <ChangeContent /> : <div />}
             </div>
           </div>
