@@ -1,10 +1,28 @@
+import axios from 'axios'
+import { useRouter } from 'next/router'
+import { useState } from 'react'
 import { AiOutlineMail } from 'react-icons/ai'
 
 import { Button } from '../../../element/button'
 
 export function ResetPassword() {
   const icons = [AiOutlineMail]
+  const [email, setEmail] = useState('')
+  const router = useRouter()
   const form = [{ name: 'email', id: 'email', type: 'email', placeholder: 'Alamat Email' }]
+  const Reset = () => async () => {
+    try {
+      await axios
+        .post('http://localhost:8000/api/requestPasswordReset', {
+          email,
+        })
+        .then(() => {
+          router.push('/auth/verifresetpassword')
+        })
+    } catch (error) {
+      console.log(error)
+    }
+  }
   return (
     <div className="max-w-[319px] sm:max-w-[362px] mx-auto flex flex-col h-[100vh] justify-center items-center gap-[10px]">
       <div className="flex flex-col justify-center items-center gap-[20px] ">
@@ -31,13 +49,14 @@ export function ResetPassword() {
                   placeholder={item.placeholder}
                   className="pl-[43px] bg-c-05 rounded-[8px] flex flex-col justify-between h-full w-full text-[#A5A9AD] focus:outline-none"
                   required
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
             )
           })}
         </form>
 
-        <Button type="tertiary" size="xl" animation="extra">
+        <Button type="tertiary" size="xl" animation="extra" onClick={Reset()}>
           Reset Password
         </Button>
       </div>

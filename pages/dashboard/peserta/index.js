@@ -24,14 +24,18 @@ export default function DashboardAdmin() {
         setData(res.data)
       })
       .catch(() => {
-        router.push('/auth/signin')
+        console.log('error')
+        // router.push('/auth/signin')
       })
   }
   useEffect(() => {
     profile()
   }, [])
   if (data?.verified) {
-    if (data?.teams?.[0].selectedCompetition === '-') {
+    if (
+      data?.teams?.[0]?.selectedCompetition === '-' ||
+      data?.teams?.[0]?.selectedCompetition === undefined
+    ) {
       return (
         <DefaultLayoutDashboard title="Dashboard - NESCO UGM 2023">
           <div className="bg-bg-03 min-h-[100vh] pt-[150px] px-[5%] lg:px-[100px] lg:overflow-hidden">

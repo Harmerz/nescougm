@@ -6,7 +6,7 @@ import axios from 'axios'
 import FormData from 'form-data'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useState } from 'react'
 
 import { Button } from '../../../element/button'
 
@@ -14,21 +14,6 @@ export function CompetitionList() {
   const router = useRouter()
   const [warning, setWarning] = useState(false)
   const [competition, setCompetition] = useState('')
-
-  const profile = () => {
-    const id = JSON.parse(localStorage.getItem('user'))?._id
-    axios
-      .get(`http://localhost:8000/api/${id}/profile`)
-      .then((res) => {
-        setData(res.data)
-      })
-      .catch(() => {
-        router.push('/auth/signin')
-      })
-  }
-  useEffect(() => {
-    profile()
-  }, [])
 
   const handleClick = () => {
     const id = JSON.parse(localStorage.getItem('user'))?._id
@@ -117,7 +102,12 @@ export function CompetitionList() {
           />
         </svg>
         <div className="flex flex-col absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <Image src="/vector/dashboard/peserta/paper.png" width={150} height={150} />
+          <Image
+            alt="Paper Competition"
+            src="/vector/dashboard/peserta/paper.png"
+            width={150}
+            height={150}
+          />
           <div className=" text-white mt-3 text-base font-poppins font-semibold flex justify-center text-center">
             Paper Competition
           </div>
@@ -162,7 +152,12 @@ export function CompetitionList() {
           />
         </svg>
         <div className="flex flex-col absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <Image src="/vector/dashboard/peserta/video.png" width={150} height={150} />
+          <Image
+            alt="Video Competition"
+            src="/vector/dashboard/peserta/video.png"
+            width={150}
+            height={150}
+          />
           <div className=" text-white text-base font-poppins font-semibold flex justify-center text-center mt-3">
             Video Competition
           </div>
@@ -206,7 +201,12 @@ export function CompetitionList() {
           />
         </svg>
         <div className="flex flex-col absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <Image src="/vector/dashboard/peserta/poster.png" width={150} height={150} />
+          <Image
+            alt="Poster Competition"
+            src="/vector/dashboard/peserta/poster.png"
+            width={150}
+            height={150}
+          />
           <div className=" text-white text-base font-poppins font-semibold flex justify-center text-center mt-3">
             Poster Competition
           </div>
