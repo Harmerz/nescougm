@@ -24,8 +24,9 @@ export default function DashboardAdmin() {
         setData(res.data)
       })
       .catch(() => {
+        // eslint-disable-next-line no-console
         console.log('error')
-        // router.push('/auth/signin')
+        router.push('/auth/signin')
       })
   }
   useEffect(() => {

@@ -1,39 +1,55 @@
-import Image from 'next/image'
+/* eslint-disable no-underscore-dangle */
+import axios from 'axios'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { AiOutlineRollback, AiOutlineSearch } from 'react-icons/ai'
 
+import { CompetitionPeserta } from './CompetitionDetailPeserta'
+
 export function DataTable({ title }) {
-  const isi = [
-    ['Haha hihi', '12345', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
-    ['Tim Juara oye', '67890', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', true, ''],
-    ['Nekolism', '11111', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
-    ['neko-neko.fig', '10110', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
-    ['isyarat sistem dapet A', '04010', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
-    ['isyarat sistem dapet B', '12345', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
-    ['isyarat sistem dapet C', '12345', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
-    ['isyarat sistem dapet D', '12345', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
-    ['isyarat sistem dapet E', '12345', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
-    ['isyarat sistem dapet F', '12345', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
-    ['isyarat sistem dapet G', '12345', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
-  ]
+  const [data, setData] = useState([])
+  const [dataDetail, setDataDetail] = useState([])
+  const dataProfile = () => {
+    axios
+      .get('http://localhost:8000/api/users')
+      .then((res) => {
+        setData(res.data)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
+  useEffect(() => {
+    dataProfile()
+  }, [])
+  const isi = useMemo(() => {
+    return data.map((item) => {
+      return [
+        item?.teams?.[0]?.namaTeam ?? '-',
+        item?._id ?? '-',
+        item?.name ?? '-',
+        item?.email ?? '-',
+        item?.teams?.[0]?.nomorKontak1 ?? '-',
+        item?.paymentStatus ?? false,
+        item?.teams?.[0]?.submission ?? '-',
+      ]
+    })
+  }, [data])
+
   const [hasilPencarian, setHasilPencarian] = useState(isi)
+
+  useEffect(() => {
+    setHasilPencarian(isi)
+  }, [isi])
   return (
     <div>
       <div className="flex justify-center items-center mt-10">
-        <div className="relative">
-          <Image
-            src={`/vector/dashboard/peserta/${title.toLowerCase()}.png`}
-            width={150}
-            height={150}
-          />
-        </div>
         <div className="ml-[1%] text-4xl h-fit font-jost font-medium bg-gradient-to-b from-c-01 to-c-02 bg-clip-text text-transparent">
-          {title} Competition
+          {title}
         </div>
       </div>
       <div>
-        <Link href="./">
+        <Link href="/">
           <button
             type="submit"
             href="#?"
@@ -76,7 +92,6 @@ export function DataTable({ title }) {
         <div className="grid grid-rows-[60px] grid-cols-[0.4fr_repeat(8,1fr)_12px] justify-items-center items-center outline outline-1 outline-c-02/[.60] rounded-t-[5px]">
           <div>No</div>
           <div>Nama tim</div>
-          <div>ID</div>
           <div>Nama ketua</div>
           <div>Email ketua</div>
           <div>Nomor wa</div>
@@ -93,12 +108,12 @@ export function DataTable({ title }) {
             >
               <div>{index + 1}</div>
               <div>{baris[0]}</div>
-              <div>{baris[1]}</div>
+
               <div>{baris[2]}</div>
               <div>{baris[3]}</div>
               <div>{baris[4]}</div>
               <div>
-                <button type="submit" href="#?">
+                <button type="button" onClick={() => setDataDetail(data[index]?.teams?.[0])}>
                   <div className="font-bold underline">Lihat Detail</div>
                 </button>
               </div>
@@ -109,6 +124,7 @@ export function DataTable({ title }) {
           ))}
         </div>
       </div>
+      <CompetitionPeserta data={dataDetail} />
     </div>
   )
 }

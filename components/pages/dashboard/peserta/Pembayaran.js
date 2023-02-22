@@ -20,7 +20,7 @@ const firebaseConfig = {
   appId: '1:412903612:web:b4e65de54653a5b68508b9',
 }
 
-export function Pembayaran({ teamId, payment, status }) {
+export function Pembayaran({ teamId, payment, status, kompetisi }) {
   const router = useRouter()
   const [file, setFile] = useState()
   const [modal, setModal] = useState(false)
@@ -74,14 +74,16 @@ export function Pembayaran({ teamId, payment, status }) {
         <div className="lg:flex-row flex mt-6 flex-col">
           <div className="lg:w-1/2 text-white font-jost text-xs md:text-base">
             <p>
-              Pembayaran lomba ..... sebesar Rp.,,,,,, dapat dibayarkan melalui rekening di bawah
-              ini:
+              Pembayaran kompetisi <span className="text-c-02">{kompetisi}</span> sebesar Rp.,,,,,,
+              dapat dibayarkan melalui rekening di bawah ini
             </p>
-            <p>1. Mandiri 123556778 atas nama ..... </p>
-            <p>2. BCA 5462892 atas nama ...</p>
+            <p>1. Bank BCA : 8175413321 atas nama Citra Agatha</p>
+            <p>2. Bank CIMB Niaga : 706729978000 atas nama Citra Agatha</p>
+            <p>3. Bank BRI : 691101017625539 atas nama Malikha Aulia</p>
+            <p>4. OVO, Gopay, Dana : 085156052603</p>
             <p>
-              Setelah berhasil melakukan pembayaran, harap melampirkan bukti pembayaran pada tempat
-              yang telah disediakan.
+              atas nama Citra Agatha Setelah berhasil melakukan pembayaran, harap melampirkan bukti
+              pembayaran pada tempat yang telah disediakan.
             </p>
           </div>
           <div className="flex flex-col w-full lg:w-1/2 justify-end items-start">
