@@ -1,12 +1,21 @@
 /* eslint-disable no-underscore-dangle */
 import axios from 'axios'
 import Link from 'next/link'
-import { useEffect, useMemo, useState } from 'react'
-import { AiOutlineRollback, AiOutlineSearch } from 'react-icons/ai'
+import { useCallback, useEffect, useMemo, useState } from 'react'
+import {
+  AiFillCheckSquare,
+  AiOutlineCheckSquare,
+  AiOutlineRollback,
+  AiOutlineSearch,
+} from 'react-icons/ai'
 
+import { Button } from '../../../element/button'
 import { CompetitionPeserta } from './CompetitionDetailPeserta'
 
 export function DataTable({ title }) {
+  const [verif, setVerif] = useState(false)
+  const [batal, setBatal] = useState(false)
+  const [status, setStatus] = useState(false)
   const [data, setData] = useState([])
   const [dataDetail, setDataDetail] = useState([])
   const dataProfile = () => {
@@ -35,6 +44,71 @@ export function DataTable({ title }) {
       ]
     })
   }, [data])
+
+  // warning sblm ngeverifikasi
+  const ChangeContent1 = useCallback(() => {
+    return (
+      <div className="bg-black/30 fixed z-40 h-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full flex justify-center items-center">
+        <div className="flex justify-center">
+          <div className="w-[300px] md:w-[488px] flex flex-col gap-[15px] justify-center bg-[#22292F] border-c-02/25 border-[1px] px-[78px] py-[48px] rounded-[10px] text-white">
+            <h1 className=" text-center text-[12px] md:text-[14px] leading-[30px] font-poppins font-medium">
+              Beneran terverif kan? cek lagi yang teliti nggih
+            </h1>
+            <div className="flex justify-center gap-[40px]">
+              <div>
+                <Button onClick={() => setVerif(false)} size="sm" type="secondary">
+                  Batalkan
+                </Button>
+              </div>
+              <button
+                type="submit"
+                onClick={() => {
+                  setVerif(false)
+                }}
+              >
+                <Button size="sm" type="primary" onClick={() => setStatus(true)}>
+                  Verifikasi
+                </Button>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }, [])
+
+  // warning batal verifikasi
+  const ChangeContent2 = useCallback(() => {
+    return (
+      <div className="bg-black/30 fixed z-40 h-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full flex justify-center items-center">
+        <div className="flex justify-center">
+          <div className="w-[300px] md:w-[488px] flex flex-col gap-[15px] justify-center bg-[#22292F] border-c-02/25 border-[1px] px-[78px] py-[48px] rounded-[10px] text-white">
+            <h1 className=" text-center text-[12px] md:text-[14px] leading-[30px] font-poppins font-medium">
+              Batal verifikasi peserta? Besok lagi jangan plin-plan ya
+            </h1>
+            <div className="flex justify-center gap-[40px]">
+              <div>
+                <Button onClick={() => setBatal(false)} size="sm" type="secondary">
+                  Enggajadi
+                </Button>
+              </div>
+              <button
+                type="submit"
+                onClick={() => {
+                  setBatal(false)
+                  setStatus(true)
+                }}
+              >
+                <Button size="sm" type="primary" onClick={() => setStatus(false)}>
+                  Batalkan
+                </Button>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }, [])
 
   const [hasilPencarian, setHasilPencarian] = useState(isi)
 
@@ -117,7 +191,19 @@ export function DataTable({ title }) {
                   <div className="font-bold underline">Lihat Detail</div>
                 </button>
               </div>
-              <div>{baris[5] ? '1' : '0'}</div>
+              <div>
+                {baris[5] && status ? (
+                  <button onClick={() => setBatal(true)} type="button">
+                    <AiFillCheckSquare size={19.79} className="text-c-02" />
+                  </button>
+                ) : (
+                  <button onClick={() => setVerif(true)} type="button">
+                    <AiOutlineCheckSquare size={19.79} className="text-c-02" />
+                  </button>
+                )}
+                {verif ? <ChangeContent1 /> : <div />}
+                {batal ? <ChangeContent2 /> : <div />}
+              </div>
               <div>{baris[6]}</div>
               <div className="h-[1px] col-span-full bg-c-02/[.60] w-[97%]" />
             </div>

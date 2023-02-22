@@ -3,9 +3,6 @@ import { AiFillEye, AiFillEyeInvisible, AiOutlineUnlock } from 'react-icons/ai'
 
 export function InputPassword({ Keterangan = 'Kata Sandi' }) {
   const [Open, setOpen] = useState(false)
-  const Toggle = () => {
-    setOpen(!Open)
-  }
   return (
     <div
       key="password"
@@ -28,13 +25,13 @@ export function InputPassword({ Keterangan = 'Kata Sandi' }) {
         <AiFillEyeInvisible
           size={24}
           className="cursor-pointer absolute top-1/2 transform -translate-y-1/2 right-[11px]"
-          onClick={Toggle}
+          onClick={setOpen(true)}
         />
       ) : (
         <AiFillEye
           size={24}
           className="cursor-pointer absolute top-1/2 transform -translate-y-1/2 right-[11px]"
-          onClick={Toggle}
+          onClick={setOpen(true)}
         />
       )}
     </div>

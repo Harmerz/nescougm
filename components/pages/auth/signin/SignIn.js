@@ -144,7 +144,7 @@ export function SignIn() {
         <div className="font-poppins text-[12px] text-white/50 text-center">
           Lupa kata sandi ?{' '}
           <Link href="/auth/resetpassword1">
-            <p className="text-c-02 underline">Reset</p>
+            <span className="text-c-02 underline">Reset</span>
           </Link>
         </div>
         <div className="flex flex-col justify-center items-center gap-[17px]">

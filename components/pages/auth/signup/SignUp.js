@@ -1,16 +1,17 @@
 /* eslint-disable no-console */
 import axios from 'axios'
-import Image from 'next/image'
+// import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
-import { AiFillEye, AiFillEyeInvisible, AiOutlineMail, AiOutlineUnlock } from 'react-icons/ai'
-import { BsPerson } from 'react-icons/bs'
+import { AiFillEye, AiFillEyeInvisible, AiFillMail, AiFillUnlock } from 'react-icons/ai'
+import { BsPersonFill } from 'react-icons/bs'
+import { FaGraduationCap } from 'react-icons/fa'
 
-import google from '../../../../public/icon/google.svg'
+// import google from '../../../../public/icon/google.svg'
 import { Button } from '../../../element/button'
 
 export function SignUp() {
-  const icons = [BsPerson, AiOutlineMail]
+  const icons = [BsPersonFill, AiFillMail]
   const route = useRouter()
   const [status, setStatus] = useState('Pelajar')
   const [email, setEmail] = useState('')
@@ -82,11 +83,34 @@ export function SignUp() {
               </div>
             )
           })}
+          <div className="flex gap-[8px] text-[#A5A9AD] text-[16px] font-poppins bg-gradient-to-b from-c-02 to-c-01 drop-shadow-[0px_0px_1.9px_#008DB8] w-full h-[51px] p-[1px] rounded-[8px] items-center justify-center relative">
+            <FaGraduationCap
+              size={24}
+              className="pointer-events-none absolute top-1/2 transform -translate-y-1/2 left-[11px]"
+            />
+            <select
+              name="status"
+              id="status"
+              className="text-[16px] pl-[43px] bg-c-05 rounded-[8px]  h-full w-full text-[#A5A9AD] focus:outline-none"
+              required
+              onChange={(e) => setStatus(e.target.value)}
+            >
+              <option disabled selected hidden>
+                pilih kategori peserta--
+              </option>
+              <option value="Pelajar" className="w-[319px] sm:w-[362px]">
+                Pelajar
+              </option>
+              <option value="Mahasiswa" className="w-[319px] sm:w-[362px]">
+                Mahasiswa
+              </option>
+            </select>
+          </div>
           <div
             key="password"
             className="flex gap-[8px] text-[#A5A9AD] text-[16px] font-poppins bg-gradient-to-b from-c-02 to-c-01 drop-shadow-[0px_0px_1.9px_#008DB8] w-full h-[51px] p-[1px] rounded-[8px] items-center justify-center relative"
           >
-            <AiOutlineUnlock
+            <AiFillUnlock
               size={24}
               className="pointer-events-none absolute top-1/2 transform -translate-y-1/2 left-[11px]"
             />
@@ -118,7 +142,7 @@ export function SignUp() {
             key="confirmPassword"
             className="flex gap-[8px] text-[#A5A9AD] text-[16px] font-poppins bg-gradient-to-b from-c-02 to-c-01 drop-shadow-[0px_0px_1.9px_#008DB8] w-full h-[51px] p-[1px] rounded-[8px] items-center justify-center relative"
           >
-            <AiOutlineUnlock
+            <AiFillUnlock
               size={24}
               className="pointer-events-none absolute top-1/2 transform -translate-y-1/2 left-[11px]"
             />
@@ -156,42 +180,43 @@ export function SignUp() {
         <p className={` ${confirm ? 'hidden' : 'block'} text-xs text-red-500`}>
           Password Tidak Sama
         </p>
+
+        {/* <div
+          className="flex flex-row justify-around w-10/12"
+          onChange={(e) => setStatus(e.target.value)}
+        >
+          <label htmlFor="1" className="text-white text-base font-poppins flex items-center">
+            <input
+              type="radio"
+              name="kategori"
+              value="Pelajar"
+              className="after:bg-c-01 w-5 h-5 mr-2"
+              defaultChecked
+            />
+            Pelajar
+          </label>
+          <label htmlFor="2" className="text-white text-base font-poppins flex items-center">
+            <input
+              type="radio"
+              name="kategori"
+              value="Mahasiswa"
+              className="after:bg-c-01 w-5 h-5 mr-2"
+            />
+            Mahasiswa
+          </label>
+        </div> */}
         <div className="flex flex-col justify-center items-center gap-[17px]">
           <Button type="tertiary" size="xl" animation="extra" onClick={Register()}>
             Daftar
           </Button>
-          <div
-            className="flex flex-row justify-around w-10/12"
-            onChange={(e) => setStatus(e.target.value)}
-          >
-            <label htmlFor="1" className="text-white text-base font-poppins flex items-center">
-              <input
-                type="radio"
-                name="kategori"
-                value="Pelajar"
-                className="after:bg-c-01 w-5 h-5 mr-2"
-                defaultChecked
-              />
-              Pelajar
-            </label>
-            <label htmlFor="2" className="text-white text-base font-poppins flex items-center">
-              <input
-                type="radio"
-                name="kategori"
-                value="Mahasiswa"
-                className="after:bg-c-01 w-5 h-5 mr-2"
-              />
-              Mahasiswa
-            </label>
-          </div>
-          <href className=" border-[2px] border-c-01 rounded-[8.07px] w-full py-[11px] cursor-pointer">
+          {/* <href className=" border-[2px] border-c-01 rounded-[8.07px] w-full py-[11px] cursor-pointer">
             <div className="flex gap-[7px] items-center justify-center hover:drop-shadow-[0_0_20px_rgba(81,177,204,0.64)] ">
               <Image src={google} width={16.48} className="flex items-center " />
               <button type="button" className="text-white font-jost font-bold leading-[30px]  ">
                 Daftar dengan Google
               </button>
             </div>
-          </href>
+          </href> */}
         </div>
       </div>
       <p className="font-poppins text-[12px] text-white/50 text-center">
