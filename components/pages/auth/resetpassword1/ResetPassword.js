@@ -61,12 +61,6 @@ export function ResetPassword() {
           Reset Password
         </Button>
       </div>
-      <p className="font-poppins text-[12px] text-white/50 text-center">
-        Didn&apos;t receive an email?{' '}
-        <span className="text-c-02 underline">
-          <a href="#?">Resend</a>
-        </span>
-      </p>
     </div>
   )
 }

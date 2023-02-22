@@ -150,7 +150,7 @@ export function SignUp() {
               type={Open2 === false ? 'password' : 'text'}
               name="confirmPassword"
               id="confirmPassword"
-              placeholder="Kata Sandi"
+              placeholder="Konfirmasi Kata Sandi"
               className="pl-[43px] bg-c-05 rounded-[8px] flex flex-col justify-between h-full w-full text-[#A5A9AD] focus:outline-none"
               required
               onChange={(e) => {

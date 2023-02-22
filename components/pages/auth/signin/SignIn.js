@@ -151,14 +151,14 @@ export function SignIn() {
           <Button type="tertiary" size="xl" animation="extra" onClick={Login()}>
             Masuk
           </Button>
-          <div className=" border-[2px] border-c-01 rounded-[8.07px] w-full py-[11px] cursor-pointer">
+          {/* <div className=" border-[2px] border-c-01 rounded-[8.07px] w-full py-[11px] cursor-pointer">
             <div className="flex gap-[7px] items-center justify-center hover:drop-shadow-[0_0_20px_rgba(81,177,204,0.64)] ">
               <Image src={google} width={16.48} className="flex items-center " />
               <button type="button" className="text-white font-jost font-bold leading-[30px]  ">
                 Masuk dengan Google
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="font-poppins text-[12px] text-white/50 text-center">
           Don&apos;t have an account ?{' '}
