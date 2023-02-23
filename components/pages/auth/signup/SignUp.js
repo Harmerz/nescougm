@@ -29,7 +29,7 @@ export function SignUp() {
   const Register = () => async () => {
     try {
       await axios
-        .post('http://localhost:8000/api/signup', {
+        .post('https://be-nesco-2023.vercel.app/api/signup', {
           email,
           password,
           status,

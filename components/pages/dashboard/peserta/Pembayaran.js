@@ -37,7 +37,7 @@ export function Pembayaran({ teamId, payment, status, kompetisi }) {
     formData.append('proofOfPayment', file)
     formData.append('teamId', teamId)
     axios
-      .post(`http://localhost:8000/api/payment`, formData)
+      .post(`https://be-nesco-2023.vercel.app/api/payment`, formData)
       .then((res) => {
         console.log(res)
         router.reload()

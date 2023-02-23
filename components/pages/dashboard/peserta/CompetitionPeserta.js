@@ -38,7 +38,7 @@ export function CompetitionPeserta({ data }) {
     formData.append('userId', id)
     formData.append('savePermanent', true)
     axios
-      .post('http://localhost:8000/api/createTeam', formData)
+      .post('https://be-nesco-2023.vercel.app/api/createTeam', formData)
       .then((res) => {
         console.log(res)
       })

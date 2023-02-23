@@ -21,7 +21,7 @@ export function DataTable({ title }) {
   const [idDetail, setIdDetail] = useState('')
   const dataProfile = () => {
     axios
-      .get('http://localhost:8000/api/users')
+      .get('https://be-nesco-2023.vercel.app/api/users')
       .then((res) => {
         setData(res.data)
       })
@@ -49,7 +49,7 @@ export function DataTable({ title }) {
   const handelVerifPembayaran = async (id) => {
     try {
       axios
-        .post(`http://localhost:8000/api/${id}/payment`, {
+        .post(`https://be-nesco-2023.vercel.app/api/${id}/payment`, {
           paymentStatus: true,
         })
         .then(() => {
@@ -65,7 +65,7 @@ export function DataTable({ title }) {
   const handelBatalVerifPembayaran = async (id) => {
     try {
       axios
-        .put(`http://localhost:8000/api/${id}/cancelpayment`, {
+        .put(`https://be-nesco-2023.vercel.app/api/${id}/cancelpayment`, {
           paymentStatus: false,
         })
         .then(() => {

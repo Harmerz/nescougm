@@ -15,7 +15,7 @@ export default function DashboardAdmin() {
       // eslint-disable-next-line no-underscore-dangle, no-undef
       const id = JSON.parse(localStorage.getItem('user'))?._id
       axios
-        .get(`http://localhost:8000/api/${id}/profile`)
+        .get(`https://be-nesco-2023.vercel.app/api/${id}/profile`)
         .then((res) => {
           setData(res.data)
         })
