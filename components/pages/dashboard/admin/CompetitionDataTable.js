@@ -16,12 +16,12 @@ import { CompetitionPeserta } from './CompetitionDetailPeserta'
 export function DataTable({ title }) {
   const [verif, setVerif] = useState(false)
   const [batal, setBatal] = useState(false)
-  const [status, setStatus] = useState(false)
   const [data, setData] = useState([])
   const [dataDetail, setDataDetail] = useState([])
+  const [idDetail, setIdDetail] = useState('')
   const dataProfile = () => {
     axios
-      .get('http://localhost:8000/api/users')
+      .get('https://be-nesco-2023.vercel.app/api/users')
       .then((res) => {
         setData(res.data)
       })
@@ -46,8 +46,42 @@ export function DataTable({ title }) {
     })
   }, [data])
 
+  const handelVerifPembayaran = async (id) => {
+    try {
+      axios
+        .post(`https://be-nesco-2023.vercel.app/api/${id}/payment`, {
+          paymentStatus: true,
+        })
+        .then(() => {
+          dataProfile()
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  const handelBatalVerifPembayaran = async (id) => {
+    try {
+      axios
+        .put(`https://be-nesco-2023.vercel.app/api/${id}/cancelpayment`, {
+          paymentStatus: false,
+        })
+        .then(() => {
+          dataProfile()
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   // warning sblm ngeverifikasi
-  const ChangeContent1 = useCallback(() => {
+  const ChangeContent1 = useCallback(({ id }) => {
+    console.log(id)
     return (
       <div className="bg-black/30 fixed z-40 h-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full flex justify-center items-center">
         <div className="flex justify-center">
@@ -67,7 +101,7 @@ export function DataTable({ title }) {
                   setVerif(false)
                 }}
               >
-                <Button size="sm" type="primary" onClick={() => setStatus(true)}>
+                <Button size="sm" type="primary" onClick={() => handelVerifPembayaran(id)}>
                   Verifikasi
                 </Button>
               </button>
@@ -79,7 +113,7 @@ export function DataTable({ title }) {
   }, [])
 
   // warning batal verifikasi
-  const ChangeContent2 = useCallback(() => {
+  const ChangeContent2 = useCallback(({ id }) => {
     return (
       <div className="bg-black/30 fixed z-40 h-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full flex justify-center items-center">
         <div className="flex justify-center">
@@ -97,11 +131,10 @@ export function DataTable({ title }) {
                 type="submit"
                 onClick={() => {
                   setBatal(false)
-                  setStatus(true)
                 }}
               >
-                <Button size="sm" type="primary" onClick={() => setStatus(false)}>
-                  Batalkan
+                <Button size="sm" type="primary" onClick={() => handelBatalVerifPembayaran(id)}>
+                  Batalkan Verifikasi
                 </Button>
               </button>
             </div>
@@ -193,17 +226,29 @@ export function DataTable({ title }) {
                 </button>
               </div>
               <div>
-                {baris[5] && status ? (
-                  <button onClick={() => setBatal(true)} type="button">
+                {baris[5] ? (
+                  <button
+                    onClick={() => {
+                      setBatal(true)
+                      setIdDetail(baris[1])
+                    }}
+                    type="button"
+                  >
                     <AiFillCheckSquare size={19.79} className="text-c-02" />
                   </button>
                 ) : (
-                  <button onClick={() => setVerif(true)} type="button">
+                  <button
+                    onClick={() => {
+                      setVerif(true)
+                      setIdDetail(baris[1])
+                    }}
+                    type="button"
+                  >
                     <AiOutlineCheckSquare size={19.79} className="text-c-02" />
                   </button>
                 )}
-                {verif ? <ChangeContent1 /> : <div />}
-                {batal ? <ChangeContent2 /> : <div />}
+                {verif ? <ChangeContent1 id={idDetail} /> : <div />}
+                {batal ? <ChangeContent2 id={idDetail} /> : <div />}
               </div>
               <div>{baris[6]}</div>
               <div className="h-[1px] col-span-full bg-c-02/[.60] w-[97%]" />

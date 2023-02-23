@@ -14,7 +14,7 @@ export function ResetPassword() {
   const Reset = () => async () => {
     try {
       await axios
-        .post('http://localhost:8000/api/requestPasswordReset', {
+        .post('https://be-nesco-2023.vercel.app/api/requestPasswordReset', {
           email,
         })
         .then(() => {

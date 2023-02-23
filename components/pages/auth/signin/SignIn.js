@@ -28,7 +28,7 @@ export function SignIn() {
   const profile = () => {
     const id = JSON.parse(localStorage.getItem('user'))?._id ?? ''
     if (id !== '') {
-      axios.get(`http://localhost:8000/api/${id}/profile`).then((res) => {
+      axios.get(`https://be-nesco-2023.vercel.app/api/${id}/profile`).then((res) => {
         if (res?.data?.role === 'admin') {
           route.push('/dashboard/admin')
         } else {
@@ -39,13 +39,14 @@ export function SignIn() {
   }
   const Login = () => async () => {
     try {
-      const response = await axios.post('http://localhost:8000/api/signin', {
+      const response = await axios.post('https://be-nesco-2023.vercel.app/api/signin', {
         email,
         password,
       })
       localStorage.setItem('token', response.data.token)
       localStorage.setItem('user', JSON.stringify(response.data.user))
-      if (response?.data?.role === 'admin') {
+
+      if (response?.data?.user?.email === 'nescougm2023@gmail.com') {
         route.push('/dashboard/admin')
       } else {
         route.push('/dashboard/peserta')

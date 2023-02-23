@@ -21,7 +21,7 @@ export function CompetitionList() {
     formData.append('selectedCompetition', competition)
     formData.append('userId', id)
     axios
-      .post(`http://localhost:8000/api/createTeam`, formData)
+      .post(`https://be-nesco-2023.vercel.app/api/createTeam`, formData)
       .then((res) => {
         console.log(res)
         router.reload()
