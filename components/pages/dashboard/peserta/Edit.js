@@ -94,12 +94,12 @@ export function EditComponent() {
       })
   }
   return (
-    <div className="bg-bg-04 rounded-xl flex flex-col py-12 px-6">
+    <div className="bg-bg-04 rounded-xl flex flex-col pt-12 px-6 drop-shadow-[0_0_14px_rgba(0,0,0,0.25)]">
       <Link className="mb-8" href="/dashboard/peserta">
         <button
           type="submit"
           href="#?"
-          className="font-jost font-medium sm:text-xs lg:text-lg xl:text-xl flex items-center absolute top-[4%] right-[3%] lg:static text-c-02"
+          className="font-jost font-medium sm:text-xs lg:text-lg xl:text-xl flex items-center absolute top-[4%] right-[3%] lg:static text-c-02 hover:opacity-60"
         >
           <AiOutlineRollback />
           &nbsp;
@@ -201,7 +201,7 @@ export function EditComponent() {
                 Jumlah Peserta :
               </p>
               <div
-                className="flex flex-row justify-around w-10/12"
+                className="flex flex-row justify-around w-10/12 "
                 onChange={(e) => setJumlah(e.target.value)}
               >
                 <label htmlFor="1" className="text-white text-base font-poppins flex items-center">
@@ -209,7 +209,7 @@ export function EditComponent() {
                     type="radio"
                     name="jumlah"
                     value="1"
-                    className="after:bg-c-01 w-5 h-5 mr-2"
+                    className="after:bg-c-01 w-5 h-5 mr-2 cursor-pointer"
                     defaultChecked
                   />
                   1 Orang
@@ -219,7 +219,7 @@ export function EditComponent() {
                     type="radio"
                     name="jumlah"
                     value="2"
-                    className="after:bg-c-01 w-5 h-5 mr-2"
+                    className="after:bg-c-01 w-5 h-5 mr-2 cursor-pointer"
                   />
                   2 Orang
                 </label>
@@ -228,7 +228,7 @@ export function EditComponent() {
                     type="radio"
                     name="jumlah"
                     value="3"
-                    className="after:bg-c-01 w-5 h-5 mr-2"
+                    className="after:bg-c-01 w-5 h-5 mr-2 cursor-pointer"
                   />
                   3 Orang
                 </label>
@@ -241,7 +241,7 @@ export function EditComponent() {
           >
             KETUA
           </div>
-          <form className="flex flex-col lg:flex-row w-full justify-around">
+          <form className="flex flex-col lg:flex-row w-full justify-between">
             <div className="lg:w-[30%] w-full">
               <label
                 htmlFor="Ketua"
@@ -318,7 +318,7 @@ export function EditComponent() {
               File : {fotoAnggota1?.name}
             </div>
             <div className=" w-full md:w-[30%] flex-col flex text-white font-poppins font-medium text-base md:mt-0 mt-5 ">
-              E-KTM Ketua:
+              E-KTM/Kartu Pelajar Ketua:
               <div className="flex items-center justify-center w-full">
                 <label
                   htmlFor="fileEktmAnggota1"
@@ -402,7 +402,7 @@ export function EditComponent() {
               >
                 ANGGOTA 1
               </div>
-              <form className="flex flex-col lg:flex-row w-full justify-around">
+              <form className="flex flex-col lg:flex-row w-full justify-between">
                 <div className="lg:w-[30%] w-full">
                   <label
                     htmlFor="Anggota1"
@@ -479,7 +479,7 @@ export function EditComponent() {
                   File : {fotoAnggota2?.name}
                 </div>
                 <div className=" w-full md:w-[30%] flex-col flex text-white font-poppins font-medium text-base md:mt-0 mt-5 ">
-                  E-KTM Anggota 1:
+                  E-KTM/Kartu Pelajar Anggota 1:
                   <div className="flex items-center justify-center w-full">
                     <label
                       htmlFor="fileEktmAnggota2"
@@ -567,7 +567,7 @@ export function EditComponent() {
               >
                 ANGGOTA 2
               </div>
-              <form className="flex flex-col lg:flex-row w-full justify-around">
+              <form className="flex flex-col lg:flex-row w-full justify-between">
                 <div className="lg:w-[30%] w-full">
                   <label
                     htmlFor="Anggota2"
@@ -644,7 +644,7 @@ export function EditComponent() {
                   File : {fotoAnggota3?.name}
                 </div>
                 <div className=" w-full md:w-[30%] flex-col flex text-white font-poppins font-medium text-base md:mt-0 mt-5 ">
-                  E-KTM Anggota 2:
+                  E-KTM/Kartu Pelajar Anggota 2:
                   <div className="flex items-center justify-center w-full">
                     <label
                       htmlFor="fileEktmAnggota3"

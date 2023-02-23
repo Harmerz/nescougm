@@ -30,7 +30,7 @@ export function Edit() {
   if (!data?.teams?.[0]?.savePermanent)
     return (
       <DefaultLayoutDashboard title="Dashboard - NESCO UGM 2023">
-        <div className="bg-bg-03 min-h-[100vh] pt-[150px] px-[5%] lg:px-[100px] lg:overflow-hidden">
+        <div className="bg-[#1E2126] min-h-[100vh] py-[150px] px-[5%] lg:px-[100px] lg:overflow-hidden">
           <BackToTop />
           <EditComponent />
         </div>

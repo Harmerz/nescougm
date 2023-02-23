@@ -78,7 +78,7 @@ export function CompetitionPeserta({ data }) {
 
   const ChangeContent = useCallback(() => {
     return (
-      <div className="bg-black fixed z-40 bg-opacity-[.7] h-screen top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-screen flex justify-center items-center">
+      <div className="bg-black fixed z-40 bg-opacity-[.7] h-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full flex justify-center items-center">
         <div className="flex justify-center">
           <div className="w-[300px] md:w-[488px] flex flex-col gap-[15px] justify-center bg-[#22292F] border-c-02/25 border-[1px] px-[78px] py-[48px] rounded-[10px] text-white">
             <h1 className=" text-center text-[12px] md:text-[14px] leading-[30px] font-poppins font-medium">
@@ -131,8 +131,8 @@ export function CompetitionPeserta({ data }) {
           {data?.selectedCompetition === 'Lomba Poster' ? 'Poster Competition' : ''}
           {data?.selectedCompetition === 'Lomba Paper' ? 'Paper Competition' : ''}
         </h1>
-        <div className="bg-c-00 rounded-xl xl:w-full w-11/12 items-center justify-center flex flex-col md:p-6 py-11">
-          <div className="flex flex-col w-[98%] h-4/5 bg-bg-01 rounded-xl">
+        <div className="bg-[#22292F] drop-shadow-[0_0_14px_rgba(0,0,0,0.25)] rounded-xl w-full items-center justify-center flex flex-col md:px-6 px-[16px] py-[25px] md:py-11 mb-[150px]">
+          <div className="flex flex-col w-[98%] h-4/5 bg-[#252E37] drop-shadow-[0_0_14px_rgba(0,0,0,0.25)] rounded-xl">
             <div className="sm:p-16 py-10 pl-4">
               <div className="bg-c-00 rounded-3xl py-2 px-2 flex justify-center items-center  w-36">
                 <div

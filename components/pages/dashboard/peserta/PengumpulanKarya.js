@@ -50,7 +50,7 @@ export function PengumpulanKarya({ data }) {
   }, [Submit, warning])
 
   return (
-    <div className="flex flex-col mt-10 w-[98%] h-4/5 bg-bg-01 rounded-xl p-6 md:p-12">
+    <div className="flex flex-col mt-10 w-[98%] h-4/5 bg-[#252E37] drop-shadow-[0_0_14px_rgba(0,0,0,0.25)] rounded-xl p-6 md:p-12">
       {warning ? <Unggah /> : <div />}
       <div
         className={` rounded bg-clip-text bg-gradient-to-t from-c-01 to-c-02 text-transparent text-xl sm:text-2xl transition-all font-bold font-jost uppercase`}
@@ -68,7 +68,7 @@ export function PengumpulanKarya({ data }) {
               type="text"
               id="Nteam"
               name="Nteam"
-              className="bg-bg-04 rounded-lg h-8 p-4 border-c-02 border-[0.5px] border-opacity-30 mt-4"
+              className="bg-bg-04 max-w-[330px] rounded-lg h-8 p-4 border-c-02 border-[0.5px] border-opacity-30 my-4"
               value={link}
               onChange={(e) => setLink(e.target.value)}
               required
@@ -84,7 +84,7 @@ export function PengumpulanKarya({ data }) {
       </div>
       {data.submission === '-' ? (
         <div className="w-1/8 mt-8">
-          <Button type="secondary" onClick={() => setWarning(!warning)}>
+          <Button type="secondary" size="sm" onClick={() => setWarning(!warning)}>
             Unggah
           </Button>
         </div>

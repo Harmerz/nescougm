@@ -13,7 +13,7 @@ export default function Profile({ icon = profilePicture, posisi = '', nama = '',
       <div className="font-jost text-lg sm:text-xl lg:text-2xl xl:text-3xl text-transparent bg-clip-text bg-gradient-to-l from-c-01 to-c-02 w-fit">
         Profile
       </div>
-      <div className="bg-bg-03 min-h-[180px] h-fit lg:h-[28vh] rounded-[10px] flex items-center flex-col lg:flex-row relative drop-shadow-[0_0_14px_rgba(0,0,0,0.25)]">
+      <div className="bg-[#22292F] min-h-[180px] h-fit lg:h-[260px] rounded-[10px] flex items-center flex-col lg:flex-row relative drop-shadow-[0_0_14px_rgba(0,0,0,0.25)] ">
         <div className="mt-[40px] lg:mt-0 lg:ml-[7%] h-full w-[23%] sm:w-[17%] xl:w-[15%]">
           <Image src={icon} alt="icon" className="w-full h-full" />
         </div>
@@ -33,7 +33,7 @@ export default function Profile({ icon = profilePicture, posisi = '', nama = '',
           <button
             type="submit"
             href="#?"
-            className="text-[0.7rem] sm:text-xs lg:text-lg xl:text-xl flex items-center absolute top-[4%] right-[3%] lg:static"
+            className="text-[0.7rem] sm:text-xs lg:text-lg xl:text-xl flex items-center absolute top-[4%] right-[3%] lg:static hover:opacity-60"
             onClick={() => {
               localStorage.removeItem('token')
               localStorage.removeItem('user')
@@ -42,7 +42,7 @@ export default function Profile({ icon = profilePicture, posisi = '', nama = '',
           >
             <RiLogoutBoxRLine />
             &nbsp;
-            <div className="underline">Sign Out</div>
+            <div className="underline font-jost font-normal">Sign Out</div>
           </button>
         </div>
         <div className="w-full h-full justify-end hidden lg:flex">
