@@ -28,8 +28,12 @@ export function SignIn() {
   const profile = () => {
     const id = JSON.parse(localStorage.getItem('user'))?._id ?? ''
     if (id !== '') {
-      axios.get(`http://localhost:8000/api/${id}/profile`).then(() => {
-        route.push('/dashboard/peserta')
+      axios.get(`http://localhost:8000/api/${id}/profile`).then((res) => {
+        if (res?.data?.role === 'admin') {
+          route.push('/dashboard/admin')
+        } else {
+          route.push('/dashboard/peserta')
+        }
       })
     }
   }
@@ -41,7 +45,11 @@ export function SignIn() {
       })
       localStorage.setItem('token', response.data.token)
       localStorage.setItem('user', JSON.stringify(response.data.user))
-      route.push('/dashboard/peserta')
+      if (response?.data?.role === 'admin') {
+        route.push('/dashboard/admin')
+      } else {
+        route.push('/dashboard/peserta')
+      }
     } catch (error) {
       if (
         error?.response?.data?.error === 'Email and password do not match' ||

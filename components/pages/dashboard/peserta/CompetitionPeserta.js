@@ -12,6 +12,7 @@ import { useCallback, useState } from 'react'
 import { Button } from '../../../element/button'
 import { JumlahKarya } from './JumlahKarya'
 import { Pembayaran } from './Pembayaran'
+import { PengumpulanKarya } from './PengumpulanKarya'
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyAGyEzjL9GIh80vbjazecsROa94a1w9Lyk',
@@ -416,6 +417,7 @@ export function CompetitionPeserta({ data }) {
             status={data?.statusTim}
             kompetisi={data?.selectedCompetition}
           />
+          <PengumpulanKarya data={data} />
         </div>
       </div>
     </>
