@@ -45,7 +45,8 @@ export function SignIn() {
       })
       localStorage.setItem('token', response.data.token)
       localStorage.setItem('user', JSON.stringify(response.data.user))
-      if (response?.data?.role === 'admin') {
+
+      if (response?.data?.user?.email === 'nescougm2023@gmail.com') {
         route.push('/dashboard/admin')
       } else {
         route.push('/dashboard/peserta')
