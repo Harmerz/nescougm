@@ -13,7 +13,7 @@ export function PengumpulanKarya({ data }) {
   const Submit = () => async () => {
     setWarning(!warning)
     try {
-      await axios.post(`https://be-nesco-2023.vercel.app/api/${data._id}/submit`, {
+      await axios.post(`https://be-nesco-2023-p2kk.vercel.app/api/${data._id}/submit`, {
         submission: link,
       })
       route.reload()

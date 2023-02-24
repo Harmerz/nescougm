@@ -28,7 +28,7 @@ export function SignIn() {
   const profile = () => {
     const id = JSON.parse(localStorage.getItem('user'))?._id ?? ''
     if (id !== '') {
-      axios.get(`https://be-nesco-2023.vercel.app/api/${id}/profile`).then((res) => {
+      axios.get(`https://be-nesco-2023-p2kk.vercel.app/api/${id}/profile`).then((res) => {
         if (res?.data?.role === 'admin') {
           route.push('/dashboard/admin')
         } else {
@@ -39,7 +39,7 @@ export function SignIn() {
   }
   const Login = () => async () => {
     try {
-      const response = await axios.post('https://be-nesco-2023.vercel.app/api/signin', {
+      const response = await axios.post('https://be-nesco-2023-p2kk.vercel.app/api/signin', {
         email,
         password,
       })
@@ -75,15 +75,17 @@ export function SignIn() {
   return (
     <div className="relative">
       <div
-        className={` ${
+        className={`${
           wrong ? '' : 'hidden'
-        } absolute z-40 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-bg-02 md:h-56 md:w-96 h-40 w-72 rounded-lg`}
+        } bg-black fixed z-50 bg-opacity-[.7] h-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full flex justify-center items-center`}
       >
-        <div className="flex flex-col justify-center text-center h-full w-full">
-          <div className="flex w-full text-center justify-center">
-            <AiOutlineCloseCircle size={100} color="red" />
+        <div className="absolute z-40 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-c-00 md:h-56 md:w-96 h-40 w-72 rounded-lg ">
+          <div className="flex flex-col justify-center text-center h-full w-full">
+            <div className="flex w-full text-center justify-center">
+              <AiOutlineCloseCircle size={100} color="red" />
+            </div>
+            <p className="text-white">Wrong Email or Password</p>
           </div>
-          <p className="text-white">Wrong Email or Password</p>
         </div>
       </div>
       <div className="flex flex-col h-[100vh] max-w-[319px] sm:max-w-[362px] justify-center mx-auto gap-[10px]">

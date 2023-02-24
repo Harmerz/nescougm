@@ -37,7 +37,7 @@ export function EditComponent() {
   const profile = () => {
     const id = JSON.parse(localStorage.getItem('user'))?._id
     axios
-      .get(`https://be-nesco-2023.vercel.app/api/${id}/profile`)
+      .get(`https://be-nesco-2023-p2kk.vercel.app/api/${id}/profile`)
       .then((res) => {
         setData(res.data)
       })
@@ -85,7 +85,7 @@ export function EditComponent() {
     formData.append('kategori', 'Mahasiswa' ?? '-')
     formData.append('userId', JSON.parse(localStorage.getItem('user'))?._id ?? '-')
     axios
-      .post('https://be-nesco-2023.vercel.app/api/createteam', formData)
+      .post('https://be-nesco-2023-p2kk.vercel.app/api/createteam', formData)
       .then(() => {
         router.push('/dashboard/peserta')
       })
