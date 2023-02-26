@@ -7,11 +7,11 @@ import { Verify } from '../../../components/pages/auth/verify'
 
 export function Verifikasi() {
   const router = useRouter()
-  const slug = router.query.slug || []
+  const slug = router.query
 
   const VerifikasiOne = (thisSlug) => {
     axios
-      .get(`https://be-nesco-2023.vercel.app/api/verify/${thisSlug[0]}/${thisSlug[1]}`)
+      .get(`https://be-nesco-2023.vercel.app/api/verify/${thisSlug.id}/${thisSlug.token}`)
       .then(() => {
         setTimeout(() => {
           router.push('/auth/signin')
@@ -23,7 +23,10 @@ export function Verifikasi() {
   }
 
   useEffect(() => {
-    if (slug[0] !== undefined) VerifikasiOne(slug)
+    console.log(slug)
+    if (slug.id !== undefined) {
+      VerifikasiOne(slug)
+    }
   }, [slug])
 
   return (
