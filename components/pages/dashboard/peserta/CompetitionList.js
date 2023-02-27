@@ -10,7 +10,7 @@ import { useCallback, useState } from 'react'
 
 import { Button } from '../../../element/button'
 
-export function CompetitionList() {
+export function CompetitionList({ data }) {
   const router = useRouter()
   const [warning, setWarning] = useState(false)
   const [competition, setCompetition] = useState('')
@@ -64,55 +64,57 @@ export function CompetitionList() {
   }, [competition, warning])
   return (
     <div className="flex md:flex-row mt-12 justify-around flex-col relative">
-      <button
-        type="button"
-        onClick={() => {
-          setWarning(!warning)
-          setCompetition('Lomba Paper')
-        }}
-        className="svg-wrapper relative flex justify-center"
-      >
-        <svg height="224" width="200" strokeLinecap="round">
-          <rect
-            className="competition-shape fill-bg-04"
-            height="200"
-            width="176"
-            rx="15"
-            ry="15"
-            x="12"
-            y="12"
-          />
-          <rect
-            className="competition-shape2 fill-transparent"
-            height="200"
-            width="176"
-            rx="15"
-            ry="15"
-            x="12"
-            y="12"
-          />
-          <rect
-            className="competition-shape3 fill-transparent"
-            height="200"
-            width="176"
-            rx="15"
-            ry="15"
-            x="12"
-            y="12"
-          />
-        </svg>
-        <div className="flex flex-col absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <Image
-            alt="Paper Competition"
-            src="/vector/dashboard/peserta/paper.png"
-            width={150}
-            height={150}
-          />
-          <div className=" text-white mt-3 text-base font-poppins font-semibold flex justify-center text-center">
-            Paper Competition
+      {data?.status !== 'Pelajar' ? (
+        <button
+          type="button"
+          onClick={() => {
+            setWarning(!warning)
+            setCompetition('Lomba Paper')
+          }}
+          className="svg-wrapper relative flex justify-center"
+        >
+          <svg height="224" width="200" strokeLinecap="round">
+            <rect
+              className="competition-shape fill-bg-04"
+              height="200"
+              width="176"
+              rx="15"
+              ry="15"
+              x="12"
+              y="12"
+            />
+            <rect
+              className="competition-shape2 fill-transparent"
+              height="200"
+              width="176"
+              rx="15"
+              ry="15"
+              x="12"
+              y="12"
+            />
+            <rect
+              className="competition-shape3 fill-transparent"
+              height="200"
+              width="176"
+              rx="15"
+              ry="15"
+              x="12"
+              y="12"
+            />
+          </svg>
+          <div className="flex flex-col absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <Image
+              alt="Paper Competition"
+              src="/vector/dashboard/peserta/paper.png"
+              width={150}
+              height={150}
+            />
+            <div className=" text-white mt-3 text-base font-poppins font-semibold flex justify-center text-center">
+              Paper Competition
+            </div>
           </div>
-        </div>
-      </button>
+        </button>
+      ) : null}
 
       <button
         type="button"

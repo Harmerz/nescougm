@@ -40,9 +40,9 @@ export default function DashboardAdmin() {
       return (
         <DefaultLayoutDashboard title="Dashboard - NESCO UGM 2023">
           <div className="bg-bg-03 min-h-[100vh] pt-[150px] px-[5%] lg:px-[100px] lg:overflow-hidden">
-            <Hero nama={data?.name} email={data?.email} />
+            <Hero nama={data?.name} email={data?.email} status={data?.status} />
             <BackToTop />
-            <CompetitionList />
+            <CompetitionList data={data} />
           </div>
         </DefaultLayoutDashboard>
       )
@@ -50,7 +50,7 @@ export default function DashboardAdmin() {
     return (
       <DefaultLayoutDashboard title="Dashboard - NESCO UGM 2023">
         <div className="bg-bg-03 min-h-[100vh] pt-[150px] px-[5%] lg:px-[100px] lg:overflow-hidden">
-          <Hero nama={data?.name} email={data?.email} />
+          <Hero nama={data?.name} email={data?.email} status={data?.status} />
           <BackToTop />
           <CompetitionPeserta data={data?.teams?.[0]} />
         </div>

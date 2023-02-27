@@ -11,7 +11,7 @@ export function Verifikasi() {
 
   const VerifikasiOne = (thisSlug) => {
     axios
-      .get(`https://be-nesco-2023.vercel.app/api/verify/${thisSlug.id}/${thisSlug.token}`)
+      .get(`https://be-nesco-2023-p2kk.vercel.app/api/verify/${thisSlug.id}/${thisSlug.token}`)
       .then(() => {
         setTimeout(() => {
           router.push('/auth/signin')

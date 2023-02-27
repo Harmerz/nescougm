@@ -6,7 +6,13 @@ import { RiLogoutBoxRLine } from 'react-icons/ri'
 import vector1 from '../../../public/vector/dashboard/admin/Vector1Db.svg'
 import profilePicture from '../../../public/vector/dashboard/dashboard-profile.svg'
 
-export default function Profile({ icon = profilePicture, posisi = '', nama = '', email = '' }) {
+export default function Profile({
+  icon = profilePicture,
+  posisi = '',
+  nama = '',
+  email = '',
+  status = '',
+}) {
   const router = useRouter()
   return (
     <div className="">
@@ -30,6 +36,7 @@ export default function Profile({ icon = profilePicture, posisi = '', nama = '',
             </h2>
           </div>
 
+          <p className="mb-2 text-md font-light">{status}</p>
           <button
             type="submit"
             href="#?"
