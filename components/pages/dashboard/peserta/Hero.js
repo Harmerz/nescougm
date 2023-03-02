@@ -1,9 +1,9 @@
 import Profile from '../Profile'
 
-export function Hero() {
+export function Hero({ nama, email, status }) {
   return (
     <section>
-      <Profile posisi="Leader" nama="gatau namanya siapa" email="gatausiapa@gmail.com" />
+      <Profile posisi="Leader" nama={nama} email={email} status={status} />
     </section>
   )
 }

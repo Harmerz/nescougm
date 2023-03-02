@@ -56,15 +56,15 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="flex-col flex gap-[14px] lg:gap-[18px]">
-          <div className="text-[18px] lg:text-[20px] text-c-01 font-jost font-bold flex justify-center">
+        <div className="flex-col flex gap-[14px] lg:gap-[18px] ">
+          <div className="text-[24px] text-c-01 font-jost font-bold justify-center items-center lg:justify-start lg:items-start ">
             QUICK LINKS
           </div>
-          <div className="flex flex-col gap-[7px]">
+          <div className="flex flex-col gap-[7px] text-[14px] justify-center items-center lg:justify-start lg:items-start">
             {competition.map((text) => (
               <Link
                 href={text.link}
-                className="text-[12px] lg:text-[16px] text-white font-poppins font-medium justify-center flex hover:opacity-50"
+                className=" text-white font-poppins font-medium justify-center flex hover:opacity-50"
                 key={text.kompetisi}
               >
                 {text.kompetisi}
@@ -72,9 +72,15 @@ export function Footer() {
             ))}
           </div>
         </div>
+        <div className="flex-col flex gap-[14px] lg:gap-[18px] justify-start items-start lg:justify-center">
+          <div className="text-[24px] text-c-01 font-jost font-bold flex justify-center">
+            PRESENTED BY
+          </div>
+          <Image src="/magatrika.svg" width={125} height={100} alt="magatrika" />
+        </div>
         <div className="flex justify-center">
           <a href="https://api.whatsapp.com/send/?phone=62895601622874">
-            <Button type="secondary">Get In Touch</Button>
+            <Button type="secondary">Whatsapp</Button>
           </a>
         </div>
       </div>

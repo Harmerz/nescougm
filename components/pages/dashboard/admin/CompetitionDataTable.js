@@ -1,42 +1,175 @@
-import { useState } from 'react'
-import { AiOutlineRollback, AiOutlineSearch } from 'react-icons/ai'
+/* eslint-disable no-console */
+/* eslint-disable no-underscore-dangle */
+import axios from 'axios'
+import Link from 'next/link'
+import { useCallback, useEffect, useMemo, useState } from 'react'
+import {
+  AiFillCheckSquare,
+  AiOutlineCheckSquare,
+  AiOutlineRollback,
+  AiOutlineSearch,
+} from 'react-icons/ai'
 
-export function DataTable({ title, onKembali }) {
-  const isi = [
-    ['Haha hihi', '12345', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
-    ['Tim Juara oye', '67890', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', true, ''],
-    ['Nekolism', '11111', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
-    ['neko-neko.fig', '10110', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
-    ['isyarat sistem dapet A', '04010', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
-    ['isyarat sistem dapet B', '12345', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
-    ['isyarat sistem dapet C', '12345', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
-    ['isyarat sistem dapet D', '12345', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
-    ['isyarat sistem dapet E', '12345', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
-    ['isyarat sistem dapet F', '12345', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
-    ['isyarat sistem dapet G', '12345', 'Jhon Doe', 'doe@mail.ui.ac.id', '87845692811', false, ''],
-  ]
+import { Button } from '../../../element/button'
+import { CompetitionPeserta } from './CompetitionDetailPeserta'
+
+export function DataTable({ title }) {
+  const [verif, setVerif] = useState(false)
+  const [batal, setBatal] = useState(false)
+  const [data, setData] = useState([])
+  const [dataDetail, setDataDetail] = useState([])
+  const [idDetail, setIdDetail] = useState('')
+  const dataProfile = () => {
+    axios
+      .get('https://be-nesco-2023-p2kk.vercel.app/api/users')
+      .then((res) => {
+        setData(res.data)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
+  useEffect(() => {
+    dataProfile()
+  }, [])
+  const isi = useMemo(() => {
+    return data.map((item) => {
+      return [
+        item?.teams?.[0]?.namaTeam ?? '-',
+        item?._id ?? '-',
+        item?.name ?? '-',
+        item?.email ?? '-',
+        item?.teams?.[0]?.nomorKontak1 ?? '-',
+        item?.paymentStatus ?? false,
+        item?.teams?.[0]?.submission ?? '-',
+      ]
+    })
+  }, [data])
+
+  const handelVerifPembayaran = async (id) => {
+    try {
+      axios
+        .post(`https://be-nesco-2023-p2kk.vercel.app/api/${id}/payment`, {
+          paymentStatus: true,
+        })
+        .then(() => {
+          dataProfile()
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  const handelBatalVerifPembayaran = async (id) => {
+    try {
+      axios
+        .put(`https://be-nesco-2023-p2kk.vercel.app/api/${id}/cancelpayment`, {
+          paymentStatus: false,
+        })
+        .then(() => {
+          dataProfile()
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  // warning sblm ngeverifikasi
+  const ChangeContent1 = useCallback(({ id }) => {
+    console.log(id)
+    return (
+      <div className="bg-black/30 fixed z-40 h-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full flex justify-center items-center">
+        <div className="flex justify-center">
+          <div className="w-[300px] md:w-[488px] flex flex-col gap-[15px] justify-center bg-[#22292F] border-c-02/25 border-[1px] px-[78px] py-[48px] rounded-[10px] text-white">
+            <h1 className=" text-center text-[12px] md:text-[14px] leading-[30px] font-poppins font-medium">
+              Beneran terverif kan? cek lagi yang teliti nggih
+            </h1>
+            <div className="flex justify-center gap-[40px]">
+              <div>
+                <Button onClick={() => setVerif(false)} size="sm" type="secondary">
+                  Batalkan
+                </Button>
+              </div>
+              <button
+                type="submit"
+                onClick={() => {
+                  setVerif(false)
+                }}
+              >
+                <Button size="sm" type="primary" onClick={() => handelVerifPembayaran(id)}>
+                  Verifikasi
+                </Button>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }, [])
+
+  // warning batal verifikasi
+  const ChangeContent2 = useCallback(({ id }) => {
+    return (
+      <div className="bg-black/30 fixed z-40 h-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full flex justify-center items-center">
+        <div className="flex justify-center">
+          <div className="w-[300px] md:w-[488px] flex flex-col gap-[15px] justify-center bg-[#22292F] border-c-02/25 border-[1px] px-[78px] py-[48px] rounded-[10px] text-white">
+            <h1 className=" text-center text-[12px] md:text-[14px] leading-[30px] font-poppins font-medium">
+              Batal verifikasi peserta? Besok lagi jangan plin-plan ya
+            </h1>
+            <div className="flex justify-center gap-[40px]">
+              <div>
+                <Button onClick={() => setBatal(false)} size="sm" type="secondary">
+                  Enggajadi
+                </Button>
+              </div>
+              <button
+                type="submit"
+                onClick={() => {
+                  setBatal(false)
+                }}
+              >
+                <Button size="sm" type="primary" onClick={() => handelBatalVerifPembayaran(id)}>
+                  Batalkan Verifikasi
+                </Button>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }, [])
+
   const [hasilPencarian, setHasilPencarian] = useState(isi)
+
+  useEffect(() => {
+    setHasilPencarian(isi)
+  }, [isi])
   return (
     <div>
-      <div className="flex justify-center items-center">
-        <div className="w-[6vw] h-[6vw] bg-[#D9D9D9]" />
+      <div className="flex justify-center items-center mt-10">
         <div className="ml-[1%] text-4xl h-fit font-jost font-medium bg-gradient-to-b from-c-01 to-c-02 bg-clip-text text-transparent">
-          {title} Competition
+          {title}
         </div>
       </div>
       <div>
-        <button
-          type="submit"
-          href="#?"
-          onClick={onKembali}
-          className="font-jost font-medium sm:text-xs lg:text-lg xl:text-xl flex items-center absolute top-[4%] right-[3%] lg:static text-c-02"
-        >
-          <AiOutlineRollback />
-          &nbsp;
-          <div className=" bg-gradient-to-l from-c-01 to-c-02 bg-clip-text text-transparent">
-            Kembali
-          </div>
-        </button>
+        <Link href="/">
+          <button
+            type="submit"
+            href="#?"
+            className="font-jost font-medium sm:text-xs lg:text-lg xl:text-xl flex items-center absolute top-[4%] right-[3%] lg:static text-c-02"
+          >
+            <AiOutlineRollback />
+            &nbsp;
+            <div className=" bg-gradient-to-l from-c-01 to-c-02 bg-clip-text text-transparent">
+              Kembali
+            </div>
+          </button>
+        </Link>
       </div>
       <div className="flex h-[50px] mt-[14px] font-poppins text-white">
         <div className="w-[36vw] bg-bg-03 rounded-[5px] outline-c-02/[.60] outline outline-1 drop-shadow-[0_0_10px_#0DF8CF20] text-white/[.20] flex">
@@ -67,7 +200,6 @@ export function DataTable({ title, onKembali }) {
         <div className="grid grid-rows-[60px] grid-cols-[0.4fr_repeat(8,1fr)_12px] justify-items-center items-center outline outline-1 outline-c-02/[.60] rounded-t-[5px]">
           <div>No</div>
           <div>Nama tim</div>
-          <div>ID</div>
           <div>Nama ketua</div>
           <div>Email ketua</div>
           <div>Nomor wa</div>
@@ -84,22 +216,47 @@ export function DataTable({ title, onKembali }) {
             >
               <div>{index + 1}</div>
               <div>{baris[0]}</div>
-              <div>{baris[1]}</div>
+
               <div>{baris[2]}</div>
               <div>{baris[3]}</div>
               <div>{baris[4]}</div>
               <div>
-                <button type="submit" href="#?">
+                <button type="button" onClick={() => setDataDetail(data[index]?.teams?.[0])}>
                   <div className="font-bold underline">Lihat Detail</div>
                 </button>
               </div>
-              <div>{baris[5] ? '1' : '0'}</div>
+              <div>
+                {baris[5] ? (
+                  <button
+                    onClick={() => {
+                      setBatal(true)
+                      setIdDetail(baris[1])
+                    }}
+                    type="button"
+                  >
+                    <AiFillCheckSquare size={19.79} className="text-c-02" />
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => {
+                      setVerif(true)
+                      setIdDetail(baris[1])
+                    }}
+                    type="button"
+                  >
+                    <AiOutlineCheckSquare size={19.79} className="text-c-02" />
+                  </button>
+                )}
+                {verif ? <ChangeContent1 id={idDetail} /> : <div />}
+                {batal ? <ChangeContent2 id={idDetail} /> : <div />}
+              </div>
               <div>{baris[6]}</div>
               <div className="h-[1px] col-span-full bg-c-02/[.60] w-[97%]" />
             </div>
           ))}
         </div>
       </div>
+      <CompetitionPeserta data={dataDetail} />
     </div>
   )
 }

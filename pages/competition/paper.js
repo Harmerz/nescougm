@@ -46,8 +46,8 @@ const Paper = {
   peserta: 'Mahasiswa, perseorangan atau tim maksimal 3 orang',
   biayaPendaftaran: 'Rp130.000,00',
   contactPersons: [
-    ['Diamond Azzukhruf M.', '081298534532', 'diamondam'],
-    ['Awaliya Shabrina', '085855174260', 'awaliyash_'],
+    ['Isabel Elgina', '0895365343444', 'abelelginaa'],
+    ['Denio Ezekiel sembiring', '081262732624', 'denioeb'],
   ],
   juaraMahasiswa: ['Rp5.000.000,-', 'Rp4.000.000,-', 'Rp3.000.000,-'],
   juaraSMA: [],

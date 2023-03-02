@@ -1,8 +1,9 @@
 export const Button = ({ children, type, size, animation, onClick }) => {
   const buttonType = {
     primary: 'rounded-full bg-c-01 text-c-00 hover:opacity-80 ',
-    secondary: 'rounded-full text-c-01 border-2 border-c-01 hover:bg-c-01 hover:text-c-00',
+    secondary: 'rounded-full text-c-01 border-2 border-c-01 bg-c-00 hover:bg-c-01 hover:text-c-00',
     tertiary: 'rounded-[8.07px] text-white bg-gradient-to-b from-c-01/[.67] to-[#41B8A9]/[.91]',
+    dead: 'rounded-full text-gray-300 border-2 border-gay-200 bg-c-00 cursor-not-allowed',
   }
 
   const buttonSize = {
@@ -14,6 +15,7 @@ export const Button = ({ children, type, size, animation, onClick }) => {
   const buttonAnimation = {
     main: 'drop-shadow-[0_0_14px_rgba(109,199,236,0.491667)] hover:drop-shadow-[0_0_20px_rgba(81,177,204,0.64)]',
     extra: 'hover:scale-105 active:scale-100 active:opacity-50 disabled:opacity-50',
+    dead: '',
   }
 
   const colorClassName = buttonType[type || 'primary']

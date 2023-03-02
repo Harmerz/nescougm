@@ -3,10 +3,10 @@ import 'aos/dist/aos.css'
 
 import AOS from 'aos'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import { lazy, Suspense, useEffect } from 'react'
 
-import styles from '../../../styles/Home.module.css'
+const Gif = lazy(() => import('./Gif'))
+const Judul = lazy(() => import('./Judul'))
 
 const draw = {
   hidden: { pathLength: 0, opacity: 0 },
@@ -32,19 +32,6 @@ const draw = {
 }
 
 export function Hero() {
-  const [gif1, setGif1] = useState(true)
-  const [gif2, setGif2] = useState(false)
-
-  useEffect(() => {
-    setInterval(() => {
-      setGif1(false)
-    }, 9000)
-  })
-  useEffect(() => {
-    setInterval(() => {
-      setGif2(true)
-    }, 8600)
-  })
   useEffect(() => {
     AOS.init()
   }, [])
@@ -218,50 +205,12 @@ export function Hero() {
           data-aos-delay="500"
           className="flex flex-col-reverse lg:grid lg:grid-cols-2 max-w-[186px] justify-center md:max-w-[1560px] mx-auto w-full lg:py-10 lg:pl-24 xl:py-10 xl:pl-40 xl:pr-16 aos-init lg:mt-[-100px] 2xl:mt-[-155px]"
         >
-          <div
-            data-aos="zoom-in"
-            data-aos-duration="1000"
-            className="flex flex-col w-full gap-[6px] lg:gap-5 xl:gap-[37px] justify-center"
-          >
-            <div>
-              <div className="w-full  text-center lg:text-left mx-auto lg:mx-0 font-jost font-extrabold text-[42.89px] leading-[47.73px] md:text-[70px] md:leading-[75px] lg:text-[120px] 2xl:text-[139px] lg:leading-[111px] overflow-visible">
-                <h1 className={styles.h1}>NESCO</h1>
-              </div>
-              <div className="lg:pl-[10px] w-full text-center lg:text-left mx-auto lg:mx-0 font-jost font-extrabold text-[14.19px] leading-[19.6px] md:text-[25px] md:leading-[30px] lg:text-[46px] lg:leading-[70px]">
-                <h1 className={styles.h1}>2023</h1>
-              </div>
-            </div>
-            <div className="lg:pl-[10px] w-full md:w-3/4  text-center lg:text-left mx-auto lg:mx-0">
-              <p className="text-[6px] md:text-[16px] font-medium font-poppins text-white text-center lg:text-justify self-start lg:justify-self-start ">
-                Indonesia’s adaptive electrical ecosystem by Integrating Clean Energy Resilience
-                through e-mobility
-              </p>
-            </div>
-          </div>
-
-          <div className="container after:pb-[100%] xl:mr-[-100px] w-full relative after:block">
-            {gif2 ? (
-              <Image
-                className=" object-cover object-center h-auto"
-                src="/homepageassets/gif2.webp"
-                alt="maskot nesco"
-                fill
-                priority
-              />
-            ) : (
-              <div />
-            )}
-            {gif1 ? (
-              <Image
-                className=" object-cover object-center h-auto"
-                src="/homepageassets/gif1.webp"
-                alt="maskot nesco"
-                fill
-              />
-            ) : (
-              <div />
-            )}
-          </div>
+          <Suspense fallback={<div>.</div>}>
+            <Judul />
+          </Suspense>
+          <Suspense fallback={<div>.</div>}>
+            <Gif />
+          </Suspense>
         </div>
 
         {/* <div className="grid h-[20vh] lg:h-[25vh] w-2/5 sm:w-1/3 lg:w-1/4  relative justify-self-end self-end ">

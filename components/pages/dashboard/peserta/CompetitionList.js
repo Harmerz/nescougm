@@ -1,11 +1,35 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-console */
+/* eslint-disable no-undef */
+/* eslint-disable no-underscore-dangle */
+import axios from 'axios'
+import FormData from 'form-data'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import { useCallback, useState } from 'react'
 
 import { Button } from '../../../element/button'
 
-export function CompetitionList() {
+export function CompetitionList({ data }) {
+  const router = useRouter()
   const [warning, setWarning] = useState(false)
   const [competition, setCompetition] = useState('')
+
+  const handleClick = () => {
+    const id = JSON.parse(localStorage.getItem('user'))?._id
+    const formData = new FormData()
+    formData.append('selectedCompetition', competition)
+    formData.append('userId', id)
+    axios
+      .post(`https://be-nesco-2023-p2kk.vercel.app/api/createTeam`, formData)
+      .then((res) => {
+        console.log(res)
+        router.reload()
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
 
   const ChangeContent = useCallback(() => {
     return (
@@ -29,7 +53,7 @@ export function CompetitionList() {
                 setWarning(!warning)
               }}
             >
-              <Button size="sm" type="primary">
+              <Button size="sm" type="primary" onClick={handleClick}>
                 Daftar
               </Button>
             </button>
@@ -40,56 +64,63 @@ export function CompetitionList() {
   }, [competition, warning])
   return (
     <div className="flex md:flex-row mt-12 justify-around flex-col relative">
-      <button
-        type="button"
-        onClick={() => {
-          setWarning(!warning)
-          setCompetition('Paper Competition')
-        }}
-        className="svg-wrapper relative flex justify-center"
-      >
-        <svg height="224" width="200" strokeLinecap="round">
-          <rect
-            className="competition-shape fill-bg-04"
-            height="200"
-            width="176"
-            rx="15"
-            ry="15"
-            x="12"
-            y="12"
-          />
-          <rect
-            className="competition-shape2 fill-transparent"
-            height="200"
-            width="176"
-            rx="15"
-            ry="15"
-            x="12"
-            y="12"
-          />
-          <rect
-            className="competition-shape3 fill-transparent"
-            height="200"
-            width="176"
-            rx="15"
-            ry="15"
-            x="12"
-            y="12"
-          />
-        </svg>
-        <div className="flex flex-col absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <Image src="/vector/dashboard/peserta/paper.png" width={150} height={150} />
-          <div className=" text-white mt-3 text-base font-poppins font-semibold flex justify-center text-center">
-            Paper Competition
+      {data?.status !== 'Pelajar' ? (
+        <button
+          type="button"
+          onClick={() => {
+            setWarning(!warning)
+            setCompetition('Lomba Paper')
+          }}
+          className="svg-wrapper relative flex justify-center"
+        >
+          <svg height="224" width="200" strokeLinecap="round">
+            <rect
+              className="competition-shape fill-bg-04"
+              height="200"
+              width="176"
+              rx="15"
+              ry="15"
+              x="12"
+              y="12"
+            />
+            <rect
+              className="competition-shape2 fill-transparent"
+              height="200"
+              width="176"
+              rx="15"
+              ry="15"
+              x="12"
+              y="12"
+            />
+            <rect
+              className="competition-shape3 fill-transparent"
+              height="200"
+              width="176"
+              rx="15"
+              ry="15"
+              x="12"
+              y="12"
+            />
+          </svg>
+          <div className="flex flex-col absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <Image
+              alt="Paper Competition"
+              src="/vector/dashboard/peserta/paper.png"
+              width={150}
+              height={150}
+            />
+            <div className=" text-white mt-3 text-base font-poppins font-semibold flex justify-center text-center">
+              Paper Competition
+            </div>
           </div>
-        </div>
-      </button>
+        </button>
+      ) : null}
 
       <button
         type="button"
         onClick={() => {
           setWarning(!warning)
-          setCompetition('Video Competition')
+          setCompetition('Lomba Video')
         }}
         className="svg-wrapper relative flex justify-center"
       >
@@ -123,7 +154,12 @@ export function CompetitionList() {
           />
         </svg>
         <div className="flex flex-col absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <Image src="/vector/dashboard/peserta/video.png" width={150} height={150} />
+          <Image
+            alt="Video Competition"
+            src="/vector/dashboard/peserta/video.png"
+            width={150}
+            height={150}
+          />
           <div className=" text-white text-base font-poppins font-semibold flex justify-center text-center mt-3">
             Video Competition
           </div>
@@ -133,7 +169,7 @@ export function CompetitionList() {
         type="button"
         onClick={() => {
           setWarning(!warning)
-          setCompetition('Poster Competition')
+          setCompetition('Lomba Poster')
         }}
         className="svg-wrapper relative flex justify-center"
       >
@@ -167,7 +203,12 @@ export function CompetitionList() {
           />
         </svg>
         <div className="flex flex-col absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <Image src="/vector/dashboard/peserta/poster.png" width={150} height={150} />
+          <Image
+            alt="Poster Competition"
+            src="/vector/dashboard/peserta/poster.png"
+            width={150}
+            height={150}
+          />
           <div className=" text-white text-base font-poppins font-semibold flex justify-center text-center mt-3">
             Poster Competition
           </div>
