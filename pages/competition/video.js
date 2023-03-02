@@ -45,8 +45,8 @@ const Video = {
   peserta: 'Perseorangan atau tim maksimal 3 orang',
   biayaPendaftaran: 'Rp60.000,00',
   contactPersons: [
-    ['Farel', '08999078927', 'rafi_pradipta_080304'],
-    ['Afra', '0895358245871', 'nal.fra'],
+    ['Sefvia Lie', '089624408702', 'sefviaahae'],
+    ['Raffa Alzena Zhafirah', '081281684078', 'rafaalzenadhaem'],
   ],
   juaraMahasiswa: ['Rp1.500.000,-', 'Rp1.000.000,-', 'Rp500.000,-', 'Rp250.000,-'],
   juaraSMA: ['Rp1.500.000,-', 'Rp1.000.000,-', 'Rp500.000,-', 'Rp250.000,-'],
