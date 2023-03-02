@@ -7,7 +7,7 @@ import { getDownloadURL, getStorage, ref } from 'firebase/storage'
 import FormData from 'form-data'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 
 import { Button } from '../../../element/button'
 
@@ -20,12 +20,15 @@ const firebaseConfig = {
   appId: '1:412903612:web:b4e65de54653a5b68508b9',
 }
 
-export function Pembayaran({ teamId, payment, status, kompetisi }) {
+export function Pembayaran({ teamId, payment, status, kompetisi, harga, uniqueNumber }) {
   const router = useRouter()
   const [file, setFile] = useState()
   const [modal, setModal] = useState(false)
   const [url, setUrl] = useState()
   const app = initializeApp(firebaseConfig)
+  const numberWithCommas = useCallback((x) => {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+  }, [])
   const handelGambar = () => {
     setModal(true)
     getDownloadURL(ref(getStorage(app), payment)).then((URL) => {
@@ -74,7 +77,8 @@ export function Pembayaran({ teamId, payment, status, kompetisi }) {
         <div className="lg:flex-row flex mt-6 flex-col">
           <div className="lg:w-1/2 text-white font-jost text-xs md:text-base">
             <p>
-              Pembayaran kompetisi <span className="text-c-02">{kompetisi}</span> sebesar Rp.,,,,,,
+              Pembayaran kompetisi <span className="text-c-02">{kompetisi}</span> sebesar Rp.
+              <span className="text-c-02">{numberWithCommas(harga + uniqueNumber)} </span>
               dapat dibayarkan melalui rekening di bawah ini
             </p>
             <p>1. Bank BCA : 8175413321 atas nama Citra Agatha</p>

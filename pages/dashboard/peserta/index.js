@@ -52,7 +52,7 @@ export default function DashboardAdmin() {
         <div className="bg-bg-03 min-h-[100vh] pt-[150px] px-[5%] lg:px-[100px] lg:overflow-hidden">
           <Hero nama={data?.name} email={data?.email} status={data?.status} />
           <BackToTop />
-          <CompetitionPeserta data={data?.teams?.[0]} />
+          <CompetitionPeserta data={data?.teams?.[0]} paymentStatus={data?.paymentStatus} />
         </div>
       </DefaultLayoutDashboard>
     )
