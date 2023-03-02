@@ -72,7 +72,7 @@ export function Footer() {
             ))}
           </div>
         </div>
-        <div className="flex-col flex gap-[14px] lg:gap-[18px] justify-start items-start lg:justify-center">
+        <div className="flex-col flex gap-[14px] lg:gap-[18px] justify-start items-center lg:justify-center">
           <div className="text-[24px] text-c-01 font-jost font-bold flex justify-center">
             PRESENTED BY
           </div>
