@@ -178,15 +178,15 @@ export function DataTable({ title }) {
             type="text"
             placeholder="Cari nama kelompok"
             className="ml-[1%] w-full mr-[5%] bg-inherit focus:outline-0 placeholder:text-white/[.20] text-white/[.50]"
-            onChange={(e) =>
+            onChange={(e) => {
               setHasilPencarian(
                 isi.filter(
                   (peserta) =>
                     peserta[0].toLowerCase().includes(e.target.value.toLowerCase()) ||
-                    peserta[1].toLowerCase().includes(e.target.value.toLowerCase())
+                    peserta[2].toLowerCase().includes(e.target.value.toLowerCase())
                 )
               )
-            }
+            }}
           />
         </div>
         <div className="ml-auto flex items-center mr-[3%]">Total: {isi.length}</div>
@@ -196,36 +196,49 @@ export function DataTable({ title }) {
           </button>
         </div>
       </div>
-      <div className="mt-[20px] outline outline-1 outline-c-02/[.60] drop-shadow-[0_0_10px_#0DF8CF20] bg-bg-03 h-[400px] mb-[50px] rounded-[5px] text-white font-poppins">
-        <div className="grid grid-rows-[60px] grid-cols-[0.4fr_repeat(8,1fr)_12px] justify-items-center items-center outline outline-1 outline-c-02/[.60] rounded-t-[5px]">
-          <div>No</div>
-          <div>Nama tim</div>
-          <div>Nama ketua</div>
-          <div>Email ketua</div>
-          <div>Nomor wa</div>
-          <div>Detail</div>
-          <div>Status</div>
-          <div>Karya</div>
-          <div />
-        </div>
-        <div className="h-[340px] overflow-auto">
+      <div className="mt-[20px] outline outline-1 outline-c-02/[.60] drop-shadow-[0_0_10px_#0DF8CF20] bg-bg-03 h-[400px] mb-[50px] rounded-[5px] text-white font-poppins overflow-auto">
+        <div className="grid grid-cols-[0fr_0.4fr_repeat(7,1fr)] justify-items-center items-center relative">
+          <div className="sticky top-0 h-[60px]" />
+          <div className="sticky top-0 h-[60px] w-full flex justify-center items-center bg-bg-03">
+            No
+          </div>
+          <div className="sticky top-0 h-[60px] w-full flex justify-center items-center bg-bg-03">
+            Nama tim
+          </div>
+          <div className="sticky top-0 h-[60px] w-full flex justify-center items-center bg-bg-03">
+            Nama ketua
+          </div>
+          <div className="sticky top-0 h-[60px] w-full flex justify-center items-center bg-bg-03">
+            Email ketua
+          </div>
+          <div className="sticky top-0 h-[60px] w-full flex justify-center items-center bg-bg-03">
+            Nomor wa
+          </div>
+          <div className="sticky top-0 h-[60px] w-full flex justify-center items-center bg-bg-03">
+            Detail
+          </div>
+          <div className="sticky top-0 h-[60px] w-full flex justify-center items-center bg-bg-03">
+            Status
+          </div>
+          <div className="sticky top-0 h-[60px] w-full flex justify-center items-center bg-bg-03">
+            Karya
+          </div>
+          <div className="sticky top-[60px] h-[1px] col-span-full bg-c-02/[.60] w-full" />
           {hasilPencarian.map((baris, index) => (
-            <div
-              key={baris[0] + baris[1]}
-              className="grid grid-rows-[60px] grid-cols-[0.4fr_repeat(8,1fr)] justify-items-center items-center"
-            >
-              <div>{index + 1}</div>
-              <div>{baris[0]}</div>
+            <>
+              <div className="h-[60px]" />
+              <div className="text-center">{index + 1}</div>
+              <div className="text-center">{baris[0]}</div>
 
-              <div>{baris[2]}</div>
-              <div>{baris[3]}</div>
-              <div>{baris[4]}</div>
-              <div>
+              <div className="text-center">{baris[2]}</div>
+              <div className="text-center">{baris[3]}</div>
+              <div className="text-center">{baris[4]}</div>
+              <div className="text-center">
                 <button type="button" onClick={() => setDataDetail(data[index]?.teams?.[0])}>
                   <div className="font-bold underline">Lihat Detail</div>
                 </button>
               </div>
-              <div>
+              <div className="text-center">
                 {baris[5] ? (
                   <button
                     onClick={() => {
@@ -250,9 +263,9 @@ export function DataTable({ title }) {
                 {verif ? <ChangeContent1 id={idDetail} /> : <div />}
                 {batal ? <ChangeContent2 id={idDetail} /> : <div />}
               </div>
-              <div>{baris[6]}</div>
+              <div className="text-center">{baris[6]}</div>
               <div className="h-[1px] col-span-full bg-c-02/[.60] w-[97%]" />
-            </div>
+            </>
           ))}
         </div>
       </div>
