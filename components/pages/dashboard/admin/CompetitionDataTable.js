@@ -191,8 +191,10 @@ export function DataTable({ title }) {
         </div>
         <div className="ml-auto flex items-center mr-[3%]">Total: {isi.length}</div>
         <div className="flex items-center underline">
-          <button type="submit" href="#?">
-            Lihat Spreadsheet
+          <button type="submit">
+            <a href="https://docs.google.com/spreadsheets/d/1V-_dyIN_6oEmPGDDbpZN3jitxDlpt2J3lM2Q44qvXJI/edit?usp=sharing">
+              Lihat Spreadsheet
+            </a>
           </button>
         </div>
       </div>
