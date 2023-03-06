@@ -79,7 +79,7 @@ export function Footer() {
           <Image src="/magatrika.svg" width={125} height={100} alt="magatrika" />
         </div>
         <div className="flex justify-center">
-          <a href="https://api.whatsapp.com/send/?phone=62895601622874">
+          <a href="https://api.whatsapp.com/send/?phone=6282158450268">
             <Button type="secondary">Whatsapp</Button>
           </a>
         </div>
