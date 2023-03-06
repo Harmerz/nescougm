@@ -69,8 +69,8 @@ const Poster = {
   peserta: 'Perseorangan atau tim maksimal 3 orang',
   biayaPendaftaran: 'Rp40.000,00',
   contactPersons: [
-    ['Rafi', '085601197359', 'rafiady3'],
-    ['Arya', '085700590268', 'aryadwija1234'],
+    ['Isabel Elgina', '0895365343444', 'abelelginaa'],
+    ['Denio Ezekiel sembiring', '081262732624', 'denioeb'],
   ],
   juaraMahasiswa: ['Rp1.500.000,-', 'Rp1.000.000,-', 'Rp500.000,-', 'Rp250.000,-'],
   juaraSMA: ['Rp1.500.000,-', 'Rp1.000.000,-', 'Rp500.000,-', 'Rp250.000,-'],

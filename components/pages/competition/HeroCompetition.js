@@ -61,11 +61,11 @@ export function HeroCompetition({ competitionTitle = 'Competition Title' }) {
             </div>
             <div className="w-[80%] h-[15%] text-xs sm:text-base md:text-lg lg:text-xl font-poppins text-white">
               Untuk pendaftaran dapat dilakukan{' '}
-              <Link href="/signin" className="text-c-01 z-[100]">
+              <Link href="/auth/signin" className="text-c-01 z-[100]">
                 disini
               </Link>
             </div>
-            <Link href="/signin" className="z-[100]">
+            <Link href="/auth/signin" className="z-[100]">
               <Button type="primary" size="sm">
                 Daftar
               </Button>
