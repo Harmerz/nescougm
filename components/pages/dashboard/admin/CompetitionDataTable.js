@@ -39,7 +39,7 @@ export function DataTable({ title }) {
         item?._id ?? '-',
         item?.name ?? '-',
         item?.email ?? '-',
-        item?.teams?.[0]?.nomorKontak1 ?? '-',
+        item?.teams?.[0]?.unique_number ?? '-',
         item?.paymentStatus ?? false,
         item?.teams?.[0]?.submission ?? '-',
       ]
@@ -212,7 +212,7 @@ export function DataTable({ title }) {
             Email ketua
           </div>
           <div className="sticky top-0 h-[60px] w-full flex justify-center items-center bg-bg-03">
-            Nomor wa
+            Nomor Unik
           </div>
           <div className="sticky top-0 h-[60px] w-full flex justify-center items-center bg-bg-03">
             Detail
