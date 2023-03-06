@@ -169,7 +169,7 @@ export function CompetitionPeserta({ data }) {
                 </div>
                 <div>
                   <div className="text-white sm:text-xs text-[8px] font-poppins sm:mb-3">
-                    Bukti Twibbon dan Follow Ketua
+                    Bukti Follow IG @nescougm Ketua
                   </div>
                   <ButtonDashboard
                     active={data?.buktiFollowAnggota1 !== '-'}
@@ -225,7 +225,7 @@ export function CompetitionPeserta({ data }) {
                 </div>
                 <div>
                   <div className="text-white sm:text-xs text-[8px] font-poppins sm:mb-3">
-                    Bukti Twibbon dan Follow Anggota 1
+                    Bukti Follow IG @nescougm Anggota 1
                   </div>
                   <ButtonDashboard
                     active={data?.buktiFollowAnggota2 !== '-'}
@@ -279,7 +279,7 @@ export function CompetitionPeserta({ data }) {
                 </div>
                 <div>
                   <div className="text-white sm:text-xs text-[8px] font-poppins sm:mb-3">
-                    Bukti Twibbon dan Follow Anggota
+                    Bukti Follow IG @nescougm Anggota
                   </div>
                   <ButtonDashboard
                     active={data?.buktiFollowAnggota3 !== '-'}
