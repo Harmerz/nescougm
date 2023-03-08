@@ -112,16 +112,15 @@ export function CompetitionPeserta({ data, paymentStatus }) {
     if (data?.selectedCompetition === 'Lomba Video') {
       setHarga(60000)
     } else if (data?.selectedCompetition === 'Lomba Poster') {
-      setHarga(40000)
+      if (jumlahKarya === 1) {
+        setHarga(40000)
+      } else if (jumlahKarya === 2) {
+        setHarga(65000)
+      }
     } else if (data?.selectedCompetition === 'Lomba Paper') {
       setHarga(130000)
     }
-    if (jumlahKarya === 1) {
-      setHarga(40000)
-    } else if (jumlahKarya === 2) {
-      setHarga(65000)
-    }
-  }, [data, jumlahKarya])
+  }, [data, harga, jumlahKarya])
 
   const JumlahKarya = useCallback(() => {
     // const [maxKarya, setMaxKarya] = useState(false)
