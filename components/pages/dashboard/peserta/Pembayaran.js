@@ -84,10 +84,10 @@ export function Pembayaran({ teamId, payment, status, kompetisi, harga, uniqueNu
             <p>1. Bank BCA : 8175413321 atas nama Citra Agatha</p>
             <p>2. Bank CIMB Niaga : 706729978000 atas nama Citra Agatha</p>
             <p>3. Bank BRI : 691101017625539 atas nama Malikha Aulia</p>
-            <p>4. OVO, Gopay, Dana : 085156052603</p>
+            <p>4. OVO, Gopay, Dana : 085156052603 atas nama Citra Agatha </p>
             <p>
-              atas nama Citra Agatha Setelah berhasil melakukan pembayaran, harap melampirkan bukti
-              pembayaran pada tempat yang telah disediakan.
+              Setelah berhasil melakukan pembayaran, harap melampirkan bukti pembayaran pada tempat
+              yang telah disediakan.
             </p>
           </div>
           <div className="flex flex-col w-full lg:w-1/2 justify-end items-start">

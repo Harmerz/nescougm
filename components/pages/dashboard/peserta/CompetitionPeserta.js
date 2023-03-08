@@ -417,7 +417,7 @@ export function CompetitionPeserta({ data, paymentStatus }) {
                 </div>
                 <div>
                   <div className="text-white sm:text-xs text-[8px] font-poppins sm:mb-3">
-                    Bukti Follow IG @nescougm Anggota
+                    Bukti Follow IG @nescougm Anggota 2
                   </div>
                   <ButtonDashboard
                     active={data?.buktiFollowAnggota3 !== '-'}
