@@ -229,6 +229,7 @@ export function DataTable({ title }) {
             }}
           />
         </div>
+
         <div className="ml-auto flex items-center mr-[3%]">Total: {isi.length}</div>
         <div className="flex items-center underline">
           <button type="submit">
@@ -237,6 +238,31 @@ export function DataTable({ title }) {
             </a>
           </button>
         </div>
+      </div>
+      <div className="mt-6 w-1/4 flex gap-[8px] text-[#A5A9AD] text-[16px] font-poppins bg-gradient-to-b from-c-02 to-c-01 drop-shadow-[0px_0px_1.9px_#008DB8] h-[51px] p-[1px] rounded-[8px] items-center justify-center relative">
+        <select
+          name="status"
+          id="status"
+          className="text-[16px] pl-[43px] bg-c-05 rounded-[8px]  h-full w-full text-[#A5A9AD] focus:outline-none"
+          required
+          onChange={(e) => {
+            setHasilPencarian(
+              isi.filter((peserta) =>
+                peserta[3].toLowerCase().includes(e.target.value.toLowerCase())
+              )
+            )
+          }}
+        >
+          <option value="Lomba Video" className="w-[319px] sm:w-[362px]">
+            Lomba Video
+          </option>
+          <option value="Lomba Poster" className="w-[319px] sm:w-[362px]">
+            Lomba Poster
+          </option>
+          <option value="Lomba Paper" className="w-[319px] sm:w-[362px]">
+            Lomba Paper
+          </option>
+        </select>
       </div>
       <div className="mt-[20px] outline outline-1 outline-c-02/[.60] drop-shadow-[0_0_10px_#0DF8CF20] bg-bg-03 h-[400px] mb-[50px] rounded-[5px] text-white font-poppins overflow-auto">
         <div className="grid grid-cols-[0fr_0.4fr_repeat(7,1fr)] justify-items-center items-center relative">
