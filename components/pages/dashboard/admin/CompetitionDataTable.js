@@ -16,7 +16,7 @@ import {
 import { Button } from '../../../element/button'
 import { CompetitionPeserta } from './CompetitionDetailPeserta'
 
-export const firebaseConfig = {
+const firebaseConfig = {
   apiKey: 'AIzaSyAGyEzjL9GIh80vbjazecsROa94a1w9Lyk',
   authDomain: 'nesco-fb1d6.firebaseapp.com',
   projectId: 'nesco-fb1d6',
