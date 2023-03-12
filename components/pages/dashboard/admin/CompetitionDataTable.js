@@ -1,6 +1,9 @@
 /* eslint-disable no-console */
 /* eslint-disable no-underscore-dangle */
 import axios from 'axios'
+import { initializeApp } from 'firebase/app'
+import { getDownloadURL, getStorage, ref } from 'firebase/storage'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import {
@@ -13,12 +16,32 @@ import {
 import { Button } from '../../../element/button'
 import { CompetitionPeserta } from './CompetitionDetailPeserta'
 
+export const firebaseConfig = {
+  apiKey: 'AIzaSyAGyEzjL9GIh80vbjazecsROa94a1w9Lyk',
+  authDomain: 'nesco-fb1d6.firebaseapp.com',
+  projectId: 'nesco-fb1d6',
+  storageBucket: 'nesco-fb1d6.appspot.com',
+  messagingSenderId: '412903612',
+  appId: '1:412903612:web:b4e65de54653a5b68508b9',
+}
+
+const app = initializeApp(firebaseConfig)
+
 export function DataTable({ title }) {
   const [verif, setVerif] = useState(false)
   const [batal, setBatal] = useState(false)
   const [data, setData] = useState([])
   const [dataDetail, setDataDetail] = useState([])
   const [idDetail, setIdDetail] = useState('')
+  const [url, setUrl] = useState('')
+  const [modal, setModal] = useState(false)
+
+  const handelGambar = (value) => {
+    setModal(true)
+    getDownloadURL(ref(getStorage(app), value)).then((URL) => {
+      setUrl(URL)
+    })
+  }
   const dataProfile = () => {
     axios
       .get('https://be-nesco-2023-p2kk.vercel.app/api/users')
@@ -38,10 +61,11 @@ export function DataTable({ title }) {
         item?.teams?.[0]?.namaTeam ?? '-',
         item?._id ?? '-',
         item?.name ?? '-',
-        item?.email ?? '-',
+        item?.teams?.[0]?.selectedCompetition ?? '-',
         item?.teams?.[0]?.unique_number ?? '-',
         item?.paymentStatus ?? false,
         item?.teams?.[0]?.submission ?? '-',
+        item?.teams?.[0]?.proofOfPayment ?? '-',
       ]
     })
   }, [data])
@@ -151,6 +175,22 @@ export function DataTable({ title }) {
   }, [isi])
   return (
     <div>
+      <div
+        className={`${
+          modal ? 'block' : 'hidden'
+        } fixed z-50 bg-slate-800 top-0 left-0 w-full h-full`}
+      >
+        <button
+          className="absolute top-4 right-8 text-[##f1f1f1] font-bold text-4xl"
+          onClick={() => setModal(false)}
+          type="button"
+        >
+          &times;
+        </button>
+        <div className="flex justify-center items-center">
+          <Image src={url} alt="Picture of the author" width={500} height={500} />
+        </div>
+      </div>
       <div className="flex justify-center items-center mt-10">
         <div className="ml-[1%] text-4xl h-fit font-jost font-medium bg-gradient-to-b from-c-01 to-c-02 bg-clip-text text-transparent">
           {title}
@@ -211,7 +251,7 @@ export function DataTable({ title }) {
             Nama ketua
           </div>
           <div className="sticky top-0 h-[60px] w-full flex justify-center items-center bg-bg-03">
-            Email ketua
+            Kompetisi
           </div>
           <div className="sticky top-0 h-[60px] w-full flex justify-center items-center bg-bg-03">
             Nomor Unik
@@ -240,7 +280,22 @@ export function DataTable({ title }) {
                   <div className="font-bold underline">Lihat Detail</div>
                 </button>
               </div>
-              <div className="text-center">
+              <div className="text-center flex justify-center items-center">
+                <button
+                  type="button"
+                  className="mr-2"
+                  onClick={() => {
+                    if (baris[7] !== '-') {
+                      handelGambar(baris[7])
+                    }
+                  }}
+                >
+                  {baris[7] === '-' ? (
+                    <div className="font-reguler cursor-not-allowed">Bukti</div>
+                  ) : (
+                    <div className="font-bold underline">Bukti</div>
+                  )}
+                </button>
                 {baris[5] ? (
                   <button
                     onClick={() => {

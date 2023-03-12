@@ -11,6 +11,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      animation: {
+        'spin-slow': 'spin 12s linear infinite',
+        'spin-counter': 'spinCounter 12s linear infinite',
+        'zoom-in': 'zoomIn 1s ease-in',
+      },
       colors: {
         'c-00': '#1F2326',
         'c-01': '#05C2FC',
@@ -49,6 +54,20 @@ module.exports = {
         flickerBgEnd: {
           '0%, 19.9%, 25%, 62.9%, 65%, 65.9%, 70%, 100%': { stopColor: '#0DF8CF' },
           '20%, 24.9%, 63%, 64.9%, 66%, 69.9%': { stopColor: '#037497' },
+        },
+        zoomIn: {
+          from: {
+            opacity: '0',
+            transform: 'scale(0)',
+          },
+          to: {
+            opacity: '1',
+            transform: 'scale(1)',
+          },
+        },
+        spinCounter: {
+          from: { transform: 'rotate(0deg)' },
+          to: { transform: 'rotate(-360deg)' },
         },
       },
     },
