@@ -346,7 +346,9 @@ export function DataTable({ title }) {
                 {verif ? <ChangeContent1 id={idDetail} /> : <div />}
                 {batal ? <ChangeContent2 id={idDetail} /> : <div />}
               </div>
-              <div className="text-center">{baris[6]}</div>
+              <div className="text-center">
+                {baris[6] !== '-' ? <a href={baris[6]}>Link bang</a> : <div>Belum</div>}
+              </div>
               <div className="h-[1px] col-span-full bg-c-02/[.60] w-[97%]" />
             </>
           ))}
