@@ -69,6 +69,9 @@ export function DataTable({ title }) {
         item?.paymentStatus ?? false,
         item?.teams?.[0]?.submission ?? '-',
         item?.teams?.[0]?.proofOfPayment ?? '-',
+        {
+          detail: item?.teams?.[0] ?? '-',
+        },
       ]
     })
   }, [data])
@@ -375,7 +378,7 @@ export function DataTable({ title }) {
               <div className="text-center">{baris[3]}</div>
               <div className="text-center">{baris[4]}</div>
               <div className="text-center">
-                <button type="button" onClick={() => setDataDetail(data[index]?.teams?.[0])}>
+                <button type="button" onClick={() => setDataDetail(baris[8].detail)}>
                   <div className="font-bold underline">Lihat Detail</div>
                 </button>
               </div>
