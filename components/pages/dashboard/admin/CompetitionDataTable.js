@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 /* eslint-disable no-underscore-dangle */
 import axios from 'axios'
+import { saveAs } from 'file-saver'
 import { initializeApp } from 'firebase/app'
 import { getDownloadURL, getStorage, ref } from 'firebase/storage'
 import Image from 'next/image'
@@ -15,6 +16,8 @@ import {
 
 import { Button } from '../../../element/button'
 import { CompetitionPeserta } from './CompetitionDetailPeserta'
+
+const ExcelJS = require('exceljs')
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAGyEzjL9GIh80vbjazecsROa94a1w9Lyk',
@@ -171,8 +174,80 @@ export function DataTable({ title }) {
   const [hasilPencarian, setHasilPencarian] = useState(isi)
 
   useEffect(() => {
-    setHasilPencarian(isi)
+    setHasilPencarian(isi.filter((item) => !item[0].toLowerCase().includes('-')))
   }, [isi])
+
+  const handleDownload = async () => {
+    const workbook = new ExcelJS.Workbook()
+    const worksheet = workbook.addWorksheet('Pendaftar')
+
+    worksheet.columns = [
+      { header: 'Id', key: 'id', width: 10 },
+      { header: 'Nama Tim', key: 'name', width: 32 },
+      { header: 'Institusi', key: 'institusi', width: 32 },
+      { header: 'Kategori Lomba', key: 'kategori', width: 10 },
+      { header: 'Nama Ketua', key: 'ketua', width: 10 },
+      { header: 'Nama Anggota 1', key: 'anggota1', width: 10 },
+      { header: 'Nama Anggota 2', key: 'anggota2', width: 10 },
+      { header: 'Nomor Telepon', key: 'phone', width: 10 },
+      { header: 'Nomor Telepon Lain', key: 'phone2', width: 10 },
+      { header: 'Email Ketua', key: 'email', width: 10 },
+      { header: 'Email Anggota 1', key: 'email2', width: 10 },
+      { header: 'Email Anggota 2', key: 'email3', width: 10 },
+      { header: 'E-KTM Ketua', key: 'ktm', width: 10 },
+      { header: 'E-KTM Anggota 1', key: 'ktm2', width: 10 },
+      { header: 'E-KTM Anggota 2', key: 'ktm3', width: 10 },
+      { header: 'Foto Ketua', key: 'foto', width: 10 },
+      { header: 'Foto Anggota 1', key: 'foto2', width: 10 },
+      { header: 'Foto Anggota 2', key: 'foto3', width: 10 },
+      { header: 'Follow Ketua', key: 'follow', width: 10 },
+      { header: 'Follow Anggota 1', key: 'follow2', width: 10 },
+      { header: 'Follow Anggota 2', key: 'follow3', width: 10 },
+      { header: 'Bukti Pembayaran', key: 'bukti', width: 10 },
+      { header: 'Submisi Karya', key: 'submisi', width: 10 },
+    ]
+    let i = 0
+    data.map((item) => {
+      if (item?.teams?.[0]?.namaTeam !== '-' && item?.teams?.[0]?.namaTeam !== undefined) {
+        i += 1
+        return worksheet.addRow({
+          id: i,
+          name: item?.teams?.[0]?.namaTeam,
+          institusi: item?.teams?.[0]?.institusi,
+          kategori: item?.teams?.[0]?.kategori,
+          ketua: item?.teams?.[0]?.namaAnggota1,
+          anggota1: item?.teams?.[0]?.namaAnggota2,
+          anggota2: item?.teams?.[0]?.namaAnggota3,
+          phone: item?.teams?.[0]?.nomorKontak1,
+          phone2: item?.teams?.[0]?.nomorKontak2,
+          email: item?.teams?.[0]?.emailAnggota1,
+          email2: item?.teams?.[0]?.emailAnggota2,
+          email3: item?.teams?.[0]?.emailAnggota2,
+          ktm: item?.teams?.[0]?.eKtmAnggota1,
+          ktm2: item?.teams?.[0]?.eKtmAnggota2,
+          ktm3: item?.teams?.[0]?.eKtmAnggota3,
+          foto: item?.teams?.[0]?.fotoAnggota1,
+          foto2: item?.teams?.[0]?.fotoAnggota2,
+          foto3: item?.teams?.[0]?.fotoAnggota3,
+          follow: item?.teams?.[0]?.buktiFollowAnggota1,
+          follow2: item?.teams?.[0]?.buktiFollowAnggota2,
+          follow3: item?.teams?.[0]?.buktiFollowAnggota3,
+          bukti: item?.teams?.[0]?.proofOfPayment,
+          submisi: item?.teams?.[0]?.submission,
+        })
+      }
+      return null
+    })
+
+    const buffer = await workbook.xlsx.writeBuffer()
+    const fileType = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+
+    const blob = new Blob([buffer], { type: fileType })
+    const DateTime = new Date()
+
+    saveAs(blob, `Pendaftar NESCO ${DateTime}.xlsx`)
+  }
+
   return (
     <div>
       <div
@@ -232,10 +307,8 @@ export function DataTable({ title }) {
 
         <div className="ml-auto flex items-center mr-[3%]">Total: {isi.length}</div>
         <div className="flex items-center underline">
-          <button type="submit">
-            <a href="https://docs.google.com/spreadsheets/d/1V-_dyIN_6oEmPGDDbpZN3jitxDlpt2J3lM2Q44qvXJI/edit?usp=sharing">
-              Lihat Spreadsheet
-            </a>
+          <button type="submit" onClick={() => handleDownload()}>
+            Lihat Spreadsheet
           </button>
         </div>
       </div>
