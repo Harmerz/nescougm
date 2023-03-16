@@ -191,7 +191,7 @@ export function CompetitionPeserta({ data, paymentStatus }) {
         } bg-black fixed z-40 bg-opacity-[.7] h-screen top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-screen flex justify-center items-center`}
       >
         <div className="flex justify-start">
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center w-1/2">
             <Image src={url} alt="Picture of the author" width={500} height={500} />
           </div>
           <button
