@@ -53,17 +53,20 @@ export function CompetitionPeserta({ data }) {
       <div
         className={`${
           modal ? 'block' : 'hidden'
-        } fixed z-50 bg-slate-800 top-0 left-0 w-full h-full`}
+        } bg-black fixed z-40 bg-opacity-[.7] h-screen top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-screen flex justify-center items-center`}
       >
-        <button
-          className="absolute top-4 right-8 text-[##f1f1f1] font-bold text-4xl"
-          onClick={() => setModal(false)}
-          type="button"
-        >
-          &times;
-        </button>
-        <div className="flex justify-center items-center">
-          <Image src={url} alt="Picture of the author" width={500} height={500} />
+        <div className="flex justify-start">
+          <div className="flex justify-center items-center">
+            <Image src={url} alt="Picture of the author" width={500} height={500} />
+          </div>
+          <button
+            // className="flex w-screen h-full "
+            className="flex justify-start items-start font-bold text-4xl text-white my-[-20px]"
+            onClick={() => setModal(false)}
+            type="button"
+          >
+            &times;
+          </button>
         </div>
       </div>
       <div className="flex flex-col w-full items-center justify-center">
