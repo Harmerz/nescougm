@@ -27,9 +27,7 @@ export function PengumpulanKarya({ data }) {
         <div className="flex justify-center">
           <div className="w-[300px] md:w-[488px] flex flex-col gap-[15px] justify-center bg-[#22292F] border-c-02/25 border-[1px] px-[78px] py-[48px] rounded-[10px] text-white">
             <h1 className=" text-center text-[12px] md:text-[14px] leading-[30px] font-poppins font-medium">
-              Pastikan Anda telah melakukan pengisian data dengan lengkap dan benar. Apabila sudah
-              simpan permanen maka anda setuju bahwa data yang sudah diisi tidak dapat diubah
-              kembali.
+              Form ini hanya dapat menerima satu kali pengumpulan karya sehingga pastikan link karya yang akan anda kumpulkan sudah benar dan mengandung 'https://' di depannya, contoh: 'https://bit.ly/JuknisNescoPosterCompetition2023'. Jika sudah, silahkan klik tombol 'Simpan' untuk mengumpulkan karya anda.
             </h1>
             <div className="flex justify-center gap-[40px]">
               <div>
