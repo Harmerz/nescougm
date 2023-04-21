@@ -38,6 +38,8 @@ export function DataTable({ title }) {
   const [idDetail, setIdDetail] = useState('')
   const [url, setUrl] = useState('')
   const [modal, setModal] = useState(false)
+  const [karya, setKarya] = useState(false)
+  const [karyabelum, setKaryaBelum] = useState(false)
 
   const handelGambar = (value) => {
     setModal(true)
@@ -365,7 +367,51 @@ export function DataTable({ title }) {
             Status
           </div>
           <div className="sticky top-0 h-[60px] w-full flex justify-center items-center bg-bg-03">
-            Karya
+            <span className="mr-2">Karya</span>
+            {karya ? (
+              <button
+                onClick={() => {
+                  setKarya(!karya)
+                  setHasilPencarian(isi)
+                }}
+                type="button"
+              >
+                <AiFillCheckSquare size={19.79} className="text-c-02" />
+              </button>
+            ) : (
+              <button
+                onClick={() => {
+                  setKarya(!karya)
+                  setKaryaBelum(false)
+                  setHasilPencarian(isi.filter((peserta) => !peserta.includes('-')))
+                }}
+                type="button"
+              >
+                <AiOutlineCheckSquare size={19.79} className="text-c-02" />
+              </button>
+            )}
+            {karyabelum ? (
+              <button
+                onClick={() => {
+                  setKaryaBelum(!karyabelum)
+                  setHasilPencarian(isi)
+                }}
+                type="button"
+              >
+                <AiFillCheckSquare size={19.79} className="text-c-02" />
+              </button>
+            ) : (
+              <button
+                onClick={() => {
+                  setKaryaBelum(!karyabelum)
+                  setKarya(false)
+                  setHasilPencarian(isi.filter((peserta) => peserta.includes('-')))
+                }}
+                type="button"
+              >
+                <AiOutlineCheckSquare size={19.79} className="text-c-02" />
+              </button>
+            )}
           </div>
           <div className="sticky top-[60px] h-[1px] col-span-full bg-c-02/[.60] w-full" />
           {hasilPencarian.map((baris, index) => (
