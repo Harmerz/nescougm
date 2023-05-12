@@ -1,14 +1,17 @@
 import { BackToTop } from '../components/element/BackToTop'
-import { DefaultLayout } from '../components/layout'
-import { Comingsoon } from '../components/pages/comingsoon'
+import { DefaultLayout, Footer } from '../components/layout'
+import { Merch } from '../components/pages/merch'
 
-export default function Merch() {
+export default function MERCH() {
   return (
     <DefaultLayout title="Merch - NESCO UGM 2023">
       <div>
-        <Comingsoon />
+        <Merch/>
         <BackToTop />
       </div>
+      <footer>
+        <Footer />
+      </footer>
     </DefaultLayout>
   )
 }
