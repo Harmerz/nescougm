@@ -1,7 +1,6 @@
 import 'aos/dist/aos.css'
 
 import AOS from 'aos'
-import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { useEffect } from 'react'
 
